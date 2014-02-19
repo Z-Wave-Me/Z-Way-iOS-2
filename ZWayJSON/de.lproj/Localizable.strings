@@ -1,0 +1,58 @@
+/* 
+  Localizable.strings
+  ZWayJSON
+
+  Created by Lucas von Hacht on 2/17/14.
+  Copyright (c) 2014 Lucas von Hacht. All rights reserved.
+*/
+
+"Remove" = "Löschen";
+"Notifications" = "Benachrichtigungen";
+"NoDevices" = "Keine Geräte gefunden";
+"OKMessage" = "Alles in Ordnung";
+"UpdateError" = "Es gab ein Problem beim Laden der Daten";
+"ToDash" = "Zum Dashboarb";
+"Done" = "Fertig";
+"IsPart" = "Schon enthalten";
+"Red" = "Rot";
+"Blue" = "Blau";
+"Orange" = "Orange";
+"Purple" = "Lila";
+"Cyan" = "Cyan";
+"Options" = "Optionen";
+"Profiles" = "Profile";
+"Color" = "Farb Thema";
+"Default" = "Standart";
+"NoProfile" = "Sie sollten mindestens ein Profil anlegen";
+"NoSelection" = "Sie sollten ein Profil auswählen";
+"OK" = "OK";
+"NewProfile" = "Neues Profil";
+"IndoorServer" = "ZUHAUSE";
+"RemoteAccess" = "REMOTE ACCESS CREDENTIALS";
+"Store" = "Daten speichern";
+"Name" = "Name";
+"Away" = "Außerhalb";
+"Home" = "Zuhause";
+"Login" = "Login";
+"Password" = "Passwort";
+"DeleteProfile" = "Profil löschen";
+"Stored" = "Daten wurden gespeichert";
+"Rooms" = "Räume";
+"Types" = "Typen";
+"Tags" = "Tags";
+"AutoLow" = "Autom. Langsam";
+"OnLow" = "Wenig";
+"AutoHigh" = "Autom. Schnell";
+"OnHigh" = "Schnell";
+"Off" = "Aus";
+"Heat" = "Heizen";
+"Cool" = "Kühlen";
+"Auto" = "Autom.";
+"Resume" = "Stoppen";
+"FanOnly" = "Nur Lüftung";
+"DryAir" = "Trockenluft";
+"NoDashboard" = "Das Dashboard ist im Augenblick leer. Sie können es mit oft benutzten Widgets füllen, indem Sie diese nach links wischen.";
+"ConnectionFail" = "Verbindungsfehler";
+"FailMessage" = "Es trat ein Problem mit der Verbindung auf";
+
+
