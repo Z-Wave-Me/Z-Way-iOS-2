@@ -10,7 +10,6 @@
 #import "ZWDataStore.h"
 #import "CMProfile.h"
 #import "ZWayAppDelegate.h"
-#import "Reachability.h"
 
 @interface ZWayNewProfileViewController ()
 
@@ -62,25 +61,35 @@
 - (void)testConnection:(NSString*)field With:(UITextField*)connection
 {
     UITableViewCell *cell = (UITableViewCell*)[tableview viewWithTag:connection.tag];
-    UIImageView *connected = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"connected-g.png"]];
-    UIImageView *fail = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-down.png"]];
-    reachableFoo = [Reachability reachabilityWithHostname:connection.text];
     
     if([field isEqualToString:NSLocalizedString(@"Home", @"")])
     {
-        if([reachableFoo currentReachabilityStatus] == NotReachable)
+
+        UIImageView *connected = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"connected-g.png"]];
+        UIImageView *fail = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-down.png"]];
+        
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@", connection.text]];
+        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:5.0];
+        NSError *error;
+        NSURLResponse *response;
+        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        if(data)
+            NSLog(@"Connection worked");
+            
+        NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+        int responseStatusCode = [httpResponse statusCode];
+        
+        if(responseStatusCode != 200)
         {
-            NSLog(@"No indoor connection found");
+            NSLog(@"Connection not found!");
             cell.accessoryView = fail;
         }
         else
         {
-            NSLog(@"Indoor connection found!");
+            NSLog(@"Connection found!");
             cell.accessoryView = connected;
         }
     }
-    
-    [reachableFoo startNotifier];
 }
 
 - (void)viewDidUnload
@@ -186,12 +195,19 @@
     UILabel *label;
     UITextField *editor;
     
-    UIButton *SaveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    SaveButton.frame = CGRectMake(0, 0, 280, 40);
-    [SaveButton setTitle:NSLocalizedString(@"Store", @"Store Data") forState:UIControlStateNormal];
-    SaveButton.backgroundColor = [UIColor clearColor];
-    [SaveButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [SaveButton addTarget:self action:@selector(store:) forControlEvents:UIControlEventTouchUpInside];
+    UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    saveButton.frame = CGRectMake(0, 0, 280, 40);
+    [saveButton setTitle:NSLocalizedString(@"Store", @"Store Data") forState:UIControlStateNormal];
+    saveButton.backgroundColor = [UIColor clearColor];
+    [saveButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [saveButton addTarget:self action:@selector(store) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    deleteButton.frame = CGRectMake(0, 50, 280, 40);
+    [deleteButton setTitle:NSLocalizedString(@"Delete", @"Delete Profile") forState:UIControlStateNormal];
+    deleteButton.backgroundColor = [UIColor clearColor];
+    [deleteButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [deleteButton addTarget:self action:@selector(deleteProfile) forControlEvents:UIControlEventTouchUpInside];
     
     switch (indexPath.section)
     {
@@ -223,7 +239,8 @@
     }
     
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(20, 0, 280, 100)];
-    [footerView addSubview:SaveButton];
+    [footerView addSubview:saveButton];
+    [footerView addSubview:deleteButton];
     tableView.tableFooterView = footerView;
     
     cell = [_fields objectForKey:name];
@@ -252,7 +269,7 @@
     return cell;
 }
 
-- (void)store:(id)sender
+- (void)store
 {
     if (ZWayAppDelegate.sharedDelegate.settingsLocked) return;
     
@@ -266,6 +283,22 @@
 
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Profiles" message:NSLocalizedString(@"Stored", @"") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
     [alert show];
+}
+
+- (void)deleteProfile
+{
+    CMProfile *selectedProfile = ZWayAppDelegate.sharedDelegate.profile;
+    
+    ZWDataStore *store = ZWDataStore.store;
+    
+    [store.managedObjectContext deleteObject:_profile];
+    [store.managedObjectContext processPendingChanges];
+    
+    if (selectedProfile == _profile)
+        // deleted selected profile
+        ZWayAppDelegate.sharedDelegate.profile = nil;
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

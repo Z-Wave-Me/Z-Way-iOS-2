@@ -22,6 +22,7 @@
 @property (strong, nonatomic) ZWDevice *device;
 
 - (void)setDisplayName;
+- (void)hideControls:(BOOL)editing;
 - (void)updateState;
 - (void)createRequestWithURL:(NSString*)url;
 

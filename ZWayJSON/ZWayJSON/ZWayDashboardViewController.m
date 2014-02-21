@@ -130,6 +130,7 @@
         } force:NO];
         
         weakCell.showsReorderControl = YES;
+        [cell hideControls:editMode];
         return cell;
     }
     else
@@ -179,6 +180,8 @@
 {
     [super setEditing:editing animated:animated];
     [self.tableview setEditing:editing animated:animated];
+    editMode = editing;
+    [self.tableview performSelector:@selector(reloadData) withObject:nil afterDelay:0.3];
 }
 
 
