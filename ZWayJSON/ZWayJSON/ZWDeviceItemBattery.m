@@ -40,6 +40,20 @@
     [self.scale setText:scale];
 }
 
+- (void)hideControls:(BOOL)editing
+{
+    if(editing == YES)
+    {
+        self.scale.hidden = YES;
+        self.valueView.hidden = YES;
+    }
+    else
+    {
+        self.scale.hidden = NO;
+        self.valueView.hidden = NO;
+    }
+}
+
 - (void)dealloc
 {
     self.valueView = nil;
