@@ -55,25 +55,132 @@
     }
     
     noItemsLabel.text = NSLocalizedString(@"NoDashboard", @"");
+    [self updateObjects];
+}
+
+- (void)updateObjects
+{
+    objects = [NSMutableArray arrayWithArray:[NSKeyedUnarchiver unarchiveObjectWithData:ZWayAppDelegate.sharedDelegate.profile.objects]];
     [tableview reloadData];
+    
+    for (int i=0; i<objects.count; i++)
+    {
+        ZWDevice *device = [objects objectAtIndex:i];
+        receivedData = nil;
+        NSURL *url;
+        
+        if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == NO)
+            url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@", ZWayAppDelegate.sharedDelegate.profile.indoorUrl, device.deviceId]];
+        else
+            url = [NSURL URLWithString:[NSString stringWithFormat:@"https://%@/ZAutomation/api/v1/devices/%@", ZWayAppDelegate.sharedDelegate.profile.outdoorUrl, device.deviceId]];
+        
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:60.0];
+        [request setHTTPMethod:@"GET"];
+        
+        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        if(!connection && alertShown == NO)
+        {
+            connection = nil;
+            NSError *error;
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ConnectionFail", @"") message:[error localizedDescription] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil, nil];
+            [alert show];
+            alertShown = YES;
+            receivedData = nil;
+        }
+    }
+    [self performSelector:@selector(updateObjects) withObject:nil afterDelay:10.0];
 }
 
-- (void)viewDidLoad
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
-    [super viewDidLoad];
-    [self registerCells];
+    receivedData = [NSMutableData new];
+    [receivedData setLength:0];
+    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+    int responseStatusCode = [httpResponse statusCode];
+    
+    if(responseStatusCode != 200 && alertShown == NO)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ConnectionFail", @"") message:NSLocalizedString(@"FailMessage", @"") delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil, nil];
+        [alert show];
+        alertShown = YES;
+    }
+    else
+        alertShown = NO;
 }
 
-- (void)registerCells
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    [self.tableview registerNib:[UINib nibWithNibName:@"ZWDeviceItemBattery" bundle:nil] forCellReuseIdentifier:@"battery"];
-    [self.tableview registerNib:[UINib nibWithNibName:@"ZWDeviceItemBlinds" bundle:nil] forCellReuseIdentifier:@"Blinds"];
-    [self.tableview registerNib:[UINib nibWithNibName:@"ZWDeviceItemDimmer" bundle:nil] forCellReuseIdentifier:@"probe"];
-    [self.tableview registerNib:[UINib nibWithNibName:@"ZWDeviceItemMeter" bundle:nil] forCellReuseIdentifier:@"Meter"];
-    [self.tableview registerNib:[UINib nibWithNibName:@"ZWDeviceItemSensorBinary" bundle:nil] forCellReuseIdentifier:@"fan"];
-    [self.tableview registerNib:[UINib nibWithNibName:@"ZWDeviceItemSensorMulti" bundle:nil] forCellReuseIdentifier:@"switchMultilevel"];
-    [self.tableview registerNib:[UINib nibWithNibName:@"ZWDeviceItemSwitch" bundle:nil] forCellReuseIdentifier:@"switchBinary"];
-    [self.tableview registerNib:[UINib nibWithNibName:@"ZWDeviceItemThermostat" bundle:nil] forCellReuseIdentifier:@"thermostat"];
+    [receivedData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    receivedData = nil;
+    connection = nil;
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSDictionary *updated = [NSDictionary new];
+    NSError *error;
+    if(receivedData)
+    {
+        updated = [NSJSONSerialization JSONObjectWithData:receivedData options:NSJSONReadingMutableContainers error:&error];
+        NSDictionary *devices = [updated objectForKey:@"data"];
+        
+        ZWDevice *updatedDev = [ZWDevice new];
+        NSMutableArray *updatedArray = [NSMutableArray new];
+        
+        if([[updated objectForKey:@"message"] isEqualToString:@"200 OK"])
+        {
+        updatedArray = [[updatedDev updateObjects:nil WithDict:devices] mutableCopy];
+        updatedDev = [updatedArray objectAtIndex:0];
+        
+        for(int i=0; i<objects.count; i++)
+        {
+            ZWDevice *device = [objects objectAtIndex:i];
+                
+            if([updatedDev.deviceId isEqualToString:device.deviceId])
+                [objects replaceObjectAtIndex:i withObject:updatedDev];
+        }
+        }
+    }
+    receivedData = nil;
+    connection = nil;
+    alertShown = NO;
+}
+
+- (BOOL)connection:(NSURLConnection*)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace
+{
+    NSString* method = protectionSpace.authenticationMethod;
+    return [method isEqualToString:NSURLAuthenticationMethodServerTrust] || [method isEqualToString:NSURLAuthenticationMethodDefault];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+{
+    NSString *method = challenge.protectionSpace.authenticationMethod;
+    NSURLCredential *credentials = [[NSURLCredential alloc] initWithUser:ZWayAppDelegate.sharedDelegate.profile.userLogin password:ZWayAppDelegate.sharedDelegate.profile.userPassword persistence:NSURLCredentialPersistenceNone];
+    
+    
+    if ([method isEqualToString:NSURLAuthenticationMethodServerTrust])
+    {
+        [challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust] forAuthenticationChallenge:challenge];
+    }
+    else if ([method isEqualToString:NSURLAuthenticationMethodDefault] && credentials != nil)
+    {
+        if ([challenge previousFailureCount] > 0)
+        {
+            [challenge.sender cancelAuthenticationChallenge:challenge];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"CredentialError", @"Authentication Error") message:NSLocalizedString(@"WrongCred", @"Can´t connect with these credentials") delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
+            [alert show];
+        }
+        else
+        {
+            [challenge.sender useCredential:credentials forAuthenticationChallenge:challenge];
+        }
+    }
+    
+    [challenge.sender continueWithoutCredentialForAuthenticationChallenge:challenge];
 }
 
 #pragma mark: Cell definition
@@ -152,6 +259,8 @@
             {
                 [objects removeObjectAtIndex:cellIndexPath.row];
                 [tableview deleteRowsAtIndexPaths:[NSArray arrayWithObject:cellIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+                NSData *objectData = [NSKeyedArchiver archivedDataWithRootObject:objects];
+                ZWayAppDelegate.sharedDelegate.profile.objects = objectData;
             }
             else
             {
@@ -200,6 +309,8 @@
     ZWDevice *deviceA = [objects objectAtIndex:fromIndexPath.row];
     [objects removeObjectAtIndex:fromIndexPath.row];
     [objects insertObject:deviceA atIndex:toIndexPath.row];
+    NSData *objectData = [NSKeyedArchiver archivedDataWithRootObject:objects];
+    ZWayAppDelegate.sharedDelegate.profile.objects = objectData;
 }
 
 
@@ -211,6 +322,8 @@
         {
             [objects removeObjectAtIndex:indexPath.row];
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            NSData *objectData = [NSKeyedArchiver archivedDataWithRootObject:objects];
+            ZWayAppDelegate.sharedDelegate.profile.objects = objectData;
         }
         else
         {

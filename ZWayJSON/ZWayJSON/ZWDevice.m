@@ -11,9 +11,6 @@
 #import "ZWDeviceItem.h"
 #import "ZWDataHandler.h"
 #import "ZWDeviceItemBattery.h"
-#import "ZWDeviceItemBlinds.h"
-#import "ZWDeviceItemDimmer.h"
-#import "ZWDeviceItemMeter.h"
 #import "ZWDeviceItemFan.h"
 #import "ZWDeviceItemSensorMulti.h"
 #import "ZWDeviceItemSwitch.h"
@@ -29,66 +26,39 @@
 @synthesize updateTime = _updateTime;
 
 //set and update the devices
-- (NSMutableArray*)updateObjects:(NSMutableArray*)array atTimestamp:(NSUInteger)timestamp
+- (NSMutableArray*)updateObjects:(NSMutableArray*)array WithDict:(NSDictionary *)dict
 {
-    NSData *profileData = ZWayAppDelegate.sharedDelegate.profile.objects;
-    NSMutableArray *profileObjects = [NSKeyedUnarchiver unarchiveObjectWithData:profileData];
     NSMutableArray *devices = [NSMutableArray new];
-    ZWDataHandler *handler = [ZWDataHandler new];
-    NSMutableArray *updated = [[[handler getJSON:timestamp] objectForKey:@"data"] valueForKey:@"devices"];
     
-    //make devices from JSON data and update them
     if(array != nil)
     {
-        devices = array;
-        for(NSInteger i=0; i<updated.count; i++)
-        {
-            ZWDevice *device = [[ZWDevice alloc] init];
-            NSDictionary *dict = [updated objectAtIndex:i];
-            device.deviceType = [dict valueForKey:@"deviceType"];
-            device.deviceId = [dict valueForKey:@"id"];
-            device.location = [dict valueForKey:@"location"];
-            device.metrics = [dict valueForKey:@"metrics"];
-            device.tags = [dict valueForKey:@"tags"];
-            device.updateTime = [dict valueForKey:@"updateTime"];
-            [updated replaceObjectAtIndex:i withObject:device];
-            
-            for(NSInteger j=0; j<devices.count; j++)
+        for(NSInteger i=0; i<array.count; i++)
             {
-                NSDictionary *dict = [devices objectAtIndex:j];
-                NSDictionary *dict2 = [updated objectAtIndex:i];
-                if([dict valueForKey:@"deviceId"] == [dict2 valueForKey:@"deviceId"])
-                    [devices replaceObjectAtIndex:j withObject:[updated objectAtIndex:i]];
+                ZWDevice *device = [ZWDevice new];
+                NSDictionary *dict = [array objectAtIndex:i];
+                device.deviceType = [dict valueForKey:@"deviceType"];
+                device.deviceId = [dict valueForKey:@"id"];
+                device.location = [dict valueForKey:@"location"];
+                device.metrics = [dict objectForKey:@"metrics"];
+                device.tags = [dict objectForKey:@"tags"];
+                device.updateTime = [dict valueForKey:@"updateTime"];
+                [devices addObject:device];
             }
-        }
+        return devices;
     }
-    //make devices from new data
     else
-        for(NSInteger i=0; i<updated.count; i++)
-        {
-            ZWDevice *device = [[ZWDevice alloc] init];
-            NSDictionary *dict = [updated objectAtIndex:i];
-            device.deviceType = [dict valueForKey:@"deviceType"];
-            device.deviceId = [dict valueForKey:@"id"];
-            device.location = [dict valueForKey:@"location"];
-            device.metrics = [dict objectForKey:@"metrics"];
-            device.tags = [dict objectForKey:@"tags"];
-            device.updateTime = [dict valueForKey:@"updateTime"];
-            [devices addObject:device];
-        }
-    
-    for(int i=0; i<profileObjects.count; i++)
     {
-        ZWDevice *profileDevice = [profileObjects objectAtIndex:i];
-        for (int j=0; j<devices.count; j++) {
-            ZWDevice *device = [devices objectAtIndex:j];
-            if([device.deviceId isEqualToString:profileDevice.deviceId])
-                [profileObjects replaceObjectAtIndex:i withObject:device];
-        }
+        ZWDevice *device = [[ZWDevice alloc] init];
+        device.deviceType = [dict valueForKey:@"deviceType"];
+        device.deviceId = [dict valueForKey:@"id"];
+        device.location = [dict valueForKey:@"location"];
+        device.metrics = [dict objectForKey:@"metrics"];
+        device.tags = [dict objectForKey:@"tags"];
+        device.updateTime = [dict valueForKey:@"updateTime"];
+        [devices addObject:device];
+        
+        return devices;
     }
-    NSData *pObjects = [NSKeyedArchiver archivedDataWithRootObject:profileObjects];
-    ZWayAppDelegate.sharedDelegate.profile.objects = pObjects;
-    
     return devices;
 }
 
@@ -100,7 +70,7 @@
 
 - (CGFloat)height
 {
-    if ([_deviceType isEqualToString:@"probe"])
+    if ([_deviceType isEqualToString:@"probe"] || [_deviceType isEqualToString:@"sensor"])
     {
         return 60;
     }
@@ -113,14 +83,9 @@
         return 90;
     }
     else if ([_deviceType isEqualToString:@"fan"] ||
-             [_deviceType isEqualToString:@"switchMultilevel"] ||
-             [_deviceType isEqualToString:@"meter"])
+             [_deviceType isEqualToString:@"switchMultilevel"])
     {
         return 60;
-    }
-    else if ([_deviceType isEqualToString:@"blinds"])
-    {
-        return 100;
     }
     else if ([_deviceType isEqualToString:@"battery"])
     {
@@ -134,7 +99,7 @@
 {
     ZWDeviceItem *item = (ZWDeviceItem*)[tableView dequeueReusableCellWithIdentifier:_deviceType];
 
-        if ([_deviceType isEqualToString:@"probe"])
+        if ([_deviceType isEqualToString:@"probe"] || [_deviceType isEqualToString:@"sensor"] || [_deviceType isEqualToString:@"battery"])
             item = [ZWDeviceItemBattery device];
         else if ([_deviceType isEqualToString:@"switchBinary"])
             item = [ZWDeviceItemSwitch device];
@@ -142,8 +107,6 @@
             item = [ZWDeviceItemSensorMulti device];
         else if ([_deviceType isEqualToString:@"thermostat"])
             item = [ZWDeviceItemThermostat device];
-        else if ([_deviceType isEqualToString:@"battery"])
-            item = [ZWDeviceItemBattery device];
         else if ([_deviceType isEqualToString:@"fan"])
             item = [ZWDeviceItemFan device];
         else

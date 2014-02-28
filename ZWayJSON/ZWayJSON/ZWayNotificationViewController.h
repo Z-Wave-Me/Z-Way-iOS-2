@@ -8,16 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZWayNotificationViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, NSCoding>
+@interface ZWayNotificationViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, NSCoding, NSURLConnectionDataDelegate, NSURLConnectionDelegate>
 {
     NSDictionary *JSON;
-    NSDictionary *notificationData;
+    NSMutableData *notificationData;
     NSMutableArray *notifications;
+    BOOL alertShown;
 }
 
 @property (strong, nonatomic) IBOutlet UILabel *noItemsLabel;
 
-- (void)extractNotifications:(NSDictionary*)dictionary;
-- (void)updateInBackground;
+- (void)getNotifications:(NSInteger)timestamp;
 
 @end

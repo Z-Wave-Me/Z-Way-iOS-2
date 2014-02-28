@@ -41,10 +41,18 @@
 - (void)updateState
 {
     NSString *on = [self.device.metrics objectForKey:@"level"];
-    if ([on integerValue] == 255)
+    if ([on integerValue] == 1)
         [self.switchView setOn:YES];
     else
         [self.switchView setOn:NO];
+}
+
+- (void)hideControls:(BOOL)editing
+{
+    if(editing == YES)
+        self.switchView.hidden = YES;
+    else
+        self.switchView.hidden = NO;
 }
 
 - (void)switchChanged:(id)sender
@@ -56,8 +64,14 @@
     }
     else
         state = @"off";
-
-    NSString *url = [NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/%@", ZWayAppDelegate.sharedDelegate.profile.indoorUrl, self.device.deviceId, state];
+    
+    NSString *url;
+    
+    if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == NO)
+        url = [NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/%@", ZWayAppDelegate.sharedDelegate.profile.indoorUrl, self.device.deviceId, state];
+    else
+        url = [NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/%@", ZWayAppDelegate.sharedDelegate.profile.outdoorUrl, self.device.deviceId, state];
+    
     [self createRequestWithURL:url];
 }
 

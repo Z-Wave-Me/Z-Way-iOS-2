@@ -11,7 +11,7 @@
 "NoDevices" = "No devices found";
 "OKMessage" = "Everything is OK";
 "UpdateError" = "There was a problem with the update";
-"ToDash" = "To dash";
+"ToDash" = "To D.B.";
 "Done" = "Done";
 "IsPart" = "Is part";
 "Red" = "Red";
@@ -54,4 +54,6 @@
 "NoDashboard" = "The dashboard is empty now. You can fill it with frequently used widgets by swiping them left";
 "ConnectionFail" = "Connection Error";
 "FailMessage" = "An issue with the connection occured";
+"CredentialsErorr" = "Authentication Error";
+"WrongCred" = "Can´t connect with these credentials";
 

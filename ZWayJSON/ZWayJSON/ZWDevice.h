@@ -30,7 +30,7 @@
 @property(strong, nonatomic) NSDictionary *metrics;
 @property(strong, nonatomic) NSString *updateTime;
 
-- (NSArray*)updateObjects:(NSArray*)array atTimestamp:(NSUInteger)timestamp;
+- (NSArray*)updateObjects:(NSArray*)array WithDict:(NSDictionary*)dict;
 - (ZWDeviceItem*)createUIforTableView:(UITableView*)tableView atPos:(NSIndexPath*)indexPath;
 - (CGFloat)height;
 

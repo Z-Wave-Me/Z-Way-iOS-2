@@ -9,14 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "SWTableViewCell.h"
 
-@interface ZWayDashboardViewController : UIViewController<NSCoding, UITableViewDelegate, UITableViewDataSource, SWTableViewCellDelegate>
+@interface ZWayDashboardViewController : UIViewController<NSCoding, UITableViewDelegate, UITableViewDataSource, NSURLConnectionDataDelegate, NSURLConnectionDelegate, SWTableViewCellDelegate>
 {
     NSMutableArray *objects;
+    BOOL editMode;
+    NSMutableData *receivedData;
+    BOOL alertShown;
 }
 
 @property (nonatomic, strong) IBOutlet UILabel *noItemsLabel;
 @property (nonatomic, strong) IBOutlet UITableView *tableview;
 
-- (void)registerCells;
+- (void)updateObjects;
 
 @end

@@ -8,21 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import "CMProfile.h"
-#import "Reachability.h"
 
-@interface ZWayNewProfileViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface ZWayNewProfileViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 {
     CMProfile *_profile;
     NSMutableDictionary *_fields;
     NSArray *_fieldsOrder;
-    Reachability *reachableFoo;
+    NSString *oldIP;
 }
 
-- (IBAction)testConnection:(NSString*)field With:(UITextField*)connection;
-- (IBAction)store:(id)sender;
-- (NSString*)conformToProfile:(NSString*)string;
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
 @property (strong, nonatomic) NSString *editing;
 @property (strong, nonatomic) NSString *loaded;
+
+
+- (void)testConnection:(NSString*)field With:(UITextField*)connection;
+- (void)store;
+- (void)deleteProfile;
+- (NSString*)conformToProfile:(NSString*)string;
 
 @end

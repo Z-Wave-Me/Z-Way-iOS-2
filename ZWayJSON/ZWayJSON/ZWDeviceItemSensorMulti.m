@@ -38,10 +38,24 @@
     [slider setValue:[value integerValue]];
 }
 
+- (void)hideControls:(BOOL)editing
+{
+    if (editing == YES)
+        self.slider.hidden = YES;
+    else
+        self.slider.hidden = NO;
+}
+
 - (void)movedSlider:(id)sender
 {
     NSInteger value = slider.value;
-    NSString *url = [NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/exact?level=%ld", ZWayAppDelegate.sharedDelegate.profile.indoorUrl, self.device.deviceId, (long)value];
+    NSString *url;
+    
+    if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == NO)
+        url = [NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/exact?level=%ld", ZWayAppDelegate.sharedDelegate.profile.indoorUrl, self.device.deviceId, (long)value];
+    else
+        url = [NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/exact?level=%ld", ZWayAppDelegate.sharedDelegate.profile.outdoorUrl, self.device.deviceId, (long)value];
+    
     [self createRequestWithURL:url];
 }
 

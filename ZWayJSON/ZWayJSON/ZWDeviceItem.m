@@ -34,8 +34,8 @@
 
 - (void)createRequestWithURL:(NSString *)url
 {
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url] cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:30];
-    [request setHTTPMethod:@"POST"];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url] cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:30.0];
+    [request setHTTPMethod:@"GET"];
     [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
     [request setValue:@"gzip, deflate" forHTTPHeaderField:@"Accept-Encoding"];
     
@@ -56,15 +56,8 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
+    receivedData = [NSMutableData new];
     [receivedData setLength:0];
-    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
-    int responseStatusCode = [httpResponse statusCode];
-    
-    if(responseStatusCode != 200)
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ConnectionFail", @"") message:NSLocalizedString(@"FailMessage", @"") delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil, nil];
-        [alert show];
-    }
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
@@ -75,13 +68,16 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     receivedData = nil;
+    connection = nil;
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ConnectionFail", @"") message:[error localizedDescription] delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil, nil];
     [alert show];
-    
-    NSLog(@"Connection failed! Error - %@ %@",
-          [error localizedDescription],
-          [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    receivedData = nil;
+    connection = nil;
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge

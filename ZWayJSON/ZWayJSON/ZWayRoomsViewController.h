@@ -33,7 +33,6 @@
 @property(nonatomic, strong) IBOutlet UILabel *noItemsLabel;
 
 - (BOOL)moveToDash:(ZWDevice*)device;
-- (void)registerCells;
 - (void)changeToNormal:(SWTableViewCell*)cell;
 
 @end

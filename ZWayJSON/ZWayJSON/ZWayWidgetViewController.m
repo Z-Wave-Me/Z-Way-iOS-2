@@ -43,28 +43,77 @@
     UIColor *color = self.navigationController.navigationBar.tintColor;
     [self.toolbar setTintColor:color];
     [self roomsSelected:self];
+    [self updateDevices:0];
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)updateDevices:(NSInteger)timestamp
 {
-    [super viewWillAppear:animated];
+    NSURL *url;
     
-    ZWDataHandler *handler = [[ZWDataHandler alloc] init];
-    ZWDevice *device = [[ZWDevice alloc] init];
-    
-    //Get JSON data
-    JSON = [handler getJSON:0];
-    if([[JSON objectForKey:@"message"] isEqualToString:@"200 OK"])
-    {
-        NSMutableDictionary *dict = [JSON objectForKey:@"data"];
-        if([[dict objectForKey:@"structureChanged"] isEqualToNumber:[NSNumber numberWithBool:YES]])
-            objects = [[device updateObjects:objects atTimestamp:0] mutableCopy];
-    }
+    if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == NO)
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices?since=%u", ZWayAppDelegate.sharedDelegate.profile.indoorUrl, 0]];
     else
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"https://%@/ZAutomation/api/v1/devices?since=%u", ZWayAppDelegate.sharedDelegate.profile.outdoorUrl, 0]];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:60.0];
+    [request setHTTPMethod:@"GET"];
+    [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"gzip, deflate, sdch" forHTTPHeaderField:@"Accept-Encoding"];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    if(!connection && alertShown == NO)
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!" message:NSLocalizedString(@"UpdateError", @"Message that an error occured during the update") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
         [alert show];
+        alertShown = YES;
+        receivedObjects = nil;
     }
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    receivedObjects = [NSMutableData new];
+    [receivedObjects setLength:0];
+    
+    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+    int responseStatusCode = [httpResponse statusCode];
+
+    if(responseStatusCode == 200)
+        alertShown = NO;
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [receivedObjects appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    connection = nil;
+    receivedObjects = nil;
+    
+    if(alertShown == NO)
+    {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!" message:[error localizedDescription] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
+    [alert show];
+    alertShown = YES;
+    }
+    
+    [self performSelector:@selector(updateDevices:) withObject:[NSNumber numberWithInt:0] afterDelay:10.0];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    ZWDataHandler *handler = [ZWDataHandler new];
+    ZWDevice *device = [ZWDevice new];
+    NSError *error;
+    
+    JSON = [NSJSONSerialization JSONObjectWithData:receivedObjects options:NSJSONReadingMutableContainers error:&error];
+    objects = [[JSON objectForKey:@"data"] objectForKey:@"devices"];
+    int timestamp = [handler getTimestamp:JSON];
+    /*NSLog(@"JSON: %@", JSON);
+    NSString *responsestring = [[NSString alloc] initWithData:receivedObjects encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", responsestring);*/
     
     //or set it
     if(objects.count == 0)
@@ -75,14 +124,40 @@
         
         objects = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObjects];
         JSON = [NSKeyedUnarchiver unarchiveObjectWithData:encodedJSON];
-        
-        //and update it
-        NSUInteger timestamp = [handler getTimestamp:JSON];
-        objects = [[device updateObjects:objects atTimestamp:timestamp] mutableCopy];
+
+        timestamp = [handler getTimestamp:JSON];
+    }
+    else
+        objects = [[device updateObjects:objects WithDict:nil] mutableCopy];
+    
+    alertShown = NO;
+    [self getWidgets];
+    
+    [tableview reloadData];
+    [self performSelector:@selector(updateDevices:) withObject:[NSNumber numberWithInt:timestamp] afterDelay:10.0];
+}
+
+- (BOOL)connection:(NSURLConnection*)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace
+{
+    NSString* method = protectionSpace.authenticationMethod;
+    return [method isEqualToString:NSURLAuthenticationMethodServerTrust] || [method isEqualToString:NSURLAuthenticationMethodDefault];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+{
+    NSString *method = challenge.protectionSpace.authenticationMethod;
+    NSURLCredential *credentials = [[NSURLCredential alloc] initWithUser:ZWayAppDelegate.sharedDelegate.profile.userLogin password:ZWayAppDelegate.sharedDelegate.profile.userPassword persistence:NSURLCredentialPersistenceNone];
+    
+    if ([method isEqualToString:NSURLAuthenticationMethodServerTrust])
+    {
+        if([challenge previousFailureCount] == 0)
+        {
+            [challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust] forAuthenticationChallenge:challenge];
+            [challenge.sender useCredential:credentials forAuthenticationChallenge:challenge];
+        }
     }
     
-    [self getWidgets];
-    [tableview reloadData];
+    [challenge.sender continueWithoutCredentialForAuthenticationChallenge:challenge];
 }
 
 -(IBAction)roomsSelected:(id)sender
@@ -213,8 +288,6 @@
             }
         }
     }
-    
-    [self performSelector:@selector(viewWillAppear:) withObject:[NSNumber numberWithBool:YES] afterDelay:5];
 }
 
 

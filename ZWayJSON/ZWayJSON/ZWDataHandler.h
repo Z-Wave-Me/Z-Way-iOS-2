@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ZWDevice.h"
 
 @interface ZWDataHandler : NSObject <NSURLConnectionDataDelegate, NSURLConnectionDelegate>
+{
+    NSMutableData *receivedData;
+}
 
-- (NSDictionary*)getJSON:(NSUInteger)timestamp;
 - (NSUInteger)getTimestamp:(NSDictionary *)dictionary;
-- (NSDictionary*)getNotifications:(NSInteger)timestamp;
 - (NSMutableArray*)getLocations;
 
 @end

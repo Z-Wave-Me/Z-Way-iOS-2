@@ -51,6 +51,14 @@
         [self.modeView setTitle:NSLocalizedString(@"OnHigh", @"") forState:UIControlStateNormal];
 }
 
+- (void)hideControls:(BOOL)editing
+{
+    if(editing == YES)
+        self.modeView.hidden = YES;
+    else
+        self.modeView.hidden = NO;
+}
+
 - (void)updateState
 {
     currentState = [NSString stringWithFormat:@"%@", [self.device.metrics objectForKey:@"currentMode"]];
@@ -84,7 +92,13 @@
     [sender removeTarget:self action:@selector(setModeDone:) forControlEvents:UIControlEventValueChanged];
     [sender removeFromSuperview];
     
-    NSString *url = [NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/setMode?mode=%@", ZWayAppDelegate.sharedDelegate.profile.indoorUrl, self.device.deviceId, currentState];
+    NSString *url;
+    
+    if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == NO)
+        url = [NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/setMode?mode=%@", ZWayAppDelegate.sharedDelegate.profile.indoorUrl, self.device.deviceId, currentState];
+    else
+        url = [NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/setMode?mode=%@", ZWayAppDelegate.sharedDelegate.profile.outdoorUrl, self.device.deviceId, currentState];
+        
     [self createRequestWithURL:url];
 }
 

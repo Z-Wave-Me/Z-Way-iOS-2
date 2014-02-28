@@ -9,6 +9,7 @@
 #import "ZWayAppDelegate.h"
 #import "ZWDataStore.h"
 #import "ZWayProfilesViewController.h"
+#import "Reachability.h"
 
 @implementation ZWayAppDelegate
 
@@ -41,13 +42,51 @@
     
     [self.window makeKeyAndVisible];
     [self useColorTheme:self.profile.theme];
+    [self testOutdoor];
     
     return YES;
 }
 
+- (void)testOutdoor
+{
+    Reachability *reachability = [Reachability reachabilityForLocalWiFi];
+    NetworkStatus networkStatus = [reachability currentReachabilityStatus];
+    if (networkStatus == ReachableViaWiFi)
+        self.profile.useOutdoor = [NSNumber numberWithBool:NO];
+    else
+        self.profile.useOutdoor = [NSNumber numberWithBool:YES];
+    
+    [self performSelector:@selector(testOutdoor) withObject:nil afterDelay:10.0];
+    //[reachability startNotifier];
+}
+
 - (void)useColorTheme:(NSString*)theme
 {
-    if(theme == nil)
+    if([theme isEqualToString:NSLocalizedString(@"Red", @"")])
+    {
+        [[UINavigationBar appearance] setTintColor:[UIColor redColor]];
+        [[UISwitch appearance] setOnTintColor:[UIColor redColor]];
+        [[UISlider appearance] setMinimumTrackTintColor:[UIColor redColor]];
+    }
+    else if([theme isEqualToString:NSLocalizedString(@"Blue", @"")])
+    {
+        [[UINavigationBar appearance] setTintColor:[UIColor blueColor]];
+        [[UISwitch appearance] setOnTintColor:[UIColor blueColor]];
+        [[UISlider appearance] setMinimumTrackTintColor:[UIColor blueColor]];
+    }
+    else if([theme isEqualToString:NSLocalizedString(@"Orange", @"")])
+    {
+        [[UINavigationBar appearance] setTintColor:[UIColor orangeColor]];
+        [[UISwitch appearance] setOnTintColor:[UIColor orangeColor]];
+        [[UISlider appearance] setMinimumTrackTintColor:[UIColor orangeColor]];
+    }
+    else if([theme isEqualToString:NSLocalizedString(@"Purple", @"")])
+    {
+        [[UINavigationBar appearance] setTintColor:[UIColor purpleColor]];
+        [[UISwitch appearance] setOnTintColor:[UIColor purpleColor]];
+        [[UISlider appearance] setMinimumTrackTintColor:[UIColor purpleColor]];
+    }
+    else if([theme isEqualToString:NSLocalizedString(@"Cyan", @"")])
     {
         [[UINavigationBar appearance] setTintColor:[UIColor cyanColor]];
         [[UISwitch appearance] setOnTintColor:[UIColor cyanColor]];
@@ -55,38 +94,10 @@
     }
     else
     {
-        if([theme isEqualToString:NSLocalizedString(@"Red", @"")])
-        {
-            [[UINavigationBar appearance] setTintColor:[UIColor redColor]];
-            [[UISwitch appearance] setOnTintColor:[UIColor redColor]];
-            [[UISlider appearance] setMinimumTrackTintColor:[UIColor redColor]];
-        }
-        else if([theme isEqualToString:NSLocalizedString(@"Blue", @"")])
-        {
-            [[UINavigationBar appearance] setTintColor:[UIColor blueColor]];
-            [[UISwitch appearance] setOnTintColor:[UIColor blueColor]];
-            [[UISlider appearance] setMinimumTrackTintColor:[UIColor blueColor]];
-        }
-        else if([theme isEqualToString:NSLocalizedString(@"Orange", @"")])
-        {
-            [[UINavigationBar appearance] setTintColor:[UIColor orangeColor]];
-            [[UISwitch appearance] setOnTintColor:[UIColor orangeColor]];
-            [[UISlider appearance] setMinimumTrackTintColor:[UIColor orangeColor]];
-        }
-        else if([theme isEqualToString:NSLocalizedString(@"Purple", @"")])
-        {
-            [[UINavigationBar appearance] setTintColor:[UIColor purpleColor]];
-            [[UISwitch appearance] setOnTintColor:[UIColor purpleColor]];
-            [[UISlider appearance] setMinimumTrackTintColor:[UIColor purpleColor]];
-        }
-        else if([theme isEqualToString:NSLocalizedString(@"Cyan", @"")])
-        {
-            [[UINavigationBar appearance] setTintColor:[UIColor cyanColor]];
-            [[UISwitch appearance] setOnTintColor:[UIColor cyanColor]];
-            [[UISlider appearance] setMinimumTrackTintColor:[UIColor cyanColor]];
-        }
+        [[UINavigationBar appearance] setTintColor:[UIColor cyanColor]];
+        [[UISwitch appearance] setOnTintColor:[UIColor cyanColor]];
+        [[UISlider appearance] setMinimumTrackTintColor:[UIColor cyanColor]];
     }
-    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -111,7 +122,6 @@
     {
         @synchronized(self.profile)
         {
-            NSLog(@"Changed outdoor to indoor");
             self.profile.useOutdoor = [NSNumber numberWithBool:NO];
         }
     }

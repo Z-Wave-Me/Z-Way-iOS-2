@@ -34,7 +34,7 @@
     
     CMProfile *profile = [[CMProfile alloc] initWithEntity:profileEntity insertIntoManagedObjectContext:store.managedObjectContext];
     profile.name = @"Name";
-    profile.outdoorUrl = @"http://find.z-wave.me/zboxweb";
+    profile.outdoorUrl = @"find.z-wave.me";
     [store saveContext];
     self.navigationItem.title = NSLocalizedString(@"NewProfile", @"New Profile title");
     _profile = profile;
@@ -73,20 +73,18 @@
         NSError *error;
         NSURLResponse *response;
         NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-        if(data)
-            NSLog(@"Connection worked");
+        if(!data)
+            connection = nil;
             
         NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
         int responseStatusCode = [httpResponse statusCode];
         
         if(responseStatusCode != 200)
         {
-            NSLog(@"Connection not found!");
             cell.accessoryView = fail;
         }
         else
         {
-            NSLog(@"Connection found!");
             cell.accessoryView = connected;
         }
     }
@@ -355,6 +353,7 @@
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
+    oldIP = textField.text;
     return !ZWayAppDelegate.sharedDelegate.settingsLocked;
 }
 
@@ -364,6 +363,12 @@
     UILabel *label = (UILabel*)[cell viewWithTag:(textField.tag + 1)];
     [self testConnection:label.text With:textField];
     [_profile setValue:textField.text forKey:[self conformToProfile:label.text]];
+    
+    if([label.text isEqualToString:NSLocalizedString(@"Home", @"")])
+    {
+        if(![textField.text isEqual:oldIP])
+            ZWayAppDelegate.sharedDelegate.profile.objects = nil;
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

@@ -30,19 +30,12 @@
 
 - (void)viewDidLoad
 {
-    [self registerCells];
-    
     objectsToDash = [NSMutableArray arrayWithArray:[NSKeyedUnarchiver unarchiveObjectWithData:ZWayAppDelegate.sharedDelegate.profile.objects]];
     
     NSInteger index = [deviceIndex integerValue];
     
-    if([selected isEqualToString:@"Rooms"])
-    {
-        if(roomDevices.count != 0)
-            displayDevices = [[NSMutableArray alloc] initWithArray:[roomDevices objectAtIndex:index]];
-        else
-            displayDevices = [NSMutableArray new];
-    }
+    if([selected isEqualToString:@"Rooms"] && roomDevices.count !=0)
+        displayDevices = [[NSMutableArray alloc] initWithArray:[roomDevices objectAtIndex:index]];
     else if ([selected isEqualToString:@"Types"])
         displayDevices = [[NSMutableArray alloc] initWithArray:[typesDevices objectAtIndex:index]];
     else if ([selected isEqualToString:@"Tags"])
@@ -52,18 +45,6 @@
     noItemsLabel.hidden = YES;
     noItemsLabel.text = NSLocalizedString(@"NoDevices", @"");
     [tableview reloadData];
-}
-
-- (void)registerCells
-{
-    [self.tableview registerNib:[UINib nibWithNibName:@"ZWDeviceItemBattery" bundle:nil] forCellReuseIdentifier:@"battery"];
-    [self.tableview registerNib:[UINib nibWithNibName:@"ZWDeviceItemBlinds" bundle:nil] forCellReuseIdentifier:@"Blinds"];
-    [self.tableview registerNib:[UINib nibWithNibName:@"ZWDeviceItemDimmer" bundle:nil] forCellReuseIdentifier:@"probe"];
-    [self.tableview registerNib:[UINib nibWithNibName:@"ZWDeviceItemMeter" bundle:nil] forCellReuseIdentifier:@"Meter"];
-    [self.tableview registerNib:[UINib nibWithNibName:@"ZWDeviceItemSensorBinary" bundle:nil] forCellReuseIdentifier:@"fan"];
-    [self.tableview registerNib:[UINib nibWithNibName:@"ZWDeviceItemSensorMulti" bundle:nil] forCellReuseIdentifier:@"switchMultilevel"];
-    [self.tableview registerNib:[UINib nibWithNibName:@"ZWDeviceItemSwitch" bundle:nil] forCellReuseIdentifier:@"switchBinary"];
-    [self.tableview registerNib:[UINib nibWithNibName:@"ZWDeviceItemThermostat" bundle:nil] forCellReuseIdentifier:@"thermostat"];
 }
 
 - (BOOL)moveToDash:(ZWDevice*)device

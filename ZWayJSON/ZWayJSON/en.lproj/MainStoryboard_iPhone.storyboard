@@ -432,8 +432,6 @@
         <class className="ZWayNewProfileViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ZWayNewProfileViewController.h"/>
             <relationships>
-                <relationship kind="action" name="store:"/>
-                <relationship kind="action" name="testConnection:With:" candidateClass="NSString"/>
                 <relationship kind="outlet" name="tableview" candidateClass="UITableView"/>
             </relationships>
         </class>

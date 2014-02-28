@@ -11,7 +11,7 @@
 "NoDevices" = "Keine Geräte gefunden";
 "OKMessage" = "Alles in Ordnung";
 "UpdateError" = "Es gab ein Problem beim Laden der Daten";
-"ToDash" = "Zum Dashboarb";
+"ToDash" = "Zum D.B.";
 "Done" = "Fertig";
 "IsPart" = "Schon enthalten";
 "Red" = "Rot";
@@ -54,5 +54,7 @@
 "NoDashboard" = "Das Dashboard ist im Augenblick leer. Sie können es mit oft benutzten Widgets füllen, indem Sie diese nach links wischen.";
 "ConnectionFail" = "Verbindungsfehler";
 "FailMessage" = "Es trat ein Problem mit der Verbindung auf";
+"CredentialsErorr" = "Authentifizierungsproblem";
+"WrongCred" = "Der Login schlug für diese Logindaten fehl";
 
 

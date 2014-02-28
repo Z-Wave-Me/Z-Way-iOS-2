@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ZWayDashboardViewController.h"
 
-@interface ZWayWidgetViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSCoding, UIGestureRecognizerDelegate>
+@interface ZWayWidgetViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSCoding, UIGestureRecognizerDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 {
     NSMutableArray *types;
     NSMutableArray *rooms;
@@ -20,6 +20,9 @@
     NSMutableArray *objects;
     NSDictionary *JSON;
     NSNumber *deviceIndex;
+    BOOL alertShown;
+    NSMutableData *receivedLocations;
+    NSMutableData *receivedObjects;
 }
 
 @property (strong, nonatomic) NSString *currentButton;
@@ -44,5 +47,6 @@
 -(IBAction)typesSelected:(id)sender;
 -(IBAction)tagsSelected:(id)sender;
 -(void)getWidgets;
+- (void)updateDevices:(NSInteger)timestamp;
 
 @end

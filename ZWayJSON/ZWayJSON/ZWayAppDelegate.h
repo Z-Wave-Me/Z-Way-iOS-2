@@ -22,5 +22,6 @@
 
 + (ZWayAppDelegate*)sharedDelegate;
 - (void)useColorTheme:(NSString*)theme;
+- (void)testOutdoor;
 
 @end

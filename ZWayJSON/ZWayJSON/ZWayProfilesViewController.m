@@ -232,7 +232,6 @@
         {
             CMProfile *profile = [_fetchController objectAtIndexPath:indexPath];
             ZWayAppDelegate.sharedDelegate.profile = profile;
-            profile.useOutdoor = [NSNumber numberWithBool:NO];
     
             if ([tableview cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark)
                 [self performSegueWithIdentifier:@"pushProfileNew" sender:self];
@@ -290,7 +289,31 @@
 
 - (void)updateColor:(NSString*)color
 {
-    if(color == nil)
+    if([color isEqualToString:NSLocalizedString(@"Red", @"")])
+    {
+        [self.navigationController.navigationBar setTintColor:[UIColor redColor]];
+        [[UIToolbar appearance] setTintColor:[UIColor redColor]];
+        [[UINavigationBar appearance] setTintColor:[UIColor redColor]];
+    }
+    else if([color isEqualToString:NSLocalizedString(@"Blue", @"")])
+    {
+        [self.navigationController.navigationBar setTintColor:[UIColor blueColor]];
+        [[UIToolbar appearance] setTintColor:[UIColor blueColor]];
+        [[UINavigationBar appearance] setTintColor:[UIColor blueColor]];
+    }
+    else if([color isEqualToString:NSLocalizedString(@"Orange", @"")])
+    {
+        [self.navigationController.navigationBar setTintColor:[UIColor orangeColor]];
+        [[UIToolbar appearance] setTintColor:[UIColor orangeColor]];
+        [[UINavigationBar appearance] setTintColor:[UIColor orangeColor]];
+    }
+    else if([color isEqualToString:NSLocalizedString(@"Purple", @"")])
+    {
+        [self.navigationController.navigationBar setTintColor:[UIColor purpleColor]];
+        [[UIToolbar appearance] setTintColor:[UIColor purpleColor]];
+        [[UINavigationBar appearance] setTintColor:[UIColor purpleColor]];
+    }
+    else if([color isEqualToString:NSLocalizedString(@"Cyan", @"")])
     {
         [self.navigationController.navigationBar setTintColor:[UIColor cyanColor]];
         [[UIToolbar appearance] setTintColor:[UIColor cyanColor]];
@@ -298,36 +321,9 @@
     }
     else
     {
-        if([color isEqualToString:NSLocalizedString(@"Red", @"")])
-        {
-            [self.navigationController.navigationBar setTintColor:[UIColor redColor]];
-            [[UIToolbar appearance] setTintColor:[UIColor redColor]];
-            [[UINavigationBar appearance] setTintColor:[UIColor redColor]];
-        }
-        else if([color isEqualToString:NSLocalizedString(@"Blue", @"")])
-        {
-            [self.navigationController.navigationBar setTintColor:[UIColor blueColor]];
-            [[UIToolbar appearance] setTintColor:[UIColor blueColor]];
-            [[UINavigationBar appearance] setTintColor:[UIColor blueColor]];
-        }
-        else if([color isEqualToString:NSLocalizedString(@"Orange", @"")])
-        {
-            [self.navigationController.navigationBar setTintColor:[UIColor orangeColor]];
-            [[UIToolbar appearance] setTintColor:[UIColor orangeColor]];
-            [[UINavigationBar appearance] setTintColor:[UIColor orangeColor]];
-        }
-        else if([color isEqualToString:NSLocalizedString(@"Purple", @"")])
-        {
-            [self.navigationController.navigationBar setTintColor:[UIColor purpleColor]];
-            [[UIToolbar appearance] setTintColor:[UIColor purpleColor]];
-            [[UINavigationBar appearance] setTintColor:[UIColor purpleColor]];
-        }
-        else if([color isEqualToString:NSLocalizedString(@"Cyan", @"")])
-        {
-            [self.navigationController.navigationBar setTintColor:[UIColor cyanColor]];
-            [[UIToolbar appearance] setTintColor:[UIColor cyanColor]];
-            [[UINavigationBar appearance] setTintColor:[UIColor cyanColor]];
-        }
+        [self.navigationController.navigationBar setTintColor:[UIColor cyanColor]];
+        [[UIToolbar appearance] setTintColor:[UIColor cyanColor]];
+        [[UINavigationBar appearance] setTintColor:[UIColor cyanColor]];
     }
 }
 

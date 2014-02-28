@@ -34,23 +34,117 @@
     {
         JSON = [NSKeyedUnarchiver unarchiveObjectWithData:encodedJSON];
         NSInteger timestamp = [handler getTimestamp:JSON];
-        notificationData = [handler getNotifications:timestamp];
+        [self getNotifications:timestamp];
     }
-    [self extractNotifications:notificationData];
+    else
+        [self getNotifications:0];
 }
 
-- (void)extractNotifications:(NSDictionary *)dictionary
+- (void)getNotifications:(NSInteger)timestamp
 {
-    if([[dictionary objectForKey:@"message"] isEqualToString:@"200 OK"])
-        notifications = [[dictionary objectForKey:@"notifications"] mutableCopy];
+    NSURL *url;
+    
+    if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == NO)
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/notifications?since=%u",ZWayAppDelegate.sharedDelegate.profile.indoorUrl, timestamp]];
     else
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"https://%@/ZAutomation/api/v1/notifications?since=%u",ZWayAppDelegate.sharedDelegate.profile.outdoorUrl, timestamp]];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:45.0];
+    [request setHTTPMethod:@"GET"];
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    if(!connection && alertShown == NO)
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!" message:NSLocalizedString(@"UpdateError", @"Message that a problem occured during the update") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
         [alert show];
+        alertShown = YES;
+    }
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    notificationData = [NSMutableData new];
+    [notificationData setLength:0];
+    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+    int responseStatusCode = [httpResponse statusCode];
+    
+    if(responseStatusCode != 200 && alertShown == NO)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ConnectionFail", @"") message:NSLocalizedString(@"FailMessage", @"") delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil, nil];
+        [alert show];
+        alertShown = YES;
+    }
+    else
+        alertShown = NO;
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [notificationData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    connection = nil;
+    notificationData = nil;
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSError *error;
+    NSDictionary *notificationJSON = [NSJSONSerialization JSONObjectWithData:notificationData options:NSJSONReadingMutableContainers error:&error];
+    NSDictionary *notificationDict = [notificationJSON objectForKey:@"data"];
+    int timestamp;
+    
+    if(notificationDict != (id)[NSNull null])
+    {
+        notifications = [notificationDict objectForKey:@"notifications"];
+        NSString *updateTime = [notificationDict objectForKey:@"updateTime"];
+        timestamp = [updateTime integerValue];
+    }
+    else
+        timestamp = 0;
+    
+    connection = nil;
+    notificationData = nil;
+    alertShown = NO;
+    
+    [self performSelector:@selector(getNotifications:) withObject:[NSNumber numberWithInt:timestamp] afterDelay:30.0];
+}
+
+- (BOOL)connection:(NSURLConnection*)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace
+{
+    NSString* method = protectionSpace.authenticationMethod;
+    return [method isEqualToString:NSURLAuthenticationMethodServerTrust] || [method isEqualToString:NSURLAuthenticationMethodDefault];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+{
+    NSString *method = challenge.protectionSpace.authenticationMethod;
+    NSURLCredential *credentials = [[NSURLCredential alloc] initWithUser:ZWayAppDelegate.sharedDelegate.profile.userLogin password:ZWayAppDelegate.sharedDelegate.profile.userPassword persistence:NSURLCredentialPersistenceNone];
+    
+    
+    if ([method isEqualToString:NSURLAuthenticationMethodServerTrust])
+    {
+        [challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust] forAuthenticationChallenge:challenge];
+    }
+    else if ([method isEqualToString:NSURLAuthenticationMethodDefault] && credentials != nil)
+    {
+        if ([challenge previousFailureCount] > 0)
+        {
+            [challenge.sender cancelAuthenticationChallenge:challenge];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"CredentialError", @"Authentication Error") message:NSLocalizedString(@"WrongCred", @"Can´t connect with these credentials") delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
+            [alert show];
+        }
+        else
+        {
+            [challenge.sender useCredential:credentials forAuthenticationChallenge:challenge];
+        }
     }
     
-    [self performSelector:@selector(viewDidAppear:) withObject:[NSNumber numberWithBool:YES] afterDelay:30.0];
+    [challenge.sender continueWithoutCredentialForAuthenticationChallenge:challenge];
 }
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
