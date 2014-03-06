@@ -30,8 +30,9 @@
 @property (nonatomic, retain) NSString * outdoorUrl;
 @property (nonatomic, retain) NSString * userLogin;
 @property (nonatomic, retain) NSString * userPassword;
-@property (nonatomic, retain) NSData *objects;
-@property (nonatomic, strong) NSString *theme;
+@property (nonatomic, retain) NSData * objects;
+@property (nonatomic, retain) NSString * theme;
 @property (nonatomic, retain) NSNumber * useOutdoor;
+@property (nonatomic, retain) NSNumber * useSpeech;
 
 @end

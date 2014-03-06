@@ -30,10 +30,12 @@
 }
 
 @property (strong, nonatomic) IBOutlet UIButton *modeView;
+@property (strong, nonatomic) NSString *currentState;
 
 
 - (IBAction)setMode:(id)sender;
 - (void)currentTitle;
+- (void)sendRequest;
 
 + (ZWDeviceItemThermostat*)device;
 

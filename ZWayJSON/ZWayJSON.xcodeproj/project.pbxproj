@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A019A93518C491A3008E420B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A019A93418C491A3008E420B /* Default-568h@2x.png */; };
+		A019A93818C491D7008E420B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A019A93618C491D7008E420B /* Default.png */; };
+		A019A93918C491D7008E420B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A019A93718C491D7008E420B /* Default@2x.png */; };
+		A019A94018C4C07C008E420B /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A019A93F18C4C07C008E420B /* NSData+Base64.m */; };
 		A025BC8618ACF90300AF73DC /* battery-critical-focus.png in Resources */ = {isa = PBXBuildFile; fileRef = A025BC5618ACF90300AF73DC /* battery-critical-focus.png */; };
 		A025BC8718ACF90300AF73DC /* battery-critical.png in Resources */ = {isa = PBXBuildFile; fileRef = A025BC5718ACF90300AF73DC /* battery-critical.png */; };
 		A025BC8818ACF90300AF73DC /* battery-focus.png in Resources */ = {isa = PBXBuildFile; fileRef = A025BC5818ACF90300AF73DC /* battery-focus.png */; };
@@ -60,6 +64,7 @@
 		A048BC1818A37DF500BF32C7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A048BC1718A37DF500BF32C7 /* QuartzCore.framework */; };
 		A049E81618BB5A5200BB5C68 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A049E81518BB5A5100BB5C68 /* Reachability.m */; };
 		A04A6D1318B208E90094CA3C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A04A6D1518B208E90094CA3C /* Localizable.strings */; };
+		A04A958018C0BADF00B1791A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A04A957E18C0BADF00B1791A /* MainStoryboard_iPad.storyboard */; };
 		A04AA36118A2447700A98C0E /* NSMutableArray+SWUtilityButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = A04AA35618A2447700A98C0E /* NSMutableArray+SWUtilityButtons.m */; };
 		A04AA36218A2447700A98C0E /* SWCellScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A04AA35818A2447700A98C0E /* SWCellScrollView.m */; };
 		A04AA36318A2447700A98C0E /* SWLongPressGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = A04AA35A18A2447700A98C0E /* SWLongPressGestureRecognizer.m */; };
@@ -67,6 +72,13 @@
 		A04AA36518A2447700A98C0E /* SWUtilityButtonTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = A04AA35E18A2447700A98C0E /* SWUtilityButtonTapGestureRecognizer.m */; };
 		A04AA36618A2447700A98C0E /* SWUtilityButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = A04AA36018A2447700A98C0E /* SWUtilityButtonView.m */; };
 		A04C98BD189BB6FC0011E5F4 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A04C98BB189BB6FC0011E5F4 /* Model.xcdatamodeld */; };
+		A04EAAF318C7161F00D22715 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A04EAAEF18C7161F00D22715 /* AcousticModelEnglish.bundle */; };
+		A04EAAF418C7161F00D22715 /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A04EAAF018C7161F00D22715 /* AcousticModelSpanish.bundle */; };
+		A04EAAF518C7161F00D22715 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A04EAAF118C7161F00D22715 /* OpenEars.framework */; };
+		A04EAAF618C7161F00D22715 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A04EAAF218C7161F00D22715 /* Slt.framework */; };
+		A04EAAF918C7164C00D22715 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A04EAAF718C7164C00D22715 /* AudioToolbox.framework */; };
+		A04EAAFA18C7164C00D22715 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A04EAAF818C7164C00D22715 /* AVFoundation.framework */; };
+		A04EAAFD18C727FC00D22715 /* ZWaySpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EAAFC18C727FC00D22715 /* ZWaySpeech.m */; };
 		A0565327189259F600103D65 /* ZWayNewProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0565326189259F600103D65 /* ZWayNewProfileViewController.m */; };
 		A0581DC818891372004E4309 /* ZWDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A0581DC718891371004E4309 /* ZWDataHandler.m */; };
 		A0581DDE1889740D004E4309 /* arrow-down.png in Resources */ = {isa = PBXBuildFile; fileRef = A0581DDD1889740D004E4309 /* arrow-down.png */; };
@@ -85,9 +97,6 @@
 		A085F5211886C5F00061E721 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A085F51F1886C5F00061E721 /* InfoPlist.strings */; };
 		A085F5231886C5F00061E721 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A085F5221886C5F00061E721 /* main.m */; };
 		A085F5271886C5F00061E721 /* ZWayAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A085F5261886C5F00061E721 /* ZWayAppDelegate.m */; };
-		A085F5291886C5F00061E721 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A085F5281886C5F00061E721 /* Default.png */; };
-		A085F52B1886C5F00061E721 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A085F52A1886C5F00061E721 /* Default@2x.png */; };
-		A085F52D1886C5F00061E721 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A085F52C1886C5F00061E721 /* Default-568h@2x.png */; };
 		A085F5301886C5F00061E721 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A085F52E1886C5F00061E721 /* MainStoryboard_iPhone.storyboard */; };
 		A085F5361886C5F00061E721 /* ZWayDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A085F5351886C5F00061E721 /* ZWayDashboardViewController.m */; };
 		A085F53D1886C5F00061E721 /* ZWayWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A085F53C1886C5F00061E721 /* ZWayWidgetViewController.m */; };
@@ -123,6 +132,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A019A93418C491A3008E420B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		A019A93618C491D7008E420B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		A019A93718C491D7008E420B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		A019A93E18C4C07C008E420B /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		A019A93F18C4C07C008E420B /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		A025BC5618ACF90300AF73DC /* battery-critical-focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "battery-critical-focus.png"; path = "Images/battery-critical-focus.png"; sourceTree = "<group>"; };
 		A025BC5718ACF90300AF73DC /* battery-critical.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "battery-critical.png"; path = "Images/battery-critical.png"; sourceTree = "<group>"; };
 		A025BC5818ACF90300AF73DC /* battery-focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "battery-focus.png"; path = "Images/battery-focus.png"; sourceTree = "<group>"; };
@@ -183,6 +197,9 @@
 		A04A6D1E18B2164B0094CA3C /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		A04A6D1F18B2164B0094CA3C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A04A6D2018B2164B0094CA3C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A04A957F18C0BADF00B1791A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		A04A958118C0BB0F00B1791A /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		A04A958218C0BB1100B1791A /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		A04AA35418A2447700A98C0E /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		A04AA35518A2447700A98C0E /* NSMutableArray+SWUtilityButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+SWUtilityButtons.h"; sourceTree = "<group>"; };
 		A04AA35618A2447700A98C0E /* NSMutableArray+SWUtilityButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+SWUtilityButtons.m"; sourceTree = "<group>"; };
@@ -197,6 +214,14 @@
 		A04AA35F18A2447700A98C0E /* SWUtilityButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUtilityButtonView.h; sourceTree = "<group>"; };
 		A04AA36018A2447700A98C0E /* SWUtilityButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonView.m; sourceTree = "<group>"; };
 		A04C98BC189BB6FC0011E5F4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		A04EAAEF18C7161F00D22715 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		A04EAAF018C7161F00D22715 /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
+		A04EAAF118C7161F00D22715 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
+		A04EAAF218C7161F00D22715 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
+		A04EAAF718C7164C00D22715 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A04EAAF818C7164C00D22715 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A04EAAFB18C727FC00D22715 /* ZWaySpeech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWaySpeech.h; sourceTree = "<group>"; };
+		A04EAAFC18C727FC00D22715 /* ZWaySpeech.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWaySpeech.m; sourceTree = "<group>"; };
 		A0565325189259F600103D65 /* ZWayNewProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWayNewProfileViewController.h; sourceTree = "<group>"; };
 		A0565326189259F600103D65 /* ZWayNewProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWayNewProfileViewController.m; sourceTree = "<group>"; };
 		A0581DC618891371004E4309 /* ZWDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWDataHandler.h; sourceTree = "<group>"; };
@@ -227,9 +252,6 @@
 		A085F5241886C5F00061E721 /* ZWayJSON-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZWayJSON-Prefix.pch"; sourceTree = "<group>"; };
 		A085F5251886C5F00061E721 /* ZWayAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWayAppDelegate.h; sourceTree = "<group>"; };
 		A085F5261886C5F00061E721 /* ZWayAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWayAppDelegate.m; sourceTree = "<group>"; };
-		A085F5281886C5F00061E721 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		A085F52A1886C5F00061E721 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		A085F52C1886C5F00061E721 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A085F52F1886C5F00061E721 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		A085F5341886C5F00061E721 /* ZWayDashboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWayDashboardViewController.h; sourceTree = "<group>"; };
 		A085F5351886C5F00061E721 /* ZWayDashboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWayDashboardViewController.m; sourceTree = "<group>"; };
@@ -267,6 +289,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A04EAAF918C7164C00D22715 /* AudioToolbox.framework in Frameworks */,
+				A04EAAFA18C7164C00D22715 /* AVFoundation.framework in Frameworks */,
 				A0A285051897C9B6004496C8 /* SystemConfiguration.framework in Frameworks */,
 				A047569F18B633E9004E1160 /* CFNetwork.framework in Frameworks */,
 				A048BC1818A37DF500BF32C7 /* QuartzCore.framework in Frameworks */,
@@ -274,6 +298,8 @@
 				A085F5171886C5F00061E721 /* UIKit.framework in Frameworks */,
 				A085F5191886C5F00061E721 /* Foundation.framework in Frameworks */,
 				A085F51B1886C5F00061E721 /* CoreGraphics.framework in Frameworks */,
+				A04EAAF518C7161F00D22715 /* OpenEars.framework in Frameworks */,
+				A04EAAF618C7161F00D22715 /* Slt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +319,7 @@
 		A04A6D1818B211950094CA3C /* en.lproj */ = {
 			isa = PBXGroup;
 			children = (
+				A04A957E18C0BADF00B1791A /* MainStoryboard_iPad.storyboard */,
 				A085F52E1886C5F00061E721 /* MainStoryboard_iPhone.storyboard */,
 				A04A6D1518B208E90094CA3C /* Localizable.strings */,
 			);
@@ -334,6 +361,18 @@
 			name = Options;
 			sourceTree = "<group>";
 		};
+		A04EAAEE18C7161F00D22715 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				A04EAAEF18C7161F00D22715 /* AcousticModelEnglish.bundle */,
+				A04EAAF018C7161F00D22715 /* AcousticModelSpanish.bundle */,
+				A04EAAF118C7161F00D22715 /* OpenEars.framework */,
+				A04EAAF218C7161F00D22715 /* Slt.framework */,
+			);
+			name = Framework;
+			path = ZWayJSON/Framework;
+			sourceTree = "<group>";
+		};
 		A0565329189264B400103D65 /* WidgetController */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,6 +387,8 @@
 		A056532A189264DF00103D65 /* Data Handling */ = {
 			isa = PBXGroup;
 			children = (
+				A019A93E18C4C07C008E420B /* NSData+Base64.h */,
+				A019A93F18C4C07C008E420B /* NSData+Base64.m */,
 				A0581DC618891371004E4309 /* ZWDataHandler.h */,
 				A0581DC718891371004E4309 /* ZWDataHandler.m */,
 				A05D5AD01887CECA0022E142 /* ZWDevice.h */,
@@ -464,6 +505,7 @@
 			children = (
 				A085F51C1886C5F00061E721 /* ZWayJSON */,
 				A085F5151886C5F00061E721 /* Frameworks */,
+				A04EAAEE18C7161F00D22715 /* Framework */,
 				A085F5141886C5F00061E721 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -480,6 +522,8 @@
 		A085F5151886C5F00061E721 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A04EAAF718C7164C00D22715 /* AudioToolbox.framework */,
+				A04EAAF818C7164C00D22715 /* AVFoundation.framework */,
 				A047569E18B633E9004E1160 /* CFNetwork.framework */,
 				A048BC1718A37DF500BF32C7 /* QuartzCore.framework */,
 				A0A285041897C9B6004496C8 /* SystemConfiguration.framework */,
@@ -497,6 +541,8 @@
 			children = (
 				A04AA35318A2447700A98C0E /* PodFiles */,
 				A0DB9E95188FBE560051DBEF /* Views */,
+				A04EAAFB18C727FC00D22715 /* ZWaySpeech.h */,
+				A04EAAFC18C727FC00D22715 /* ZWaySpeech.m */,
 				A085F5251886C5F00061E721 /* ZWayAppDelegate.h */,
 				A085F5261886C5F00061E721 /* ZWayAppDelegate.m */,
 				A049E81418BB5A5100BB5C68 /* Reachability.h */,
@@ -514,13 +560,13 @@
 		A085F51D1886C5F00061E721 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A019A93618C491D7008E420B /* Default.png */,
+				A019A93718C491D7008E420B /* Default@2x.png */,
+				A019A93418C491A3008E420B /* Default-568h@2x.png */,
 				A085F51E1886C5F00061E721 /* ZWayJSON-Info.plist */,
 				A085F51F1886C5F00061E721 /* InfoPlist.strings */,
 				A085F5221886C5F00061E721 /* main.m */,
 				A085F5241886C5F00061E721 /* ZWayJSON-Prefix.pch */,
-				A085F5281886C5F00061E721 /* Default.png */,
-				A085F52A1886C5F00061E721 /* Default@2x.png */,
-				A085F52C1886C5F00061E721 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -623,9 +669,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A085F5211886C5F00061E721 /* InfoPlist.strings in Resources */,
-				A085F5291886C5F00061E721 /* Default.png in Resources */,
-				A085F52B1886C5F00061E721 /* Default@2x.png in Resources */,
-				A085F52D1886C5F00061E721 /* Default-568h@2x.png in Resources */,
 				A085F5301886C5F00061E721 /* MainStoryboard_iPhone.storyboard in Resources */,
 				A0581DDE1889740D004E4309 /* arrow-down.png in Resources */,
 				A0581DE01889741E004E4309 /* arrow-up.png in Resources */,
@@ -688,6 +731,12 @@
 				A025BCB418ACF90300AF73DC /* window-focus.png in Resources */,
 				A025BCB518ACF90300AF73DC /* window.png in Resources */,
 				A04A6D1318B208E90094CA3C /* Localizable.strings in Resources */,
+				A04A958018C0BADF00B1791A /* MainStoryboard_iPad.storyboard in Resources */,
+				A019A93518C491A3008E420B /* Default-568h@2x.png in Resources */,
+				A019A93818C491D7008E420B /* Default.png in Resources */,
+				A019A93918C491D7008E420B /* Default@2x.png in Resources */,
+				A04EAAF318C7161F00D22715 /* AcousticModelEnglish.bundle in Resources */,
+				A04EAAF418C7161F00D22715 /* AcousticModelSpanish.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -748,6 +797,8 @@
 				A076C1E518ACB59D00712B4E /* ZWPickerPopup.m in Sources */,
 				A076C1E918ACD8E800712B4E /* ZWDeviceItemFan.m in Sources */,
 				A049E81618BB5A5200BB5C68 /* Reachability.m in Sources */,
+				A019A94018C4C07C008E420B /* NSData+Base64.m in Sources */,
+				A04EAAFD18C727FC00D22715 /* ZWaySpeech.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -778,6 +829,16 @@
 			);
 			name = Localizable.strings;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		A04A957E18C0BADF00B1791A /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A04A957F18C0BADF00B1791A /* en */,
+				A04A958118C0BB0F00B1791A /* de */,
+				A04A958218C0BB1100B1791A /* ru */,
+			);
+			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		A085F51F1886C5F00061E721 /* InfoPlist.strings */ = {
@@ -864,6 +925,10 @@
 		A085F55A1886C5F00061E721 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ZWayJSON/Framework\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZWayJSON/ZWayJSON-Prefix.pch";
 				INFOPLIST_FILE = "ZWayJSON/ZWayJSON-Info.plist";
@@ -875,6 +940,10 @@
 		A085F55B1886C5F00061E721 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ZWayJSON/Framework\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZWayJSON/ZWayJSON-Prefix.pch";
 				INFOPLIST_FILE = "ZWayJSON/ZWayJSON-Info.plist";

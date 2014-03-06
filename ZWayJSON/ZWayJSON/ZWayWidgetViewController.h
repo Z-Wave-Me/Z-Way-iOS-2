@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "ZWayDashboardViewController.h"
+#import "ZWaySpeech.h"
+#import <OpenEars/FliteController.h>
 
-@interface ZWayWidgetViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSCoding, UIGestureRecognizerDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate>
+@interface ZWayWidgetViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSCoding, UIGestureRecognizerDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate, OpenEarsEventsObserverDelegate>
 {
     NSMutableArray *types;
     NSMutableArray *rooms;
@@ -20,9 +22,18 @@
     NSMutableArray *objects;
     NSDictionary *JSON;
     NSNumber *deviceIndex;
-    BOOL alertShown;
+    NSInteger alertShown;
+    NSString *name;
     NSMutableData *receivedLocations;
     NSMutableData *receivedObjects;
+    ZWDevice *spokenDevice;
+    NSString *command;
+    NSInteger speechState;
+    ZWaySpeech *speech;
+    FliteController *fliteController;
+    Slt *slt;
+    OpenEarsEventsObserver *openEarsEventsObserver;
+    PocketsphinxController *pocketSphinxController;
 }
 
 @property (strong, nonatomic) NSString *currentButton;
@@ -41,6 +52,9 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *typesButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *tagsButton;
 @property (strong, nonatomic) IBOutlet UILabel *noItemsLabel;
+@property (strong, nonatomic) FliteController *fliteController;
+@property (strong, nonatomic) Slt *slt;
+@property (strong, nonatomic) OpenEarsEventsObserver *openEarsEventsObserver;
 
 
 -(IBAction)roomsSelected:(id)sender;
@@ -48,5 +62,7 @@
 -(IBAction)tagsSelected:(id)sender;
 -(void)getWidgets;
 - (void)updateDevices:(NSInteger)timestamp;
+- (void)addDeviceTitles;
+- (void)startListening;
 
 @end

@@ -21,10 +21,15 @@
 
 #import <UIKit/UIKit.h>
 #import "ZWDeviceItem.h"
+//#import "RWKnobControl.h"
 
 @interface ZWDeviceItemSensorMulti : ZWDeviceItem
+/*{
+    RWKnobControl *_knobControl;
+}*/
 
 @property (strong, nonatomic) IBOutlet UISlider *slider;
+@property (strong, nonatomic) IBOutlet UIView *placeholder;
 
 + (ZWDeviceItemSensorMulti*)device;
 

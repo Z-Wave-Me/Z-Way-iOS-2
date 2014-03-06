@@ -181,9 +181,9 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="There is no device in this section" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kF-ms-MKJ">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="There is no device in this section" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kF-ms-MKJ">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="216" id="M4h-57-PR2"/>
+                                    <constraint firstAttribute="height" constant="217" id="oNw-i6-gD2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -240,12 +240,12 @@
                             <constraint firstItem="jN3-N9-upk" firstAttribute="top" secondItem="17" secondAttribute="top" type="default" id="6M8-wU-zXW"/>
                             <constraint firstAttribute="trailing" secondItem="3kF-ms-MKJ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="7UK-eC-dGS"/>
                             <constraint firstItem="3kF-ms-MKJ" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="82x-kS-l1L"/>
-                            <constraint firstItem="3kF-ms-MKJ" firstAttribute="top" secondItem="17" secondAttribute="top" constant="120" id="918-Io-z6w"/>
                             <constraint firstItem="jN3-N9-upk" firstAttribute="leading" secondItem="17" secondAttribute="leading" type="default" id="BE7-du-zh4"/>
                             <constraint firstItem="jN3-N9-upk" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="C7W-TV-AWS"/>
                             <constraint firstItem="YGW-rI-UzL" firstAttribute="leading" secondItem="17" secondAttribute="leading" type="default" id="JDf-4v-UnG"/>
                             <constraint firstItem="YGW-rI-UzL" firstAttribute="top" secondItem="jN3-N9-upk" secondAttribute="bottom" type="default" id="cx4-rv-WmG"/>
                             <constraint firstItem="YGW-rI-UzL" firstAttribute="bottom" secondItem="17" secondAttribute="bottom" type="default" id="doc-UR-GCh"/>
+                            <constraint firstItem="3kF-ms-MKJ" firstAttribute="centerY" secondItem="17" secondAttribute="centerY" type="default" id="kPW-PI-A83"/>
                             <constraint firstItem="YGW-rI-UzL" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="pwZ-EV-7wf"/>
                         </constraints>
                     </view>
@@ -273,7 +273,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="There is no device in this section" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAO-Th-xTf">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="There is no device in this section" lineBreakMode="clip" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAO-Th-xTf">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="116" id="RsM-sm-QEM"/>
                                     <constraint firstAttribute="width" constant="266" id="zRG-Jc-jkY"/>

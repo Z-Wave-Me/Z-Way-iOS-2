@@ -36,7 +36,7 @@
     profile.name = @"Name";
     profile.outdoorUrl = @"find.z-wave.me";
     [store saveContext];
-    self.navigationItem.title = NSLocalizedString(@"NewProfile", @"New Profile title");
+    self.navigationItem.title =  NSLocalizedString(@"NewProfile", @"New Profile title");
     _profile = profile;
     }
     else
@@ -207,6 +207,23 @@
     [deleteButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [deleteButton addTarget:self action:@selector(deleteProfile) forControlEvents:UIControlEventTouchUpInside];
     
+    UIButton *checkButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [checkButton setFrame:CGRectMake(0, 100, 280, 25)];
+    checkButton.backgroundColor = [UIColor clearColor];
+    [checkButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [checkButton setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
+    [checkButton addTarget:self action:@selector(chkBtnHandler:) forControlEvents:UIControlEventTouchUpInside];
+    if([ZWayAppDelegate.sharedDelegate.profile.useSpeech boolValue] == YES)
+        [checkButton setSelected:YES];
+    
+    [checkButton setImage:nil forState:UIControlStateNormal];
+    [checkButton setImage:[UIImage imageNamed:@"connected-g.png"] forState:UIControlStateSelected];
+    
+    [checkButton setTitle:NSLocalizedString(@"Speech", @"Option to activate speach recognition")
+            forState:UIControlStateNormal];
+    [checkButton setTitle:NSLocalizedString(@"Speech", @"")
+            forState:UIControlStateSelected];
+    
     switch (indexPath.section)
     {
         case 0:
@@ -236,9 +253,10 @@
         }
     }
     
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(20, 0, 280, 100)];
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(20, 0, 280, 200)];
     [footerView addSubview:saveButton];
     [footerView addSubview:deleteButton];
+    [footerView addSubview:checkButton];
     tableView.tableFooterView = footerView;
     
     cell = [_fields objectForKey:name];
@@ -265,6 +283,15 @@
     label.tag = (editor.tag +1);
     
     return cell;
+}
+
+- (void)chkBtnHandler:(id)sender {
+    [(UIButton *)sender setSelected:![(UIButton *)sender isSelected]];
+    
+    if([(UIButton *)sender isSelected])
+        _profile.useSpeech = [NSNumber numberWithBool:YES];
+    else
+        _profile.useSpeech = [NSNumber numberWithBool:NO];
 }
 
 - (void)store

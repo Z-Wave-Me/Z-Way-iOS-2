@@ -9,8 +9,18 @@
 #import "ZWayDashboardViewController.h"
 #import "ZWDevice.h"
 #import "ZWDeviceItem.h"
+#import "ZWDeviceItemFan.h"
+#import "ZWDeviceItemSwitch.h"
+#import "ZWDeviceItemThermostat.h"
 #import "ZWDataHandler.h"
 #import "ZWayAppDelegate.h"
+#import "NSData+Base64.m"
+#import "ZWaySpeech.h"
+#import <OpenEars/PocketsphinxController.h>
+#import <OpenEars/FliteController.h>
+#import <OpenEars/LanguageModelGenerator.h>
+#import <OpenEars/OpenEarsLogging.h>
+#import <OpenEars/AcousticModel.h>
 
 
 @class ZWDevice;
@@ -22,7 +32,20 @@
 @implementation ZWayDashboardViewController
 @synthesize noItemsLabel;
 @synthesize tableview;
+@synthesize fliteController;
+@synthesize slt;
+@synthesize openEarsEventsObserver;
 
+
+- (void)viewDidLoad
+{
+    UIPinchGestureRecognizer *pinchRecognizer = [UIPinchGestureRecognizer new];
+    [pinchRecognizer addTarget:self action:@selector(startListening)];
+    
+    speech = [ZWaySpeech new];
+    [self.openEarsEventsObserver setDelegate:self];
+    [speech fixCommands];
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -55,27 +78,57 @@
     }
     
     noItemsLabel.text = NSLocalizedString(@"NoDashboard", @"");
+    
     [self updateObjects];
+}
+
+- (void)startListening
+{
+    if([ZWayAppDelegate.sharedDelegate.profile.useSpeech boolValue] == YES)
+    {
+        [self addDeviceTitles];
+        [speech setUpSpeech];
+        [self.fliteController say:@"Please name the device" withVoice:self.slt];
+    }
 }
 
 - (void)updateObjects
 {
     objects = [NSMutableArray arrayWithArray:[NSKeyedUnarchiver unarchiveObjectWithData:ZWayAppDelegate.sharedDelegate.profile.objects]];
+    
     [tableview reloadData];
     
     for (int i=0; i<objects.count; i++)
     {
         ZWDevice *device = [objects objectAtIndex:i];
+        notFound = device;
         receivedData = nil;
         NSURL *url;
+        NSMutableURLRequest *request;
         
         if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == NO)
-            url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@", ZWayAppDelegate.sharedDelegate.profile.indoorUrl, device.deviceId]];
+        {
+            url = [NSURL URLWithString:[NSString stringWithFormat:@"http://find.z-wave.me/ZAutomation/api/v1/devices/%@", device.deviceId]];
+            request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
+            
+            NSString *authStr = [NSString stringWithFormat:@"%@:%@", ZWayAppDelegate.sharedDelegate.profile.userLogin, ZWayAppDelegate.sharedDelegate.profile.userPassword];
+            NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
+            NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64EncodingWithLineLength:80]];
+            
+            [request setHTTPMethod:@"GET"];
+            [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
+            [request setValue:@"gzip, deflate, sdch" forHTTPHeaderField:@"Accept-Encoding"];
+            [request setValue:authValue forHTTPHeaderField:@"Authorization"];
+        }
         else
-            url = [NSURL URLWithString:[NSString stringWithFormat:@"https://%@/ZAutomation/api/v1/devices/%@", ZWayAppDelegate.sharedDelegate.profile.outdoorUrl, device.deviceId]];
-        
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:60.0];
-        [request setHTTPMethod:@"GET"];
+        {
+            url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@", ZWayAppDelegate.sharedDelegate.profile.indoorUrl, device.deviceId]];
+            request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
+            
+            [request setHTTPMethod:@"GET"];
+            [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
+            [request setValue:@"gzip, deflate, sdch" forHTTPHeaderField:@"Accept-Encoding"];
+        }
         
         NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         if(!connection && alertShown == NO)
@@ -98,11 +151,15 @@
     NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
     int responseStatusCode = [httpResponse statusCode];
     
-    if(responseStatusCode != 200 && alertShown == NO)
+    if(responseStatusCode != 200)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ConnectionFail", @"") message:NSLocalizedString(@"FailMessage", @"") delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil, nil];
-        [alert show];
-        alertShown = YES;
+        if(responseStatusCode == 404)
+        {
+            [objects removeObject:notFound];
+            ZWayAppDelegate.sharedDelegate.profile.objects = [NSKeyedArchiver archivedDataWithRootObject:objects];
+            connection = nil;
+            receivedData = nil;
+        }
     }
     else
         alertShown = NO;
@@ -115,6 +172,12 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
+    if(alertShown == NO)
+    {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"ConnectionFail", @"") message:NSLocalizedString(@"FailMessage", @"") delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil, nil];
+    [alert show];
+        alertShown = YES;
+    }
     receivedData = nil;
     connection = nil;
 }
@@ -225,7 +288,7 @@
         
         [weakCell setAppearanceWithBlock:^{
             weakCell.containingTableView = tableView;
-            [weakCell setCellHeight:weakCell.frame.size.height];
+            [weakCell setCellHeight:[self tableView:tableView heightForRowAtIndexPath:indexPath]];
             
             NSMutableArray *rightUtilityButtons = [NSMutableArray new];
             
@@ -332,6 +395,129 @@
             [objects removeObjectAtIndex:indexPath.row];
         }
     }
+}
+
+- (void)addDeviceTitles
+{
+    NSMutableArray *deviceTitles = [NSMutableArray new];
+    
+    for(int i=0; i<objects.count; i++)
+    {
+        ZWDevice *device = [objects objectAtIndex:i];
+        NSDictionary *dict = device.metrics;
+        NSString *title = [[dict valueForKey:@"title"] uppercaseString];
+        if(![deviceTitles containsObject:title])
+            [deviceTitles addObject:title];
+    }
+    [speech updateCommands:deviceTitles];
+}
+
+- (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID
+{
+    for(int i=0; i<objects.count; i++)
+    {
+        ZWDevice *device = [objects objectAtIndex:i];
+        NSString *title = [[device.metrics objectForKey:@"title"] uppercaseString];
+        if([hypothesis isEqualToString:title])
+        {
+            spokenDevice = device;
+            speechState = 1;
+        }
+        else if([speech.words containsObject:hypothesis])
+        {
+            command = hypothesis;
+        }
+    }
+    
+    if([spokenDevice isKindOfClass:[ZWDeviceItemFan class]])
+    {
+        ZWDeviceItemFan *fanItem = (ZWDeviceItemFan*)spokenDevice;
+        if([command isEqualToString:@"AUTOLOW"])
+            fanItem.currentState = @"0";
+        else if([command isEqualToString:@"ONLOW"])
+            fanItem.currentState = @"1";
+        else if([command isEqualToString:@"AUTOHIGH"])
+            fanItem.currentState = @"2";
+        else if([command isEqualToString:@"ONHIGH"])
+            fanItem.currentState = @"3";
+        
+        [fanItem sendRequest];
+    }
+    else if ([spokenDevice isKindOfClass:[ZWDeviceItemSwitch class]])
+    {
+        ZWDeviceItemSwitch *switchItem = (ZWDeviceItemSwitch*)spokenDevice;
+        if([command isEqualToString:@"ON"])
+        {
+            [switchItem.switchView setOn:YES animated:YES];
+            [switchItem switchChanged:self];
+        }
+        else if([command isEqualToString:@"OFF"])
+        {
+            [switchItem.switchView setOn:NO animated:YES];
+            [switchItem switchChanged:self];
+        }
+    }
+    else if([spokenDevice isKindOfClass:[ZWDeviceItemThermostat class]])
+    {
+        ZWDeviceItemThermostat *therItem = (ZWDeviceItemThermostat*)spokenDevice;
+        if([command isEqualToString:@"AUTOLOW"])
+            therItem.currentState = @"0";
+        else if([command isEqualToString:@"ONLOW"])
+            therItem.currentState = @"1";
+        else if([command isEqualToString:@"AUTOHIGH"])
+            therItem.currentState = @"2";
+        else if([command isEqualToString:@"ONHIGH"])
+            therItem.currentState = @"3";
+        
+        [therItem sendRequest];
+    }
+    else
+    {
+        if(speechState == 0)
+            [self.fliteController say:@"Not a valid device" withVoice:self.slt];
+        else if(speechState == 1)
+            [self.fliteController say:@"Not a valid command" withVoice:self.slt];
+    }
+}
+
+- (void)pocketsphinxDidDetectFinishedSpeech
+{
+    if(speechState == 1)
+    {
+        [self.fliteController say:@"Please name a command" withVoice:self.slt];
+        speechState = 0;
+    }
+    else
+        [speech stopListening];
+}
+
+- (FliteController *)fliteController {
+	if (fliteController == nil) {
+		fliteController = [[FliteController alloc] init];
+	}
+	return fliteController;
+}
+
+- (Slt *)slt {
+	if (slt == nil) {
+		slt = [[Slt alloc] init];
+	}
+	return slt;
+}
+
+- (OpenEarsEventsObserver *)openEarsEventsObserver {
+	if (openEarsEventsObserver == nil) {
+		openEarsEventsObserver = [[OpenEarsEventsObserver alloc] init];
+	}
+	return openEarsEventsObserver;
+}
+
+- (PocketsphinxController *)pocketSphinxController
+{
+    if(pocketSphinxController == nil)
+        pocketSphinxController = [PocketsphinxController new];
+    
+    return pocketSphinxController;
 }
 
 - (void)viewWillDisappear:(BOOL)animated

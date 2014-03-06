@@ -56,5 +56,6 @@
 "FailMessage" = "Es trat ein Problem mit der Verbindung auf";
 "CredentialsErorr" = "Authentifizierungsproblem";
 "WrongCred" = "Der Login schlug für diese Logindaten fehl";
+"Speech" = "Sprcherkennung";
 
 

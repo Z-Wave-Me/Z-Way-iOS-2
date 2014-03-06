@@ -57,7 +57,6 @@
         self.profile.useOutdoor = [NSNumber numberWithBool:YES];
     
     [self performSelector:@selector(testOutdoor) withObject:nil afterDelay:10.0];
-    //[reachability startNotifier];
 }
 
 - (void)useColorTheme:(NSString*)theme

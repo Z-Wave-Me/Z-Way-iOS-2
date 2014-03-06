@@ -9,6 +9,7 @@
         <attribute name="useOutdoor" optional="YES" transient="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="userLogin" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userPassword" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="useSpeech" optional="YES" attributeType="Boolean" syncable="YES"/>
         <compoundIndexes>
             <compoundIndex>
                 <index value="name"/>
@@ -16,6 +17,6 @@
         </compoundIndexes>
     </entity>
     <elements>
-        <element name="Profile" positionX="160" positionY="192" width="128" height="165"/>
+        <element name="Profile" positionX="160" positionY="192" width="128" height="180"/>
     </elements>
 </model>

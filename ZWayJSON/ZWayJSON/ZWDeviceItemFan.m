@@ -25,6 +25,7 @@
 
 @implementation ZWDeviceItemFan
 
+@synthesize currentState;
 @synthesize modeView = _modeView;
 
 + (ZWDeviceItemFan*)device
@@ -63,6 +64,7 @@
 {
     currentState = [NSString stringWithFormat:@"%@", [self.device.metrics objectForKey:@"currentMode"]];
     [self currentTitle];
+    self.currentState = currentState;
     
     states = [NSMutableArray new];
     [states addObject:NSLocalizedString(@"AutoLow", @"")];
@@ -91,14 +93,19 @@
 {
     [sender removeTarget:self action:@selector(setModeDone:) forControlEvents:UIControlEventValueChanged];
     [sender removeFromSuperview];
-    
+    [self sendRequest];
+}
+
+- (void)sendRequest
+{
     NSString *url;
+    currentState = self.currentState;
     
     if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == NO)
         url = [NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/setMode?mode=%@", ZWayAppDelegate.sharedDelegate.profile.indoorUrl, self.device.deviceId, currentState];
     else
         url = [NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/setMode?mode=%@", ZWayAppDelegate.sharedDelegate.profile.outdoorUrl, self.device.deviceId, currentState];
-        
+    
     [self createRequestWithURL:url];
 }
 

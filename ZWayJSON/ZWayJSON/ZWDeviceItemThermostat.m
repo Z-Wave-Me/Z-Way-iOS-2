@@ -25,6 +25,7 @@
 @implementation ZWDeviceItemThermostat
 
 @synthesize modeView = _modeView;
+@synthesize currentState;
 
 + (ZWDeviceItemThermostat*)device
 {
@@ -60,6 +61,7 @@
 {
     currentState = [NSString stringWithFormat:@"%@", [self.device.metrics objectForKey:@"currentMode"]];
     [self currentTitle];
+    self.currentState = currentState;
     
     states = [NSMutableArray new];
     [states addObject:NSLocalizedString(@"Off", @"")];
@@ -100,6 +102,12 @@
     [sender removeTarget:self action:@selector(setModeDone:) forControlEvents:UIControlEventValueChanged];
     [sender removeFromSuperview];
     
+    [self sendRequest];
+}
+
+- (void)sendRequest
+{
+    currentState = self.currentState;
     NSString *url;
     
     if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == NO)

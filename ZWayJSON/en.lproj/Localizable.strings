@@ -56,4 +56,5 @@
 "FailMessage" = "An issue with the connection occured";
 "CredentialsErorr" = "Authentication Error";
 "WrongCred" = "Can´t connect with these credentials";
+"Speech" = "Activate Speech";
 

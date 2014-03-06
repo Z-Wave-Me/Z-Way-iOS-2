@@ -115,7 +115,7 @@
     
     [weakCell setAppearanceWithBlock:^{
         weakCell.containingTableView = tableView;
-        [weakCell setCellHeight:weakCell.frame.size.height];
+        [weakCell setCellHeight:[self tableView:tableView heightForRowAtIndexPath:indexPath]];
         
         NSMutableArray *rightUtilityButtons = [NSMutableArray new];
         

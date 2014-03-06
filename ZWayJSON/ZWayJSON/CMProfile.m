@@ -32,5 +32,6 @@
 @dynamic useOutdoor;
 @dynamic objects;
 @dynamic theme;
+@dynamic useSpeech;
 
 @end
