@@ -15,6 +15,8 @@
 @interface ZWDeviceItem : SWTableViewCell<NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 {
     NSMutableData *receivedData;
+    NSInteger attempts;
+    NSURL *url;
 }
 
 @property (strong, nonatomic) IBOutlet UILabel *nameView;
@@ -24,6 +26,6 @@
 - (void)setDisplayName;
 - (void)hideControls:(BOOL)editing;
 - (void)updateState;
-- (void)createRequestWithURL:(NSString*)url;
+- (void)createRequestWithURL;
 
 @end

@@ -32,9 +32,9 @@
         self.imageView.image = [UIImage imageNamed:@"battery.png"];
 }
 
-- (void)createRequestWithURL:(NSString *)url
+- (void)createRequestWithURL
 {
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url] cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:30.0];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:30.0];
     [request setHTTPMethod:@"GET"];
     [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
     [request setValue:@"gzip, deflate" forHTTPHeaderField:@"Accept-Encoding"];
@@ -76,23 +76,53 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
+    attempts = 0;
     receivedData = nil;
     connection = nil;
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+- (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSMutableURLRequest *)request redirectResponse:(NSURLResponse *)response
 {
-    if([challenge previousFailureCount] == 0)
+    if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == YES)
     {
-        NSURLCredential *credentials = [[NSURLCredential alloc] initWithUser:ZWayAppDelegate.sharedDelegate.profile.userLogin password:ZWayAppDelegate.sharedDelegate.profile.userPassword persistence:NSURLCredentialPersistenceNone];
-    
-        [[challenge sender] useCredential:credentials forAuthenticationChallenge:challenge];
+        NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+        int responseStatusCode = [httpResponse statusCode];
+        
+        if(responseStatusCode >= 300 && responseStatusCode <= 400 && attempts == 1)
+        {
+            request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:30.0];
+            
+            [request setHTTPMethod:@"GET"];
+            [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
+            [request setValue:@"gzip, deflate, sdch" forHTTPHeaderField:@"Accept-Encoding"];
+            attempts = 2;
+            return request;
+        }
+        else if(attempts == 0)
+        {
+            url = [NSURL URLWithString:[NSString stringWithFormat:@"http://find.z-wave.me/zboxweb"]];
+            request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:30.0];
+            
+            NSString *postString = [NSString stringWithFormat:@"act=login&login=%@&pass=%@", ZWayAppDelegate.sharedDelegate.profile.userLogin, ZWayAppDelegate.sharedDelegate.profile.userPassword];
+            NSData *myRequestData = [postString dataUsingEncoding: NSUTF8StringEncoding];
+            
+            [request setHTTPMethod:@"POST"];
+            [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
+            [request setValue:@"gzip, deflate, sdch" forHTTPHeaderField:@"Accept-Encoding"];
+            [request setValue:[NSString stringWithFormat:@"%d", [myRequestData length]] forHTTPHeaderField:@"Content-length"];
+            [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-type"];
+            [request setHTTPBody:myRequestData];
+            attempts = 1;
+            return request;
+        }
+        else
+        {
+            [connection cancel];
+            return nil;
+        }
     }
     else
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"CredentialError", @"Authentication Error") message:NSLocalizedString(@"WrongCred", @"Can´t connect with these credentials") delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
-        [alert show];
-    }
+        return request;
 }
 
 @end

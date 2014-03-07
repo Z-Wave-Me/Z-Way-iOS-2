@@ -19,6 +19,7 @@
     BOOL editMode;
     NSMutableData *receivedData;
     BOOL alertShown;
+    NSInteger attempts;
     ZWDevice *notFound;
     ZWDevice *spokenDevice;
     ZWDevice *currentdevice;

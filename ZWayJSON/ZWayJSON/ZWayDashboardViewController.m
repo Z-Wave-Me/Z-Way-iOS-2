@@ -180,6 +180,7 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
+    attempts = 0;
     NSDictionary *updated = [NSDictionary new];
     NSError *error;
     if(receivedData)
@@ -211,12 +212,15 @@
 
 - (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSMutableURLRequest *)request redirectResponse:(NSURLResponse *)response
 {
+    
+    if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == YES)
+    {
     NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
     int responseStatusCode = [httpResponse statusCode];
     
     NSURL *url;
     
-    if(responseStatusCode >= 300 && responseStatusCode <= 400)
+    if(responseStatusCode >= 300 && responseStatusCode <= 400 && attempts == 1)
     {
         url = [NSURL URLWithString:[NSString stringWithFormat:@"http://find.z-wave.me/ZAutomation/api/v1/devices/%@", currentdevice.deviceId]];
         request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:30.0];
@@ -224,8 +228,10 @@
         [request setHTTPMethod:@"GET"];
         [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
         [request setValue:@"gzip, deflate, sdch" forHTTPHeaderField:@"Accept-Encoding"];
+        attempts = 2;
+        return request;
     }
-    else
+    else if(attempts == 0)
     {
         url = [NSURL URLWithString:[NSString stringWithFormat:@"http://find.z-wave.me/zboxweb"]];
         request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:30.0];
@@ -239,9 +245,18 @@
         [request setValue:[NSString stringWithFormat:@"%d", [myRequestData length]] forHTTPHeaderField:@"Content-length"];
         [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-type"];
         [request setHTTPBody:myRequestData];
+        attempts = 1;
+        return request;
     }
-    
-    return request;
+    else
+    {
+        [connection cancel];
+        return nil;
+    }
+        
+    }
+    else
+        return request;
 }
 
 #pragma mark: Cell definition

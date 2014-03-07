@@ -56,6 +56,8 @@
     UIColor *color = self.navigationController.navigationBar.tintColor;
     [self.toolbar setTintColor:color];
     [self roomsSelected:self];
+    handler = [ZWDataHandler new];
+    [handler getLocations];
     [self updateDevices:0];
     
     UIPinchGestureRecognizer *pinchRecognizer = [UIPinchGestureRecognizer new];
@@ -81,7 +83,7 @@
     NSURL *url;
     NSMutableURLRequest *request;
     
-    if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == YES)
+    if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == NO)
     {
         url = [NSURL URLWithString:[NSString stringWithFormat:@"http://find.z-wave.me/ZAutomation/api/v1/devices"]];
         request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:30.0];
@@ -145,7 +147,7 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    ZWDataHandler *handler = [ZWDataHandler new];
+    attempts = 0;
     ZWDevice *device = [ZWDevice new];
     NSError *error;
     
@@ -184,37 +186,55 @@
 
 - (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSMutableURLRequest *)request redirectResponse:(NSURLResponse *)response
 {
-    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
-    int responseStatusCode = [httpResponse statusCode];
-    
-    NSURL *url;
-    
-    if(responseStatusCode >= 300 && responseStatusCode <= 400)
+    if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == NO)
     {
-        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://find.z-wave.me/ZAutomation/api/v1/devices"]];
-        request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:30.0];
+        NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+        int responseStatusCode = [httpResponse statusCode];
+    
+        NSURL *url;
+    
+        if(responseStatusCode >= 300 && responseStatusCode <= 400 && attempts == 1)
+        {
+            url = [NSURL URLWithString:[NSString stringWithFormat:@"http://find.z-wave.me/ZAutomation/api/v1/devices"]];
+            request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:30.0];
         
-        [request setHTTPMethod:@"GET"];
-        [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
-        [request setValue:@"gzip, deflate, sdch" forHTTPHeaderField:@"Accept-Encoding"];
+            [request setHTTPMethod:@"GET"];
+            [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
+            [request setValue:@"gzip, deflate, sdch" forHTTPHeaderField:@"Accept-Encoding"];
+            attempts = 2;
+            return request;
+        }
+        else if(attempts == 0)
+        {
+            url = [NSURL URLWithString:[NSString stringWithFormat:@"http://find.z-wave.me/zboxweb"]];
+            request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:30.0];
+        
+            NSString *postString = [NSString stringWithFormat:@"act=login&login=%@&pass=%@", ZWayAppDelegate.sharedDelegate.profile.userLogin, ZWayAppDelegate.sharedDelegate.profile.userPassword];
+            NSData *myRequestData = [postString dataUsingEncoding: NSUTF8StringEncoding];
+        
+            [request setHTTPMethod:@"POST"];
+            [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
+            [request setValue:@"gzip, deflate, sdch" forHTTPHeaderField:@"Accept-Encoding"];
+            [request setValue:[NSString stringWithFormat:@"%d", [myRequestData length]] forHTTPHeaderField:@"Content-length"];
+            [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-type"];
+            [request setHTTPBody:myRequestData];
+            attempts = 1;
+            return request;
+        }
+        else
+        {
+            if(alertShown == 0)
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Wrong Credentials" message:NSLocalizedString(@"CredentialError", @"") delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles: nil];
+                [alert show];
+                alertShown = 1;
+            }
+            [connection cancel];
+            return nil;
+        }
     }
     else
-    {
-        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://find.z-wave.me/zboxweb"]];
-        request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:30.0];
-        
-        NSString *postString = [NSString stringWithFormat:@"act=login&login=%@&pass=%@", ZWayAppDelegate.sharedDelegate.profile.userLogin, ZWayAppDelegate.sharedDelegate.profile.userPassword];
-        NSData *myRequestData = [postString dataUsingEncoding: NSUTF8StringEncoding];
-        
-        [request setHTTPMethod:@"POST"];
-        [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
-        [request setValue:@"gzip, deflate, sdch" forHTTPHeaderField:@"Accept-Encoding"];
-        [request setValue:[NSString stringWithFormat:@"%d", [myRequestData length]] forHTTPHeaderField:@"Content-length"];
-        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-type"];
-        [request setHTTPBody:myRequestData];
-    }
-    
-    return request;
+        return request;
 }
 
 -(IBAction)roomsSelected:(id)sender
@@ -277,12 +297,12 @@
 {
     types = [NSMutableArray new];
     tags  = [NSMutableArray new];
+    rooms = [NSMutableArray new];
     typeObjects = [NSMutableArray new];
     tagObjects  = [NSMutableArray new];
     roomObjects = [NSMutableArray new];
     ZWDevice *device = [ZWDevice new];
-    ZWDataHandler *handler = [ZWDataHandler new];
-    rooms = [[NSMutableArray alloc] initWithArray:[handler getLocations]];
+    rooms = handler.locations;
     
     for (NSInteger i=0; i<objects.count; i++)
     {

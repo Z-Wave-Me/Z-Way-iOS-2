@@ -23,12 +23,14 @@
     NSDictionary *JSON;
     NSNumber *deviceIndex;
     NSInteger alertShown;
+    NSInteger attempts;
     NSString *name;
     NSMutableData *receivedLocations;
     NSMutableData *receivedObjects;
     ZWDevice *spokenDevice;
     NSString *command;
     NSInteger speechState;
+    ZWDataHandler *handler;
     ZWaySpeech *speech;
     FliteController *fliteController;
     Slt *slt;

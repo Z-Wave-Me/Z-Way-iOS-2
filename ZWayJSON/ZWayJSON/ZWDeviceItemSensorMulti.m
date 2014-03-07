@@ -49,14 +49,13 @@
 - (void)movedSlider:(id)sender
 {
     NSInteger value = slider.value;
-    NSString *url;
     
     if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == NO)
-        url = [NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/exact?level=%ld", ZWayAppDelegate.sharedDelegate.profile.indoorUrl, self.device.deviceId, (long)value];
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/exact?level=%ld", ZWayAppDelegate.sharedDelegate.profile.indoorUrl, self.device.deviceId, (long)value]];
     else
-        url = [NSString stringWithFormat:@"http://find.z-wave.me/ZAutomation/api/v1/devices/%@/command/exact?level=%ld", self.device.deviceId, (long)value];
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://find.z-wave.me/ZAutomation/api/v1/devices/%@/command/exact?level=%ld", self.device.deviceId, (long)value]];
     
-    [self createRequestWithURL:url];
+    [self createRequestWithURL];
 }
 
 @end

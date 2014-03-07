@@ -98,15 +98,15 @@
 
 - (void)sendRequest
 {
-    NSString *url;
     currentState = self.currentState;
     
     if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == NO)
-        url = [NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/setMode?mode=%@", ZWayAppDelegate.sharedDelegate.profile.indoorUrl, self.device.deviceId, currentState];
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/setMode?mode=%@", ZWayAppDelegate.sharedDelegate.profile.indoorUrl, self.device.deviceId, currentState]];
     else
-        url = [NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/setMode?mode=%@", ZWayAppDelegate.sharedDelegate.profile.outdoorUrl, self.device.deviceId, currentState];
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/setMode?mode=%@", ZWayAppDelegate.sharedDelegate.profile.outdoorUrl, self.device.deviceId, currentState]];
     
-    [self createRequestWithURL:url];
+    
+    [self createRequestWithURL];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
