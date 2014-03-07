@@ -70,7 +70,7 @@
     if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == NO)
         url = [NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/%@", ZWayAppDelegate.sharedDelegate.profile.indoorUrl, self.device.deviceId, state];
     else
-        url = [NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/%@", ZWayAppDelegate.sharedDelegate.profile.outdoorUrl, self.device.deviceId, state];
+        url = [NSString stringWithFormat:@"http://find.z-wave.me/ZAutomation/api/v1/devices/%@/command/%@", self.device.deviceId, state];
     
     [self createRequestWithURL:url];
 }

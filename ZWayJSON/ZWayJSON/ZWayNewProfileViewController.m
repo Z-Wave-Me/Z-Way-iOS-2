@@ -66,7 +66,7 @@
     {
 
         UIImageView *connected = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"connected-g.png"]];
-        UIImageView *fail = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow-down.png"]];
+        UIImageView *fail = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wrong.png"]];
         
         NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@", connection.text]];
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:5.0];

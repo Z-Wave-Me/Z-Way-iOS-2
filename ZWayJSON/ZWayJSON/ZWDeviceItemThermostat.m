@@ -113,7 +113,7 @@
     if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == NO)
         url = [NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/setMode?mode=%@", ZWayAppDelegate.sharedDelegate.profile.indoorUrl, self.device.deviceId, currentState];
     else
-        url = [NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/setMode?mode=%@", ZWayAppDelegate.sharedDelegate.profile.outdoorUrl, self.device.deviceId, currentState];
+        url = [NSString stringWithFormat:@"http://find.z-wave.me/ZAutomation/api/v1/devices/%@/command/setMode?mode=%@", self.device.deviceId, currentState];
     
     [self createRequestWithURL:url];
 }

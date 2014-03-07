@@ -21,6 +21,7 @@
     BOOL alertShown;
     ZWDevice *notFound;
     ZWDevice *spokenDevice;
+    ZWDevice *currentdevice;
     NSString *command;
     NSInteger speechState;
     ZWaySpeech *speech;

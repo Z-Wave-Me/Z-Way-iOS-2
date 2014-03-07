@@ -81,24 +81,19 @@
     NSURL *url;
     NSMutableURLRequest *request;
     
-    if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == NO)
+    if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == YES)
     {
         url = [NSURL URLWithString:[NSString stringWithFormat:@"http://find.z-wave.me/ZAutomation/api/v1/devices"]];
-        request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
-        
-        NSString *authStr = [NSString stringWithFormat:@"%@:%@", ZWayAppDelegate.sharedDelegate.profile.userLogin, ZWayAppDelegate.sharedDelegate.profile.userPassword];
-        NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
-        NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64EncodingWithLineLength:80]];
+        request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:30.0];
         
         [request setHTTPMethod:@"GET"];
         [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
         [request setValue:@"gzip, deflate, sdch" forHTTPHeaderField:@"Accept-Encoding"];
-        [request setValue:authValue forHTTPHeaderField:@"Authorization"];
     }
     else
     {
         url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices?since=%u", ZWayAppDelegate.sharedDelegate.profile.indoorUrl, 0]];
-        request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
+        request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:30.0];
         
         [request setHTTPMethod:@"GET"];
         [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
@@ -158,7 +153,6 @@
     objects = [[JSON objectForKey:@"data"] objectForKey:@"devices"];
     int timestamp = [handler getTimestamp:JSON];
     
-    
     //or set it
     if(objects.count == 0)
     {
@@ -170,6 +164,13 @@
         JSON = [NSKeyedUnarchiver unarchiveObjectWithData:encodedJSON];
 
         timestamp = [handler getTimestamp:JSON];
+        
+        if(alertShown == 0)
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!" message:NSLocalizedString(@"UpdateError", @"Message that an error occured during the update") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
+            [alert show];
+            alertShown = 1;
+        }
     }
     else
         objects = [[device updateObjects:objects WithDict:nil] mutableCopy];
@@ -181,22 +182,39 @@
     [self performSelector:@selector(updateDevices:) withObject:[NSNumber numberWithInt:timestamp] afterDelay:10.0];
 }
 
-- (void)connection:(NSURLConnection *)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
+- (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSMutableURLRequest *)request redirectResponse:(NSURLResponse *)response
 {
-    NSURLCredential *credentials = [NSURLCredential credentialWithUser:ZWayAppDelegate.sharedDelegate.profile.userLogin password:ZWayAppDelegate.sharedDelegate.profile.userPassword persistence:NSURLCredentialPersistenceNone];
+    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+    int responseStatusCode = [httpResponse statusCode];
     
-    if([challenge previousFailureCount] == 0)
+    NSURL *url;
+    
+    if(responseStatusCode >= 300 && responseStatusCode <= 400)
     {
-        if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust] && [challenge.protectionSpace.host hasSuffix:@"find.z-wave.me"])
-        {
-            [challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust] forAuthenticationChallenge:challenge];
-            [challenge.sender useCredential:credentials forAuthenticationChallenge:challenge];
-        }
-        else
-        {
-            [challenge.sender continueWithoutCredentialForAuthenticationChallenge:challenge];
-        }
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://find.z-wave.me/ZAutomation/api/v1/devices"]];
+        request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:30.0];
+        
+        [request setHTTPMethod:@"GET"];
+        [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
+        [request setValue:@"gzip, deflate, sdch" forHTTPHeaderField:@"Accept-Encoding"];
     }
+    else
+    {
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://find.z-wave.me/zboxweb"]];
+        request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:30.0];
+        
+        NSString *postString = [NSString stringWithFormat:@"act=login&login=%@&pass=%@", ZWayAppDelegate.sharedDelegate.profile.userLogin, ZWayAppDelegate.sharedDelegate.profile.userPassword];
+        NSData *myRequestData = [postString dataUsingEncoding: NSUTF8StringEncoding];
+        
+        [request setHTTPMethod:@"POST"];
+        [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
+        [request setValue:@"gzip, deflate, sdch" forHTTPHeaderField:@"Accept-Encoding"];
+        [request setValue:[NSString stringWithFormat:@"%d", [myRequestData length]] forHTTPHeaderField:@"Content-length"];
+        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-type"];
+        [request setHTTPBody:myRequestData];
+    }
+    
+    return request;
 }
 
 -(IBAction)roomsSelected:(id)sender

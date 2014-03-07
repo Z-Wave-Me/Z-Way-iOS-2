@@ -21,7 +21,6 @@
 
 #import "ZWDeviceItemSensorMulti.h"
 #import "ZWayAppDelegate.h"
-#import "RWKnobControl.h"
 
 @implementation ZWDeviceItemSensorMulti
 
@@ -32,21 +31,6 @@
     NSArray *a = [[NSBundle mainBundle] loadNibNamed:@"ZWDeviceItemSensorMulti" owner:nil options:nil];
     return [a objectAtIndex:0];
 }
-
-/*- (id)init
-{
-    self = [super init];
-    if(self)
-    {
-        _knobControl = [[RWKnobControl alloc] initWithFrame:self.placeholder.bounds];
-        [self.placeholder addSubview:_knobControl];
-        
-        _knobControl.lineWidth = 4.0;
-        _knobControl.pointerLength = 8.0;
-    }
-        
-    return self;
-}*/
 
 - (void)updateState
 {
@@ -70,7 +54,7 @@
     if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == NO)
         url = [NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/exact?level=%ld", ZWayAppDelegate.sharedDelegate.profile.indoorUrl, self.device.deviceId, (long)value];
     else
-        url = [NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/exact?level=%ld", ZWayAppDelegate.sharedDelegate.profile.outdoorUrl, self.device.deviceId, (long)value];
+        url = [NSString stringWithFormat:@"http://find.z-wave.me/ZAutomation/api/v1/devices/%@/command/exact?level=%ld", self.device.deviceId, (long)value];
     
     [self createRequestWithURL:url];
 }

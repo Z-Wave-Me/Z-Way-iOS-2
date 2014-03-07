@@ -13,6 +13,7 @@
     NSDictionary *JSON;
     NSMutableData *notificationData;
     NSMutableArray *notifications;
+    NSInteger currentTimestamp;
     BOOL alertShown;
 }
 
