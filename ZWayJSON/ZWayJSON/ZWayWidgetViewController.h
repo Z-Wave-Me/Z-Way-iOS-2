@@ -18,6 +18,7 @@
     NSMutableArray *tags;
     NSMutableArray *tagObjects;
     NSMutableArray *roomObjects;
+    NSMutableArray *roomIDs;
     NSMutableArray *typeObjects;
     NSMutableArray *objects;
     NSDictionary *JSON;

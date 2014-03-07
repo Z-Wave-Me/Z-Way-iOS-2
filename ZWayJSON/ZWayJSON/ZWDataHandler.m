@@ -11,7 +11,8 @@
 
 @implementation ZWDataHandler
 
-@synthesize locations;
+@synthesize locationTitles;
+@synthesize locationIDs;
 
 //get the timestamp from the JSON data
 -(NSUInteger)getTimestamp:(NSDictionary *)dictionary
@@ -96,18 +97,26 @@
 {
     attempts = 0;
     NSError *error;
-    locations = [NSMutableArray new];
-    self.locations = [NSMutableArray new];
+    locationTitles = [NSMutableArray new];
+    locationIDs = [NSMutableArray new];
+    self.locationTitles = [NSMutableArray new];
+    self.locationIDs = [NSMutableArray new];
     
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:receivedData options:NSJSONReadingMutableContainers error:&error];
     NSArray *temp = [dict objectForKey:@"data"];
     for(NSInteger i=0; i<temp.count; i++)
     {
-        NSString *locationString = [[temp objectAtIndex:i] objectForKey:@"title"];
-        if(![locations containsObject:locationString])
-            [locations addObject:locationString];
+        NSString *locationTitle = [[temp objectAtIndex:i] objectForKey:@"title"];
+        NSString *locationID = [[temp objectAtIndex:i] objectForKey:@"id"];
+        
+        if(![locationTitles containsObject:locationTitle])
+            [locationTitles addObject:locationTitle];
+        
+        if(![locationIDs containsObject:locationID])
+            [locationIDs addObject:locationID];
     }
-    self.locations = locations;
+    self.locationTitles = locationTitles;
+    self.locationIDs = locationIDs;
     
     [self performSelector:@selector(getLocations) withObject:nil afterDelay:10.0];
 }

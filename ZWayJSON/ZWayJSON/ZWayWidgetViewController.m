@@ -83,7 +83,7 @@
     NSURL *url;
     NSMutableURLRequest *request;
     
-    if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == NO)
+    if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == YES)
     {
         url = [NSURL URLWithString:[NSString stringWithFormat:@"http://find.z-wave.me/ZAutomation/api/v1/devices"]];
         request = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowedInMemoryOnly timeoutInterval:30.0];
@@ -186,7 +186,7 @@
 
 - (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSMutableURLRequest *)request redirectResponse:(NSURLResponse *)response
 {
-    if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == NO)
+    if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == YES)
     {
         NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
         int responseStatusCode = [httpResponse statusCode];
@@ -301,8 +301,10 @@
     typeObjects = [NSMutableArray new];
     tagObjects  = [NSMutableArray new];
     roomObjects = [NSMutableArray new];
+    roomIDs = [NSMutableArray new];
     ZWDevice *device = [ZWDevice new];
-    rooms = handler.locations;
+    rooms = handler.locationTitles;
+    roomIDs = handler.locationIDs;
     
     for (NSInteger i=0; i<objects.count; i++)
     {
@@ -356,9 +358,9 @@
         {
             for (int j=0; j<rooms.count; j++)
             {
-                if([[rooms objectAtIndex:j] isEqualToString:location])
+                if([[roomIDs objectAtIndex:j] isEqualToString:location])
                 {
-                    NSUInteger index = [rooms indexOfObject:location];
+                    NSUInteger index = [roomIDs indexOfObject:location];
                     NSMutableArray *puffer = [[NSMutableArray alloc]initWithArray:[roomObjects objectAtIndex:index]];
                     [puffer addObject:device];
                     [roomObjects replaceObjectAtIndex:index withObject:puffer];

@@ -12,12 +12,14 @@
 @interface ZWDataHandler : NSObject <NSURLConnectionDataDelegate, NSURLConnectionDelegate>
 {
     NSMutableData *receivedData;
-    NSMutableArray *locations;
+    NSMutableArray *locationTitles;
+    NSMutableArray *locationIDs;
     int alertShown;
     NSInteger attempts;
 }
 
-@property (nonatomic, strong) NSMutableArray *locations;
+@property (nonatomic, strong) NSMutableArray *locationTitles;
+@property (nonatomic, strong) NSMutableArray *locationIDs;
 
 - (NSUInteger)getTimestamp:(NSDictionary *)dictionary;
 - (void)getLocations;
