@@ -358,7 +358,7 @@
         {
             for (int j=0; j<rooms.count; j++)
             {
-                if([[roomIDs objectAtIndex:j] isEqualToString:location])
+                if([[roomIDs objectAtIndex:j] isEqual:location])
                 {
                     NSUInteger index = [roomIDs indexOfObject:location];
                     NSMutableArray *puffer = [[NSMutableArray alloc]initWithArray:[roomObjects objectAtIndex:index]];
