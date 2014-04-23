@@ -11,7 +11,7 @@
 #import "ZWaySpeech.h"
 #import <OpenEars/FliteController.h>
 
-@interface ZWayWidgetViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSCoding, UIGestureRecognizerDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate, OpenEarsEventsObserverDelegate>
+@interface ZWayWidgetViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSCoding, UIGestureRecognizerDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate, UIToolbarDelegate, OpenEarsEventsObserverDelegate>
 {
     NSMutableArray *types;
     NSMutableArray *rooms;

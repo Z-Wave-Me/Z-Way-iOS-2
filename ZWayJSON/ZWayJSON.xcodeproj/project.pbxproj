@@ -79,34 +79,6 @@
 		A04EAAF918C7164C00D22715 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A04EAAF718C7164C00D22715 /* AudioToolbox.framework */; };
 		A04EAAFA18C7164C00D22715 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A04EAAF818C7164C00D22715 /* AVFoundation.framework */; };
 		A04EAAFD18C727FC00D22715 /* ZWaySpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = A04EAAFC18C727FC00D22715 /* ZWaySpeech.m */; };
-		A04F65DF18CA2D6A008A5637 /* arrow-down.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65C318CA2D6A008A5637 /* arrow-down.png */; };
-		A04F65E018CA2D6A008A5637 /* arrow-up.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65C418CA2D6A008A5637 /* arrow-up.png */; };
-		A04F65E118CA2D6A008A5637 /* device-blinds@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65C518CA2D6A008A5637 /* device-blinds@2x.png */; };
-		A04F65E218CA2D6A008A5637 /* device-co@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65C618CA2D6A008A5637 /* device-co@2x.png */; };
-		A04F65E318CA2D6A008A5637 /* device-cooling@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65C718CA2D6A008A5637 /* device-cooling@2x.png */; };
-		A04F65E418CA2D6A008A5637 /* device-door@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65C818CA2D6A008A5637 /* device-door@2x.png */; };
-		A04F65E518CA2D6A008A5637 /* device-energy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65C918CA2D6A008A5637 /* device-energy@2x.png */; };
-		A04F65E618CA2D6A008A5637 /* device-fan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65CA18CA2D6A008A5637 /* device-fan@2x.png */; };
-		A04F65E718CA2D6A008A5637 /* device-flood@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65CB18CA2D6A008A5637 /* device-flood@2x.png */; };
-		A04F65E818CA2D6A008A5637 /* device-gas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65CC18CA2D6A008A5637 /* device-gas@2x.png */; };
-		A04F65E918CA2D6A008A5637 /* device-heating@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65CD18CA2D6A008A5637 /* device-heating@2x.png */; };
-		A04F65EA18CA2D6A008A5637 /* device-humidity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65CE18CA2D6A008A5637 /* device-humidity@2x.png */; };
-		A04F65EB18CA2D6A008A5637 /* device-light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65CF18CA2D6A008A5637 /* device-light@2x.png */; };
-		A04F65EC18CA2D6A008A5637 /* device-luminosity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65D018CA2D6A008A5637 /* device-luminosity@2x.png */; };
-		A04F65ED18CA2D6A008A5637 /* device-media@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65D118CA2D6A008A5637 /* device-media@2x.png */; };
-		A04F65EE18CA2D6A008A5637 /* device-meter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65D218CA2D6A008A5637 /* device-meter@2x.png */; };
-		A04F65EF18CA2D6A008A5637 /* device-motion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65D318CA2D6A008A5637 /* device-motion@2x.png */; };
-		A04F65F018CA2D6A008A5637 /* device-smoke@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65D418CA2D6A008A5637 /* device-smoke@2x.png */; };
-		A04F65F118CA2D6A008A5637 /* device-switch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65D518CA2D6A008A5637 /* device-switch@2x.png */; };
-		A04F65F218CA2D6A008A5637 /* device-temperature@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65D618CA2D6A008A5637 /* device-temperature@2x.png */; };
-		A04F65F318CA2D6A008A5637 /* device-thermostat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65D718CA2D6A008A5637 /* device-thermostat@2x.png */; };
-		A04F65F418CA2D6A008A5637 /* device-water@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65D818CA2D6A008A5637 /* device-water@2x.png */; };
-		A04F65F518CA2D6A008A5637 /* device-window@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65D918CA2D6A008A5637 /* device-window@2x.png */; };
-		A04F65F618CA2D6A008A5637 /* notification-battery-critical@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65DA18CA2D6A008A5637 /* notification-battery-critical@2x.png */; };
-		A04F65F718CA2D6A008A5637 /* notification-battery-low@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65DB18CA2D6A008A5637 /* notification-battery-low@2x.png */; };
-		A04F65F818CA2D6A008A5637 /* notification-connection@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65DC18CA2D6A008A5637 /* notification-connection@2x.png */; };
-		A04F65F918CA2D6A008A5637 /* refreshing.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65DD18CA2D6A008A5637 /* refreshing.png */; };
-		A04F65FA18CA2D6A008A5637 /* wrong.png in Resources */ = {isa = PBXBuildFile; fileRef = A04F65DE18CA2D6A008A5637 /* wrong.png */; };
 		A0565327189259F600103D65 /* ZWayNewProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0565326189259F600103D65 /* ZWayNewProfileViewController.m */; };
 		A0581DC818891372004E4309 /* ZWDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A0581DC718891371004E4309 /* ZWDataHandler.m */; };
 		A05B1180189664BA00714488 /* ZWayRoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05B117F189664BA00714488 /* ZWayRoomsViewController.m */; };
@@ -125,9 +97,34 @@
 		A085F5301886C5F00061E721 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A085F52E1886C5F00061E721 /* MainStoryboard_iPhone.storyboard */; };
 		A085F5361886C5F00061E721 /* ZWayDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A085F5351886C5F00061E721 /* ZWayDashboardViewController.m */; };
 		A085F53D1886C5F00061E721 /* ZWayWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A085F53C1886C5F00061E721 /* ZWayWidgetViewController.m */; };
-		A085F5491886C5F00061E721 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085F5481886C5F00061E721 /* SenTestingKit.framework */; };
-		A085F54A1886C5F00061E721 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085F5161886C5F00061E721 /* UIKit.framework */; };
-		A085F54B1886C5F00061E721 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085F5181886C5F00061E721 /* Foundation.framework */; };
+		A089EF7618C9C9020016293C /* wrong.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF7518C9C9020016293C /* wrong.png */; };
+		A089EF8F18C9C9700016293C /* device-blinds@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF7718C9C9700016293C /* device-blinds@2x.png */; };
+		A089EF9018C9C9700016293C /* device-co@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF7818C9C9700016293C /* device-co@2x.png */; };
+		A089EF9118C9C9700016293C /* device-cooling@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF7918C9C9700016293C /* device-cooling@2x.png */; };
+		A089EF9218C9C9700016293C /* device-door@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF7A18C9C9700016293C /* device-door@2x.png */; };
+		A089EF9318C9C9700016293C /* device-energy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF7B18C9C9700016293C /* device-energy@2x.png */; };
+		A089EF9418C9C9700016293C /* device-fan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF7C18C9C9700016293C /* device-fan@2x.png */; };
+		A089EF9518C9C9700016293C /* device-flood@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF7D18C9C9700016293C /* device-flood@2x.png */; };
+		A089EF9618C9C9700016293C /* device-gas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF7E18C9C9700016293C /* device-gas@2x.png */; };
+		A089EF9718C9C9700016293C /* device-heating@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF7F18C9C9700016293C /* device-heating@2x.png */; };
+		A089EF9818C9C9700016293C /* device-humidity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF8018C9C9700016293C /* device-humidity@2x.png */; };
+		A089EF9918C9C9700016293C /* device-light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF8118C9C9700016293C /* device-light@2x.png */; };
+		A089EF9A18C9C9700016293C /* device-luminosity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF8218C9C9700016293C /* device-luminosity@2x.png */; };
+		A089EF9B18C9C9700016293C /* device-media@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF8318C9C9700016293C /* device-media@2x.png */; };
+		A089EF9C18C9C9700016293C /* device-meter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF8418C9C9700016293C /* device-meter@2x.png */; };
+		A089EF9D18C9C9700016293C /* device-motion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF8518C9C9700016293C /* device-motion@2x.png */; };
+		A089EF9E18C9C9700016293C /* device-smoke@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF8618C9C9700016293C /* device-smoke@2x.png */; };
+		A089EF9F18C9C9700016293C /* device-switch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF8718C9C9700016293C /* device-switch@2x.png */; };
+		A089EFA018C9C9700016293C /* device-temperature@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF8818C9C9700016293C /* device-temperature@2x.png */; };
+		A089EFA118C9C9700016293C /* device-thermostat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF8918C9C9700016293C /* device-thermostat@2x.png */; };
+		A089EFA218C9C9700016293C /* device-water@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF8A18C9C9700016293C /* device-water@2x.png */; };
+		A089EFA318C9C9700016293C /* device-window@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF8B18C9C9700016293C /* device-window@2x.png */; };
+		A089EFA418C9C9700016293C /* notification-battery-critical@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF8C18C9C9700016293C /* notification-battery-critical@2x.png */; };
+		A089EFA518C9C9700016293C /* notification-battery-low@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF8D18C9C9700016293C /* notification-battery-low@2x.png */; };
+		A089EFA618C9C9700016293C /* notification-connection@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EF8E18C9C9700016293C /* notification-connection@2x.png */; };
+		A089EFAA18C9FF4C0016293C /* arrow-down.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EFA718C9FF4C0016293C /* arrow-down.png */; };
+		A089EFAB18C9FF4C0016293C /* arrow-up.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EFA818C9FF4C0016293C /* arrow-up.png */; };
+		A089EFAC18C9FF4C0016293C /* refreshing.png in Resources */ = {isa = PBXBuildFile; fileRef = A089EFA918C9FF4C0016293C /* refreshing.png */; };
 		A0A284FB1897C862004496C8 /* ZWPasswordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0A284F81897C862004496C8 /* ZWPasswordCell.xib */; };
 		A0A284FC1897C862004496C8 /* ZWTextEditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0A284F91897C862004496C8 /* ZWTextEditCell.xib */; };
 		A0A284FD1897C862004496C8 /* ZWUrlEditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0A284FA1897C862004496C8 /* ZWUrlEditCell.xib */; };
@@ -145,16 +142,6 @@
 		A0CDCA7C188D55D30014ED82 /* ZWDeviceItemThermostat.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CDCA75188D55D30014ED82 /* ZWDeviceItemThermostat.m */; };
 		A0CDCA81188D65670014ED82 /* ZWDeviceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CDCA80188D65670014ED82 /* ZWDeviceItem.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A085F54C1886C5F00061E721 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A085F50B1886C5F00061E721 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A085F5121886C5F00061E721;
-			remoteInfo = ZWayJSON;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A019A93418C491A3008E420B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -247,34 +234,6 @@
 		A04EAAF818C7164C00D22715 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A04EAAFB18C727FC00D22715 /* ZWaySpeech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWaySpeech.h; sourceTree = "<group>"; };
 		A04EAAFC18C727FC00D22715 /* ZWaySpeech.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWaySpeech.m; sourceTree = "<group>"; };
-		A04F65C318CA2D6A008A5637 /* arrow-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow-down.png"; path = "Images/arrow-down.png"; sourceTree = "<group>"; };
-		A04F65C418CA2D6A008A5637 /* arrow-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow-up.png"; path = "Images/arrow-up.png"; sourceTree = "<group>"; };
-		A04F65C518CA2D6A008A5637 /* device-blinds@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-blinds@2x.png"; path = "Images/device-blinds@2x.png"; sourceTree = "<group>"; };
-		A04F65C618CA2D6A008A5637 /* device-co@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-co@2x.png"; path = "Images/device-co@2x.png"; sourceTree = "<group>"; };
-		A04F65C718CA2D6A008A5637 /* device-cooling@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-cooling@2x.png"; path = "Images/device-cooling@2x.png"; sourceTree = "<group>"; };
-		A04F65C818CA2D6A008A5637 /* device-door@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-door@2x.png"; path = "Images/device-door@2x.png"; sourceTree = "<group>"; };
-		A04F65C918CA2D6A008A5637 /* device-energy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-energy@2x.png"; path = "Images/device-energy@2x.png"; sourceTree = "<group>"; };
-		A04F65CA18CA2D6A008A5637 /* device-fan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-fan@2x.png"; path = "Images/device-fan@2x.png"; sourceTree = "<group>"; };
-		A04F65CB18CA2D6A008A5637 /* device-flood@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-flood@2x.png"; path = "Images/device-flood@2x.png"; sourceTree = "<group>"; };
-		A04F65CC18CA2D6A008A5637 /* device-gas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-gas@2x.png"; path = "Images/device-gas@2x.png"; sourceTree = "<group>"; };
-		A04F65CD18CA2D6A008A5637 /* device-heating@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-heating@2x.png"; path = "Images/device-heating@2x.png"; sourceTree = "<group>"; };
-		A04F65CE18CA2D6A008A5637 /* device-humidity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-humidity@2x.png"; path = "Images/device-humidity@2x.png"; sourceTree = "<group>"; };
-		A04F65CF18CA2D6A008A5637 /* device-light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-light@2x.png"; path = "Images/device-light@2x.png"; sourceTree = "<group>"; };
-		A04F65D018CA2D6A008A5637 /* device-luminosity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-luminosity@2x.png"; path = "Images/device-luminosity@2x.png"; sourceTree = "<group>"; };
-		A04F65D118CA2D6A008A5637 /* device-media@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-media@2x.png"; path = "Images/device-media@2x.png"; sourceTree = "<group>"; };
-		A04F65D218CA2D6A008A5637 /* device-meter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-meter@2x.png"; path = "Images/device-meter@2x.png"; sourceTree = "<group>"; };
-		A04F65D318CA2D6A008A5637 /* device-motion@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-motion@2x.png"; path = "Images/device-motion@2x.png"; sourceTree = "<group>"; };
-		A04F65D418CA2D6A008A5637 /* device-smoke@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-smoke@2x.png"; path = "Images/device-smoke@2x.png"; sourceTree = "<group>"; };
-		A04F65D518CA2D6A008A5637 /* device-switch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-switch@2x.png"; path = "Images/device-switch@2x.png"; sourceTree = "<group>"; };
-		A04F65D618CA2D6A008A5637 /* device-temperature@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-temperature@2x.png"; path = "Images/device-temperature@2x.png"; sourceTree = "<group>"; };
-		A04F65D718CA2D6A008A5637 /* device-thermostat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-thermostat@2x.png"; path = "Images/device-thermostat@2x.png"; sourceTree = "<group>"; };
-		A04F65D818CA2D6A008A5637 /* device-water@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-water@2x.png"; path = "Images/device-water@2x.png"; sourceTree = "<group>"; };
-		A04F65D918CA2D6A008A5637 /* device-window@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-window@2x.png"; path = "Images/device-window@2x.png"; sourceTree = "<group>"; };
-		A04F65DA18CA2D6A008A5637 /* notification-battery-critical@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "notification-battery-critical@2x.png"; path = "Images/notification-battery-critical@2x.png"; sourceTree = "<group>"; };
-		A04F65DB18CA2D6A008A5637 /* notification-battery-low@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "notification-battery-low@2x.png"; path = "Images/notification-battery-low@2x.png"; sourceTree = "<group>"; };
-		A04F65DC18CA2D6A008A5637 /* notification-connection@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "notification-connection@2x.png"; path = "Images/notification-connection@2x.png"; sourceTree = "<group>"; };
-		A04F65DD18CA2D6A008A5637 /* refreshing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refreshing.png; path = Images/refreshing.png; sourceTree = "<group>"; };
-		A04F65DE18CA2D6A008A5637 /* wrong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wrong.png; path = Images/wrong.png; sourceTree = "<group>"; };
 		A0565325189259F600103D65 /* ZWayNewProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWayNewProfileViewController.h; sourceTree = "<group>"; };
 		A0565326189259F600103D65 /* ZWayNewProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWayNewProfileViewController.m; sourceTree = "<group>"; };
 		A0581DC618891371004E4309 /* ZWDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWDataHandler.h; sourceTree = "<group>"; };
@@ -307,8 +266,35 @@
 		A085F5351886C5F00061E721 /* ZWayDashboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWayDashboardViewController.m; sourceTree = "<group>"; };
 		A085F53B1886C5F00061E721 /* ZWayWidgetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWayWidgetViewController.h; sourceTree = "<group>"; };
 		A085F53C1886C5F00061E721 /* ZWayWidgetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWayWidgetViewController.m; sourceTree = "<group>"; };
-		A085F5471886C5F00061E721 /* ZWayJSONTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZWayJSONTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A085F5481886C5F00061E721 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		A089EF7518C9C9020016293C /* wrong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wrong.png; path = Images/wrong.png; sourceTree = "<group>"; };
+		A089EF7718C9C9700016293C /* device-blinds@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-blinds@2x.png"; path = "Images/device-blinds@2x.png"; sourceTree = "<group>"; };
+		A089EF7818C9C9700016293C /* device-co@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-co@2x.png"; path = "Images/device-co@2x.png"; sourceTree = "<group>"; };
+		A089EF7918C9C9700016293C /* device-cooling@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-cooling@2x.png"; path = "Images/device-cooling@2x.png"; sourceTree = "<group>"; };
+		A089EF7A18C9C9700016293C /* device-door@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-door@2x.png"; path = "Images/device-door@2x.png"; sourceTree = "<group>"; };
+		A089EF7B18C9C9700016293C /* device-energy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-energy@2x.png"; path = "Images/device-energy@2x.png"; sourceTree = "<group>"; };
+		A089EF7C18C9C9700016293C /* device-fan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-fan@2x.png"; path = "Images/device-fan@2x.png"; sourceTree = "<group>"; };
+		A089EF7D18C9C9700016293C /* device-flood@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-flood@2x.png"; path = "Images/device-flood@2x.png"; sourceTree = "<group>"; };
+		A089EF7E18C9C9700016293C /* device-gas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-gas@2x.png"; path = "Images/device-gas@2x.png"; sourceTree = "<group>"; };
+		A089EF7F18C9C9700016293C /* device-heating@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-heating@2x.png"; path = "Images/device-heating@2x.png"; sourceTree = "<group>"; };
+		A089EF8018C9C9700016293C /* device-humidity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-humidity@2x.png"; path = "Images/device-humidity@2x.png"; sourceTree = "<group>"; };
+		A089EF8118C9C9700016293C /* device-light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-light@2x.png"; path = "Images/device-light@2x.png"; sourceTree = "<group>"; };
+		A089EF8218C9C9700016293C /* device-luminosity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-luminosity@2x.png"; path = "Images/device-luminosity@2x.png"; sourceTree = "<group>"; };
+		A089EF8318C9C9700016293C /* device-media@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-media@2x.png"; path = "Images/device-media@2x.png"; sourceTree = "<group>"; };
+		A089EF8418C9C9700016293C /* device-meter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-meter@2x.png"; path = "Images/device-meter@2x.png"; sourceTree = "<group>"; };
+		A089EF8518C9C9700016293C /* device-motion@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-motion@2x.png"; path = "Images/device-motion@2x.png"; sourceTree = "<group>"; };
+		A089EF8618C9C9700016293C /* device-smoke@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-smoke@2x.png"; path = "Images/device-smoke@2x.png"; sourceTree = "<group>"; };
+		A089EF8718C9C9700016293C /* device-switch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-switch@2x.png"; path = "Images/device-switch@2x.png"; sourceTree = "<group>"; };
+		A089EF8818C9C9700016293C /* device-temperature@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-temperature@2x.png"; path = "Images/device-temperature@2x.png"; sourceTree = "<group>"; };
+		A089EF8918C9C9700016293C /* device-thermostat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-thermostat@2x.png"; path = "Images/device-thermostat@2x.png"; sourceTree = "<group>"; };
+		A089EF8A18C9C9700016293C /* device-water@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-water@2x.png"; path = "Images/device-water@2x.png"; sourceTree = "<group>"; };
+		A089EF8B18C9C9700016293C /* device-window@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "device-window@2x.png"; path = "Images/device-window@2x.png"; sourceTree = "<group>"; };
+		A089EF8C18C9C9700016293C /* notification-battery-critical@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "notification-battery-critical@2x.png"; path = "Images/notification-battery-critical@2x.png"; sourceTree = "<group>"; };
+		A089EF8D18C9C9700016293C /* notification-battery-low@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "notification-battery-low@2x.png"; path = "Images/notification-battery-low@2x.png"; sourceTree = "<group>"; };
+		A089EF8E18C9C9700016293C /* notification-connection@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "notification-connection@2x.png"; path = "Images/notification-connection@2x.png"; sourceTree = "<group>"; };
+		A089EFA718C9FF4C0016293C /* arrow-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow-down.png"; path = "Images/arrow-down.png"; sourceTree = "<group>"; };
+		A089EFA818C9FF4C0016293C /* arrow-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow-up.png"; path = "Images/arrow-up.png"; sourceTree = "<group>"; };
+		A089EFA918C9FF4C0016293C /* refreshing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refreshing.png; path = Images/refreshing.png; sourceTree = "<group>"; };
 		A0A284F81897C862004496C8 /* ZWPasswordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZWPasswordCell.xib; sourceTree = "<group>"; };
 		A0A284F91897C862004496C8 /* ZWTextEditCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZWTextEditCell.xib; sourceTree = "<group>"; };
 		A0A284FA1897C862004496C8 /* ZWUrlEditCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZWUrlEditCell.xib; sourceTree = "<group>"; };
@@ -353,16 +339,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A085F5431886C5F00061E721 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A085F5491886C5F00061E721 /* SenTestingKit.framework in Frameworks */,
-				A085F54A1886C5F00061E721 /* UIKit.framework in Frameworks */,
-				A085F54B1886C5F00061E721 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -397,7 +373,7 @@
 			path = SWTableViewCell/PodFiles;
 			sourceTree = "<group>";
 		};
-		A04B162B18A8BF0C00740FD2 /* Options */ = {
+		A04B162B18A8BF0C00740FD2 /* OptionsController */ = {
 			isa = PBXGroup;
 			children = (
 				A0787397188EC97800DAF192 /* ZWayProfilesViewController.h */,
@@ -408,7 +384,7 @@
 				A0A284F91897C862004496C8 /* ZWTextEditCell.xib */,
 				A0A284FA1897C862004496C8 /* ZWUrlEditCell.xib */,
 			);
-			name = Options;
+			name = OptionsController;
 			sourceTree = "<group>";
 		};
 		A04EAAEE18C7161F00D22715 /* Framework */ = {
@@ -468,34 +444,34 @@
 		A0581DE3188974D4004E4309 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				A04F65C318CA2D6A008A5637 /* arrow-down.png */,
-				A04F65C418CA2D6A008A5637 /* arrow-up.png */,
-				A04F65C518CA2D6A008A5637 /* device-blinds@2x.png */,
-				A04F65C618CA2D6A008A5637 /* device-co@2x.png */,
-				A04F65C718CA2D6A008A5637 /* device-cooling@2x.png */,
-				A04F65C818CA2D6A008A5637 /* device-door@2x.png */,
-				A04F65C918CA2D6A008A5637 /* device-energy@2x.png */,
-				A04F65CA18CA2D6A008A5637 /* device-fan@2x.png */,
-				A04F65CB18CA2D6A008A5637 /* device-flood@2x.png */,
-				A04F65CC18CA2D6A008A5637 /* device-gas@2x.png */,
-				A04F65CD18CA2D6A008A5637 /* device-heating@2x.png */,
-				A04F65CE18CA2D6A008A5637 /* device-humidity@2x.png */,
-				A04F65CF18CA2D6A008A5637 /* device-light@2x.png */,
-				A04F65D018CA2D6A008A5637 /* device-luminosity@2x.png */,
-				A04F65D118CA2D6A008A5637 /* device-media@2x.png */,
-				A04F65D218CA2D6A008A5637 /* device-meter@2x.png */,
-				A04F65D318CA2D6A008A5637 /* device-motion@2x.png */,
-				A04F65D418CA2D6A008A5637 /* device-smoke@2x.png */,
-				A04F65D518CA2D6A008A5637 /* device-switch@2x.png */,
-				A04F65D618CA2D6A008A5637 /* device-temperature@2x.png */,
-				A04F65D718CA2D6A008A5637 /* device-thermostat@2x.png */,
-				A04F65D818CA2D6A008A5637 /* device-water@2x.png */,
-				A04F65D918CA2D6A008A5637 /* device-window@2x.png */,
-				A04F65DA18CA2D6A008A5637 /* notification-battery-critical@2x.png */,
-				A04F65DB18CA2D6A008A5637 /* notification-battery-low@2x.png */,
-				A04F65DC18CA2D6A008A5637 /* notification-connection@2x.png */,
-				A04F65DD18CA2D6A008A5637 /* refreshing.png */,
-				A04F65DE18CA2D6A008A5637 /* wrong.png */,
+				A089EFA718C9FF4C0016293C /* arrow-down.png */,
+				A089EFA818C9FF4C0016293C /* arrow-up.png */,
+				A089EFA918C9FF4C0016293C /* refreshing.png */,
+				A089EF7718C9C9700016293C /* device-blinds@2x.png */,
+				A089EF7818C9C9700016293C /* device-co@2x.png */,
+				A089EF7918C9C9700016293C /* device-cooling@2x.png */,
+				A089EF7A18C9C9700016293C /* device-door@2x.png */,
+				A089EF7B18C9C9700016293C /* device-energy@2x.png */,
+				A089EF7C18C9C9700016293C /* device-fan@2x.png */,
+				A089EF7D18C9C9700016293C /* device-flood@2x.png */,
+				A089EF7E18C9C9700016293C /* device-gas@2x.png */,
+				A089EF7F18C9C9700016293C /* device-heating@2x.png */,
+				A089EF8018C9C9700016293C /* device-humidity@2x.png */,
+				A089EF8118C9C9700016293C /* device-light@2x.png */,
+				A089EF8218C9C9700016293C /* device-luminosity@2x.png */,
+				A089EF8318C9C9700016293C /* device-media@2x.png */,
+				A089EF8418C9C9700016293C /* device-meter@2x.png */,
+				A089EF8518C9C9700016293C /* device-motion@2x.png */,
+				A089EF8618C9C9700016293C /* device-smoke@2x.png */,
+				A089EF8718C9C9700016293C /* device-switch@2x.png */,
+				A089EF8818C9C9700016293C /* device-temperature@2x.png */,
+				A089EF8918C9C9700016293C /* device-thermostat@2x.png */,
+				A089EF8A18C9C9700016293C /* device-water@2x.png */,
+				A089EF8B18C9C9700016293C /* device-window@2x.png */,
+				A089EF8C18C9C9700016293C /* notification-battery-critical@2x.png */,
+				A089EF8D18C9C9700016293C /* notification-battery-low@2x.png */,
+				A089EF8E18C9C9700016293C /* notification-connection@2x.png */,
+				A089EF7518C9C9020016293C /* wrong.png */,
 				A03D5C6E1897F1DC0016356B /* connected-g.png */,
 				A025BC5618ACF90300AF73DC /* battery-critical-focus.png */,
 				A025BC5718ACF90300AF73DC /* battery-critical.png */,
@@ -589,7 +565,6 @@
 			isa = PBXGroup;
 			children = (
 				A085F5131886C5F00061E721 /* ZWayJSON.app */,
-				A085F5471886C5F00061E721 /* ZWayJSONTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -664,7 +639,7 @@
 				A056532C1892654300103D65 /* DashboardController */,
 				A056532B1892652D00103D65 /* NotificationController */,
 				A0565329189264B400103D65 /* WidgetController */,
-				A04B162B18A8BF0C00740FD2 /* Options */,
+				A04B162B18A8BF0C00740FD2 /* OptionsController */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -689,25 +664,6 @@
 			productReference = A085F5131886C5F00061E721 /* ZWayJSON.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A085F5461886C5F00061E721 /* ZWayJSONTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A085F55C1886C5F00061E721 /* Build configuration list for PBXNativeTarget "ZWayJSONTests" */;
-			buildPhases = (
-				A085F5421886C5F00061E721 /* Sources */,
-				A085F5431886C5F00061E721 /* Frameworks */,
-				A085F5441886C5F00061E721 /* Resources */,
-				A085F5451886C5F00061E721 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A085F54D1886C5F00061E721 /* PBXTargetDependency */,
-			);
-			name = ZWayJSONTests;
-			productName = ZWayJSONTests;
-			productReference = A085F5471886C5F00061E721 /* ZWayJSONTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -715,6 +671,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = ZWay;
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Lucas von Hacht";
 			};
@@ -733,7 +690,6 @@
 			projectRoot = "";
 			targets = (
 				A085F5121886C5F00061E721 /* ZWayJSON */,
-				A085F5461886C5F00061E721 /* ZWayJSONTests */,
 			);
 		};
 /* End PBXProject section */
@@ -809,61 +765,38 @@
 				A019A93918C491D7008E420B /* Default@2x.png in Resources */,
 				A04EAAF318C7161F00D22715 /* AcousticModelEnglish.bundle in Resources */,
 				A04EAAF418C7161F00D22715 /* AcousticModelSpanish.bundle in Resources */,
-				A04F65DF18CA2D6A008A5637 /* arrow-down.png in Resources */,
-				A04F65E018CA2D6A008A5637 /* arrow-up.png in Resources */,
-				A04F65E118CA2D6A008A5637 /* device-blinds@2x.png in Resources */,
-				A04F65E218CA2D6A008A5637 /* device-co@2x.png in Resources */,
-				A04F65E318CA2D6A008A5637 /* device-cooling@2x.png in Resources */,
-				A04F65E418CA2D6A008A5637 /* device-door@2x.png in Resources */,
-				A04F65E518CA2D6A008A5637 /* device-energy@2x.png in Resources */,
-				A04F65E618CA2D6A008A5637 /* device-fan@2x.png in Resources */,
-				A04F65E718CA2D6A008A5637 /* device-flood@2x.png in Resources */,
-				A04F65E818CA2D6A008A5637 /* device-gas@2x.png in Resources */,
-				A04F65E918CA2D6A008A5637 /* device-heating@2x.png in Resources */,
-				A04F65EA18CA2D6A008A5637 /* device-humidity@2x.png in Resources */,
-				A04F65EB18CA2D6A008A5637 /* device-light@2x.png in Resources */,
-				A04F65EC18CA2D6A008A5637 /* device-luminosity@2x.png in Resources */,
-				A04F65ED18CA2D6A008A5637 /* device-media@2x.png in Resources */,
-				A04F65EE18CA2D6A008A5637 /* device-meter@2x.png in Resources */,
-				A04F65EF18CA2D6A008A5637 /* device-motion@2x.png in Resources */,
-				A04F65F018CA2D6A008A5637 /* device-smoke@2x.png in Resources */,
-				A04F65F118CA2D6A008A5637 /* device-switch@2x.png in Resources */,
-				A04F65F218CA2D6A008A5637 /* device-temperature@2x.png in Resources */,
-				A04F65F318CA2D6A008A5637 /* device-thermostat@2x.png in Resources */,
-				A04F65F418CA2D6A008A5637 /* device-water@2x.png in Resources */,
-				A04F65F518CA2D6A008A5637 /* device-window@2x.png in Resources */,
-				A04F65F618CA2D6A008A5637 /* notification-battery-critical@2x.png in Resources */,
-				A04F65F718CA2D6A008A5637 /* notification-battery-low@2x.png in Resources */,
-				A04F65F818CA2D6A008A5637 /* notification-connection@2x.png in Resources */,
-				A04F65F918CA2D6A008A5637 /* refreshing.png in Resources */,
-				A04F65FA18CA2D6A008A5637 /* wrong.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A085F5441886C5F00061E721 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				A089EF7618C9C9020016293C /* wrong.png in Resources */,
+				A089EF8F18C9C9700016293C /* device-blinds@2x.png in Resources */,
+				A089EF9018C9C9700016293C /* device-co@2x.png in Resources */,
+				A089EF9118C9C9700016293C /* device-cooling@2x.png in Resources */,
+				A089EF9218C9C9700016293C /* device-door@2x.png in Resources */,
+				A089EF9318C9C9700016293C /* device-energy@2x.png in Resources */,
+				A089EF9418C9C9700016293C /* device-fan@2x.png in Resources */,
+				A089EF9518C9C9700016293C /* device-flood@2x.png in Resources */,
+				A089EF9618C9C9700016293C /* device-gas@2x.png in Resources */,
+				A089EF9718C9C9700016293C /* device-heating@2x.png in Resources */,
+				A089EF9818C9C9700016293C /* device-humidity@2x.png in Resources */,
+				A089EF9918C9C9700016293C /* device-light@2x.png in Resources */,
+				A089EF9A18C9C9700016293C /* device-luminosity@2x.png in Resources */,
+				A089EF9B18C9C9700016293C /* device-media@2x.png in Resources */,
+				A089EF9C18C9C9700016293C /* device-meter@2x.png in Resources */,
+				A089EF9D18C9C9700016293C /* device-motion@2x.png in Resources */,
+				A089EF9E18C9C9700016293C /* device-smoke@2x.png in Resources */,
+				A089EF9F18C9C9700016293C /* device-switch@2x.png in Resources */,
+				A089EFA018C9C9700016293C /* device-temperature@2x.png in Resources */,
+				A089EFA118C9C9700016293C /* device-thermostat@2x.png in Resources */,
+				A089EFA218C9C9700016293C /* device-water@2x.png in Resources */,
+				A089EFA318C9C9700016293C /* device-window@2x.png in Resources */,
+				A089EFA418C9C9700016293C /* notification-battery-critical@2x.png in Resources */,
+				A089EFA518C9C9700016293C /* notification-battery-low@2x.png in Resources */,
+				A089EFA618C9C9700016293C /* notification-connection@2x.png in Resources */,
+				A089EFAA18C9FF4C0016293C /* arrow-down.png in Resources */,
+				A089EFAB18C9FF4C0016293C /* arrow-up.png in Resources */,
+				A089EFAC18C9FF4C0016293C /* refreshing.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		A085F5451886C5F00061E721 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A085F50F1886C5F00061E721 /* Sources */ = {
@@ -902,22 +835,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A085F5421886C5F00061E721 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A085F54D1886C5F00061E721 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A085F5121886C5F00061E721 /* ZWayJSON */;
-			targetProxy = A085F54C1886C5F00061E721 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A04A6D1518B208E90094CA3C /* Localizable.strings */ = {
@@ -989,7 +907,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1014,7 +932,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1052,40 +970,6 @@
 			};
 			name = Release;
 		};
-		A085F55D1886C5F00061E721 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ZWayJSON.app/ZWayJSON";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ZWayJSON/ZWayJSON-Prefix.pch";
-				INFOPLIST_FILE = "ZWayJSONTests/ZWayJSONTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		A085F55E1886C5F00061E721 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ZWayJSON.app/ZWayJSON";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ZWayJSON/ZWayJSON-Prefix.pch";
-				INFOPLIST_FILE = "ZWayJSONTests/ZWayJSONTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1103,15 +987,6 @@
 			buildConfigurations = (
 				A085F55A1886C5F00061E721 /* Debug */,
 				A085F55B1886C5F00061E721 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A085F55C1886C5F00061E721 /* Build configuration list for PBXNativeTarget "ZWayJSONTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A085F55D1886C5F00061E721 /* Debug */,
-				A085F55E1886C5F00061E721 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

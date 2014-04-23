@@ -54,7 +54,7 @@
 "NoDashboard" = "The dashboard is empty now. You can fill it with frequently used widgets by swiping them left";
 "ConnectionFail" = "Connection Error";
 "FailMessage" = "An issue with the connection occured";
-"CredentialsErorr" = "Authentication Error";
+"CredentialsError" = "Authentication Error";
 "WrongCred" = "Can´t connect with these credentials";
 "Speech" = "Activate Speech";
 

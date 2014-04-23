@@ -48,6 +48,10 @@
 
 - (void)viewDidLoad
 {
+    toolbar.delegate = self;
+    [self.navigationController setToolbarHidden:NO];
+    [self setToolbarItems:[NSArray arrayWithObjects:self.tagsButton, self.typesButton, self.roomsButton, nil] animated:NO];
+    
     currentButton = @"Rooms";
     roomsButton.title = NSLocalizedString(@"Rooms", @"");
     typesButton.title = NSLocalizedString(@"Types", @"");
@@ -66,6 +70,10 @@
     
     speech = [ZWaySpeech new];
     [speech fixCommands];
+}
+
+- (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar {
+    return UIBarPositionTopAttached;
 }
 
 - (void)startListening
@@ -241,12 +249,12 @@
 {
     currentButton = @"Rooms";
     UIColor *color = self.navigationController.navigationBar.tintColor;
-    [roomsButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:color, UITextAttributeTextColor, nil] forState:UIControlStateNormal];
+    [roomsButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:color, NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
     [roomsButton setTintColor:[UIColor whiteColor]];
     [typesButton setTintColor:nil];
-    [typesButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:nil, UITextAttributeTextColor, nil] forState:UIControlStateNormal];
+    [typesButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:nil, NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
     [tagsButton setTintColor:nil];
-    [tagsButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:nil, UITextAttributeTextColor, nil] forState:UIControlStateNormal];
+    [tagsButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:nil, NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
     [tableview reloadData];
 }
 
@@ -254,12 +262,12 @@
 {
     currentButton = @"Types";
     UIColor *color = self.navigationController.navigationBar.tintColor;
-    [typesButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:color, UITextAttributeTextColor, nil] forState:UIControlStateNormal];
+    [typesButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:color, NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
     [typesButton setTintColor:[UIColor whiteColor]];
     [roomsButton setTintColor:nil];
-    [roomsButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:nil, UITextAttributeTextColor, nil] forState:UIControlStateNormal];
+    [roomsButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:nil, NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
     [tagsButton setTintColor:nil];
-    [tagsButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:nil, UITextAttributeTextColor, nil] forState:UIControlStateNormal];
+    [tagsButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:nil, NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
     [tableview reloadData];
 }
 
@@ -267,12 +275,12 @@
 {
     currentButton = @"Tags";
     UIColor *color = self.navigationController.navigationBar.tintColor;
-    [tagsButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:color, UITextAttributeTextColor, nil] forState:UIControlStateNormal];
+    [tagsButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:color, NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
     [tagsButton setTintColor:[UIColor whiteColor]];
     [roomsButton setTintColor:nil];
-    [roomsButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:nil, UITextAttributeTextColor, nil] forState:UIControlStateNormal];
+    [roomsButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:nil, NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
     [typesButton setTintColor:nil];
-    [typesButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:nil, UITextAttributeTextColor, nil] forState:UIControlStateNormal];
+    [typesButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:nil, NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
     [tableview reloadData];
 }
 

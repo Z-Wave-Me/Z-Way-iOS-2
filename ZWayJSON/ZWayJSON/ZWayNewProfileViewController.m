@@ -28,6 +28,8 @@
     
     ZWDataStore *store = ZWDataStore.store;
     
+    self.navigationController.navigationBar.translucent = NO;
+    
     if(![editing isEqualToString:@"YES"])
     {
     NSEntityDescription *profileEntity = [NSEntityDescription entityForName:@"Profile" inManagedObjectContext:store.managedObjectContext];
@@ -55,6 +57,10 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar {
+    return UIBarPositionTopAttached;
 }
 
 // Checks if we have a connection or not
@@ -215,6 +221,7 @@
     [checkButton addTarget:self action:@selector(chkBtnHandler:) forControlEvents:UIControlEventTouchUpInside];
     if([ZWayAppDelegate.sharedDelegate.profile.useSpeech boolValue] == YES)
         [checkButton setSelected:YES];
+    checkButton.hidden = YES;
     
     [checkButton setImage:nil forState:UIControlStateNormal];
     [checkButton setImage:[UIImage imageNamed:@"connected-g.png"] forState:UIControlStateSelected];
@@ -325,6 +332,7 @@
     
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

@@ -54,6 +54,6 @@
 "NoDashboard" = "";
 "ConnectionFail" = "";
 "FailMessage" = "";
-"CredentialsErorr" = "";
+"CredentialsError" = "";
 "WrongCred" = "";
 "Speech" = "";
