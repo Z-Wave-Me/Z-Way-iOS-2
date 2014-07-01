@@ -1,0 +1,76 @@
+/* 
+  Localizable.strings
+  ZWayJSON
+
+  Created by Lucas von Hacht on 2/17/14.
+  Copyright (c) 2014 Lucas von Hacht. All rights reserved.
+*/
+
+"Remove" = "Remove";
+"Notifications" = "Notifications";
+"Dashboard" = "Dashboard";
+"Options" = "Options";
+"Widgets" = "Widgets";
+"NoDevices" = "No devices found";
+"OKMessage" = "Everything is OK";
+"UpdateError" = "There was a problem with the update";
+"ToDash" = "Device moved to dashboard";
+"Done" = "Done";
+"IsPart" = "Device is already part of the dashboard";
+"Red" = "Red";
+"Blue" = "Blue";
+"Orange" = "Orange";
+"Purple" = "Purple";
+"Profiles" = "Profiles";
+"Color" = "Color theme";
+"Default" = "default";
+"NoProfile" = "You should create at least one profile";
+"NoSelection" = "You should select a profile";
+"OK" = "OK";
+"NewProfile" = "New Profile";
+"IndoorServer" = "INDOOR SERVER";
+"RemoteAccess" = "REMOTE ACCESS CREDENTIALS";
+"Store" = "Store data";
+"Name" = "Name";
+"Away" = "away";
+"Home" = "@ home";
+"Login" = "ID";
+"Password" = "Password";
+"DeleteProfile" = "Delete Profile";
+"Stored" = "Your data has been stored";
+"Rooms" = "Rooms";
+"Types" = "Types";
+"Tags" = "Tags";
+"AutoLow" = "Auto Low";
+"OnLow" = "On Low";
+"AutoHigh" = "Auto High";
+"OnHigh" = "On High";
+"Off" = "Off";
+"Heat" = "Heat";
+"Cool" = "Cool";
+"Auto" = "Auto";
+"Resume" = "Resume";
+"FanOnly" = "Fan Only";
+"DryAir" = "DryAir";
+"NoDashboard" = "The dashboard is empty now. You can fill it with frequently used widgets by swiping them left";
+"ConnectionFail" = "Connection Error";
+"CommandFail" = "The command failed";
+"FailMessage" = "An issue with the connection occured";
+"CredentialsError" = "Authentication Error";
+"WrongCred" = "Can´t connect with these credentials";
+"Speech" = "Activate Speech";
+"Language" = "Language";
+"English" = "English";
+"German" = "German";
+"Russian" = "Russian";
+"Chinese" = "Chinese";
+
+"Battery" = "Batteries";
+"MultiSensor" = "Multi sensors";
+"BinarySensor" = "Binary sensors";
+"BinarySwitch" = "Binary switches";
+"MultiSwitch" = "Scalable switches";
+"Doorlock" = "Doorlocks";
+"Thermostat" = "Thermostats";
+"Fan" = "Fans";
+"Meter" = "Meters";

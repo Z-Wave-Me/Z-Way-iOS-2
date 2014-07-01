@@ -1,0 +1,77 @@
+/* 
+  Localizable.strings
+  ZWayJSON
+
+  Created by Lucas von Hacht on 2/17/14.
+  Copyright (c) 2014 Lucas von Hacht. All rights reserved.
+*/
+
+"Remove" = "";
+"Notifications" = "";
+"Dashboard" = "";
+"Options" = "";
+"Widgets" = "";
+"NoDevices" = "";
+"OKMessage" = "";
+"UpdateError" = "";
+"ToDash" = "";
+"Done" = "";
+"IsPart" = "";
+"Red" = "";
+"Blue" = "";
+"Orange" = "";
+"Purple" = "";
+"Options" = "";
+"Profiles" = "";
+"Color" = "";
+"Default" = "";
+"NoProfile" = "";
+"NoSelection" = "";
+"OK" = "";
+"NewProfile" = "";
+"IndoorServer" = "";
+"RemoteAccess" = "";
+"Store" = "";
+"Name" = "";
+"Away" = "";
+"Home" = "";
+"Login" = "";
+"Password" = "";
+"DeleteProfile" = "";
+"Stored" = "";
+"Rooms" = "";
+"Types" = "";
+"Tags" = "";
+"AutoLow" = "";
+"OnLow" = "";
+"AutoHigh" = "";
+"OnHigh" = "";
+"Off" = "";
+"Heat" = "";
+"Cool" = "";
+"Auto" = "";
+"Resume" = "";
+"FanOnly" = "";
+"DryAir" = "";
+"NoDashboard" = "";
+"ConnectionFail" = "";
+"CommandFail" = "";
+"FailMessage" = "";
+"CredentialsError" = "";
+"WrongCred" = "";
+"Speech" = "";
+"Language" = "";
+"English" = "";
+"German" = "";
+"Russian" = "";
+"Chinese" = "";
+
+"Battery" = "";
+"MultiSensor" = "";
+"BinarySensor" = "";
+"BinarySwitch" = "";
+"MultiSwitch" = "";
+"Doorlock" = "";
+"Thermostat" = "";
+"Fan" = "";
+"Meter" = "";

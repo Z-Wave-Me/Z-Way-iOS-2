@@ -1,0 +1,77 @@
+/* 
+  Localizable.strings
+  ZWayJSON
+
+  Created by Lucas von Hacht on 2/17/14.
+  Copyright (c) 2014 Lucas von Hacht. All rights reserved.
+*/
+
+"Remove" = "Löschen";
+"Notifications" = "Benachrichtigungen";
+"Dashboard" = "Dashboard";
+"Options" = "Optionen";
+"Widgets" = "Widgets";
+"NoDevices" = "Keine Geräte gefunden";
+"OKMessage" = "Alles in Ordnung";
+"UpdateError" = "Es gab ein Problem beim Laden der Daten";
+"ToDash" = "Gerät wurde dem Dashboard hinzugefügt";
+"Done" = "Fertig";
+"IsPart" = "Das Gerät ist schon Teil des Dashboards";
+"Red" = "Rot";
+"Blue" = "Blau";
+"Orange" = "Orange";
+"Purple" = "Lila";
+"Options" = "Optionen";
+"Profiles" = "Profile";
+"Color" = "Farb Thema";
+"Default" = "Standart";
+"NoProfile" = "Sie sollten mindestens ein Profil anlegen";
+"NoSelection" = "Sie sollten ein Profil auswählen";
+"OK" = "OK";
+"NewProfile" = "Neues Profil";
+"IndoorServer" = "ZUHAUSE";
+"RemoteAccess" = "REMOTE ACCESS CREDENTIALS";
+"Store" = "Daten speichern";
+"Name" = "Name";
+"Away" = "Außerhalb";
+"Home" = "Zuhause";
+"Login" = "Login";
+"Password" = "Passwort";
+"DeleteProfile" = "Profil löschen";
+"Stored" = "Daten wurden gespeichert";
+"Rooms" = "Räume";
+"Types" = "Typen";
+"Tags" = "Tags";
+"AutoLow" = "Autom. Langsam";
+"OnLow" = "Wenig";
+"AutoHigh" = "Autom. Schnell";
+"OnHigh" = "Schnell";
+"Off" = "Aus";
+"Heat" = "Heizen";
+"Cool" = "Kühlen";
+"Auto" = "Autom.";
+"Resume" = "Stoppen";
+"FanOnly" = "Nur Lüftung";
+"DryAir" = "Trockenluft";
+"NoDashboard" = "Das Dashboard ist im Augenblick leer. Sie können es mit oft benutzten Widgets füllen, indem Sie diese nach links wischen.";
+"CommandFail" = "Der Befehl konnte nicht ausgeführt werden";
+"ConnectionFail" = "Verbindungsfehler";
+"FailMessage" = "Es trat ein Problem mit der Verbindung auf";
+"CredentialsError" = "Authentifizierungsproblem";
+"WrongCred" = "Der Login schlug für diese Logindaten fehl";
+"Speech" = "Spra‚cherkennung";
+"Language" = "Sprache";
+"English" = "Englisch";
+"German" = "Deutsch";
+"Russian" = "Russisch";
+"Chinese" = "Chinesisch";
+
+"Battery" = "Batterien";
+"MultiSensor" = "Multi-Sensoren";
+"BinarySensor" = "Einfache Sensoren";
+"BinarySwitch" = "Einfache Schalter";
+"MultiSwitch" = "Regulierbare Schalter";
+"Doorlock" = "Türschlösser";
+"Thermostat" = "Thermostate";
+"Fan" = "Ventilatoren";
+"Meter" = "Anzeigen";

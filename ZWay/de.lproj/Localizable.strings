@@ -1,0 +1,77 @@
+/* 
+  Localizable.strings
+  ZWayJSON
+
+  Created by Lucas von Hacht on 2/17/14.
+  Copyright (c) 2014 Lucas von Hacht. All rights reserved.
+*/
+
+"Remove" = "Entfernen";
+"Notifications" = "Benachrichtigungen";
+"Dashboard" = "Dashboard";
+"Options" = "Optionen";
+"Widgets" = "Widgets";
+"About" = "About";
+"NoDevices" = "Keine Geräte gefunden";
+"OKMessage" = "Alles in Ordnung";
+"UpdateError" = "Es gab ein problem mit dem Update";
+"ToDash" = "Gerät dem Dashboard hinzugefügt";
+"Done" = "Fertig";
+"IsPart" = "Dashboard enthält das Gerät bereits";
+"Red" = "Rot";
+"Blue" = "Blau";
+"Orange" = "Orange";
+"Purple" = "Violett";
+"Profiles" = "Profile";
+"Color" = "Farbthema";
+"Default" = "Standard";
+"NoProfile" = "Sie sollten wenigstens ein Profil anlegen";
+"NoSelection" = "Sie sollten ein Profil auswählen";
+"OK" = "OK";
+"NewProfile" = "Neues Profil";
+"IndoorServer" = "Lokaler Zugriff";
+"RemoteAccess" = "Fernzugriff";
+"Store" = "Daten speichern";
+"Name" = "Name";
+"Away" = "Unterwegs";
+"Home" = "Zuhause";
+"Login" = "Name";
+"Password" = "Passwort";
+"DeleteProfile" = "Profil löschen";
+"Stored" = "Ihre Daten wurden gespeichert";
+"Rooms" = "Räume";
+"Types" = "Typen";
+"Tags" = "Tags";
+"AutoLow" = "Automatisch niedrig";
+"OnLow" = "Niedrig";
+"AutoHigh" = "Automatisch Hoch";
+"OnHigh" = "Hoch";
+"Off" = "Aus";
+"Heat" = "Heizen";
+"Cool" = "Kühlen";
+"Auto" = "Automat.";
+"Resume" = "Fortfahren";
+"FanOnly" = "Nur Ventilator";
+"DryAir" = "Trockenluft";
+"NoDashboard" = "Das Dashboard ist im Augenblick leer. Sie können es mit Geräten füllen indem sie diese 2 Sekunden lang drücken.";
+"ConnectionFail" = "Verbindungsfehler";
+"CommandFail" = "Der Befehl wurde nicht ausgeführt";
+"FailMessage" = "Es trt ein Problem mit der Verbindung auf";
+"CredentialsError" = "Authentifikationsfehler";
+"WrongCred" = "Ihre Einlogdaten scheinen falsch zu sein";
+"Language" = "Sprache";
+"English" = "Englisch";
+"German" = "Deutsch";
+"Russian" = "Russisch";
+"Chinese" = "Chinesisch";
+
+"Battery" = "Batterien";
+"MultiSensor" = "Multisensoren";
+"BinarySensor" = "Binärsensoren";
+"BinarySwitch" = "Einfache Schalter";
+"MultiSwitch" = "Regulierbare Schalter";
+"Doorlock" = "Türschlösser";
+"Thermostat" = "Thermostate";
+"Fan" = "Ventilatoren";
+"Meter" = "Anzeigen";
+"Scene" = "Szenen";
