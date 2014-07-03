@@ -609,7 +609,6 @@
     return !ZWayAppDelegate.sharedDelegate.settingsLocked;
 }
 
-
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     for(int i=10; i<14; i++)
@@ -631,16 +630,16 @@
             [_profile setValue:text forKey:[self conformToProfile:label.text]];
             
             if(i == 11)
+            {
                 [cellTextField setText:text];
+                if(![text isEqual:oldIP])
+                {
+                    _profile.objects = nil;
+                }
+            }
         }
         else
             [_profile setValue:cellTextField.text forKey:[self conformToProfile:label.text]];
-        
-        if([label.text isEqualToString:NSLocalizedString(@"Home", @"")])
-        {
-            if(![text isEqual:oldIP])
-                _profile.objects = nil;
-        }
     }
 }
 

@@ -35,7 +35,7 @@
 "Name" = "Name";
 "Away" = "Unterwegs";
 "Home" = "Zuhause";
-"Login" = "Name";
+"Login" = "Login";
 "Password" = "Passwort";
 "DeleteProfile" = "Profil löschen";
 "Stored" = "Ihre Daten wurden gespeichert";
