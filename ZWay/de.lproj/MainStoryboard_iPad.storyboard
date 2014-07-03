@@ -16,13 +16,13 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="The dashboard is empty now. You can fill it with frequently used widgets by swiping them left. " textAlignment="center" lineBreakMode="clip" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="768" translatesAutoresizingMaskIntoConstraints="NO" id="zZh-bM-UNK">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="The dashboard is empty now. You can fill it with frequently used widgets by swiping them left. " textAlignment="center" lineBreakMode="clip" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="768" translatesAutoresizingMaskIntoConstraints="NO" id="zZh-bM-UNK">
                                 <rect key="frame" x="0.0" y="123" width="768" height="172"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="khX-rs-IMQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="khX-rs-IMQ">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -32,6 +32,16 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="khX-rs-IMQ" firstAttribute="top" secondItem="16" secondAttribute="top" id="3td-89-xUj"/>
+                            <constraint firstItem="xbK-71-rvp" firstAttribute="top" secondItem="zZh-bM-UNK" secondAttribute="bottom" constant="616" id="L5u-Vv-QEQ"/>
+                            <constraint firstItem="khX-rs-IMQ" firstAttribute="leading" secondItem="16" secondAttribute="leading" id="SBq-df-esf"/>
+                            <constraint firstAttribute="trailing" secondItem="khX-rs-IMQ" secondAttribute="trailing" id="brr-Go-FMu"/>
+                            <constraint firstItem="zZh-bM-UNK" firstAttribute="top" secondItem="SfS-Xb-kUd" secondAttribute="bottom" constant="123" id="dcQ-gG-gtT"/>
+                            <constraint firstAttribute="bottom" secondItem="khX-rs-IMQ" secondAttribute="bottom" id="ezY-Cc-UqP"/>
+                            <constraint firstItem="khX-rs-IMQ" firstAttribute="leading" secondItem="zZh-bM-UNK" secondAttribute="leading" id="kiU-al-1UE"/>
+                            <constraint firstItem="khX-rs-IMQ" firstAttribute="trailing" secondItem="zZh-bM-UNK" secondAttribute="trailing" id="pGR-pF-Ifg"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Dashboard" id="NsS-Ip-axy"/>
@@ -56,7 +66,7 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pom-jM-hHY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pom-jM-hHY">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,6 +77,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="pom-jM-hHY" secondAttribute="trailing" id="A3t-3z-LnJ"/>
+                            <constraint firstItem="pom-jM-hHY" firstAttribute="leading" secondItem="fHt-pX-Jc7" secondAttribute="leading" id="G04-h0-hdc"/>
+                            <constraint firstItem="pom-jM-hHY" firstAttribute="top" secondItem="fHt-pX-Jc7" secondAttribute="top" id="i8G-Rp-QLl"/>
+                            <constraint firstAttribute="bottom" secondItem="pom-jM-hHY" secondAttribute="bottom" id="vwx-FG-fr0"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="7Bd-5d-M7f"/>
@@ -92,7 +108,7 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" editable="NO" text="About Section" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdD-0J-3Kn">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="About Section" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdD-0J-3Kn">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -107,6 +123,12 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qdD-0J-3Kn" firstAttribute="leading" secondItem="mT9-zd-WG5" secondAttribute="leading" id="G7Y-Vo-Nju"/>
+                            <constraint firstItem="qdD-0J-3Kn" firstAttribute="top" secondItem="mT9-zd-WG5" secondAttribute="top" id="cCA-Mm-zy1"/>
+                            <constraint firstAttribute="bottom" secondItem="qdD-0J-3Kn" secondAttribute="bottom" id="yM7-ev-kJJ"/>
+                            <constraint firstAttribute="trailing" secondItem="qdD-0J-3Kn" secondAttribute="trailing" id="zx8-af-LkW"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="AI8-VT-q3W"/>
@@ -176,13 +198,13 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Everything is OK" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsO-Vo-pqX">
-                                <rect key="frame" x="283" y="403" width="201" height="105"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Everything is OK" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsO-Vo-pqX">
+                                <rect key="frame" x="319" y="445" width="128" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Iav-uy-RMb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Iav-uy-RMb">
                                 <rect key="frame" x="-1" y="0.0" width="768" height="911"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -193,16 +215,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGb-NK-GRc">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGb-NK-GRc">
                                                     <rect key="frame" x="67" y="11" width="239" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="239" id="I7w-WY-W4L"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YRc-8N-GKG">
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YRc-8N-GKG">
                                                     <rect key="frame" x="7" y="5" width="52" height="33"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="52" id="dOC-j4-Q1f"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="YRc-8N-GKG" firstAttribute="top" secondItem="9Yc-N8-NbW" secondAttribute="top" constant="5" id="XVs-hZ-e1W"/>
+                                                <constraint firstItem="YRc-8N-GKG" firstAttribute="leading" secondItem="9Yc-N8-NbW" secondAttribute="leading" constant="7" id="Zmw-Do-DLB"/>
+                                                <constraint firstItem="YRc-8N-GKG" firstAttribute="centerY" secondItem="eGb-NK-GRc" secondAttribute="centerY" id="kmh-hP-Alu"/>
+                                                <constraint firstItem="eGb-NK-GRc" firstAttribute="centerY" secondItem="9Yc-N8-NbW" secondAttribute="centerY" id="mrG-vV-0ZW"/>
+                                                <constraint firstItem="eGb-NK-GRc" firstAttribute="leading" secondItem="YRc-8N-GKG" secondAttribute="trailing" constant="8" symbolic="YES" id="pib-RN-sFz"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -213,6 +248,14 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Iav-uy-RMb" firstAttribute="centerX" secondItem="hsO-Vo-pqX" secondAttribute="centerX" id="2Pc-TC-eNt"/>
+                            <constraint firstItem="Iav-uy-RMb" firstAttribute="top" secondItem="tzK-4Z-gCo" secondAttribute="top" id="5eD-SN-DlF"/>
+                            <constraint firstAttribute="bottom" secondItem="Iav-uy-RMb" secondAttribute="bottom" id="5oF-Fi-0Lm"/>
+                            <constraint firstItem="Iav-uy-RMb" firstAttribute="centerY" secondItem="hsO-Vo-pqX" secondAttribute="centerY" id="cKX-wA-L2A"/>
+                            <constraint firstItem="Iav-uy-RMb" firstAttribute="leading" secondItem="tzK-4Z-gCo" secondAttribute="leading" constant="-1" id="chl-ej-cr5"/>
+                            <constraint firstAttribute="trailing" secondItem="Iav-uy-RMb" secondAttribute="trailing" constant="1" id="fxV-pa-GFq"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="v6f-iC-uDU"/>
@@ -237,13 +280,13 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="There is no device in this section" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kF-ms-MKJ">
-                                <rect key="frame" x="20" y="103" width="728" height="216"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="There is no device in this section" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kF-ms-MKJ">
+                                <rect key="frame" x="259" y="103" width="251" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" horizontalHuggingPriority="1000" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jN3-N9-upk">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="jN3-N9-upk">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
@@ -264,8 +307,8 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="YGW-rI-UzL">
-                                <rect key="frame" x="0.0" y="-69" width="768" height="980"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="YGW-rI-UzL">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="gTd-4C-pww" style="IBUITableViewCellStyleDefault" id="Mqk-Py-i2a">
@@ -292,6 +335,17 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YGW-rI-UzL" firstAttribute="top" secondItem="17" secondAttribute="top" id="8ih-Rf-Med"/>
+                            <constraint firstItem="3kF-ms-MKJ" firstAttribute="top" secondItem="jN3-N9-upk" secondAttribute="bottom" constant="59" id="G2y-va-BQS"/>
+                            <constraint firstItem="YGW-rI-UzL" firstAttribute="centerX" secondItem="3kF-ms-MKJ" secondAttribute="centerX" id="RbI-ow-oAG"/>
+                            <constraint firstItem="YGW-rI-UzL" firstAttribute="leading" secondItem="17" secondAttribute="leading" id="bRD-0q-bhB"/>
+                            <constraint firstItem="YGW-rI-UzL" firstAttribute="leading" secondItem="jN3-N9-upk" secondAttribute="leading" id="lp0-UE-2wX"/>
+                            <constraint firstAttribute="trailing" secondItem="YGW-rI-UzL" secondAttribute="trailing" id="nJ7-iR-7u1"/>
+                            <constraint firstItem="jN3-N9-upk" firstAttribute="top" secondItem="17" secondAttribute="top" id="o8j-mV-RFa"/>
+                            <constraint firstItem="YGW-rI-UzL" firstAttribute="trailing" secondItem="jN3-N9-upk" secondAttribute="trailing" id="pIy-o7-4Np"/>
+                            <constraint firstAttribute="bottom" secondItem="YGW-rI-UzL" secondAttribute="bottom" id="saX-dL-bA0"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Widgets" id="rS8-w0-7uq"/>
@@ -322,13 +376,16 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="There is no device in this section" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAO-Th-xTf">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="There is no device in this section" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAO-Th-xTf">
                                 <rect key="frame" x="251" y="149" width="266" height="116"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="266" id="6a4-zY-ItQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JFO-id-OFi">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JFO-id-OFi">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -338,6 +395,15 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kqK-M7-vyx" firstAttribute="top" secondItem="mAO-Th-xTf" secondAttribute="bottom" constant="646" id="BqB-Nd-THy"/>
+                            <constraint firstItem="JFO-id-OFi" firstAttribute="leading" secondItem="NZc-2r-t1W" secondAttribute="leading" id="OZM-M4-cIS"/>
+                            <constraint firstAttribute="trailing" secondItem="JFO-id-OFi" secondAttribute="trailing" id="YzU-TK-V0A"/>
+                            <constraint firstItem="mAO-Th-xTf" firstAttribute="top" secondItem="H1p-Bx-9UZ" secondAttribute="bottom" constant="149" id="egd-hH-DP1"/>
+                            <constraint firstItem="JFO-id-OFi" firstAttribute="centerX" secondItem="mAO-Th-xTf" secondAttribute="centerX" id="hio-CG-WGb"/>
+                            <constraint firstItem="JFO-id-OFi" firstAttribute="top" secondItem="NZc-2r-t1W" secondAttribute="top" id="oQF-jQ-mZn"/>
+                            <constraint firstAttribute="bottom" secondItem="JFO-id-OFi" secondAttribute="bottom" id="xxy-xG-X3q"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="V4c-TF-l3w"/>
@@ -375,7 +441,7 @@
         <scene sceneID="Xm0-zk-g2p">
             <objects>
                 <navigationController id="fYx-6O-i5n" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Widgets" image="arrow-up.png" id="6"/>
+                    <tabBarItem key="tabBarItem" title="Widgets" image="Widgets.png" id="6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fVO-en-zNl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -394,7 +460,7 @@
         <scene sceneID="5rz-bG-e6c">
             <objects>
                 <navigationController id="xZi-1A-p7I" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Dashboard" image="arrow-down.png" id="7"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="Dashboard.png" id="7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JNH-fp-FuL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -413,7 +479,7 @@
         <scene sceneID="y40-UV-Z6A">
             <objects>
                 <navigationController id="Kyr-iH-6tr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Notifications" image="arrow-down.png" id="4cx-k1-jK4"/>
+                    <tabBarItem key="tabBarItem" title="Notifications" image="Notifications.png" id="4cx-k1-jK4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GRo-Jc-LGh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -438,7 +504,7 @@
         <scene sceneID="tcg-bb-2Is">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="shd-PZ-wSG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Options" id="oj8-mp-kxR"/>
+                    <tabBarItem key="tabBarItem" title="Options" image="Options.png" id="oj8-mp-kxR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VCA-WQ-Zlw">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
@@ -455,8 +521,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow-down.png" width="16" height="16"/>
-        <image name="arrow-up.png" width="16" height="16"/>
+        <image name="Dashboard.png" width="40" height="31"/>
+        <image name="Notifications.png" width="49" height="42"/>
+        <image name="Options.png" width="40" height="30"/>
+        <image name="Widgets.png" width="40" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

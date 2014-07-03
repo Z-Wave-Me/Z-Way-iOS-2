@@ -7,42 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A03BA7FF19617EB40096E45E /* ZWayOptionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = A03BA7FE19617EB40096E45E /* ZWayOptionsController.m */; };
-		A03BA802196180A70096E45E /* ZWayAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = A03BA801196180A70096E45E /* ZWayAboutController.m */; };
 		A03BA80E196199B00096E45E /* greenDot.png in Resources */ = {isa = PBXBuildFile; fileRef = A03BA80C196199B00096E45E /* greenDot.png */; };
 		A03BA80F196199B00096E45E /* redDot.png in Resources */ = {isa = PBXBuildFile; fileRef = A03BA80D196199B00096E45E /* redDot.png */; };
-		A042F0B91962936600825387 /* ZWayAuthentification.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0B81962936600825387 /* ZWayAuthentification.m */; };
+		A03E191419654EC3008416DB /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A03E191319654EC3008416DB /* NotificationCell.xib */; };
+		A03E191619655110008416DB /* Notifications.png in Resources */ = {isa = PBXBuildFile; fileRef = A03E191519655110008416DB /* Notifications.png */; };
+		A03E191919655401008416DB /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A03E191719655401008416DB /* Model.xcdatamodeld */; };
+		A03E191B196562A8008416DB /* ZWDeviceItemScene.xib in Resources */ = {isa = PBXBuildFile; fileRef = A03E191A196562A8008416DB /* ZWDeviceItemScene.xib */; };
+		A03E191D1965632E008416DB /* toggleButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A03E191C1965632E008416DB /* toggleButton.png */; };
+		A03E192019656384008416DB /* ZWDeviceItemScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A03E191F19656384008416DB /* ZWDeviceItemScene.m */; };
+		A03E1922196572D9008416DB /* scene.png in Resources */ = {isa = PBXBuildFile; fileRef = A03E1921196572D9008416DB /* scene.png */; };
+		A042F0BB1962ED8900825387 /* ZWayDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0BA1962ED8900825387 /* ZWayDashboardViewController.m */; };
+		A042F0C11962EDC100825387 /* ZWayRoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0BE1962EDC100825387 /* ZWayRoomsViewController.m */; };
+		A042F0C21962EDC100825387 /* ZWayWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0C01962EDC100825387 /* ZWayWidgetViewController.m */; };
+		A042F0C51962EDDC00825387 /* ZWayNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0C41962EDDC00825387 /* ZWayNotificationViewController.m */; };
+		A042F0CA1962EDFA00825387 /* ZWayAboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0C71962EDFA00825387 /* ZWayAboutController.m */; };
+		A042F0CB1962EDFA00825387 /* ZWayOptionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0C91962EDFA00825387 /* ZWayOptionsController.m */; };
+		A042F0D31962EE0900825387 /* ZWayNewProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0CD1962EE0900825387 /* ZWayNewProfileViewController.m */; };
+		A042F0D41962EE0900825387 /* ZWayProfilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0CF1962EE0900825387 /* ZWayProfilesViewController.m */; };
+		A042F0D51962EE0900825387 /* ZWPasswordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A042F0D01962EE0900825387 /* ZWPasswordCell.xib */; };
+		A042F0D61962EE0900825387 /* ZWTextEditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A042F0D11962EE0900825387 /* ZWTextEditCell.xib */; };
+		A042F0D71962EE0900825387 /* ZWUrlEditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A042F0D21962EE0900825387 /* ZWUrlEditCell.xib */; };
+		A042F0DC1962EE2A00825387 /* CMProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0D91962EE2A00825387 /* CMProfile.m */; };
+		A042F0DD1962EE2A00825387 /* ZWDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0DB1962EE2A00825387 /* ZWDataStore.m */; };
+		A042F0E71962EE4600825387 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0E01962EE4600825387 /* NSData+Base64.m */; };
+		A042F0E81962EE4600825387 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0E21962EE4600825387 /* Reachability.m */; };
+		A042F0E91962EE4600825387 /* ZWayAuthentification.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0E41962EE4600825387 /* ZWayAuthentification.m */; };
+		A042F0EA1962EE4600825387 /* ZWDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0E61962EE4600825387 /* ZWDataHandler.m */; };
+		A042F1041962EE5D00825387 /* ZWDeviceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0EC1962EE5D00825387 /* ZWDeviceItem.m */; };
+		A042F1051962EE5D00825387 /* ZWDeviceItemBattery.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0EE1962EE5D00825387 /* ZWDeviceItemBattery.m */; };
+		A042F1061962EE5D00825387 /* ZWDeviceItemBattery.xib in Resources */ = {isa = PBXBuildFile; fileRef = A042F0EF1962EE5D00825387 /* ZWDeviceItemBattery.xib */; };
+		A042F1071962EE5D00825387 /* ZWDeviceItemBlinds.xib in Resources */ = {isa = PBXBuildFile; fileRef = A042F0F01962EE5D00825387 /* ZWDeviceItemBlinds.xib */; };
+		A042F1081962EE5D00825387 /* ZWDeviceItemDimmer.xib in Resources */ = {isa = PBXBuildFile; fileRef = A042F0F11962EE5D00825387 /* ZWDeviceItemDimmer.xib */; };
+		A042F1091962EE5D00825387 /* ZWDeviceItemFan.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0F31962EE5D00825387 /* ZWDeviceItemFan.m */; };
+		A042F10A1962EE5D00825387 /* ZWDeviceItemFan.xib in Resources */ = {isa = PBXBuildFile; fileRef = A042F0F41962EE5D00825387 /* ZWDeviceItemFan.xib */; };
+		A042F10E1962EE5D00825387 /* ZWDeviceItemSensorMulti.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0FA1962EE5D00825387 /* ZWDeviceItemSensorMulti.m */; };
+		A042F10F1962EE5D00825387 /* ZWDeviceItemSensorMulti.xib in Resources */ = {isa = PBXBuildFile; fileRef = A042F0FB1962EE5D00825387 /* ZWDeviceItemSensorMulti.xib */; };
+		A042F1101962EE5D00825387 /* ZWDeviceItemSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0FD1962EE5D00825387 /* ZWDeviceItemSwitch.m */; };
+		A042F1111962EE5D00825387 /* ZWDeviceItemSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = A042F0FE1962EE5D00825387 /* ZWDeviceItemSwitch.xib */; };
+		A042F1121962EE5D00825387 /* ZWDeviceItemThermostat.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F1001962EE5D00825387 /* ZWDeviceItemThermostat.m */; };
+		A042F1131962EE5D00825387 /* ZWDeviceItemThermostat.xib in Resources */ = {isa = PBXBuildFile; fileRef = A042F1011962EE5D00825387 /* ZWDeviceItemThermostat.xib */; };
+		A042F1141962EE5D00825387 /* ZWPickerPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F1031962EE5D00825387 /* ZWPickerPopup.m */; };
+		A042F11A1962EE7A00825387 /* ZWayLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F1181962EE7A00825387 /* ZWayLanguage.m */; };
+		A042F11C1962EF0700825387 /* connected-g.png in Resources */ = {isa = PBXBuildFile; fileRef = A042F11B1962EF0700825387 /* connected-g.png */; };
+		A042F1201962EF1B00825387 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F11D1962EF1B00825387 /* main.m */; };
+		A042F1211962EF1B00825387 /* ZWayAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F11F1962EF1B00825387 /* ZWayAppDelegate.m */; };
+		A042F1231962F10300825387 /* ZWDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F1221962F10300825387 /* ZWDevice.m */; };
 		A0459B0B195DBD76005E6EB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085F5181886C5F00061E721 /* Foundation.framework */; };
 		A0459B0C195DBD76005E6EB0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085F51A1886C5F00061E721 /* CoreGraphics.framework */; };
 		A0459B0D195DBD76005E6EB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085F5161886C5F00061E721 /* UIKit.framework */; };
 		A0459B2B195DBD76005E6EB0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0459AF1195DBC7E005E6EB0 /* XCTest.framework */; };
 		A0459B2C195DBD77005E6EB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085F5181886C5F00061E721 /* Foundation.framework */; };
 		A0459B2D195DBD77005E6EB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085F5161886C5F00061E721 /* UIKit.framework */; };
-		A0840BB5195DBE0900FC5FAC /* ZWayDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0459A92195DBA12005E6EB0 /* ZWayDashboardViewController.m */; };
-		A0840BB6195DBE0900FC5FAC /* ZWayRoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0459A9C195DBA12005E6EB0 /* ZWayRoomsViewController.m */; };
-		A0840BB7195DBE0900FC5FAC /* ZWayWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0459A9E195DBA12005E6EB0 /* ZWayWidgetViewController.m */; };
-		A0840BB8195DBE0900FC5FAC /* ZWayNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0459A98195DBA12005E6EB0 /* ZWayNotificationViewController.m */; };
-		A0840BB9195DBE0900FC5FAC /* ZWayNewProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0459A96195DBA12005E6EB0 /* ZWayNewProfileViewController.m */; };
-		A0840BBA195DBE0900FC5FAC /* ZWayProfilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0459A9A195DBA12005E6EB0 /* ZWayProfilesViewController.m */; };
-		A0840BBB195DBE0900FC5FAC /* ZWayLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = A0459A94195DBA12005E6EB0 /* ZWayLanguage.m */; };
+		A046682A196414B900323048 /* BinaryOff.png in Resources */ = {isa = PBXBuildFile; fileRef = A0466825196414B900323048 /* BinaryOff.png */; };
+		A046682B196414B900323048 /* BinaryOn.png in Resources */ = {isa = PBXBuildFile; fileRef = A0466826196414B900323048 /* BinaryOn.png */; };
+		A046682C196414B900323048 /* Dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = A0466827196414B900323048 /* Dashboard.png */; };
+		A046682D196414B900323048 /* Options.png in Resources */ = {isa = PBXBuildFile; fileRef = A0466828196414B900323048 /* Options.png */; };
+		A046682E196414B900323048 /* Widgets.png in Resources */ = {isa = PBXBuildFile; fileRef = A0466829196414B900323048 /* Widgets.png */; };
 		A0840BC2195DBF1D00FC5FAC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A04EAAF818C7164C00D22715 /* AVFoundation.framework */; };
 		A0840BC3195DBF2100FC5FAC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A047569E18B633E9004E1160 /* CFNetwork.framework */; };
 		A0840BC4195DBF2300FC5FAC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A048BC1718A37DF500BF32C7 /* QuartzCore.framework */; };
 		A0840BC5195DBF2600FC5FAC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0A285041897C9B6004496C8 /* SystemConfiguration.framework */; };
 		A0840BC6195DBF2900FC5FAC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0ABBA981897B054002D7FBF /* CoreData.framework */; };
-		A0840BC9195DBF8F00FC5FAC /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = A0459A84195DBA12005E6EB0 /* NSData+Base64.m */; };
-		A0840BCA195DBF8F00FC5FAC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A0459A86195DBA12005E6EB0 /* Reachability.m */; };
-		A0840BCB195DBF8F00FC5FAC /* ZWDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A0459AA0195DBA12005E6EB0 /* ZWDataHandler.m */; };
-		A0840BCC195DBF8F00FC5FAC /* CMProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = A0459A21195DBA12005E6EB0 /* CMProfile.m */; };
-		A0840BCD195DBF8F00FC5FAC /* ZWDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = A0459AA2195DBA12005E6EB0 /* ZWDataStore.m */; };
-		A0840BCE195DBF8F00FC5FAC /* ZWDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = A0459AA4195DBA12005E6EB0 /* ZWDevice.m */; };
-		A0840BCF195DBF8F00FC5FAC /* ZWPickerPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = A0459ABE195DBA12005E6EB0 /* ZWPickerPopup.m */; };
-		A0840BD0195DBF8F00FC5FAC /* ZWDeviceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A0459AA6195DBA12005E6EB0 /* ZWDeviceItem.m */; };
-		A0840BD1195DBF8F00FC5FAC /* ZWDeviceItemBattery.m in Sources */ = {isa = PBXBuildFile; fileRef = A0459AA8195DBA12005E6EB0 /* ZWDeviceItemBattery.m */; };
-		A0840BD2195DBF8F00FC5FAC /* ZWDeviceItemFan.m in Sources */ = {isa = PBXBuildFile; fileRef = A0459AAD195DBA12005E6EB0 /* ZWDeviceItemFan.m */; };
-		A0840BD4195DBF8F00FC5FAC /* ZWDeviceItemSensorMulti.m in Sources */ = {isa = PBXBuildFile; fileRef = A0459AB4195DBA12005E6EB0 /* ZWDeviceItemSensorMulti.m */; };
-		A0840BD5195DBF8F00FC5FAC /* ZWDeviceItemSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = A0459AB7195DBA12005E6EB0 /* ZWDeviceItemSwitch.m */; };
-		A0840BD6195DBF8F00FC5FAC /* ZWDeviceItemThermostat.m in Sources */ = {isa = PBXBuildFile; fileRef = A0459ABA195DBA12005E6EB0 /* ZWDeviceItemThermostat.m */; };
 		A0C2DBC919613CF00031E4BA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0459A23195DBA12005E6EB0 /* InfoPlist.strings */; };
 		A0C2DBCA19613E9C0031E4BA /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0459A29195DBA12005E6EB0 /* MainStoryboard_iPhone.storyboard */; };
 		A0C2DBCB19613E9F0031E4BA /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0459A27195DBA12005E6EB0 /* MainStoryboard_iPad.storyboard */; };
@@ -50,9 +75,6 @@
 		A0C2DBCD19613EB80031E4BA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A2B195DBA12005E6EB0 /* Default-568h@2x.png */; };
 		A0C2DBCE19613EBE0031E4BA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A2C195DBA12005E6EB0 /* Default.png */; };
 		A0C2DBCF19613EBE0031E4BA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A2D195DBA12005E6EB0 /* Default@2x.png */; };
-		A0C2DBD019613EBE0031E4BA /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A31195DBA12005E6EB0 /* first.png */; };
-		A0C2DBD119613EBE0031E4BA /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A32195DBA12005E6EB0 /* first@2x.png */; };
-		A0C2DBD219613EBE0031E4BA /* connected-g.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A22195DBA12005E6EB0 /* connected-g.png */; };
 		A0C2DBD319613EBE0031E4BA /* arrow-down.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A34195DBA12005E6EB0 /* arrow-down.png */; };
 		A0C2DBD419613EBE0031E4BA /* arrow-up.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A35195DBA12005E6EB0 /* arrow-up.png */; };
 		A0C2DBD519613EBE0031E4BA /* battery-critical-focus.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A36195DBA12005E6EB0 /* battery-critical-focus.png */; };
@@ -129,20 +151,6 @@
 		A0C2DC1C19613EBE0031E4BA /* window-focus.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A7D195DBA12005E6EB0 /* window-focus.png */; };
 		A0C2DC1D19613EBE0031E4BA /* window.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A7E195DBA12005E6EB0 /* window.png */; };
 		A0C2DC1E19613EBE0031E4BA /* wrong.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A7F195DBA12005E6EB0 /* wrong.png */; };
-		A0C2DC24196141110031E4BA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0459A81195DBA12005E6EB0 /* Model.xcdatamodeld */; };
-		A0C2DC25196142820031E4BA /* ZWPasswordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0459ABC195DBA12005E6EB0 /* ZWPasswordCell.xib */; };
-		A0C2DC26196142840031E4BA /* ZWTextEditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0459ABF195DBA12005E6EB0 /* ZWTextEditCell.xib */; };
-		A0C2DC27196142860031E4BA /* ZWUrlEditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0459AC0195DBA12005E6EB0 /* ZWUrlEditCell.xib */; };
-		A0C2DC28196142910031E4BA /* ZWDeviceItemBattery.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0459AA9195DBA12005E6EB0 /* ZWDeviceItemBattery.xib */; };
-		A0C2DC291961429C0031E4BA /* ZWDeviceItemBlinds.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0459AAA195DBA12005E6EB0 /* ZWDeviceItemBlinds.xib */; };
-		A0C2DC2A1961429C0031E4BA /* ZWDeviceItemDimmer.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0459AAB195DBA12005E6EB0 /* ZWDeviceItemDimmer.xib */; };
-		A0C2DC2B1961429C0031E4BA /* ZWDeviceItemFan.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0459AAE195DBA12005E6EB0 /* ZWDeviceItemFan.xib */; };
-		A0C2DC2C1961429C0031E4BA /* ZWDeviceItemSensorBinary.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0459AB2195DBA12005E6EB0 /* ZWDeviceItemSensorBinary.xib */; };
-		A0C2DC2D1961429C0031E4BA /* ZWDeviceItemSensorMulti.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0459AB5195DBA12005E6EB0 /* ZWDeviceItemSensorMulti.xib */; };
-		A0C2DC2E1961429C0031E4BA /* ZWDeviceItemSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0459AB8195DBA12005E6EB0 /* ZWDeviceItemSwitch.xib */; };
-		A0C2DC2F1961429C0031E4BA /* ZWDeviceItemThermostat.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0459ABB195DBA12005E6EB0 /* ZWDeviceItemThermostat.xib */; };
-		A0D8EBA6195DC349001FAE67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D8EBA3195DC349001FAE67 /* main.m */; };
-		A0D8EBA7195DC349001FAE67 /* ZWayAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D8EBA5195DC349001FAE67 /* ZWayAppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,17 +164,78 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A03BA7FD19617EB40096E45E /* ZWayOptionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWayOptionsController.h; sourceTree = "<group>"; };
-		A03BA7FE19617EB40096E45E /* ZWayOptionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWayOptionsController.m; sourceTree = "<group>"; };
-		A03BA800196180A70096E45E /* ZWayAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWayAboutController.h; sourceTree = "<group>"; };
-		A03BA801196180A70096E45E /* ZWayAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWayAboutController.m; sourceTree = "<group>"; };
 		A03BA80C196199B00096E45E /* greenDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenDot.png; sourceTree = "<group>"; };
 		A03BA80D196199B00096E45E /* redDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redDot.png; sourceTree = "<group>"; };
-		A042F0B71962936600825387 /* ZWayAuthentification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWayAuthentification.h; sourceTree = "<group>"; };
-		A042F0B81962936600825387 /* ZWayAuthentification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWayAuthentification.m; sourceTree = "<group>"; };
-		A0459A20195DBA12005E6EB0 /* CMProfile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMProfile.h; sourceTree = "<group>"; };
-		A0459A21195DBA12005E6EB0 /* CMProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMProfile.m; sourceTree = "<group>"; };
-		A0459A22195DBA12005E6EB0 /* connected-g.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "connected-g.png"; path = "../connected-g.png"; sourceTree = "<group>"; };
+		A03E191319654EC3008416DB /* NotificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotificationCell.xib; path = Notifications/NotificationCell.xib; sourceTree = "<group>"; };
+		A03E191519655110008416DB /* Notifications.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Notifications.png; sourceTree = "<group>"; };
+		A03E191819655401008416DB /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		A03E191A196562A8008416DB /* ZWDeviceItemScene.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZWDeviceItemScene.xib; sourceTree = "<group>"; };
+		A03E191C1965632E008416DB /* toggleButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toggleButton.png; sourceTree = "<group>"; };
+		A03E191E19656384008416DB /* ZWDeviceItemScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWDeviceItemScene.h; path = "Device Items/ZWDeviceItemScene.h"; sourceTree = "<group>"; };
+		A03E191F19656384008416DB /* ZWDeviceItemScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWDeviceItemScene.m; path = "Device Items/ZWDeviceItemScene.m"; sourceTree = "<group>"; };
+		A03E1921196572D9008416DB /* scene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene.png; sourceTree = "<group>"; };
+		A042F0BA1962ED8900825387 /* ZWayDashboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZWayDashboardViewController.m; path = Dashboard/ZWayDashboardViewController.m; sourceTree = "<group>"; };
+		A042F0BC1962EDAA00825387 /* ZWayDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWayDashboardViewController.h; path = Dashboard/ZWayDashboardViewController.h; sourceTree = "<group>"; };
+		A042F0BD1962EDC100825387 /* ZWayRoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWayRoomsViewController.h; path = Widgets/ZWayRoomsViewController.h; sourceTree = "<group>"; };
+		A042F0BE1962EDC100825387 /* ZWayRoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWayRoomsViewController.m; path = Widgets/ZWayRoomsViewController.m; sourceTree = "<group>"; };
+		A042F0BF1962EDC100825387 /* ZWayWidgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWayWidgetViewController.h; path = Widgets/ZWayWidgetViewController.h; sourceTree = "<group>"; };
+		A042F0C01962EDC100825387 /* ZWayWidgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWayWidgetViewController.m; path = Widgets/ZWayWidgetViewController.m; sourceTree = "<group>"; };
+		A042F0C31962EDDC00825387 /* ZWayNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWayNotificationViewController.h; path = Notifications/ZWayNotificationViewController.h; sourceTree = "<group>"; };
+		A042F0C41962EDDC00825387 /* ZWayNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWayNotificationViewController.m; path = Notifications/ZWayNotificationViewController.m; sourceTree = "<group>"; };
+		A042F0C61962EDFA00825387 /* ZWayAboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWayAboutController.h; path = Options/ZWayAboutController.h; sourceTree = "<group>"; };
+		A042F0C71962EDFA00825387 /* ZWayAboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWayAboutController.m; path = Options/ZWayAboutController.m; sourceTree = "<group>"; };
+		A042F0C81962EDFA00825387 /* ZWayOptionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWayOptionsController.h; path = Options/ZWayOptionsController.h; sourceTree = "<group>"; };
+		A042F0C91962EDFA00825387 /* ZWayOptionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWayOptionsController.m; path = Options/ZWayOptionsController.m; sourceTree = "<group>"; };
+		A042F0CC1962EE0900825387 /* ZWayNewProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWayNewProfileViewController.h; path = Options/Profiles/ZWayNewProfileViewController.h; sourceTree = "<group>"; };
+		A042F0CD1962EE0900825387 /* ZWayNewProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWayNewProfileViewController.m; path = Options/Profiles/ZWayNewProfileViewController.m; sourceTree = "<group>"; };
+		A042F0CE1962EE0900825387 /* ZWayProfilesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWayProfilesViewController.h; path = Options/Profiles/ZWayProfilesViewController.h; sourceTree = "<group>"; };
+		A042F0CF1962EE0900825387 /* ZWayProfilesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWayProfilesViewController.m; path = Options/Profiles/ZWayProfilesViewController.m; sourceTree = "<group>"; };
+		A042F0D01962EE0900825387 /* ZWPasswordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZWPasswordCell.xib; path = Options/Profiles/ZWPasswordCell.xib; sourceTree = "<group>"; };
+		A042F0D11962EE0900825387 /* ZWTextEditCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZWTextEditCell.xib; path = Options/Profiles/ZWTextEditCell.xib; sourceTree = "<group>"; };
+		A042F0D21962EE0900825387 /* ZWUrlEditCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZWUrlEditCell.xib; path = Options/Profiles/ZWUrlEditCell.xib; sourceTree = "<group>"; };
+		A042F0D81962EE2A00825387 /* CMProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMProfile.h; path = "Data Handling/CMProfile.h"; sourceTree = "<group>"; };
+		A042F0D91962EE2A00825387 /* CMProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMProfile.m; path = "Data Handling/CMProfile.m"; sourceTree = "<group>"; };
+		A042F0DA1962EE2A00825387 /* ZWDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWDataStore.h; path = "Data Handling/ZWDataStore.h"; sourceTree = "<group>"; };
+		A042F0DB1962EE2A00825387 /* ZWDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWDataStore.m; path = "Data Handling/ZWDataStore.m"; sourceTree = "<group>"; };
+		A042F0DF1962EE4600825387 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "Data Handling/NSData+Base64.h"; sourceTree = "<group>"; };
+		A042F0E01962EE4600825387 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "Data Handling/NSData+Base64.m"; sourceTree = "<group>"; };
+		A042F0E11962EE4600825387 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = "Data Handling/Reachability.h"; sourceTree = "<group>"; };
+		A042F0E21962EE4600825387 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = "Data Handling/Reachability.m"; sourceTree = "<group>"; };
+		A042F0E31962EE4600825387 /* ZWayAuthentification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWayAuthentification.h; path = "Data Handling/ZWayAuthentification.h"; sourceTree = "<group>"; };
+		A042F0E41962EE4600825387 /* ZWayAuthentification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWayAuthentification.m; path = "Data Handling/ZWayAuthentification.m"; sourceTree = "<group>"; };
+		A042F0E51962EE4600825387 /* ZWDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWDataHandler.h; path = "Data Handling/ZWDataHandler.h"; sourceTree = "<group>"; };
+		A042F0E61962EE4600825387 /* ZWDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWDataHandler.m; path = "Data Handling/ZWDataHandler.m"; sourceTree = "<group>"; };
+		A042F0EB1962EE5D00825387 /* ZWDeviceItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWDeviceItem.h; path = "Device Items/ZWDeviceItem.h"; sourceTree = "<group>"; };
+		A042F0EC1962EE5D00825387 /* ZWDeviceItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWDeviceItem.m; path = "Device Items/ZWDeviceItem.m"; sourceTree = "<group>"; };
+		A042F0ED1962EE5D00825387 /* ZWDeviceItemBattery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWDeviceItemBattery.h; path = "Device Items/ZWDeviceItemBattery.h"; sourceTree = "<group>"; };
+		A042F0EE1962EE5D00825387 /* ZWDeviceItemBattery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWDeviceItemBattery.m; path = "Device Items/ZWDeviceItemBattery.m"; sourceTree = "<group>"; };
+		A042F0EF1962EE5D00825387 /* ZWDeviceItemBattery.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZWDeviceItemBattery.xib; path = "Device Items/ZWDeviceItemBattery.xib"; sourceTree = "<group>"; };
+		A042F0F01962EE5D00825387 /* ZWDeviceItemBlinds.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZWDeviceItemBlinds.xib; path = "Device Items/ZWDeviceItemBlinds.xib"; sourceTree = "<group>"; };
+		A042F0F11962EE5D00825387 /* ZWDeviceItemDimmer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZWDeviceItemDimmer.xib; path = "Device Items/ZWDeviceItemDimmer.xib"; sourceTree = "<group>"; };
+		A042F0F21962EE5D00825387 /* ZWDeviceItemFan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWDeviceItemFan.h; path = "Device Items/ZWDeviceItemFan.h"; sourceTree = "<group>"; };
+		A042F0F31962EE5D00825387 /* ZWDeviceItemFan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWDeviceItemFan.m; path = "Device Items/ZWDeviceItemFan.m"; sourceTree = "<group>"; };
+		A042F0F41962EE5D00825387 /* ZWDeviceItemFan.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZWDeviceItemFan.xib; path = "Device Items/ZWDeviceItemFan.xib"; sourceTree = "<group>"; };
+		A042F0F91962EE5D00825387 /* ZWDeviceItemSensorMulti.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWDeviceItemSensorMulti.h; path = "Device Items/ZWDeviceItemSensorMulti.h"; sourceTree = "<group>"; };
+		A042F0FA1962EE5D00825387 /* ZWDeviceItemSensorMulti.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWDeviceItemSensorMulti.m; path = "Device Items/ZWDeviceItemSensorMulti.m"; sourceTree = "<group>"; };
+		A042F0FB1962EE5D00825387 /* ZWDeviceItemSensorMulti.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZWDeviceItemSensorMulti.xib; path = "Device Items/ZWDeviceItemSensorMulti.xib"; sourceTree = "<group>"; };
+		A042F0FC1962EE5D00825387 /* ZWDeviceItemSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWDeviceItemSwitch.h; path = "Device Items/ZWDeviceItemSwitch.h"; sourceTree = "<group>"; };
+		A042F0FD1962EE5D00825387 /* ZWDeviceItemSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWDeviceItemSwitch.m; path = "Device Items/ZWDeviceItemSwitch.m"; sourceTree = "<group>"; };
+		A042F0FE1962EE5D00825387 /* ZWDeviceItemSwitch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZWDeviceItemSwitch.xib; path = "Device Items/ZWDeviceItemSwitch.xib"; sourceTree = "<group>"; };
+		A042F0FF1962EE5D00825387 /* ZWDeviceItemThermostat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWDeviceItemThermostat.h; path = "Device Items/ZWDeviceItemThermostat.h"; sourceTree = "<group>"; };
+		A042F1001962EE5D00825387 /* ZWDeviceItemThermostat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWDeviceItemThermostat.m; path = "Device Items/ZWDeviceItemThermostat.m"; sourceTree = "<group>"; };
+		A042F1011962EE5D00825387 /* ZWDeviceItemThermostat.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZWDeviceItemThermostat.xib; path = "Device Items/ZWDeviceItemThermostat.xib"; sourceTree = "<group>"; };
+		A042F1021962EE5D00825387 /* ZWPickerPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWPickerPopup.h; path = "Device Items/ZWPickerPopup.h"; sourceTree = "<group>"; };
+		A042F1031962EE5D00825387 /* ZWPickerPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWPickerPopup.m; path = "Device Items/ZWPickerPopup.m"; sourceTree = "<group>"; };
+		A042F1151962EE7A00825387 /* ZWay-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "ZWay-Info.plist"; path = "Localization/ZWay-Info.plist"; sourceTree = "<group>"; };
+		A042F1161962EE7A00825387 /* ZWay-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ZWay-Prefix.pch"; path = "Localization/ZWay-Prefix.pch"; sourceTree = "<group>"; };
+		A042F1171962EE7A00825387 /* ZWayLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWayLanguage.h; path = Localization/ZWayLanguage.h; sourceTree = "<group>"; };
+		A042F1181962EE7A00825387 /* ZWayLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWayLanguage.m; path = Localization/ZWayLanguage.m; sourceTree = "<group>"; };
+		A042F11B1962EF0700825387 /* connected-g.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connected-g.png"; sourceTree = "<group>"; };
+		A042F11D1962EF1B00825387 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Main/main.m; sourceTree = "<group>"; };
+		A042F11E1962EF1B00825387 /* ZWayAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWayAppDelegate.h; path = Main/ZWayAppDelegate.h; sourceTree = "<group>"; };
+		A042F11F1962EF1B00825387 /* ZWayAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWayAppDelegate.m; path = Main/ZWayAppDelegate.m; sourceTree = "<group>"; };
+		A042F1221962F10300825387 /* ZWDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWDevice.m; path = "Data Handling/ZWDevice.m"; sourceTree = "<group>"; };
+		A042F1241962F10F00825387 /* ZWDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWDevice.h; path = "Data Handling/ZWDevice.h"; sourceTree = "<group>"; };
 		A0459A24195DBA12005E6EB0 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0459A26195DBA12005E6EB0 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A0459A28195DBA12005E6EB0 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
@@ -177,8 +246,6 @@
 		A0459A2E195DBA12005E6EB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0459A2F195DBA12005E6EB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		A0459A30195DBA12005E6EB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		A0459A31195DBA12005E6EB0 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = ../first.png; sourceTree = "<group>"; };
-		A0459A32195DBA12005E6EB0 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "first@2x.png"; path = "../first@2x.png"; sourceTree = "<group>"; };
 		A0459A34195DBA12005E6EB0 /* arrow-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-down.png"; sourceTree = "<group>"; };
 		A0459A35195DBA12005E6EB0 /* arrow-up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-up.png"; sourceTree = "<group>"; };
 		A0459A36195DBA12005E6EB0 /* battery-critical-focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "battery-critical-focus.png"; sourceTree = "<group>"; };
@@ -255,66 +322,18 @@
 		A0459A7D195DBA12005E6EB0 /* window-focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "window-focus.png"; sourceTree = "<group>"; };
 		A0459A7E195DBA12005E6EB0 /* window.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = window.png; sourceTree = "<group>"; };
 		A0459A7F195DBA12005E6EB0 /* wrong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wrong.png; sourceTree = "<group>"; };
-		A0459A82195DBA12005E6EB0 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		A0459A83195DBA12005E6EB0 /* NSData+Base64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
-		A0459A84195DBA12005E6EB0 /* NSData+Base64.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
-		A0459A85195DBA12005E6EB0 /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		A0459A86195DBA12005E6EB0 /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		A0459A87195DBA12005E6EB0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0459A88195DBA12005E6EB0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A0459A89195DBA12005E6EB0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		A0459A8A195DBA12005E6EB0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		A0459A8D195DBA12005E6EB0 /* ZWay-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZWay-Info.plist"; sourceTree = "<group>"; };
-		A0459A8E195DBA12005E6EB0 /* ZWay-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZWay-Prefix.pch"; sourceTree = "<group>"; };
-		A0459A91195DBA12005E6EB0 /* ZWayDashboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWayDashboardViewController.h; sourceTree = "<group>"; };
-		A0459A92195DBA12005E6EB0 /* ZWayDashboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWayDashboardViewController.m; sourceTree = "<group>"; };
-		A0459A93195DBA12005E6EB0 /* ZWayLanguage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWayLanguage.h; sourceTree = "<group>"; };
-		A0459A94195DBA12005E6EB0 /* ZWayLanguage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWayLanguage.m; sourceTree = "<group>"; };
-		A0459A95195DBA12005E6EB0 /* ZWayNewProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWayNewProfileViewController.h; sourceTree = "<group>"; };
-		A0459A96195DBA12005E6EB0 /* ZWayNewProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWayNewProfileViewController.m; sourceTree = "<group>"; };
-		A0459A97195DBA12005E6EB0 /* ZWayNotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWayNotificationViewController.h; sourceTree = "<group>"; };
-		A0459A98195DBA12005E6EB0 /* ZWayNotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWayNotificationViewController.m; sourceTree = "<group>"; };
-		A0459A99195DBA12005E6EB0 /* ZWayProfilesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWayProfilesViewController.h; sourceTree = "<group>"; };
-		A0459A9A195DBA12005E6EB0 /* ZWayProfilesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWayProfilesViewController.m; sourceTree = "<group>"; };
-		A0459A9B195DBA12005E6EB0 /* ZWayRoomsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWayRoomsViewController.h; sourceTree = "<group>"; };
-		A0459A9C195DBA12005E6EB0 /* ZWayRoomsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWayRoomsViewController.m; sourceTree = "<group>"; };
-		A0459A9D195DBA12005E6EB0 /* ZWayWidgetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWayWidgetViewController.h; sourceTree = "<group>"; };
-		A0459A9E195DBA12005E6EB0 /* ZWayWidgetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWayWidgetViewController.m; sourceTree = "<group>"; };
-		A0459A9F195DBA12005E6EB0 /* ZWDataHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWDataHandler.h; sourceTree = "<group>"; };
-		A0459AA0195DBA12005E6EB0 /* ZWDataHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWDataHandler.m; sourceTree = "<group>"; };
-		A0459AA1195DBA12005E6EB0 /* ZWDataStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWDataStore.h; sourceTree = "<group>"; };
-		A0459AA2195DBA12005E6EB0 /* ZWDataStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWDataStore.m; sourceTree = "<group>"; };
-		A0459AA3195DBA12005E6EB0 /* ZWDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWDevice.h; sourceTree = "<group>"; };
-		A0459AA4195DBA12005E6EB0 /* ZWDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWDevice.m; sourceTree = "<group>"; };
-		A0459AA5195DBA12005E6EB0 /* ZWDeviceItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWDeviceItem.h; sourceTree = "<group>"; };
-		A0459AA6195DBA12005E6EB0 /* ZWDeviceItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWDeviceItem.m; sourceTree = "<group>"; };
-		A0459AA7195DBA12005E6EB0 /* ZWDeviceItemBattery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWDeviceItemBattery.h; sourceTree = "<group>"; };
-		A0459AA8195DBA12005E6EB0 /* ZWDeviceItemBattery.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWDeviceItemBattery.m; sourceTree = "<group>"; };
-		A0459AA9195DBA12005E6EB0 /* ZWDeviceItemBattery.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWDeviceItemBattery.xib; sourceTree = "<group>"; };
-		A0459AAA195DBA12005E6EB0 /* ZWDeviceItemBlinds.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWDeviceItemBlinds.xib; sourceTree = "<group>"; };
-		A0459AAB195DBA12005E6EB0 /* ZWDeviceItemDimmer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWDeviceItemDimmer.xib; sourceTree = "<group>"; };
-		A0459AAC195DBA12005E6EB0 /* ZWDeviceItemFan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWDeviceItemFan.h; sourceTree = "<group>"; };
-		A0459AAD195DBA12005E6EB0 /* ZWDeviceItemFan.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWDeviceItemFan.m; sourceTree = "<group>"; };
-		A0459AAE195DBA12005E6EB0 /* ZWDeviceItemFan.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWDeviceItemFan.xib; sourceTree = "<group>"; };
-		A0459AB1195DBA12005E6EB0 /* ZWDeviceItemSensorBinary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWDeviceItemSensorBinary.h; sourceTree = "<group>"; };
-		A0459AB2195DBA12005E6EB0 /* ZWDeviceItemSensorBinary.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWDeviceItemSensorBinary.xib; sourceTree = "<group>"; };
-		A0459AB3195DBA12005E6EB0 /* ZWDeviceItemSensorMulti.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWDeviceItemSensorMulti.h; sourceTree = "<group>"; };
-		A0459AB4195DBA12005E6EB0 /* ZWDeviceItemSensorMulti.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWDeviceItemSensorMulti.m; sourceTree = "<group>"; };
-		A0459AB5195DBA12005E6EB0 /* ZWDeviceItemSensorMulti.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWDeviceItemSensorMulti.xib; sourceTree = "<group>"; };
-		A0459AB6195DBA12005E6EB0 /* ZWDeviceItemSwitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWDeviceItemSwitch.h; sourceTree = "<group>"; };
-		A0459AB7195DBA12005E6EB0 /* ZWDeviceItemSwitch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWDeviceItemSwitch.m; sourceTree = "<group>"; };
-		A0459AB8195DBA12005E6EB0 /* ZWDeviceItemSwitch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWDeviceItemSwitch.xib; sourceTree = "<group>"; };
-		A0459AB9195DBA12005E6EB0 /* ZWDeviceItemThermostat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWDeviceItemThermostat.h; sourceTree = "<group>"; };
-		A0459ABA195DBA12005E6EB0 /* ZWDeviceItemThermostat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWDeviceItemThermostat.m; sourceTree = "<group>"; };
-		A0459ABB195DBA12005E6EB0 /* ZWDeviceItemThermostat.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWDeviceItemThermostat.xib; sourceTree = "<group>"; };
-		A0459ABC195DBA12005E6EB0 /* ZWPasswordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWPasswordCell.xib; sourceTree = "<group>"; };
-		A0459ABD195DBA12005E6EB0 /* ZWPickerPopup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWPickerPopup.h; sourceTree = "<group>"; };
-		A0459ABE195DBA12005E6EB0 /* ZWPickerPopup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWPickerPopup.m; sourceTree = "<group>"; };
-		A0459ABF195DBA12005E6EB0 /* ZWTextEditCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWTextEditCell.xib; sourceTree = "<group>"; };
-		A0459AC0195DBA12005E6EB0 /* ZWUrlEditCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZWUrlEditCell.xib; sourceTree = "<group>"; };
 		A0459AF1195DBC7E005E6EB0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A0459B0A195DBD76005E6EB0 /* ZWay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZWay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0459B2A195DBD76005E6EB0 /* ZWayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZWayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0466825196414B900323048 /* BinaryOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BinaryOff.png; sourceTree = "<group>"; };
+		A0466826196414B900323048 /* BinaryOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BinaryOn.png; sourceTree = "<group>"; };
+		A0466827196414B900323048 /* Dashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dashboard.png; sourceTree = "<group>"; };
+		A0466828196414B900323048 /* Options.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Options.png; sourceTree = "<group>"; };
+		A0466829196414B900323048 /* Widgets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Widgets.png; sourceTree = "<group>"; };
 		A047569E18B633E9004E1160 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		A048BC1718A37DF500BF32C7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A04EAAF818C7164C00D22715 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -324,9 +343,6 @@
 		A0A285041897C9B6004496C8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A0ABBA981897B054002D7FBF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A0C2DC22196140610031E4BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		A0D8EBA3195DC349001FAE67 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A0D8EBA4195DC349001FAE67 /* ZWayAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWayAppDelegate.h; sourceTree = "<group>"; };
-		A0D8EBA5195DC349001FAE67 /* ZWayAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWayAppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,10 +377,13 @@
 		A03BA803196186290096E45E /* Profiles */ = {
 			isa = PBXGroup;
 			children = (
-				A0459A99195DBA12005E6EB0 /* ZWayProfilesViewController.h */,
-				A0459A9A195DBA12005E6EB0 /* ZWayProfilesViewController.m */,
-				A0459A95195DBA12005E6EB0 /* ZWayNewProfileViewController.h */,
-				A0459A96195DBA12005E6EB0 /* ZWayNewProfileViewController.m */,
+				A042F0CE1962EE0900825387 /* ZWayProfilesViewController.h */,
+				A042F0CF1962EE0900825387 /* ZWayProfilesViewController.m */,
+				A042F0CC1962EE0900825387 /* ZWayNewProfileViewController.h */,
+				A042F0CD1962EE0900825387 /* ZWayNewProfileViewController.m */,
+				A042F0D01962EE0900825387 /* ZWPasswordCell.xib */,
+				A042F0D11962EE0900825387 /* ZWTextEditCell.xib */,
+				A042F0D21962EE0900825387 /* ZWUrlEditCell.xib */,
 			);
 			name = Profiles;
 			sourceTree = "<group>";
@@ -385,14 +404,6 @@
 		A0459A33195DBA12005E6EB0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				A03BA80C196199B00096E45E /* greenDot.png */,
-				A03BA80D196199B00096E45E /* redDot.png */,
-				A0459A2B195DBA12005E6EB0 /* Default-568h@2x.png */,
-				A0459A2C195DBA12005E6EB0 /* Default.png */,
-				A0459A2D195DBA12005E6EB0 /* Default@2x.png */,
-				A0459A31195DBA12005E6EB0 /* first.png */,
-				A0459A32195DBA12005E6EB0 /* first@2x.png */,
-				A0459A22195DBA12005E6EB0 /* connected-g.png */,
 				A0459A34195DBA12005E6EB0 /* arrow-down.png */,
 				A0459A35195DBA12005E6EB0 /* arrow-up.png */,
 				A0459A36195DBA12005E6EB0 /* battery-critical-focus.png */,
@@ -401,12 +412,19 @@
 				A0459A39195DBA12005E6EB0 /* battery-low-focus.png */,
 				A0459A3A195DBA12005E6EB0 /* battery-low.png */,
 				A0459A3B195DBA12005E6EB0 /* battery.png */,
+				A0466825196414B900323048 /* BinaryOff.png */,
+				A0466826196414B900323048 /* BinaryOn.png */,
 				A0459A3C195DBA12005E6EB0 /* blinds-focus.png */,
 				A0459A3D195DBA12005E6EB0 /* blinds.png */,
 				A0459A3E195DBA12005E6EB0 /* co-focus.png */,
 				A0459A3F195DBA12005E6EB0 /* co.png */,
+				A042F11B1962EF0700825387 /* connected-g.png */,
 				A0459A40195DBA12005E6EB0 /* cooling-focus.png */,
 				A0459A41195DBA12005E6EB0 /* cooling.png */,
+				A0466827196414B900323048 /* Dashboard.png */,
+				A0459A2B195DBA12005E6EB0 /* Default-568h@2x.png */,
+				A0459A2C195DBA12005E6EB0 /* Default.png */,
+				A0459A2D195DBA12005E6EB0 /* Default@2x.png */,
 				A0459A42195DBA12005E6EB0 /* device-blinds@2x.png */,
 				A0459A43195DBA12005E6EB0 /* device-co@2x.png */,
 				A0459A44195DBA12005E6EB0 /* device-cooling@2x.png */,
@@ -438,6 +456,7 @@
 				A0459A5E195DBA12005E6EB0 /* flood.png */,
 				A0459A5F195DBA12005E6EB0 /* gas-focus.png */,
 				A0459A60195DBA12005E6EB0 /* gas.png */,
+				A03BA80C196199B00096E45E /* greenDot.png */,
 				A0459A61195DBA12005E6EB0 /* heating-focus.png */,
 				A0459A62195DBA12005E6EB0 /* heating.png */,
 				A0459A63195DBA12005E6EB0 /* humidity-focus.png */,
@@ -455,7 +474,11 @@
 				A0459A6F195DBA12005E6EB0 /* notification-battery-critical@2x.png */,
 				A0459A70195DBA12005E6EB0 /* notification-battery-low@2x.png */,
 				A0459A71195DBA12005E6EB0 /* notification-connection@2x.png */,
+				A03E191519655110008416DB /* Notifications.png */,
+				A0466828196414B900323048 /* Options.png */,
+				A03BA80D196199B00096E45E /* redDot.png */,
 				A0459A72195DBA12005E6EB0 /* refreshing.png */,
+				A03E1921196572D9008416DB /* scene.png */,
 				A0459A73195DBA12005E6EB0 /* smoke-focus.png */,
 				A0459A74195DBA12005E6EB0 /* smoke.png */,
 				A0459A75195DBA12005E6EB0 /* switch-focus.png */,
@@ -464,8 +487,10 @@
 				A0459A78195DBA12005E6EB0 /* temperature.png */,
 				A0459A79195DBA12005E6EB0 /* thermostat-focus.png */,
 				A0459A7A195DBA12005E6EB0 /* thermostat.png */,
+				A03E191C1965632E008416DB /* toggleButton.png */,
 				A0459A7B195DBA12005E6EB0 /* water-focus.png */,
 				A0459A7C195DBA12005E6EB0 /* water.png */,
+				A0466829196414B900323048 /* Widgets.png */,
 				A0459A7D195DBA12005E6EB0 /* window-focus.png */,
 				A0459A7E195DBA12005E6EB0 /* window.png */,
 				A0459A7F195DBA12005E6EB0 /* wrong.png */,
@@ -487,16 +512,16 @@
 		A0459AC2195DBA9B005E6EB0 /* Data Handling */ = {
 			isa = PBXGroup;
 			children = (
-				A042F0B71962936600825387 /* ZWayAuthentification.h */,
-				A042F0B81962936600825387 /* ZWayAuthentification.m */,
-				A0459A83195DBA12005E6EB0 /* NSData+Base64.h */,
-				A0459A84195DBA12005E6EB0 /* NSData+Base64.m */,
-				A0459A85195DBA12005E6EB0 /* Reachability.h */,
-				A0459A86195DBA12005E6EB0 /* Reachability.m */,
-				A0459A9F195DBA12005E6EB0 /* ZWDataHandler.h */,
-				A0459AA0195DBA12005E6EB0 /* ZWDataHandler.m */,
-				A0459AA3195DBA12005E6EB0 /* ZWDevice.h */,
-				A0459AA4195DBA12005E6EB0 /* ZWDevice.m */,
+				A042F1241962F10F00825387 /* ZWDevice.h */,
+				A042F1221962F10300825387 /* ZWDevice.m */,
+				A042F0DF1962EE4600825387 /* NSData+Base64.h */,
+				A042F0E01962EE4600825387 /* NSData+Base64.m */,
+				A042F0E11962EE4600825387 /* Reachability.h */,
+				A042F0E21962EE4600825387 /* Reachability.m */,
+				A042F0E31962EE4600825387 /* ZWayAuthentification.h */,
+				A042F0E41962EE4600825387 /* ZWayAuthentification.m */,
+				A042F0E51962EE4600825387 /* ZWDataHandler.h */,
+				A042F0E61962EE4600825387 /* ZWDataHandler.m */,
 			);
 			name = "Data Handling";
 			sourceTree = "<group>";
@@ -504,29 +529,30 @@
 		A0459AC3195DBAE7005E6EB0 /* Device Items */ = {
 			isa = PBXGroup;
 			children = (
-				A0459ABD195DBA12005E6EB0 /* ZWPickerPopup.h */,
-				A0459ABE195DBA12005E6EB0 /* ZWPickerPopup.m */,
-				A0459AA5195DBA12005E6EB0 /* ZWDeviceItem.h */,
-				A0459AA6195DBA12005E6EB0 /* ZWDeviceItem.m */,
-				A0459AA7195DBA12005E6EB0 /* ZWDeviceItemBattery.h */,
-				A0459AA8195DBA12005E6EB0 /* ZWDeviceItemBattery.m */,
-				A0459AA9195DBA12005E6EB0 /* ZWDeviceItemBattery.xib */,
-				A0459AAA195DBA12005E6EB0 /* ZWDeviceItemBlinds.xib */,
-				A0459AAB195DBA12005E6EB0 /* ZWDeviceItemDimmer.xib */,
-				A0459AAC195DBA12005E6EB0 /* ZWDeviceItemFan.h */,
-				A0459AAD195DBA12005E6EB0 /* ZWDeviceItemFan.m */,
-				A0459AAE195DBA12005E6EB0 /* ZWDeviceItemFan.xib */,
-				A0459AB1195DBA12005E6EB0 /* ZWDeviceItemSensorBinary.h */,
-				A0459AB2195DBA12005E6EB0 /* ZWDeviceItemSensorBinary.xib */,
-				A0459AB3195DBA12005E6EB0 /* ZWDeviceItemSensorMulti.h */,
-				A0459AB4195DBA12005E6EB0 /* ZWDeviceItemSensorMulti.m */,
-				A0459AB5195DBA12005E6EB0 /* ZWDeviceItemSensorMulti.xib */,
-				A0459AB6195DBA12005E6EB0 /* ZWDeviceItemSwitch.h */,
-				A0459AB7195DBA12005E6EB0 /* ZWDeviceItemSwitch.m */,
-				A0459AB8195DBA12005E6EB0 /* ZWDeviceItemSwitch.xib */,
-				A0459AB9195DBA12005E6EB0 /* ZWDeviceItemThermostat.h */,
-				A0459ABA195DBA12005E6EB0 /* ZWDeviceItemThermostat.m */,
-				A0459ABB195DBA12005E6EB0 /* ZWDeviceItemThermostat.xib */,
+				A042F0EB1962EE5D00825387 /* ZWDeviceItem.h */,
+				A042F0EC1962EE5D00825387 /* ZWDeviceItem.m */,
+				A042F0ED1962EE5D00825387 /* ZWDeviceItemBattery.h */,
+				A042F0EE1962EE5D00825387 /* ZWDeviceItemBattery.m */,
+				A042F0EF1962EE5D00825387 /* ZWDeviceItemBattery.xib */,
+				A042F0F01962EE5D00825387 /* ZWDeviceItemBlinds.xib */,
+				A042F0F11962EE5D00825387 /* ZWDeviceItemDimmer.xib */,
+				A042F0F21962EE5D00825387 /* ZWDeviceItemFan.h */,
+				A042F0F31962EE5D00825387 /* ZWDeviceItemFan.m */,
+				A042F0F41962EE5D00825387 /* ZWDeviceItemFan.xib */,
+				A03E191E19656384008416DB /* ZWDeviceItemScene.h */,
+				A03E191F19656384008416DB /* ZWDeviceItemScene.m */,
+				A03E191A196562A8008416DB /* ZWDeviceItemScene.xib */,
+				A042F0F91962EE5D00825387 /* ZWDeviceItemSensorMulti.h */,
+				A042F0FA1962EE5D00825387 /* ZWDeviceItemSensorMulti.m */,
+				A042F0FB1962EE5D00825387 /* ZWDeviceItemSensorMulti.xib */,
+				A042F0FC1962EE5D00825387 /* ZWDeviceItemSwitch.h */,
+				A042F0FD1962EE5D00825387 /* ZWDeviceItemSwitch.m */,
+				A042F0FE1962EE5D00825387 /* ZWDeviceItemSwitch.xib */,
+				A042F0FF1962EE5D00825387 /* ZWDeviceItemThermostat.h */,
+				A042F1001962EE5D00825387 /* ZWDeviceItemThermostat.m */,
+				A042F1011962EE5D00825387 /* ZWDeviceItemThermostat.xib */,
+				A042F1021962EE5D00825387 /* ZWPickerPopup.h */,
+				A042F1031962EE5D00825387 /* ZWPickerPopup.m */,
 			);
 			name = "Device Items";
 			sourceTree = "<group>";
@@ -538,10 +564,10 @@
 				A0459A25195DBA12005E6EB0 /* Localizable.strings */,
 				A0459A27195DBA12005E6EB0 /* MainStoryboard_iPad.storyboard */,
 				A0459A29195DBA12005E6EB0 /* MainStoryboard_iPhone.storyboard */,
-				A0459A8D195DBA12005E6EB0 /* ZWay-Info.plist */,
-				A0459A8E195DBA12005E6EB0 /* ZWay-Prefix.pch */,
-				A0459A93195DBA12005E6EB0 /* ZWayLanguage.h */,
-				A0459A94195DBA12005E6EB0 /* ZWayLanguage.m */,
+				A042F1151962EE7A00825387 /* ZWay-Info.plist */,
+				A042F1161962EE7A00825387 /* ZWay-Prefix.pch */,
+				A042F1171962EE7A00825387 /* ZWayLanguage.h */,
+				A042F1181962EE7A00825387 /* ZWayLanguage.m */,
 			);
 			name = Localization;
 			sourceTree = "<group>";
@@ -549,15 +575,12 @@
 		A0459AC5195DBB95005E6EB0 /* Options */ = {
 			isa = PBXGroup;
 			children = (
-				A03BA7FD19617EB40096E45E /* ZWayOptionsController.h */,
-				A03BA7FE19617EB40096E45E /* ZWayOptionsController.m */,
-				A03BA800196180A70096E45E /* ZWayAboutController.h */,
-				A03BA801196180A70096E45E /* ZWayAboutController.m */,
+				A042F0C61962EDFA00825387 /* ZWayAboutController.h */,
+				A042F0C71962EDFA00825387 /* ZWayAboutController.m */,
+				A042F0C81962EDFA00825387 /* ZWayOptionsController.h */,
+				A042F0C91962EDFA00825387 /* ZWayOptionsController.m */,
 				A03BA803196186290096E45E /* Profiles */,
 				A0C2DC23196140E80031E4BA /* Profile store */,
-				A0459ABC195DBA12005E6EB0 /* ZWPasswordCell.xib */,
-				A0459ABF195DBA12005E6EB0 /* ZWTextEditCell.xib */,
-				A0459AC0195DBA12005E6EB0 /* ZWUrlEditCell.xib */,
 			);
 			name = Options;
 			sourceTree = "<group>";
@@ -565,10 +588,10 @@
 		A0459AC6195DBBA9005E6EB0 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
-				A0459A9D195DBA12005E6EB0 /* ZWayWidgetViewController.h */,
-				A0459A9E195DBA12005E6EB0 /* ZWayWidgetViewController.m */,
-				A0459A9B195DBA12005E6EB0 /* ZWayRoomsViewController.h */,
-				A0459A9C195DBA12005E6EB0 /* ZWayRoomsViewController.m */,
+				A042F0BF1962EDC100825387 /* ZWayWidgetViewController.h */,
+				A042F0C01962EDC100825387 /* ZWayWidgetViewController.m */,
+				A042F0BD1962EDC100825387 /* ZWayRoomsViewController.h */,
+				A042F0BE1962EDC100825387 /* ZWayRoomsViewController.m */,
 			);
 			name = Widgets;
 			sourceTree = "<group>";
@@ -576,8 +599,8 @@
 		A0459AC7195DBBBF005E6EB0 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				A0459A91195DBA12005E6EB0 /* ZWayDashboardViewController.h */,
-				A0459A92195DBA12005E6EB0 /* ZWayDashboardViewController.m */,
+				A042F0BC1962EDAA00825387 /* ZWayDashboardViewController.h */,
+				A042F0BA1962ED8900825387 /* ZWayDashboardViewController.m */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -585,8 +608,9 @@
 		A0459AC8195DBBD1005E6EB0 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				A0459A97195DBA12005E6EB0 /* ZWayNotificationViewController.h */,
-				A0459A98195DBA12005E6EB0 /* ZWayNotificationViewController.m */,
+				A042F0C31962EDDC00825387 /* ZWayNotificationViewController.h */,
+				A042F0C41962EDDC00825387 /* ZWayNotificationViewController.m */,
+				A03E191319654EC3008416DB /* NotificationCell.xib */,
 			);
 			name = Notifications;
 			sourceTree = "<group>";
@@ -594,9 +618,9 @@
 		A0459AC9195DBBED005E6EB0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				A0D8EBA3195DC349001FAE67 /* main.m */,
-				A0D8EBA4195DC349001FAE67 /* ZWayAppDelegate.h */,
-				A0D8EBA5195DC349001FAE67 /* ZWayAppDelegate.m */,
+				A042F11D1962EF1B00825387 /* main.m */,
+				A042F11E1962EF1B00825387 /* ZWayAppDelegate.h */,
+				A042F11F1962EF1B00825387 /* ZWayAppDelegate.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -638,11 +662,11 @@
 		A0C2DC23196140E80031E4BA /* Profile store */ = {
 			isa = PBXGroup;
 			children = (
-				A0459A81195DBA12005E6EB0 /* Model.xcdatamodeld */,
-				A0459A20195DBA12005E6EB0 /* CMProfile.h */,
-				A0459A21195DBA12005E6EB0 /* CMProfile.m */,
-				A0459AA1195DBA12005E6EB0 /* ZWDataStore.h */,
-				A0459AA2195DBA12005E6EB0 /* ZWDataStore.m */,
+				A03E191719655401008416DB /* Model.xcdatamodeld */,
+				A042F0D81962EE2A00825387 /* CMProfile.h */,
+				A042F0D91962EE2A00825387 /* CMProfile.m */,
+				A042F0DA1962EE2A00825387 /* ZWDataStore.h */,
+				A042F0DB1962EE2A00825387 /* ZWDataStore.m */,
 			);
 			name = "Profile store";
 			sourceTree = "<group>";
@@ -728,9 +752,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0C2DBF919613EBE0031E4BA /* energy.png in Resources */,
+				A042F11C1962EF0700825387 /* connected-g.png in Resources */,
 				A0C2DC0019613EBE0031E4BA /* heating-focus.png in Resources */,
 				A0C2DC1D19613EBE0031E4BA /* window.png in Resources */,
 				A0C2DBF319613EBE0031E4BA /* device-thermostat@2x.png in Resources */,
+				A042F0D51962EE0900825387 /* ZWPasswordCell.xib in Resources */,
 				A0C2DBCB19613E9F0031E4BA /* MainStoryboard_iPad.storyboard in Resources */,
 				A0C2DBE019613EBE0031E4BA /* cooling.png in Resources */,
 				A0C2DBFD19613EBE0031E4BA /* flood.png in Resources */,
@@ -744,37 +770,36 @@
 				A0C2DBCC19613EB00031E4BA /* Localizable.strings in Resources */,
 				A03BA80E196199B00096E45E /* greenDot.png in Resources */,
 				A0C2DC1219613EBE0031E4BA /* smoke-focus.png in Resources */,
+				A042F1111962EE5D00825387 /* ZWDeviceItemSwitch.xib in Resources */,
 				A0C2DBD319613EBE0031E4BA /* arrow-down.png in Resources */,
 				A0C2DBE819613EBE0031E4BA /* device-gas@2x.png in Resources */,
+				A03E1922196572D9008416DB /* scene.png in Resources */,
+				A042F0D71962EE0900825387 /* ZWUrlEditCell.xib in Resources */,
 				A0C2DBCA19613E9C0031E4BA /* MainStoryboard_iPhone.storyboard in Resources */,
 				A0C2DC0819613EBE0031E4BA /* media-focus.png in Resources */,
 				A0C2DC0619613EBE0031E4BA /* luminosity-focus.png in Resources */,
-				A0C2DBD019613EBE0031E4BA /* first.png in Resources */,
 				A0C2DBCD19613EB80031E4BA /* Default-568h@2x.png in Resources */,
 				A0C2DC1719613EBE0031E4BA /* temperature.png in Resources */,
 				A0C2DC1A19613EBE0031E4BA /* water-focus.png in Resources */,
-				A0C2DC25196142820031E4BA /* ZWPasswordCell.xib in Resources */,
 				A0C2DBFE19613EBE0031E4BA /* gas-focus.png in Resources */,
-				A0C2DC27196142860031E4BA /* ZWUrlEditCell.xib in Resources */,
 				A0C2DC0F19613EBE0031E4BA /* notification-battery-low@2x.png in Resources */,
 				A0C2DC0B19613EBE0031E4BA /* meter.png in Resources */,
+				A042F1131962EE5D00825387 /* ZWDeviceItemThermostat.xib in Resources */,
 				A0C2DC0519613EBE0031E4BA /* light.png in Resources */,
 				A0C2DBEC19613EBE0031E4BA /* device-luminosity@2x.png in Resources */,
-				A0C2DC2D1961429C0031E4BA /* ZWDeviceItemSensorMulti.xib in Resources */,
 				A0C2DBF519613EBE0031E4BA /* device-window@2x.png in Resources */,
-				A0C2DC2F1961429C0031E4BA /* ZWDeviceItemThermostat.xib in Resources */,
 				A0C2DBDB19613EBE0031E4BA /* blinds-focus.png in Resources */,
 				A0C2DC1919613EBE0031E4BA /* thermostat.png in Resources */,
-				A0C2DC26196142840031E4BA /* ZWTextEditCell.xib in Resources */,
 				A0C2DC1C19613EBE0031E4BA /* window-focus.png in Resources */,
-				A0C2DBD119613EBE0031E4BA /* first@2x.png in Resources */,
-				A0C2DC28196142910031E4BA /* ZWDeviceItemBattery.xib in Resources */,
 				A03BA80F196199B00096E45E /* redDot.png in Resources */,
+				A042F1061962EE5D00825387 /* ZWDeviceItemBattery.xib in Resources */,
 				A0C2DC0919613EBE0031E4BA /* media.png in Resources */,
 				A0C2DBDC19613EBE0031E4BA /* blinds.png in Resources */,
 				A0C2DC0319613EBE0031E4BA /* humidity.png in Resources */,
+				A03E191419654EC3008416DB /* NotificationCell.xib in Resources */,
 				A0C2DBF419613EBE0031E4BA /* device-water@2x.png in Resources */,
 				A0C2DC0E19613EBE0031E4BA /* notification-battery-critical@2x.png in Resources */,
+				A03E191D1965632E008416DB /* toggleButton.png in Resources */,
 				A0C2DBD719613EBE0031E4BA /* battery-focus.png in Resources */,
 				A0C2DBD619613EBE0031E4BA /* battery-critical.png in Resources */,
 				A0C2DBFC19613EBE0031E4BA /* flood-focus.png in Resources */,
@@ -783,18 +808,21 @@
 				A0C2DC0719613EBE0031E4BA /* luminosity.png in Resources */,
 				A0C2DBDF19613EBE0031E4BA /* cooling-focus.png in Resources */,
 				A0C2DC1619613EBE0031E4BA /* temperature-focus.png in Resources */,
-				A0C2DC2E1961429C0031E4BA /* ZWDeviceItemSwitch.xib in Resources */,
 				A0C2DBD419613EBE0031E4BA /* arrow-up.png in Resources */,
 				A0C2DC1019613EBE0031E4BA /* notification-connection@2x.png in Resources */,
-				A0C2DBD219613EBE0031E4BA /* connected-g.png in Resources */,
+				A03E191619655110008416DB /* Notifications.png in Resources */,
 				A0C2DBCF19613EBE0031E4BA /* Default@2x.png in Resources */,
 				A0C2DBF819613EBE0031E4BA /* energy-focus.png in Resources */,
 				A0C2DC0119613EBE0031E4BA /* heating.png in Resources */,
-				A0C2DC2C1961429C0031E4BA /* ZWDeviceItemSensorBinary.xib in Resources */,
+				A046682C196414B900323048 /* Dashboard.png in Resources */,
+				A042F0D61962EE0900825387 /* ZWTextEditCell.xib in Resources */,
 				A0C2DBE119613EBE0031E4BA /* device-blinds@2x.png in Resources */,
 				A0C2DBF119613EBE0031E4BA /* device-switch@2x.png in Resources */,
 				A0C2DBDD19613EBE0031E4BA /* co-focus.png in Resources */,
+				A046682E196414B900323048 /* Widgets.png in Resources */,
+				A042F10F1962EE5D00825387 /* ZWDeviceItemSensorMulti.xib in Resources */,
 				A0C2DC0D19613EBE0031E4BA /* motion.png in Resources */,
+				A046682A196414B900323048 /* BinaryOff.png in Resources */,
 				A0C2DBF719613EBE0031E4BA /* door.png in Resources */,
 				A0C2DC1E19613EBE0031E4BA /* wrong.png in Resources */,
 				A0C2DBE419613EBE0031E4BA /* device-door@2x.png in Resources */,
@@ -802,16 +830,18 @@
 				A0C2DBEF19613EBE0031E4BA /* device-motion@2x.png in Resources */,
 				A0C2DBE519613EBE0031E4BA /* device-energy@2x.png in Resources */,
 				A0C2DBF219613EBE0031E4BA /* device-temperature@2x.png in Resources */,
-				A0C2DC291961429C0031E4BA /* ZWDeviceItemBlinds.xib in Resources */,
+				A042F1071962EE5D00825387 /* ZWDeviceItemBlinds.xib in Resources */,
 				A0C2DC1119613EBE0031E4BA /* refreshing.png in Resources */,
-				A0C2DC2B1961429C0031E4BA /* ZWDeviceItemFan.xib in Resources */,
+				A042F10A1962EE5D00825387 /* ZWDeviceItemFan.xib in Resources */,
 				A0C2DC0C19613EBE0031E4BA /* motion-focus.png in Resources */,
 				A0C2DBF019613EBE0031E4BA /* device-smoke@2x.png in Resources */,
 				A0C2DBFB19613EBE0031E4BA /* fan.png in Resources */,
 				A0C2DBEB19613EBE0031E4BA /* device-light@2x.png in Resources */,
+				A03E191B196562A8008416DB /* ZWDeviceItemScene.xib in Resources */,
 				A0C2DBDE19613EBE0031E4BA /* co.png in Resources */,
 				A0C2DC0219613EBE0031E4BA /* humidity-focus.png in Resources */,
-				A0C2DC2A1961429C0031E4BA /* ZWDeviceItemDimmer.xib in Resources */,
+				A046682B196414B900323048 /* BinaryOn.png in Resources */,
+				A042F1081962EE5D00825387 /* ZWDeviceItemDimmer.xib in Resources */,
 				A0C2DBEA19613EBE0031E4BA /* device-humidity@2x.png in Resources */,
 				A0C2DBD519613EBE0031E4BA /* battery-critical-focus.png in Resources */,
 				A0C2DBC919613CF00031E4BA /* InfoPlist.strings in Resources */,
@@ -823,6 +853,7 @@
 				A0C2DBE219613EBE0031E4BA /* device-co@2x.png in Resources */,
 				A0C2DBE619613EBE0031E4BA /* device-fan@2x.png in Resources */,
 				A0C2DC0A19613EBE0031E4BA /* meter-focus.png in Resources */,
+				A046682D196414B900323048 /* Options.png in Resources */,
 				A0C2DC1419613EBE0031E4BA /* switch-focus.png in Resources */,
 				A0C2DBD819613EBE0031E4BA /* battery-low-focus.png in Resources */,
 				A0C2DC1819613EBE0031E4BA /* thermostat-focus.png in Resources */,
@@ -843,32 +874,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0840BC9195DBF8F00FC5FAC /* NSData+Base64.m in Sources */,
-				A0C2DC24196141110031E4BA /* Model.xcdatamodeld in Sources */,
-				A0840BCA195DBF8F00FC5FAC /* Reachability.m in Sources */,
-				A0840BCB195DBF8F00FC5FAC /* ZWDataHandler.m in Sources */,
-				A0840BCC195DBF8F00FC5FAC /* CMProfile.m in Sources */,
-				A0840BCD195DBF8F00FC5FAC /* ZWDataStore.m in Sources */,
-				A0840BCE195DBF8F00FC5FAC /* ZWDevice.m in Sources */,
-				A0840BCF195DBF8F00FC5FAC /* ZWPickerPopup.m in Sources */,
-				A0840BD0195DBF8F00FC5FAC /* ZWDeviceItem.m in Sources */,
-				A0840BD1195DBF8F00FC5FAC /* ZWDeviceItemBattery.m in Sources */,
-				A0840BD2195DBF8F00FC5FAC /* ZWDeviceItemFan.m in Sources */,
-				A042F0B91962936600825387 /* ZWayAuthentification.m in Sources */,
-				A0840BD4195DBF8F00FC5FAC /* ZWDeviceItemSensorMulti.m in Sources */,
-				A0D8EBA7195DC349001FAE67 /* ZWayAppDelegate.m in Sources */,
-				A0840BD5195DBF8F00FC5FAC /* ZWDeviceItemSwitch.m in Sources */,
-				A0840BD6195DBF8F00FC5FAC /* ZWDeviceItemThermostat.m in Sources */,
-				A0840BB5195DBE0900FC5FAC /* ZWayDashboardViewController.m in Sources */,
-				A0840BB6195DBE0900FC5FAC /* ZWayRoomsViewController.m in Sources */,
-				A0840BB7195DBE0900FC5FAC /* ZWayWidgetViewController.m in Sources */,
-				A0840BB8195DBE0900FC5FAC /* ZWayNotificationViewController.m in Sources */,
-				A0840BB9195DBE0900FC5FAC /* ZWayNewProfileViewController.m in Sources */,
-				A0840BBA195DBE0900FC5FAC /* ZWayProfilesViewController.m in Sources */,
-				A03BA7FF19617EB40096E45E /* ZWayOptionsController.m in Sources */,
-				A0D8EBA6195DC349001FAE67 /* main.m in Sources */,
-				A03BA802196180A70096E45E /* ZWayAboutController.m in Sources */,
-				A0840BBB195DBE0900FC5FAC /* ZWayLanguage.m in Sources */,
+				A03E192019656384008416DB /* ZWDeviceItemScene.m in Sources */,
+				A042F0E81962EE4600825387 /* Reachability.m in Sources */,
+				A042F0C51962EDDC00825387 /* ZWayNotificationViewController.m in Sources */,
+				A042F1121962EE5D00825387 /* ZWDeviceItemThermostat.m in Sources */,
+				A042F0C21962EDC100825387 /* ZWayWidgetViewController.m in Sources */,
+				A042F0C11962EDC100825387 /* ZWayRoomsViewController.m in Sources */,
+				A042F1211962EF1B00825387 /* ZWayAppDelegate.m in Sources */,
+				A042F0DC1962EE2A00825387 /* CMProfile.m in Sources */,
+				A042F1141962EE5D00825387 /* ZWPickerPopup.m in Sources */,
+				A042F0E91962EE4600825387 /* ZWayAuthentification.m in Sources */,
+				A042F1231962F10300825387 /* ZWDevice.m in Sources */,
+				A042F11A1962EE7A00825387 /* ZWayLanguage.m in Sources */,
+				A03E191919655401008416DB /* Model.xcdatamodeld in Sources */,
+				A042F1101962EE5D00825387 /* ZWDeviceItemSwitch.m in Sources */,
+				A042F0DD1962EE2A00825387 /* ZWDataStore.m in Sources */,
+				A042F0E71962EE4600825387 /* NSData+Base64.m in Sources */,
+				A042F0CB1962EDFA00825387 /* ZWayOptionsController.m in Sources */,
+				A042F10E1962EE5D00825387 /* ZWDeviceItemSensorMulti.m in Sources */,
+				A042F1051962EE5D00825387 /* ZWDeviceItemBattery.m in Sources */,
+				A042F1201962EF1B00825387 /* main.m in Sources */,
+				A042F1041962EE5D00825387 /* ZWDeviceItem.m in Sources */,
+				A042F0CA1962EDFA00825387 /* ZWayAboutController.m in Sources */,
+				A042F0D41962EE0900825387 /* ZWayProfilesViewController.m in Sources */,
+				A042F0BB1962ED8900825387 /* ZWayDashboardViewController.m in Sources */,
+				A042F0D31962EE0900825387 /* ZWayNewProfileViewController.m in Sources */,
+				A042F0EA1962EE4600825387 /* ZWDataHandler.m in Sources */,
+				A042F1091962EE5D00825387 /* ZWDeviceItemFan.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -947,7 +979,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ZWay/ZWay-Prefix.pch";
+				GCC_PREFIX_HEADER = "ZWay/Localization/ZWay-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -957,7 +989,7 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "ZWay/ZWay-Info.plist";
+				INFOPLIST_FILE = "ZWay/Localization/ZWay-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -978,13 +1010,13 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ZWay/ZWay-Prefix.pch";
+				GCC_PREFIX_HEADER = "ZWay/Localization/ZWay-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "ZWay/ZWay-Info.plist";
+				INFOPLIST_FILE = "ZWay/Localization/ZWay-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1140,13 +1172,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A0459A81195DBA12005E6EB0 /* Model.xcdatamodeld */ = {
+		A03E191719655401008416DB /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A0459A82195DBA12005E6EB0 /* Model.xcdatamodel */,
+				A03E191819655401008416DB /* Model.xcdatamodel */,
 			);
-			currentVersion = A0459A82195DBA12005E6EB0 /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
+			currentVersion = A03E191819655401008416DB /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = "Data Handling/Model.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

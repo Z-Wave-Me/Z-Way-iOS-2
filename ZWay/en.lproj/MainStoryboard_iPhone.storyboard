@@ -42,6 +42,7 @@
                             <constraint firstItem="zZh-bM-UNK" firstAttribute="trailing" secondItem="khX-rs-IMQ" secondAttribute="trailing" id="Zvy-y3-xYo"/>
                             <constraint firstItem="khX-rs-IMQ" firstAttribute="centerY" secondItem="16" secondAttribute="centerY" id="jR9-sA-0V2"/>
                             <constraint firstItem="zZh-bM-UNK" firstAttribute="top" secondItem="16" secondAttribute="top" constant="142" id="lT9-4N-B49"/>
+                            <constraint firstAttribute="bottom" secondItem="khX-rs-IMQ" secondAttribute="bottom" id="w3b-45-blw"/>
                             <constraint firstAttribute="trailing" secondItem="zZh-bM-UNK" secondAttribute="trailing" id="wgx-P0-Gak"/>
                             <constraint firstItem="ClQ-V1-4ng" firstAttribute="bottom" secondItem="khX-rs-IMQ" secondAttribute="top" id="zID-5W-42X"/>
                         </constraints>
@@ -69,7 +70,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="OlW-ZE-2UQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="OlW-ZE-2UQ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -80,6 +81,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OlW-ZE-2UQ" firstAttribute="leading" secondItem="f28-qS-Of7" secondAttribute="leading" id="4uz-Re-Kfg"/>
+                            <constraint firstItem="OlW-ZE-2UQ" firstAttribute="top" secondItem="f28-qS-Of7" secondAttribute="top" id="6u3-6z-ftW"/>
+                            <constraint firstAttribute="bottom" secondItem="OlW-ZE-2UQ" secondAttribute="bottom" id="Flf-ag-27N"/>
+                            <constraint firstAttribute="trailing" secondItem="OlW-ZE-2UQ" secondAttribute="trailing" id="c0h-hc-fcq"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="5oy-eL-Qj5"/>
@@ -129,7 +136,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="About Section" translatesAutoresizingMaskIntoConstraints="NO" id="SE5-WK-V1b">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="About Section" translatesAutoresizingMaskIntoConstraints="NO" id="SE5-WK-V1b">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -144,6 +151,12 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="SE5-WK-V1b" secondAttribute="trailing" id="89g-D0-H3H"/>
+                            <constraint firstItem="SE5-WK-V1b" firstAttribute="top" secondItem="Y8e-Pp-Qvi" secondAttribute="top" id="Nn9-bd-y6K"/>
+                            <constraint firstAttribute="bottom" secondItem="SE5-WK-V1b" secondAttribute="bottom" id="rTY-Dy-Jil"/>
+                            <constraint firstItem="SE5-WK-V1b" firstAttribute="leading" secondItem="Y8e-Pp-Qvi" secondAttribute="leading" id="yD8-wk-1hC"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="1fZ-KW-SID"/>
@@ -253,6 +266,7 @@
                             <constraint firstItem="Iav-uy-RMb" firstAttribute="centerY" secondItem="hsO-Vo-pqX" secondAttribute="centerY" id="U3B-XG-hU7"/>
                             <constraint firstItem="hsO-Vo-pqX" firstAttribute="centerY" secondItem="tzK-4Z-gCo" secondAttribute="centerY" id="cAB-ei-8WY"/>
                             <constraint firstItem="hsO-Vo-pqX" firstAttribute="leading" secondItem="tzK-4Z-gCo" secondAttribute="leading" constant="59" id="dAL-dc-IEh"/>
+                            <constraint firstAttribute="bottom" secondItem="Iav-uy-RMb" secondAttribute="bottom" id="dVU-4k-EGs"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -341,18 +355,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jN3-N9-upk" firstAttribute="top" secondItem="T3f-ru-fsL" secondAttribute="bottom" constant="-1" id="5FJ-jz-2LY"/>
                             <constraint firstItem="CLO-uT-jEP" firstAttribute="bottom" secondItem="T3f-ru-fsL" secondAttribute="top" id="Uhh-5X-hna"/>
                             <constraint firstItem="3kF-ms-MKJ" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" id="Y2h-Wf-xxx"/>
                             <constraint firstAttribute="trailing" secondItem="3kF-ms-MKJ" secondAttribute="trailing" constant="20" symbolic="YES" id="aQ8-Kw-ukV"/>
                             <constraint firstItem="3kF-ms-MKJ" firstAttribute="centerX" secondItem="jN3-N9-upk" secondAttribute="centerX" id="c1G-oi-ZR8"/>
+                            <constraint firstAttribute="bottom" secondItem="T3f-ru-fsL" secondAttribute="bottom" constant="-1" id="cBf-if-4X4"/>
                             <constraint firstItem="jN3-N9-upk" firstAttribute="leading" secondItem="T3f-ru-fsL" secondAttribute="leading" id="dCm-tH-fLM"/>
                             <constraint firstItem="jN3-N9-upk" firstAttribute="trailing" secondItem="T3f-ru-fsL" secondAttribute="trailing" id="jYn-1e-s02"/>
+                            <constraint firstItem="jN3-N9-upk" firstAttribute="top" secondItem="MAu-d4-ehr" secondAttribute="bottom" id="kXf-yz-VkW"/>
                             <constraint firstItem="CLO-uT-jEP" firstAttribute="bottom" secondItem="T3f-ru-fsL" secondAttribute="top" id="obW-QK-jrT"/>
                             <constraint firstItem="T3f-ru-fsL" firstAttribute="leading" secondItem="17" secondAttribute="leading" id="peP-nK-g2e"/>
                             <constraint firstItem="CLO-uT-jEP" firstAttribute="bottom" secondItem="T3f-ru-fsL" secondAttribute="top" id="pkV-ve-KPK"/>
                             <constraint firstItem="3kF-ms-MKJ" firstAttribute="centerY" secondItem="17" secondAttribute="centerY" id="qgV-RJ-ntk"/>
-                            <constraint firstAttribute="bottom" secondItem="T3f-ru-fsL" secondAttribute="bottom" constant="-1" id="yIY-ZD-Rdz"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -411,6 +425,7 @@
                             <constraint firstItem="JFO-id-OFi" firstAttribute="centerY" secondItem="NZc-2r-t1W" secondAttribute="centerY" id="NXf-VF-MPk"/>
                             <constraint firstItem="JFO-id-OFi" firstAttribute="leading" secondItem="NZc-2r-t1W" secondAttribute="leading" id="S6S-90-thA"/>
                             <constraint firstAttribute="trailing" secondItem="JFO-id-OFi" secondAttribute="trailing" id="Tiu-uX-0ot"/>
+                            <constraint firstAttribute="bottom" secondItem="JFO-id-OFi" secondAttribute="bottom" id="xTW-Sx-cqL"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -451,7 +466,7 @@
             <objects>
                 <navigationController id="fYx-6O-i5n" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Widgets" image="arrow-up.png" id="6"/>
+                    <tabBarItem key="tabBarItem" title="Widgets" image="Widgets.png" id="6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fVO-en-zNl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -475,7 +490,7 @@
             <objects>
                 <navigationController id="xZi-1A-p7I" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Dashboard" image="arrow-down.png" id="7"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="Dashboard.png" id="7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JNH-fp-FuL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -495,7 +510,7 @@
             <objects>
                 <navigationController id="Kyr-iH-6tr" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Notifications" image="arrow-down.png" id="4cx-k1-jK4"/>
+                    <tabBarItem key="tabBarItem" title="Notifications" image="Notifications.png" id="4cx-k1-jK4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GRo-Jc-LGh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -520,7 +535,7 @@
         <scene sceneID="gjK-fQ-af6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WRz-CI-oID" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Options" id="siz-9K-KZv"/>
+                    <tabBarItem key="tabBarItem" title="Options" image="Options.png" id="siz-9K-KZv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bbk-Xk-4A9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -537,8 +552,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow-down.png" width="16" height="16"/>
-        <image name="arrow-up.png" width="16" height="16"/>
+        <image name="Dashboard.png" width="40" height="31"/>
+        <image name="Notifications.png" width="49" height="42"/>
+        <image name="Options.png" width="40" height="30"/>
+        <image name="Widgets.png" width="40" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
