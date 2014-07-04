@@ -18,6 +18,7 @@
 "ToDash" = "Device moved to dashboard";
 "Done" = "Done";
 "IsPart" = "Device is already part of the dashboard";
+"Edit" = "Edit";
 "Red" = "Red";
 "Blue" = "Blue";
 "Orange" = "Orange";
@@ -64,6 +65,10 @@
 "German" = "German";
 "Russian" = "Russian";
 "Chinese" = "Chinese";
+
+"Error!" = "Error!";
+"AlreadyPart" = "Is part";
+"MovedTo" = "Moved";
 
 "Battery" = "Batteries";
 "MultiSensor" = "Multi sensors";

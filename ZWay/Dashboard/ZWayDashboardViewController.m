@@ -80,6 +80,7 @@
             noItemsLabel.hidden = YES;
             self.navigationItem.rightBarButtonItem = self.editButtonItem;
             self.navigationItem.rightBarButtonItem.style = UIBarButtonItemStylePlain;
+            self.navigationItem.rightBarButtonItem.title = NSLocalizedString(@"Edit", @"");
         }
         else
         {
@@ -94,6 +95,8 @@
         tableview.hidden = YES;
         noItemsLabel.hidden = NO;
     }
+    
+    [self setEditing:NO animated:NO];
     
     //set localized text for empty dashboard
     noItemsLabel.text = NSLocalizedString(@"NoDashboard", @"");
@@ -168,7 +171,7 @@
     receivedData = [NSMutableData new];
     [receivedData setLength:0];
     NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
-    int responseStatusCode = [httpResponse statusCode];
+    NSInteger responseStatusCode = [httpResponse statusCode];
     
     //check response code
     if(responseStatusCode != 200)
@@ -273,7 +276,7 @@
     if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == YES)
     {
     NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
-    int responseStatusCode = [httpResponse statusCode];
+    NSInteger responseStatusCode = [httpResponse statusCode];
     
     NSURL *url;
     
@@ -300,7 +303,7 @@
         [request setHTTPMethod:@"POST"];
         [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
         [request setValue:@"gzip, deflate, sdch" forHTTPHeaderField:@"Accept-Encoding"];
-        [request setValue:[NSString stringWithFormat:@"%d", [myRequestData length]] forHTTPHeaderField:@"Content-length"];
+        [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[myRequestData length]] forHTTPHeaderField:@"Content-length"];
         [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-type"];
         [request setHTTPBody:myRequestData];
         return request;
@@ -419,6 +422,7 @@
         {
             tableview.hidden = YES;
             noItemsLabel.hidden = NO;
+            self.navigationItem.rightBarButtonItem = nil;
             [objects removeObjectAtIndex:indexPath.row];
         }
         

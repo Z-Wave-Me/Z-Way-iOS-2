@@ -86,6 +86,10 @@
             NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:[dict valueForKey:@"icon"]]];
             self.imageView.image = [UIImage imageWithData: imageData];
         }
+        else if([title isEqualToString:@"energy"])
+        {
+            self.imageView.image = [UIImage imageNamed:@"energy.png"];
+        }
         else
             self.imageView.hidden = YES;
     }

@@ -110,13 +110,13 @@
             //inform the user that the device was added
             if(moved == YES)
             {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ToDash" message:NSLocalizedString(@"ToDash", @"Message that the device was moved to the D.B.") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"MovedTo", @"") message:NSLocalizedString(@"ToDash", @"Message that the device was moved to the D.B.") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
                 [alert show];
             }
             //inform the user that the device was not added
             else
             {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"IsPart" message:NSLocalizedString(@"IsPart", @"Message that the device is already part of the D.B.") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"AlreadyPart", @"") message:NSLocalizedString(@"IsPart", @"Message that the device is already part of the D.B.") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
                 [alert show];
             }
 

@@ -61,8 +61,13 @@
     [handler setUpAuth];
     [handler getLocations];
     
+    currentButton = NSLocalizedString(@"Types", @"");
+    
     //update devices
-    [self updateDevices:[NSNumber numberWithLong:0]];
+    if(handler.locationTitles)
+        [self updateDevices:[NSNumber numberWithLong:0]];
+    else
+        [self performSelector:@selector(updateDevices:) withObject:[NSNumber numberWithLong:0] afterDelay:1];
     
     alertShown = false;
     firstUpdate = YES;
@@ -76,16 +81,18 @@
     
     //localize in case the language changed
     [self setTitle:NSLocalizedString(@"Widgets", @"")];
-    currentButton = NSLocalizedString(@"Types", @"");
     roomsButton.title = NSLocalizedString(@"Rooms", @"");
     typesButton.title = NSLocalizedString(@"Types", @"");
     tagsButton.title = NSLocalizedString(@"Tags", @"");
     noItemsLabel.text = NSLocalizedString(@"NoDevices", @"");
     
-    //select types button for default
-    [self typesSelected:self];
+    if([currentButton isEqualToString:NSLocalizedString(@"Rooms", @"")])
+        [self roomsSelected:self];
+    else if([currentButton isEqualToString:NSLocalizedString(@"Tags", @"")])
+        [self tagsSelected:self];
+    else
+        [self typesSelected:self];
     
-    [self performSelector:@selector(typesSelected:) withObject:self];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -121,7 +128,7 @@
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     if(!connection && alertShown == false)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!" message:NSLocalizedString(@"UpdateError", @"Message that an error occured during the update") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error!", @"") message:NSLocalizedString(@"UpdateError", @"Message that an error occured during the update") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
         [alert show];
         alertShown = true;
         receivedObjects = nil;
@@ -179,7 +186,7 @@
         
         if(alertShown == false)
         {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!" message:NSLocalizedString(@"UpdateError", @"Message that an error occured during the update") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error!", @"") message:NSLocalizedString(@"UpdateError", @"Message that an error occured during the update") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
             [alert show];
             alertShown = true;
         }
@@ -321,7 +328,7 @@
         NSString *location = device.location;
         
         //ignore NULL and system items
-        if (deviceType != (id)[NSNull null] && ![deviceType isEqualToString:@"system"])
+        if (deviceType != (id)[NSNull null] && ![deviceType isEqualToString:@"system"] && ![deviceType isEqualToString:@"camera"] && ![deviceType isEqualToString:@"switchRGBW"])
         {
             //sort into existing type array
             if(![types containsObject:deviceType])
@@ -450,35 +457,31 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 
     //show rooms
     if([currentButton isEqualToString:NSLocalizedString(@"Rooms", @"")] && rooms.count != 0)
     {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
         cell.textLabel.text = [rooms objectAtIndex:indexPath.row];
-        return cell;
     }
     //show types
     else if([currentButton isEqualToString:NSLocalizedString(@"Types", @"")] && types.count != 0)
     {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
         cell.textLabel.text = [self smoothTitles:[types objectAtIndex:indexPath.row]];
-        return cell;
     }
     //show tags
     else if([currentButton isEqualToString:NSLocalizedString(@"Tags", @"")] && tags.count != 0)
     {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
         cell.textLabel.text = [tags objectAtIndex:indexPath.row];
-        return cell;
     }
     //display default cells (ob´nly called when an unusual situation appears)
     else
     {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
         cell.textLabel.text = NSLocalizedString(@"NoDevices", @"Message that no devices were found");
-        return cell;
     }
+    
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    return cell;
 }
 
 //go to subview if a category is selected

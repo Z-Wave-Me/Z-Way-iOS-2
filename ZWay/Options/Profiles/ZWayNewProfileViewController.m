@@ -43,7 +43,7 @@
         CMProfile *profile = [[CMProfile alloc] initWithEntity:profileEntity insertIntoManagedObjectContext:store.managedObjectContext];
         //set default name and outdoor URL
         profile.name = @"Name";
-        profile.language = @"en";
+        profile.language = nil;
         profile.theme = NSLocalizedString(@"Default", @"");
         [store saveContext];
         self.navigationItem.title =  NSLocalizedString(@"NewProfile", @"New Profile title");
@@ -485,10 +485,6 @@
             [NSBundle setLanguage:@"zh"];
         }
     }
-    else
-    {
-        [NSBundle setLanguage:ZWayAppDelegate.sharedDelegate.profile.language];
-    }
     
     //update the picker arrays according to the localization
     colors = [NSArray arrayWithObjects:NSLocalizedString(@"Red", @"Red"), NSLocalizedString(@"Blue", @"Blue"), NSLocalizedString(@"Orange", @"Orange"), NSLocalizedString(@"Purple", @"Purple"), nil];
@@ -580,7 +576,7 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:@"ZWProfileHasChanged" object:nil];
     }
 
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Profiles" message:NSLocalizedString(@"Stored", @"") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Profiles", @"") message:NSLocalizedString(@"Stored", @"") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
     [alert show];
 }
 
@@ -609,40 +605,55 @@
     return !ZWayAppDelegate.sharedDelegate.settingsLocked;
 }
 
+//what to do when a field was edited
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
+    //save each text field
     for(int i=10; i<14; i++)
     {
+        //get the cell with it´s label and textfield
         UITableViewCell *cell = (UITableViewCell*)[tableview viewWithTag:i];
         UILabel *label = (UILabel*)[cell viewWithTag:1];
         UITextField *cellTextField = (UITextField*)[cell viewWithTag:2];
         NSString *text = textField.text;
         
+        //check if it´s the IP field
         if([textField.text rangeOfString:@"192."].location != NSNotFound)
         {
+            //remove http:// prefix
             if([text hasPrefix:@"http://"])
                 text = [text substringFromIndex:[@"http://" length]];
             
+            //add port if not added manually
             if (![text hasSuffix:@":8083"])
                 text = [NSString stringWithFormat:@"%@:8083", text];
             
+            //test connection with corrected IP
             [self testConnection:label.text With:text];
-            [_profile setValue:text forKey:[self conformToProfile:label.text]];
             
             if(i == 11)
             {
+                //save IP to profile
+                [_profile setValue:text forKey:[self conformToProfile:label.text]];
+            
+                //check if new IP differs from old one
                 [cellTextField setText:text];
                 if(![text isEqual:oldIP])
                 {
+                    //if yes reset dashboard
                     _profile.objects = nil;
                 }
             }
         }
+        //save textfield to profile
         else
+        {
             [_profile setValue:cellTextField.text forKey:[self conformToProfile:label.text]];
+        }
     }
 }
 
+//remove keyboard
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
@@ -650,7 +661,7 @@
     return YES;
 }
 
-//save values in profile
+//save values in specific profile field
 - (NSString*)conformToProfile:(NSString*)profile
 {
     if([profile isEqualToString:NSLocalizedString(@"Name", @"")])

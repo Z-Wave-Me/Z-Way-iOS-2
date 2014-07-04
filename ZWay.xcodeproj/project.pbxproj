@@ -12,10 +12,10 @@
 		A03E191419654EC3008416DB /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A03E191319654EC3008416DB /* NotificationCell.xib */; };
 		A03E191619655110008416DB /* Notifications.png in Resources */ = {isa = PBXBuildFile; fileRef = A03E191519655110008416DB /* Notifications.png */; };
 		A03E191919655401008416DB /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A03E191719655401008416DB /* Model.xcdatamodeld */; };
-		A03E191B196562A8008416DB /* ZWDeviceItemScene.xib in Resources */ = {isa = PBXBuildFile; fileRef = A03E191A196562A8008416DB /* ZWDeviceItemScene.xib */; };
 		A03E191D1965632E008416DB /* toggleButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A03E191C1965632E008416DB /* toggleButton.png */; };
 		A03E192019656384008416DB /* ZWDeviceItemScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A03E191F19656384008416DB /* ZWDeviceItemScene.m */; };
 		A03E1922196572D9008416DB /* scene.png in Resources */ = {isa = PBXBuildFile; fileRef = A03E1921196572D9008416DB /* scene.png */; };
+		A03E19241965792B008416DB /* ZWDeviceItemScene.xib in Resources */ = {isa = PBXBuildFile; fileRef = A03E19231965792B008416DB /* ZWDeviceItemScene.xib */; };
 		A042F0BB1962ED8900825387 /* ZWayDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0BA1962ED8900825387 /* ZWayDashboardViewController.m */; };
 		A042F0C11962EDC100825387 /* ZWayRoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0BE1962EDC100825387 /* ZWayRoomsViewController.m */; };
 		A042F0C21962EDC100825387 /* ZWayWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A042F0C01962EDC100825387 /* ZWayWidgetViewController.m */; };
@@ -169,11 +169,11 @@
 		A03E191319654EC3008416DB /* NotificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotificationCell.xib; path = Notifications/NotificationCell.xib; sourceTree = "<group>"; };
 		A03E191519655110008416DB /* Notifications.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Notifications.png; sourceTree = "<group>"; };
 		A03E191819655401008416DB /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		A03E191A196562A8008416DB /* ZWDeviceItemScene.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZWDeviceItemScene.xib; sourceTree = "<group>"; };
 		A03E191C1965632E008416DB /* toggleButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toggleButton.png; sourceTree = "<group>"; };
 		A03E191E19656384008416DB /* ZWDeviceItemScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWDeviceItemScene.h; path = "Device Items/ZWDeviceItemScene.h"; sourceTree = "<group>"; };
 		A03E191F19656384008416DB /* ZWDeviceItemScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWDeviceItemScene.m; path = "Device Items/ZWDeviceItemScene.m"; sourceTree = "<group>"; };
 		A03E1921196572D9008416DB /* scene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene.png; sourceTree = "<group>"; };
+		A03E19231965792B008416DB /* ZWDeviceItemScene.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZWDeviceItemScene.xib; path = "Device Items/ZWDeviceItemScene.xib"; sourceTree = "<group>"; };
 		A042F0BA1962ED8900825387 /* ZWayDashboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZWayDashboardViewController.m; path = Dashboard/ZWayDashboardViewController.m; sourceTree = "<group>"; };
 		A042F0BC1962EDAA00825387 /* ZWayDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWayDashboardViewController.h; path = Dashboard/ZWayDashboardViewController.h; sourceTree = "<group>"; };
 		A042F0BD1962EDC100825387 /* ZWayRoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWayRoomsViewController.h; path = Widgets/ZWayRoomsViewController.h; sourceTree = "<group>"; };
@@ -512,8 +512,6 @@
 		A0459AC2195DBA9B005E6EB0 /* Data Handling */ = {
 			isa = PBXGroup;
 			children = (
-				A042F1241962F10F00825387 /* ZWDevice.h */,
-				A042F1221962F10300825387 /* ZWDevice.m */,
 				A042F0DF1962EE4600825387 /* NSData+Base64.h */,
 				A042F0E01962EE4600825387 /* NSData+Base64.m */,
 				A042F0E11962EE4600825387 /* Reachability.h */,
@@ -522,6 +520,8 @@
 				A042F0E41962EE4600825387 /* ZWayAuthentification.m */,
 				A042F0E51962EE4600825387 /* ZWDataHandler.h */,
 				A042F0E61962EE4600825387 /* ZWDataHandler.m */,
+				A042F1241962F10F00825387 /* ZWDevice.h */,
+				A042F1221962F10300825387 /* ZWDevice.m */,
 			);
 			name = "Data Handling";
 			sourceTree = "<group>";
@@ -541,7 +541,7 @@
 				A042F0F41962EE5D00825387 /* ZWDeviceItemFan.xib */,
 				A03E191E19656384008416DB /* ZWDeviceItemScene.h */,
 				A03E191F19656384008416DB /* ZWDeviceItemScene.m */,
-				A03E191A196562A8008416DB /* ZWDeviceItemScene.xib */,
+				A03E19231965792B008416DB /* ZWDeviceItemScene.xib */,
 				A042F0F91962EE5D00825387 /* ZWDeviceItemSensorMulti.h */,
 				A042F0FA1962EE5D00825387 /* ZWDeviceItemSensorMulti.m */,
 				A042F0FB1962EE5D00825387 /* ZWDeviceItemSensorMulti.xib */,
@@ -837,7 +837,6 @@
 				A0C2DBF019613EBE0031E4BA /* device-smoke@2x.png in Resources */,
 				A0C2DBFB19613EBE0031E4BA /* fan.png in Resources */,
 				A0C2DBEB19613EBE0031E4BA /* device-light@2x.png in Resources */,
-				A03E191B196562A8008416DB /* ZWDeviceItemScene.xib in Resources */,
 				A0C2DBDE19613EBE0031E4BA /* co.png in Resources */,
 				A0C2DC0219613EBE0031E4BA /* humidity-focus.png in Resources */,
 				A046682B196414B900323048 /* BinaryOn.png in Resources */,
@@ -848,6 +847,7 @@
 				A0C2DBD919613EBE0031E4BA /* battery-low.png in Resources */,
 				A0C2DBED19613EBE0031E4BA /* device-media@2x.png in Resources */,
 				A0C2DBFF19613EBE0031E4BA /* gas.png in Resources */,
+				A03E19241965792B008416DB /* ZWDeviceItemScene.xib in Resources */,
 				A0C2DC0419613EBE0031E4BA /* light-focus.png in Resources */,
 				A0C2DBEE19613EBE0031E4BA /* device-meter@2x.png in Resources */,
 				A0C2DBE219613EBE0031E4BA /* device-co@2x.png in Resources */,

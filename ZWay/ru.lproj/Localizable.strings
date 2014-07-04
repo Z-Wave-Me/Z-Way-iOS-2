@@ -65,6 +65,11 @@
 "Russian" = "Русский";
 "Chinese" = "中国的";
 
+"Error!" = "";
+"AlreadyPart" = "";
+"MovedTo" = "";
+"Edit" = "";
+
 "Battery" = "Батарейки";
 "MultiSensor" = "Мультисенсоры";
 "BinarySensor" = "Бинарные сенсоры";

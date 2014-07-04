@@ -10,6 +10,8 @@
 
 @implementation ZWDeviceItemScene
 
+
+//load xib for scene
 + (ZWDeviceItemScene*)device
 {
     NSArray *a = [[NSBundle mainBundle] loadNibNamed:@"ZWDeviceItemScene" owner:nil options:nil];
@@ -22,6 +24,7 @@
     self.toggleButton = nil;
 }
 
+//sent command when toggle button is pressed
 -(IBAction)triggerToggle:(id)sender
 {
     //decide if outdoor or indoor URL should be used

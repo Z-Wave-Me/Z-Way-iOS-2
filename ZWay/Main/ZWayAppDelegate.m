@@ -118,18 +118,6 @@
     
 }
 
-/*- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // try local address on activate
-    if (self.profile != nil)
-    {
-        @synchronized(self.profile)
-        {
-            self.profile.useOutdoor = [NSNumber numberWithBool:NO];
-        }
-    }
-}*/
-
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     

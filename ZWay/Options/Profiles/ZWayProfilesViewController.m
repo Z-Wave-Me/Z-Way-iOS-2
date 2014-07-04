@@ -55,6 +55,7 @@
 {
     [self reloadView];
     [tableview reloadData];
+    [self setTitle:NSLocalizedString(@"Options", @"")];
     editing = @"YES";
 }
 
@@ -236,7 +237,7 @@
             
             //change color and language according to the newly selected profile
             [ZWayAppDelegate.sharedDelegate useColorTheme:ZWayAppDelegate.sharedDelegate.profile.theme];
-            [self updateLanguage:nil];
+            [self updateLanguage:ZWayAppDelegate.sharedDelegate.profile.language];
             [self updateColor:ZWayAppDelegate.sharedDelegate.profile.theme];
             [tableview reloadData];
         }
@@ -285,31 +286,7 @@
 {
     if(language)
     {
-        //check which language was selected and change it
-        if([language isEqualToString:NSLocalizedString(@"German", @"")])
-        {
-            ZWayAppDelegate.sharedDelegate.profile.language = @"de";
-            [NSBundle setLanguage:@"de"];
-        }
-        else if([language isEqualToString:NSLocalizedString(@"English", @"")])
-        {
-            ZWayAppDelegate.sharedDelegate.profile.language = @"en";
-            [NSBundle setLanguage:@"en"];
-        }
-        else if([language isEqualToString:NSLocalizedString(@"Russian", @"")])
-        {
-            ZWayAppDelegate.sharedDelegate.profile.language = @"ru";
-            [NSBundle setLanguage:@"ru"];
-        }
-        else if([language isEqualToString:NSLocalizedString(@"Chinese", @"")])
-        {
-            ZWayAppDelegate.sharedDelegate.profile.language = @"zh";
-            [NSBundle setLanguage:@"zh"];
-        }
-    }
-    else
-    {
-        [NSBundle setLanguage:ZWayAppDelegate.sharedDelegate.profile.language];
+        [NSBundle setLanguage:language];
     }
     
     //set the tab bar items to the current language

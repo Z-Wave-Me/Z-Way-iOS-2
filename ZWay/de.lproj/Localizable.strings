@@ -65,6 +65,11 @@
 "Russian" = "Russisch";
 "Chinese" = "Chinesisch";
 
+"Error!" = "Fehler!";
+"AlreadyPart" = "Enthalten";
+"MovedTo" = "Hinzugefügt";
+"Edit" = "Bearbeiten";
+
 "Battery" = "Batterien";
 "MultiSensor" = "Multisensoren";
 "BinarySensor" = "Binärsensoren";
