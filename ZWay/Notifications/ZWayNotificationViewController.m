@@ -40,6 +40,7 @@
     
     //set editing button and the navigation bar translucent
     [self.navigationController.navigationBar setTranslucent:NO];
+    [self.navigationController.navigationBar setOpaque:YES];
     [self.tabBarController.tabBar setTranslucent:NO];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.navigationItem.rightBarButtonItem.style = UIBarButtonItemStylePlain;
@@ -51,6 +52,7 @@
     //set localized title and label
     [self setTitle:NSLocalizedString(@"Notifications", @"")];
     self.noItemsLabel.text = NSLocalizedString(@"OKMessage", @"");
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
     if(notifications.count != 0)
     {
@@ -129,6 +131,7 @@
     notificationData = nil;
     //load data from scratch when an error occured
     [self performSelector:@selector(getNotifications:) withObject:[NSNumber numberWithInt:0] afterDelay:20.0];
+    
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -141,30 +144,31 @@
     
     if(![notificationDict objectForKey:@"id"])
     {
-    if(notificationDict != (id)[NSNull null])
-    {
-        NSMutableArray *sort = [notificationDict objectForKey:@"notifications"];
-        //timestamp = [[notificationDict valueForKey:@"updateTime"] integerValue];
-        timestamp = 0;
-        
-        //filter all redeemed notifications
-        for(int i=0; i<sort.count; i++)
+        if(notificationDict != (id)[NSNull null])
         {
-            BOOL redeemed = [[[sort objectAtIndex:i] objectForKey:@"redeemed"] boolValue];
-            
-            if(redeemed == YES)
-            {
-                [sort removeObjectAtIndex:i];
-            }
-        }
+            NSMutableArray *sort = [notificationDict objectForKey:@"notifications"];
+            //timestamp = [[notificationDict valueForKey:@"updateTime"] integerValue];
+            timestamp = 0;
         
-        //set only notifications that should be shown
-        notifications = sort;
+            //filter all redeemed notifications
+            for(int i=0; i<sort.count; i++)
+            {
+                BOOL redeemed = [[[sort objectAtIndex:i] objectForKey:@"redeemed"] boolValue];
+            
+                if(redeemed == YES)
+                {
+                    [sort removeObjectAtIndex:i];
+                }
+            }
+        
+            //set only notifications that should be shown
+            notifications = sort;
+        }
+        else
+            timestamp = 0;
     }
     else
         timestamp = 0;
-        
-    }
     
     //disable edit button if no notification is found
     if(notifications.count == 0)

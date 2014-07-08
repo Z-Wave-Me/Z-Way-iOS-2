@@ -27,6 +27,8 @@
 //sent command when toggle button is pressed
 -(IBAction)triggerToggle:(id)sender
 {
+    [self.toggleButton setHidden:YES];
+    
     //decide if outdoor or indoor URL should be used
     if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == NO)
         url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/on", ZWayAppDelegate.sharedDelegate.profile.indoorUrl, self.device.deviceId]];
@@ -35,6 +37,8 @@
     
     //create the request
     [self createRequestWithURL];
+    
+    [self.toggleButton performSelector:@selector(setHidden:) withObject:NO afterDelay:1];
 }
 
 - (void)updateState

@@ -32,5 +32,6 @@
 @dynamic objects;
 @dynamic theme;
 @dynamic language;
+@dynamic changedIP;
 
 @end

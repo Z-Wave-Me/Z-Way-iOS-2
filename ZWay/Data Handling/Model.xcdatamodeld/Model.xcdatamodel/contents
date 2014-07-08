@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Profile" representedClassName="CMProfile" syncable="YES">
+        <attribute name="changedIP" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="indoorUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
@@ -16,6 +17,6 @@
         </compoundIndexes>
     </entity>
     <elements>
-        <element name="Profile" positionX="160" positionY="192" width="128" height="165"/>
+        <element name="Profile" positionX="160" positionY="192" width="128" height="180"/>
     </elements>
 </model>

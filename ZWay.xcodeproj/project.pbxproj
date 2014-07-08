@@ -72,9 +72,6 @@
 		A0C2DBCA19613E9C0031E4BA /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0459A29195DBA12005E6EB0 /* MainStoryboard_iPhone.storyboard */; };
 		A0C2DBCB19613E9F0031E4BA /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0459A27195DBA12005E6EB0 /* MainStoryboard_iPad.storyboard */; };
 		A0C2DBCC19613EB00031E4BA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0459A25195DBA12005E6EB0 /* Localizable.strings */; };
-		A0C2DBCD19613EB80031E4BA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A2B195DBA12005E6EB0 /* Default-568h@2x.png */; };
-		A0C2DBCE19613EBE0031E4BA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A2C195DBA12005E6EB0 /* Default.png */; };
-		A0C2DBCF19613EBE0031E4BA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A2D195DBA12005E6EB0 /* Default@2x.png */; };
 		A0C2DBD319613EBE0031E4BA /* arrow-down.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A34195DBA12005E6EB0 /* arrow-down.png */; };
 		A0C2DBD419613EBE0031E4BA /* arrow-up.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A35195DBA12005E6EB0 /* arrow-up.png */; };
 		A0C2DBD519613EBE0031E4BA /* battery-critical-focus.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A36195DBA12005E6EB0 /* battery-critical-focus.png */; };
@@ -164,6 +161,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A02ABF4B196AA1DC00FD11E0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		A02ABF4C196AA1DC00FD11E0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A02ABF4D196AA1DC00FD11E0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/MainStoryboard_iPad.storyboard"; sourceTree = "<group>"; };
+		A02ABF4E196AA1DC00FD11E0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/MainStoryboard_iPhone.storyboard"; sourceTree = "<group>"; };
 		A03BA80C196199B00096E45E /* greenDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenDot.png; sourceTree = "<group>"; };
 		A03BA80D196199B00096E45E /* redDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redDot.png; sourceTree = "<group>"; };
 		A03E191319654EC3008416DB /* NotificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotificationCell.xib; path = Notifications/NotificationCell.xib; sourceTree = "<group>"; };
@@ -240,9 +241,6 @@
 		A0459A26195DBA12005E6EB0 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A0459A28195DBA12005E6EB0 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		A0459A2A195DBA12005E6EB0 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		A0459A2B195DBA12005E6EB0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
-		A0459A2C195DBA12005E6EB0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
-		A0459A2D195DBA12005E6EB0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 		A0459A2E195DBA12005E6EB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0459A2F195DBA12005E6EB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		A0459A30195DBA12005E6EB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
@@ -422,9 +420,6 @@
 				A0459A40195DBA12005E6EB0 /* cooling-focus.png */,
 				A0459A41195DBA12005E6EB0 /* cooling.png */,
 				A0466827196414B900323048 /* Dashboard.png */,
-				A0459A2B195DBA12005E6EB0 /* Default-568h@2x.png */,
-				A0459A2C195DBA12005E6EB0 /* Default.png */,
-				A0459A2D195DBA12005E6EB0 /* Default@2x.png */,
 				A0459A42195DBA12005E6EB0 /* device-blinds@2x.png */,
 				A0459A43195DBA12005E6EB0 /* device-co@2x.png */,
 				A0459A44195DBA12005E6EB0 /* device-cooling@2x.png */,
@@ -575,10 +570,10 @@
 		A0459AC5195DBB95005E6EB0 /* Options */ = {
 			isa = PBXGroup;
 			children = (
-				A042F0C61962EDFA00825387 /* ZWayAboutController.h */,
-				A042F0C71962EDFA00825387 /* ZWayAboutController.m */,
 				A042F0C81962EDFA00825387 /* ZWayOptionsController.h */,
 				A042F0C91962EDFA00825387 /* ZWayOptionsController.m */,
+				A042F0C61962EDFA00825387 /* ZWayAboutController.h */,
+				A042F0C71962EDFA00825387 /* ZWayAboutController.m */,
 				A03BA803196186290096E45E /* Profiles */,
 				A0C2DC23196140E80031E4BA /* Profile store */,
 			);
@@ -734,6 +729,7 @@
 				de,
 				ru,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = A085F50A1886C5F00061E721;
 			productRefGroup = A085F5141886C5F00061E721 /* Products */;
@@ -761,7 +757,6 @@
 				A0C2DBE019613EBE0031E4BA /* cooling.png in Resources */,
 				A0C2DBFD19613EBE0031E4BA /* flood.png in Resources */,
 				A0C2DBE919613EBE0031E4BA /* device-heating@2x.png in Resources */,
-				A0C2DBCE19613EBE0031E4BA /* Default.png in Resources */,
 				A0C2DC1B19613EBE0031E4BA /* water.png in Resources */,
 				A0C2DBE719613EBE0031E4BA /* device-flood@2x.png in Resources */,
 				A0C2DC1519613EBE0031E4BA /* switch.png in Resources */,
@@ -778,7 +773,6 @@
 				A0C2DBCA19613E9C0031E4BA /* MainStoryboard_iPhone.storyboard in Resources */,
 				A0C2DC0819613EBE0031E4BA /* media-focus.png in Resources */,
 				A0C2DC0619613EBE0031E4BA /* luminosity-focus.png in Resources */,
-				A0C2DBCD19613EB80031E4BA /* Default-568h@2x.png in Resources */,
 				A0C2DC1719613EBE0031E4BA /* temperature.png in Resources */,
 				A0C2DC1A19613EBE0031E4BA /* water-focus.png in Resources */,
 				A0C2DBFE19613EBE0031E4BA /* gas-focus.png in Resources */,
@@ -811,7 +805,6 @@
 				A0C2DBD419613EBE0031E4BA /* arrow-up.png in Resources */,
 				A0C2DC1019613EBE0031E4BA /* notification-connection@2x.png in Resources */,
 				A03E191619655110008416DB /* Notifications.png in Resources */,
-				A0C2DBCF19613EBE0031E4BA /* Default@2x.png in Resources */,
 				A0C2DBF819613EBE0031E4BA /* energy-focus.png in Resources */,
 				A0C2DC0119613EBE0031E4BA /* heating.png in Resources */,
 				A046682C196414B900323048 /* Dashboard.png in Resources */,
@@ -928,6 +921,7 @@
 				A0459A24195DBA12005E6EB0 /* de */,
 				A0459A2E195DBA12005E6EB0 /* en */,
 				A0459A87195DBA12005E6EB0 /* ru */,
+				A02ABF4B196AA1DC00FD11E0 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -938,6 +932,7 @@
 				A0459A26195DBA12005E6EB0 /* de */,
 				A0459A88195DBA12005E6EB0 /* ru */,
 				A0C2DC22196140610031E4BA /* en */,
+				A02ABF4C196AA1DC00FD11E0 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -948,6 +943,7 @@
 				A0459A28195DBA12005E6EB0 /* de */,
 				A0459A2F195DBA12005E6EB0 /* en */,
 				A0459A89195DBA12005E6EB0 /* ru */,
+				A02ABF4D196AA1DC00FD11E0 /* zh-Hans */,
 			);
 			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
@@ -958,6 +954,7 @@
 				A0459A2A195DBA12005E6EB0 /* de */,
 				A0459A30195DBA12005E6EB0 /* en */,
 				A0459A8A195DBA12005E6EB0 /* ru */,
+				A02ABF4E196AA1DC00FD11E0 /* zh-Hans */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";

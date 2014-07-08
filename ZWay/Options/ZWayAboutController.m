@@ -19,7 +19,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self.navigationController.navigationBar setTranslucent:NO];
+    [self.navigationController.navigationBar setOpaque:YES];
+    [self.tabBarController.tabBar setTranslucent:NO];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

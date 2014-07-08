@@ -52,7 +52,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *noItemsLabel;
 @property (strong, nonatomic) ZWayAuthentification *authent;
 
-
 -(IBAction)roomsSelected:(id)sender;
 -(IBAction)typesSelected:(id)sender;
 -(IBAction)tagsSelected:(id)sender;

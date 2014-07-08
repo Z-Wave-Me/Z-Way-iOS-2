@@ -26,7 +26,7 @@
 @synthesize displayDevices;
 @synthesize tableview;
 @synthesize noItemsLabel;
-@synthesize authent;
+@synthesize authent, changedIP;
 
 - (void)viewDidLoad
 {
@@ -55,6 +55,7 @@
     NSInteger index = [deviceIndex integerValue];
     //set tab and navigation translucent
     [self.navigationController.navigationBar setTranslucent:NO];
+    [self.navigationController.navigationBar setOpaque:YES];
     [self.tabBarController.tabBar setTranslucent:NO];
     
     //set title for subview
@@ -76,6 +77,8 @@
     
     //set localized label for empty section (empty locations)
     noItemsLabel.text = NSLocalizedString(@"NoDevices", @"");
+    
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
     //load dash objects
     if(ZWayAppDelegate.sharedDelegate.profile.objects)

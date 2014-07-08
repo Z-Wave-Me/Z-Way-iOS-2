@@ -1,0 +1,88 @@
+﻿/* 
+  Localizable.strings
+  ZWayJSON
+
+  Created by Lucas von Hacht on 2/17/14.
+  Copyright (c) 2014 Lucas von Hacht. All rights reserved.
+*/
+
+"Remove" = "移除";
+"Notifications" = "通知";
+"Dashboard" = "面板";
+"Options" = "选项";
+"Widgets" = "控件";
+"About" = "关于";
+"NoDevices" = "未发现设备";
+"OKMessage" = "一切正常";
+"UpdateError" = "更新出现问题";
+"ToDash" = "设备移到了面板上";
+"Done" = "完成";
+"IsPart" = "设备已经是面板的一部分";
+"Edit" = "编辑";
+"Profiles" = "应用";
+"Color" = "颜色方案";
+"Default" = "默认";
+"NoProfile" = "你要创建至少一个应用";
+"NoSelection" = "你要选择一个应用";
+"OK" = "OK";
+"NewProfile" = "新应用";
+"IndoorServer" = "室内服务器";
+"RemoteAccess" = "远程访问证书";
+"Store" = "存储数据";
+"Name" = "名字";
+"Away" = "离开";
+"Home" = "@ 家";
+"Login" = "ID";
+"Password" = "密码";
+"DeleteProfile" = "删除应用";
+"Stored" = "数据已经被存储";
+"Rooms" = "房间";
+"Types" = "类型";
+"Tags" = "标签";
+"AutoLow" = "自动 低";
+"OnLow" = "开 低";
+"AutoHigh" = "自动 高";
+"OnHigh" = "开 高";
+"Off" = "关闭";
+"Heat" = "加热";
+"Cool" = "制冷";
+"Auto" = "自动";
+"Resume" = "恢复";
+"FanOnly" = "只开风扇";
+"DryAir" = "抽湿";
+"NoDashboard" = "面板为空。按住控件2秒，便可添加常用控件到面板上。";
+"ConnectionFail" = "连接错误";
+"CommandFail" = "命令失败";
+"FailMessage" = "连接发生问题";
+"CredentialsError" = "认证错误";
+"WrongCred" = "无法连接到证书";
+"Language" = "语言";
+"English" = "英语";
+"German" = "德语";
+"Russian" = "俄语";
+"Chinese" = "中文";
+
+"Red" = "红色";
+"Blue" = "蓝色";
+"Orange" = "橙色";
+"Purple" = "紫色";
+"Brown" = "";
+"Magenta" = "";
+"Yellow" = "";
+"Cyan" = "";
+"Green" = "";
+
+"Error!" = "错误!";
+"AlreadyPart" = "部分";
+"MovedTo" = "可移动的";
+
+"Battery" = "电池";
+"MultiSensor" = "多传感器";
+"BinarySensor" = "二进制传感器";
+"BinarySwitch" = "二进制开关";
+"MultiSwitch" = "可调开关";
+"Doorlock" = "门锁";
+"Thermostat" = "温控器";
+"Fan" = "风扇";
+"Meter" = "电表";
+"Scene" = "场景";

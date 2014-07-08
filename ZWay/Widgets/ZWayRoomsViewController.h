@@ -33,6 +33,7 @@
 @property(nonatomic, strong) IBOutlet UITableView *tableview;
 @property(nonatomic, strong) IBOutlet UILabel *noItemsLabel;
 @property(nonatomic, strong) ZWayAuthentification *authent;
+@property (nonatomic, strong) NSString *changedIP;
 
 - (BOOL)moveToDash:(ZWDevice*)device;
 -(void)onLongPress:(UILongPressGestureRecognizer*)pGesture;

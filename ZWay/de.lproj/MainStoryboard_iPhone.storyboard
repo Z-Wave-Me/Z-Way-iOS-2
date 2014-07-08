@@ -427,7 +427,7 @@
                 <tabBarController id="4" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="5">
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="5">
                         <rect key="frame" x="0.0" y="431" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -531,10 +531,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Dashboard.png" width="40" height="31"/>
+        <image name="Dashboard.png" width="50" height="39"/>
         <image name="Notifications.png" width="49" height="42"/>
-        <image name="Options.png" width="40" height="30"/>
-        <image name="Widgets.png" width="40" height="30"/>
+        <image name="Options.png" width="46" height="42"/>
+        <image name="Widgets.png" width="54" height="43"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

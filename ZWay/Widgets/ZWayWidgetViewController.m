@@ -49,7 +49,10 @@
     toolbar.delegate = self;
     [self.navigationController setToolbarHidden:NO];
     [self.toolbar setTranslucent:NO];
+    [self.toolbar setBarStyle:UIBarStyleBlackOpaque];
+    [self.toolbar setTintColor:[UIColor whiteColor]];
     [self.navigationController.navigationBar setTranslucent:NO];
+    [self.navigationController.navigationBar setOpaque:YES];
     [self.tabBarController.tabBar setTranslucent:NO];
     [self setToolbarItems:[NSArray arrayWithObjects: self.typesButton, self.roomsButton, self.tagsButton, nil] animated:NO];
     
@@ -78,6 +81,7 @@
     [super viewWillAppear:animated];
     
     [self.navigationController setToolbarHidden:NO animated:NO];
+    [self.toolbar setBarTintColor:self.navigationController.navigationBar.tintColor];
     
     //localize in case the language changed
     [self setTitle:NSLocalizedString(@"Widgets", @"")];
@@ -86,6 +90,10 @@
     tagsButton.title = NSLocalizedString(@"Tags", @"");
     noItemsLabel.text = NSLocalizedString(@"NoDevices", @"");
     
+    [roomsButton setTintColor:[UIColor whiteColor]];
+    [tagsButton setTintColor:[UIColor whiteColor]];
+    [typesButton setTintColor:[UIColor whiteColor]];
+    
     if([currentButton isEqualToString:NSLocalizedString(@"Rooms", @"")])
         [self roomsSelected:self];
     else if([currentButton isEqualToString:NSLocalizedString(@"Tags", @"")])
@@ -93,6 +101,17 @@
     else
         [self typesSelected:self];
     
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    
+    if([ZWayAppDelegate.sharedDelegate.profile.changedIP boolValue] == YES)
+    {
+        [handler getLocations];
+        
+        if(handler.locationTitles)
+            [self updateDevices:[NSNumber numberWithLong:0]];
+        else
+            [self performSelector:@selector(updateDevices:) withObject:[NSNumber numberWithLong:0] afterDelay:1];
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -159,7 +178,10 @@
     receivedObjects = nil;
     
     //load device from scratch if connection failed
-    [self performSelector:@selector(updateDevices:) withObject:[NSNumber numberWithInt:0] afterDelay:10.0];
+    if(![ZWayAppDelegate.sharedDelegate.profile.changedIP boolValue] == YES)
+        [self performSelector:@selector(updateDevices:) withObject:[NSNumber numberWithInt:0] afterDelay:10.0];
+    
+    ZWayAppDelegate.sharedDelegate.profile.changedIP = [NSNumber numberWithBool:NO];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -236,7 +258,10 @@
         firstUpdate = NO;
     
     //reload devices after 20 seconds
-    [self performSelector:@selector(updateDevices:) withObject:[NSNumber numberWithLong:timestamp] afterDelay:20.0];
+    if(![ZWayAppDelegate.sharedDelegate.profile.changedIP boolValue] == YES)
+        [self performSelector:@selector(updateDevices:) withObject:[NSNumber numberWithLong:timestamp] afterDelay:20.0];
+    
+    ZWayAppDelegate.sharedDelegate.profile.changedIP = [NSNumber numberWithBool:NO];
 }
 
 //method for redirect if outdoor is used

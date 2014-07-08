@@ -71,36 +71,94 @@
 
 - (void)useColorTheme:(NSString*)theme
 {
+    //check which color was selected and set all color elements to it
     if([theme isEqualToString:NSLocalizedString(@"Red", @"")])
     {
-        [[UINavigationBar appearance] setTintColor:[UIColor redColor]];
-        [[UISwitch appearance] setOnTintColor:[UIColor redColor]];
+        [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
+        [[UIToolbar appearance] setBarTintColor:[UIColor redColor]];
+        [[UITabBar appearance] setTintColor:[UIColor redColor]];
         [[UISlider appearance] setMinimumTrackTintColor:[UIColor redColor]];
+        [[UISwitch appearance] setOnTintColor:[UIColor redColor]];
+        [[UITabBar appearance] setTintColor:[UIColor redColor]];
     }
     else if([theme isEqualToString:NSLocalizedString(@"Blue", @"")])
     {
-        [[UINavigationBar appearance] setTintColor:[UIColor blueColor]];
-        [[UISwitch appearance] setOnTintColor:[UIColor blueColor]];
+        [[UINavigationBar appearance] setBarTintColor:[UIColor blueColor]];
+        [[UIToolbar appearance] setBarTintColor:[UIColor blueColor]];
+        [[UITabBar appearance] setTintColor:[UIColor blueColor]];
         [[UISlider appearance] setMinimumTrackTintColor:[UIColor blueColor]];
+        [[UISwitch appearance] setOnTintColor:[UIColor blueColor]];
+        [[UITabBar appearance] setTintColor:[UIColor blueColor]];
     }
     else if([theme isEqualToString:NSLocalizedString(@"Orange", @"")])
     {
-        [[UINavigationBar appearance] setTintColor:[UIColor orangeColor]];
-        [[UISwitch appearance] setOnTintColor:[UIColor orangeColor]];
+        [[UINavigationBar appearance] setBarTintColor:[UIColor orangeColor]];
+        [[UIToolbar appearance] setBarTintColor:[UIColor orangeColor]];
+        [[UITabBar appearance] setTintColor:[UIColor orangeColor]];
         [[UISlider appearance] setMinimumTrackTintColor:[UIColor orangeColor]];
+        [[UISwitch appearance] setOnTintColor:[UIColor orangeColor]];
+        [[UITabBar appearance] setTintColor:[UIColor orangeColor]];
     }
     else if([theme isEqualToString:NSLocalizedString(@"Purple", @"")])
     {
-        [[UINavigationBar appearance] setTintColor:[UIColor purpleColor]];
-        [[UISwitch appearance] setOnTintColor:[UIColor purpleColor]];
+        [[UINavigationBar appearance] setBarTintColor:[UIColor purpleColor]];
+        [[UIToolbar appearance] setBarTintColor:[UIColor purpleColor]];
+        [[UITabBar appearance] setTintColor:[UIColor purpleColor]];
         [[UISlider appearance] setMinimumTrackTintColor:[UIColor purpleColor]];
+        [[UISwitch appearance] setOnTintColor:[UIColor purpleColor]];
+        [[UITabBar appearance] setTintColor:[UIColor purpleColor]];
+    }
+    else if([theme isEqualToString:NSLocalizedString(@"Brown", @"")])
+    {
+        [[UINavigationBar appearance] setBarTintColor:[UIColor brownColor]];
+        [[UIToolbar appearance] setBarTintColor:[UIColor brownColor]];
+        [[UISlider appearance] setMinimumTrackTintColor:[UIColor brownColor]];
+        [[UISwitch appearance] setOnTintColor:[UIColor brownColor]];
+        [[UITabBar appearance] setTintColor:[UIColor brownColor]];
+    }
+    else if([theme isEqualToString:NSLocalizedString(@"Cyan", @"")])
+    {
+        [[UINavigationBar appearance] setBarTintColor:[UIColor cyanColor]];
+        [[UIToolbar appearance] setBarTintColor:[UIColor cyanColor]];
+        [[UISlider appearance] setMinimumTrackTintColor:[UIColor cyanColor]];
+        [[UISwitch appearance] setOnTintColor:[UIColor cyanColor]];
+        [[UITabBar appearance] setTintColor:[UIColor cyanColor]];
+    }
+    else if([theme isEqualToString:NSLocalizedString(@"Green", @"")])
+    {
+        [[UINavigationBar appearance] setBarTintColor:[UIColor greenColor]];
+        [[UIToolbar appearance] setBarTintColor:[UIColor greenColor]];
+        [[UISlider appearance] setMinimumTrackTintColor:[UIColor greenColor]];
+        [[UISwitch appearance] setOnTintColor:[UIColor greenColor]];
+        [[UITabBar appearance] setTintColor:[UIColor greenColor]];
+    }
+    else if([theme isEqualToString:NSLocalizedString(@"Magenta", @"")])
+    {
+        [[UINavigationBar appearance] setBarTintColor:[UIColor magentaColor]];
+        [[UIToolbar appearance] setBarTintColor:[UIColor magentaColor]];
+        [[UISlider appearance] setMinimumTrackTintColor:[UIColor magentaColor]];
+        [[UISwitch appearance] setOnTintColor:[UIColor magentaColor]];
+        [[UITabBar appearance] setTintColor:[UIColor magentaColor]];
+    }
+    else if([theme isEqualToString:NSLocalizedString(@"Yellow", @"")])
+    {
+        [[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];
+        [[UIToolbar appearance] setBarTintColor:[UIColor yellowColor]];
+        [[UISlider appearance] setMinimumTrackTintColor:[UIColor yellowColor]];
+        [[UISwitch appearance] setOnTintColor:[UIColor yellowColor]];
+        [[UITabBar appearance] setTintColor:[UIColor yellowColor]];
     }
     else
     {
-        [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
-        [[UISwitch appearance] setOnTintColor:[UIColor blackColor]];
-        [[UISlider appearance] setMinimumTrackTintColor:[UIColor blackColor]];
+        [[UINavigationBar appearance] setBarTintColor:[UIColor blueColor]];
+        [[UIToolbar appearance] setBarTintColor:[UIColor blueColor]];
+        [[UISlider appearance] setMinimumTrackTintColor:[UIColor blueColor]];
+        [[UISwitch appearance] setOnTintColor:[UIColor blueColor]];
+        [[UITabBar appearance] setTintColor:[UIColor blueColor]];
     }
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UIToolbar appearance] setTintColor:[UIColor whiteColor]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

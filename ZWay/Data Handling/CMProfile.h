@@ -33,5 +33,6 @@
 @property (nonatomic, retain) NSString * theme;
 @property (nonatomic, retain) NSNumber * useOutdoor;
 @property (nonatomic, retain) NSString * language;
+@property (nonatomic, retain) NSNumber * changedIP;
 
 @end

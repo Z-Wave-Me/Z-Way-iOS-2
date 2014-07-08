@@ -19,10 +19,6 @@
 "Done" = "Done";
 "IsPart" = "Device is already part of the dashboard";
 "Edit" = "Edit";
-"Red" = "Red";
-"Blue" = "Blue";
-"Orange" = "Orange";
-"Purple" = "Purple";
 "Profiles" = "Profiles";
 "Color" = "Color theme";
 "Default" = "default";
@@ -54,7 +50,7 @@
 "Resume" = "Resume";
 "FanOnly" = "Fan Only";
 "DryAir" = "DryAir";
-"NoDashboard" = "The dashboard is empty now. You can fill it with frequently used widgets by swiping them left";
+"NoDashboard" = "The dashboard is empty now. You can fill it with frequently used widgets by holding them 2 seconds";
 "ConnectionFail" = "Connection Error";
 "CommandFail" = "The command failed";
 "FailMessage" = "An issue with the connection occured";
@@ -69,6 +65,16 @@
 "Error!" = "Error!";
 "AlreadyPart" = "Is part";
 "MovedTo" = "Moved";
+
+"Red" = "Red";
+"Blue" = "Blue";
+"Orange" = "Orange";
+"Purple" = "Purple";
+"Brown" = "Brown";
+"Magenta" = "Magenta";
+"Yellow" = "Yellow";
+"Cyan" = "Cyan";
+"Green" = "Green";
 
 "Battery" = "Batteries";
 "MultiSensor" = "Multi sensors";

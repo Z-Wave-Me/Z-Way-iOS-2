@@ -26,7 +26,6 @@
 @property (strong, nonatomic) NSString *loaded;
 @property (strong, nonatomic) UIPickerView *picker;
 
-
 - (void)testConnection:(NSString*)field With:(NSString*)connection;
 - (void)store;
 - (void)deleteProfile;

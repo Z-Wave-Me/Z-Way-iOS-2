@@ -59,12 +59,15 @@
     
     //set tab and navigation translucent so they don´t overlap the tableview
     [self.navigationController.navigationBar setTranslucent:NO];
+    [self.navigationController.navigationBar setOpaque:YES];
     [self.tabBarController.tabBar setTranslucent:NO];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
     //check if a profile is selected and hide tableview when not
     if (ZWayAppDelegate.sharedDelegate.profile != nil)

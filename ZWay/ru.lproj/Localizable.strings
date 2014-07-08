@@ -18,10 +18,6 @@
 "ToDash" = "На Dashboard";
 "Done" = "Готово";
 "IsPart" = "Часть";
-"Red" = "Красный";
-"Blue" = "Синий";
-"Orange" = "Оранжевый";
-"Purple" = "Фиолетовый";
 "Profiles" = "Профили";
 "Color" = "Цвета";
 "Default" = "По умолчанию";
@@ -69,6 +65,16 @@
 "AlreadyPart" = "";
 "MovedTo" = "";
 "Edit" = "";
+
+"Red" = "Красный";
+"Blue" = "Синий";
+"Orange" = "Оранжевый";
+"Purple" = "Фиолетовый";
+"Brown" = "";
+"Magenta" = "";
+"Yellow" = "";
+"Cyan" = "";
+"Green" = "";
 
 "Battery" = "Батарейки";
 "MultiSensor" = "Мультисенсоры";

@@ -16,12 +16,12 @@
 
 @synthesize tableview;
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     [self.navigationController.navigationBar setTranslucent:NO];
+    [self.navigationController.navigationBar setOpaque:YES];
     [self.tabBarController.tabBar setTranslucent:NO];
 }
 
@@ -30,6 +30,8 @@
     [super viewWillAppear:animated];
     
     self.title = NSLocalizedString(@"Options", @"");
+    
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     [tableview reloadData];
 }
 
@@ -113,16 +115,5 @@
             break;
     }
 }
-
-
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
 
 @end
