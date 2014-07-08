@@ -347,10 +347,6 @@
         NSString *deviceType = device.deviceType;
         NSArray *deviceTags = [[NSArray alloc]initWithArray:device.tags];
         NSString *location = device.location;
-        
-        //filter all camera and switchRGBW devices
-        if([deviceType isEqualToString:@"camera"] || [deviceType isEqualToString:@"switchRGBW"])
-            [objects removeObjectAtIndex:i];
             
         //ignore NULL and system items
         if (deviceType != (id)[NSNull null] && ![deviceType isEqualToString:@"system"])

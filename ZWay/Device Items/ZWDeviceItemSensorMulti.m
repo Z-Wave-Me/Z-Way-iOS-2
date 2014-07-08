@@ -24,11 +24,11 @@
 
 @implementation ZWDeviceItemSensorMulti
 
-@synthesize slider;
+@synthesize slider, switchButton;
 
 + (ZWDeviceItemSensorMulti*)device
 {
-    NSArray *a = [[NSBundle mainBundle] loadNibNamed:@"ZWDeviceItemSensorMulti" owner:nil options:nil];
+    NSArray *a = [[NSBundle mainBundle] loadNibNamed:@"ZWDeviceItemDimmer" owner:nil options:nil];
     return [a objectAtIndex:0];
 }
 
@@ -40,6 +40,13 @@
         value = @"100";
         
     [slider setValue:[value integerValue]];
+    
+    //check if it´s on
+    NSString *on = [self.device.metrics valueForKey:@"level"];
+    if ([on integerValue] > 0)
+        [self.switchButton setOn:YES];
+    else
+        [self.switchButton setOn:NO];
 }
 
 //hide the slider when editing
@@ -67,6 +74,31 @@
         //create the request
         [self createRequestWithURL];
     }
+}
+
+- (void)switchValueChanged:(id)sender
+{
+    BOOL value = self.switchButton.isOn;
+    NSString *state;
+    
+    //check if switch was turned on or off
+    if (value == YES)
+    {
+        state = @"on";
+    }
+    else
+    {
+        state = @"off";
+    }
+    
+    //decide if outdoor or indoor URL should be used
+    if([ZWayAppDelegate.sharedDelegate.profile.useOutdoor boolValue] == NO)
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/ZAutomation/api/v1/devices/%@/command/%@", ZWayAppDelegate.sharedDelegate.profile.indoorUrl, self.device.deviceId, state]];
+    else
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"https://find.z-wave.me/ZAutomation/api/v1/devices/%@/command/%@", self.device.deviceId, state]];
+    
+    //create the request
+    [self createRequestWithURL];
 }
 
 @end

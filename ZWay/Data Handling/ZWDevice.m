@@ -38,20 +38,29 @@
             {
                 ZWDevice *device = [ZWDevice new];
                 NSDictionary *dict = [array objectAtIndex:i];
-                device.deviceType = [dict valueForKey:@"deviceType"];
-                device.deviceId = [dict valueForKey:@"id"];
-                device.location = [dict valueForKey:@"location"];
-                device.metrics = [dict objectForKey:@"metrics"];
+                NSString *type = [dict valueForKey:@"deviceType"];
                 
-                //filter NULL scales
-                if([device.metrics valueForKey:@"scaleTitle"] == (id)[NSNull null])
+                if([type isEqualToString:@"camera"] || [type isEqualToString:@"switchRGBW"] || [type isEqualToString:@"switchControl"])
                 {
-                    [device.metrics setValue:@"" forKey:@"scaleTitle"];
+                    //NSLog(@"DeviceType not supported");
                 }
+                else
+                {
+                    device.deviceType = type;
+                    device.deviceId = [dict valueForKey:@"id"];
+                    device.location = [dict valueForKey:@"location"];
+                    device.metrics = [dict objectForKey:@"metrics"];
                 
-                device.tags = [dict objectForKey:@"tags"];
-                device.updateTime = [dict valueForKey:@"updateTime"];
-                [devices addObject:device];
+                    //filter NULL scales
+                    if([device.metrics valueForKey:@"scaleTitle"] == (id)[NSNull null])
+                    {
+                        [device.metrics setValue:@"" forKey:@"scaleTitle"];
+                    }
+                
+                    device.tags = [dict objectForKey:@"tags"];
+                    device.updateTime = [dict valueForKey:@"updateTime"];
+                    [devices addObject:device];
+                }
             }
     }
     else
@@ -84,10 +93,8 @@
 //set the height for the device cells
 - (CGFloat)height
 {
-    if ([_deviceType isEqualToString:@"thermostat"] || [_deviceType isEqualToString:@"fan"])
+    if ([_deviceType isEqualToString:@"thermostat"] || [_deviceType isEqualToString:@"fan"] || [_deviceType isEqualToString:@"switchMultilevel"])
         return 90;
-    else if([_deviceType isEqualToString:@"switchMultilevel"])
-        return 70;
     
     return 60;
 }

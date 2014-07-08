@@ -83,8 +83,36 @@
         }
         else if ([[dict valueForKey:@"icon"] rangeOfString:@"http"].location != NSNotFound)
         {
-            NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:[dict valueForKey:@"icon"]]];
-            self.imageView.image = [UIImage imageWithData: imageData];
+            NSString *oldValue;
+            NSData * imageData;
+            
+            NSData *olddata = [[NSUserDefaults standardUserDefaults] dataForKey:[NSString stringWithFormat:@"value%@", self.device.deviceId]];
+            
+            if (olddata)
+            {
+                oldValue = [NSKeyedUnarchiver unarchiveObjectWithData:olddata];
+            
+                if([oldValue doubleValue] == [[dict valueForKey:@"level"] doubleValue])
+                {
+                    imageData = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"%@", self.device.deviceId]];
+                    self.imageView.image = [UIImage imageWithData: imageData];
+                }
+                else
+                {
+                    imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:[dict valueForKey:@"icon"]]];
+                    self.imageView.image = [UIImage imageWithData: imageData];
+                }
+            }
+            else
+            {
+                imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:[dict valueForKey:@"icon"]]];
+                self.imageView.image = [UIImage imageWithData: imageData];
+            }
+            
+            NSData *data = [NSKeyedArchiver archivedDataWithRootObject:[dict valueForKey:@"level"]];
+            
+            [[NSUserDefaults standardUserDefaults] setObject:imageData forKey:[NSString stringWithFormat:@"%@", self.device.deviceId]];
+            [[NSUserDefaults standardUserDefaults] setObject:data forKey:[NSString stringWithFormat:@"value%@", self.device.deviceId]];
         }
         else if([title isEqualToString:@"energy"])
         {

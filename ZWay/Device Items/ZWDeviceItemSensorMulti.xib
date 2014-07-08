@@ -25,9 +25,6 @@
                         <rect key="frame" x="60" y="32" width="186" height="29"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="minimumTrackTintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <connections>
-                            <action selector="handleValueChanged:event:" destination="2" eventType="valueChanged" id="y2A-b1-S37"/>
-                        </connections>
                     </slider>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="32">
                         <rect key="frame" x="0.0" y="7" width="47" height="47"/>
@@ -39,7 +36,6 @@
             <connections>
                 <outlet property="imageView" destination="32" id="33"/>
                 <outlet property="nameView" destination="8" id="13"/>
-                <outlet property="slider" destination="29" id="30"/>
             </connections>
         </tableViewCell>
     </objects>

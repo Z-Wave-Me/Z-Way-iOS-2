@@ -25,9 +25,11 @@
 @interface ZWDeviceItemSensorMulti : ZWDeviceItem
 
 @property (strong, nonatomic) IBOutlet UISlider *slider;
+@property (strong, nonatomic) IBOutlet UISwitch *switchButton;
 
 + (ZWDeviceItemSensorMulti*)device;
 
 - (IBAction)handleValueChanged:(id)sender event:(id)event;
+- (IBAction)switchValueChanged:(id)sender;
 
 @end
