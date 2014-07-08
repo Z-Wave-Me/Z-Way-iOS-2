@@ -35,9 +35,6 @@
 "Password" = "Пароль";
 "DeleteProfile" = "Удалить Профиль";
 "Stored" = "Сохранено";
-"Rooms" = "Комнаты";
-"Types" = "Типы";
-"Tags" = "Тэги";
 "AutoLow" = "AutoLow";
 "OnLow" = "OnLow";
 "AutoHigh" = "AutoHigh";
@@ -75,6 +72,11 @@
 "Yellow" = "";
 "Cyan" = "";
 "Green" = "";
+
+"Rooms" = "Комнаты";
+"Types" = "Типы";
+"Tags" = "Тэги";
+"All" = "";
 
 "Battery" = "Батарейки";
 "MultiSensor" = "Мультисенсоры";

@@ -36,9 +36,6 @@
 "Password" = "Password";
 "DeleteProfile" = "Delete Profile";
 "Stored" = "Your data has been stored";
-"Rooms" = "Rooms";
-"Types" = "Types";
-"Tags" = "Tags";
 "AutoLow" = "Auto Low";
 "OnLow" = "On Low";
 "AutoHigh" = "Auto High";
@@ -75,6 +72,11 @@
 "Yellow" = "Yellow";
 "Cyan" = "Cyan";
 "Green" = "Green";
+
+"Rooms" = "Rooms";
+"Types" = "Types";
+"Tags" = "Tags";
+"All" = "All";
 
 "Battery" = "Batteries";
 "MultiSensor" = "Multi sensors";

@@ -49,12 +49,14 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *roomsButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *typesButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *tagsButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *allButton;
 @property (strong, nonatomic) IBOutlet UILabel *noItemsLabel;
 @property (strong, nonatomic) ZWayAuthentification *authent;
 
 -(IBAction)roomsSelected:(id)sender;
 -(IBAction)typesSelected:(id)sender;
 -(IBAction)tagsSelected:(id)sender;
+-(IBAction)allSelected:(id)sender;
 -(void)getWidgets;
 -(void)updateDevices:(NSNumber*)timestamp;
 -(NSString *)smoothTitles:(NSString *)title;

@@ -29,7 +29,7 @@
 @synthesize JSON;
 @synthesize roomObjects, typeObjects, tagObjects;
 @synthesize deviceIndex;
-@synthesize tagsButton, typesButton, roomsButton;
+@synthesize tagsButton, typesButton, roomsButton, allButton;
 @synthesize noItemsLabel;
 @synthesize toolbar;
 @synthesize authent;
@@ -54,7 +54,7 @@
     [self.navigationController.navigationBar setTranslucent:NO];
     [self.navigationController.navigationBar setOpaque:YES];
     [self.tabBarController.tabBar setTranslucent:NO];
-    [self setToolbarItems:[NSArray arrayWithObjects: self.typesButton, self.roomsButton, self.tagsButton, nil] animated:NO];
+    [self setToolbarItems:[NSArray arrayWithObjects:self.allButton, self.typesButton, self.roomsButton, self.tagsButton, nil] animated:NO];
     
     //set up auth handler
     authent = [ZWayAuthentification new];
@@ -64,7 +64,7 @@
     [handler setUpAuth];
     [handler getLocations];
     
-    currentButton = NSLocalizedString(@"Types", @"");
+    currentButton = NSLocalizedString(@"All", @"");
     
     //update devices
     if(handler.locationTitles)
@@ -93,13 +93,16 @@
     [roomsButton setTintColor:[UIColor whiteColor]];
     [tagsButton setTintColor:[UIColor whiteColor]];
     [typesButton setTintColor:[UIColor whiteColor]];
+    [allButton setTintColor:[UIColor whiteColor]];
     
     if([currentButton isEqualToString:NSLocalizedString(@"Rooms", @"")])
         [self roomsSelected:self];
     else if([currentButton isEqualToString:NSLocalizedString(@"Tags", @"")])
         [self tagsSelected:self];
-    else
+    else if([currentButton isEqualToString:NSLocalizedString(@"Types", @"")])
         [self typesSelected:self];
+    else
+        [self allSelected:self];
     
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
@@ -244,8 +247,7 @@
     NSData *encodedObjects = [NSKeyedArchiver archivedDataWithRootObject:objects];
     [defaults setObject:encodedObjects forKey:@"Devices"];
     
-    //if(firstUpdate == NO)
-        //NSLog(@"Objects: %@", JSON);
+    //NSLog(@"Objects: %@", JSON);
     
     alertShown = false;
     
@@ -277,10 +279,6 @@
 -(IBAction)roomsSelected:(id)sender
 {
     currentButton = NSLocalizedString(@"Rooms", @"");
-    UIColor *color = self.navigationController.navigationBar.tintColor;
-    [roomsButton setTintColor:color];
-    [typesButton setTintColor:nil];
-    [tagsButton setTintColor:nil];
     [tableview reloadData];
 }
 
@@ -288,10 +286,6 @@
 -(IBAction)typesSelected:(id)sender
 {
     currentButton = NSLocalizedString(@"Types", @"");
-    UIColor *color = self.navigationController.navigationBar.tintColor;
-    [typesButton setTintColor:color];
-    [roomsButton setTintColor:nil];
-    [tagsButton setTintColor:nil];
     [tableview reloadData];
 }
 
@@ -299,10 +293,12 @@
 -(IBAction)tagsSelected:(id)sender
 {
     currentButton = NSLocalizedString(@"Tags", @"");
-    UIColor *color = self.navigationController.navigationBar.tintColor;
-    [tagsButton setTintColor:color];
-    [roomsButton setTintColor:nil];
-    [typesButton setTintColor:nil];
+    [tableview reloadData];
+}
+
+-(IBAction)allSelected:(id)sender
+{
+    currentButton = NSLocalizedString(@"All", @"");
     [tableview reloadData];
 }
 
@@ -352,8 +348,12 @@
         NSArray *deviceTags = [[NSArray alloc]initWithArray:device.tags];
         NSString *location = device.location;
         
+        //filter all camera and switchRGBW devices
+        if([deviceType isEqualToString:@"camera"] || [deviceType isEqualToString:@"switchRGBW"])
+            [objects removeObjectAtIndex:i];
+            
         //ignore NULL and system items
-        if (deviceType != (id)[NSNull null] && ![deviceType isEqualToString:@"system"] && ![deviceType isEqualToString:@"camera"] && ![deviceType isEqualToString:@"switchRGBW"])
+        if (deviceType != (id)[NSNull null] && ![deviceType isEqualToString:@"system"])
         {
             //sort into existing type array
             if(![types containsObject:deviceType])
@@ -421,6 +421,11 @@
 //all categories have the same height
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if([currentButton isEqualToString:NSLocalizedString(@"All", @"")])
+    {
+        ZWDevice *device = [objects objectAtIndex:indexPath.row];
+        return [device height];
+    }
     return 60;
 }
 
@@ -461,7 +466,7 @@
         }
         return types.count;
     }
-    else
+    else if([currentButton isEqualToString:NSLocalizedString(@"Tags", @"")])
     {
         if(tags.count == 0)
         {
@@ -474,6 +479,20 @@
             noItemsLabel.hidden = YES;
         }
         return tags.count;
+    }
+    else
+    {
+        if(objects.count == 0)
+        {
+            tableview.hidden = YES;
+            noItemsLabel.hidden = NO;
+        }
+        else
+        {
+            tableview.hidden = NO;
+            noItemsLabel.hidden = YES;
+        }
+        return objects.count;
     }
 
 }
@@ -499,7 +518,17 @@
     {
         cell.textLabel.text = [tags objectAtIndex:indexPath.row];
     }
-    //display default cells (ob´nly called when an unusual situation appears)
+    else if([currentButton isEqualToString:NSLocalizedString(@"All", @"")] && objects.count != 0)
+    {
+        ZWDevice *device = [objects objectAtIndex:indexPath.row];
+        ZWDeviceItem *item = [device createUIforTableView:tableView atPos:indexPath];
+        item.device = device;
+        [item setDisplayName];
+        [item updateState];
+        [item setSelectionStyle:UITableViewCellSelectionStyleNone];
+        return item;
+    }
+    //display default cells (only called when an unusual situation appears)
     else
     {
         cell.textLabel.text = NSLocalizedString(@"NoDevices", @"Message that no devices were found");
@@ -512,17 +541,20 @@
 //go to subview if a category is selected
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    deviceIndex = [NSNumber numberWithInteger:indexPath.row];
+    if(![currentButton isEqualToString:NSLocalizedString(@"All", @"")])
+    {
+        deviceIndex = [NSNumber numberWithInteger:indexPath.row];
     
-    //provide array for subview
-    if([currentButton isEqualToString:NSLocalizedString(@"Rooms", @"")])
-        name = [rooms objectAtIndex:indexPath.row];
-    else if([currentButton isEqualToString:NSLocalizedString(@"Types", @"")])
+        //provide array for subview
+        if([currentButton isEqualToString:NSLocalizedString(@"Rooms", @"")])
+            name = [rooms objectAtIndex:indexPath.row];
+        else if([currentButton isEqualToString:NSLocalizedString(@"Types", @"")])
         name = [self smoothTitles:[types objectAtIndex:indexPath.row]];
-    else
-        name = [tags objectAtIndex:indexPath.row];
+        else
+            name = [tags objectAtIndex:indexPath.row];
 
-    [self performSegueWithIdentifier:@"pushWidgetDevices" sender:self];
+        [self performSegueWithIdentifier:@"pushWidgetDevices" sender:self];
+    }
 }
 
 //smooth out the title to look better

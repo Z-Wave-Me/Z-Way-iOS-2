@@ -35,9 +35,6 @@
 "Password" = "Passwort";
 "DeleteProfile" = "Profil löschen";
 "Stored" = "Ihre Daten wurden gespeichert";
-"Rooms" = "Räume";
-"Types" = "Typen";
-"Tags" = "Tags";
 "AutoLow" = "Automatisch niedrig";
 "OnLow" = "Niedrig";
 "AutoHigh" = "Automatisch Hoch";
@@ -75,6 +72,11 @@
 "Yellow" = "Gelb";
 "Cyan" = "Cyan";
 "Green" = "Grün";
+
+"Rooms" = "Räume";
+"Types" = "Typen";
+"Tags" = "Tags";
+"All" = "Alles";
 
 "Battery" = "Batterien";
 "MultiSensor" = "Messwerte";

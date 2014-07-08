@@ -294,6 +294,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
+                                    <barButtonItem title="All" id="TSF-8a-Cyx">
+                                        <connections>
+                                            <action selector="allSelected:" destination="2SZ-Gu-6CS" id="9Y4-0l-LOq"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="Types" width="95" id="Vc1-M8-89w">
                                         <connections>
                                             <action selector="typesSelected:" destination="2SZ-Gu-6CS" id="hlK-t1-62R"/>
@@ -355,6 +360,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Widgets" id="5qw-nT-6Hs"/>
                     <connections>
+                        <outlet property="allButton" destination="TSF-8a-Cyx" id="O2T-Av-9gQ"/>
                         <outlet property="noItemsLabel" destination="oxz-mb-5tV" id="aau-my-MoD"/>
                         <outlet property="roomsButton" destination="8ro-57-fbl" id="DAI-9B-YVN"/>
                         <outlet property="tableview" destination="LXm-7j-0sk" id="Hdc-gg-bkf"/>
@@ -425,7 +431,7 @@
         <scene sceneID="6cP-kD-rHV">
             <objects>
                 <tabBarController id="Uug-k9-lkZ" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="MPH-nJ-0fl">
                         <rect key="frame" x="0.0" y="431" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -526,10 +532,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Dashboard.png" width="40" height="31"/>
+        <image name="Dashboard.png" width="50" height="39"/>
         <image name="Notifications.png" width="49" height="42"/>
-        <image name="Options.png" width="40" height="30"/>
-        <image name="Widgets.png" width="40" height="30"/>
+        <image name="Options.png" width="46" height="42"/>
+        <image name="Widgets.png" width="54" height="43"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

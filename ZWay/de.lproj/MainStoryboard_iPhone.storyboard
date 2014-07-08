@@ -294,6 +294,11 @@
                                 <rect key="frame" x="0.0" y="455" width="320" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
+                                    <barButtonItem title="All" id="Qtj-IH-WWV">
+                                        <connections>
+                                            <action selector="allSelected:" destination="3" id="P6A-9g-1cZ"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="Types" width="95" id="aaA-CA-MGH">
                                         <connections>
                                             <action selector="typesSelected:" destination="3" id="oTF-bN-E2a"/>
@@ -356,6 +361,7 @@
                     <navigationItem key="navigationItem" title="Widgets" id="rS8-w0-7uq"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
+                        <outlet property="allButton" destination="Qtj-IH-WWV" id="fJ9-oC-iC2"/>
                         <outlet property="noItemsLabel" destination="3kF-ms-MKJ" id="87o-e7-MVU"/>
                         <outlet property="roomsButton" destination="CNd-Mg-6zA" id="2uG-u2-hBG"/>
                         <outlet property="tableview" destination="YGW-rI-UzL" id="bB6-io-qeG"/>

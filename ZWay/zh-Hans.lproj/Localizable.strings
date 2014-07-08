@@ -1,4 +1,4 @@
-﻿/* 
+/* 
   Localizable.strings
   ZWayJSON
 
@@ -36,9 +36,6 @@
 "Password" = "密码";
 "DeleteProfile" = "删除应用";
 "Stored" = "数据已经被存储";
-"Rooms" = "房间";
-"Types" = "类型";
-"Tags" = "标签";
 "AutoLow" = "自动 低";
 "OnLow" = "开 低";
 "AutoHigh" = "自动 高";
@@ -75,6 +72,11 @@
 "Error!" = "错误!";
 "AlreadyPart" = "部分";
 "MovedTo" = "可移动的";
+
+"Rooms" = "房间";
+"Types" = "类型";
+"Tags" = "标签";
+"All" = "";
 
 "Battery" = "电池";
 "MultiSensor" = "多传感器";
