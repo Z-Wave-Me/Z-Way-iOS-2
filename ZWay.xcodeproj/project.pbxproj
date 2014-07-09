@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A03BA80E196199B00096E45E /* greenDot.png in Resources */ = {isa = PBXBuildFile; fileRef = A03BA80C196199B00096E45E /* greenDot.png */; };
-		A03BA80F196199B00096E45E /* redDot.png in Resources */ = {isa = PBXBuildFile; fileRef = A03BA80D196199B00096E45E /* redDot.png */; };
 		A03E191419654EC3008416DB /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A03E191319654EC3008416DB /* NotificationCell.xib */; };
 		A03E191619655110008416DB /* Notifications.png in Resources */ = {isa = PBXBuildFile; fileRef = A03E191519655110008416DB /* Notifications.png */; };
 		A03E191919655401008416DB /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A03E191719655401008416DB /* Model.xcdatamodeld */; };
-		A03E191D1965632E008416DB /* toggleButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A03E191C1965632E008416DB /* toggleButton.png */; };
 		A03E192019656384008416DB /* ZWDeviceItemScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A03E191F19656384008416DB /* ZWDeviceItemScene.m */; };
 		A03E1922196572D9008416DB /* scene.png in Resources */ = {isa = PBXBuildFile; fileRef = A03E1921196572D9008416DB /* scene.png */; };
 		A03E19241965792B008416DB /* ZWDeviceItemScene.xib in Resources */ = {isa = PBXBuildFile; fileRef = A03E19231965792B008416DB /* ZWDeviceItemScene.xib */; };
@@ -63,6 +60,10 @@
 		A046682C196414B900323048 /* Dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = A0466827196414B900323048 /* Dashboard.png */; };
 		A046682D196414B900323048 /* Options.png in Resources */ = {isa = PBXBuildFile; fileRef = A0466828196414B900323048 /* Options.png */; };
 		A046682E196414B900323048 /* Widgets.png in Resources */ = {isa = PBXBuildFile; fileRef = A0466829196414B900323048 /* Widgets.png */; };
+		A054497F196D7193006610B5 /* connection.png in Resources */ = {isa = PBXBuildFile; fileRef = A054497D196D7193006610B5 /* connection.png */; };
+		A0544980196D7193006610B5 /* noConnection.png in Resources */ = {isa = PBXBuildFile; fileRef = A054497E196D7193006610B5 /* noConnection.png */; };
+		A0544983196D7E57006610B5 /* toggleNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = A0544981196D7E57006610B5 /* toggleNormal.png */; };
+		A0544984196D7E57006610B5 /* togglePressed.png in Resources */ = {isa = PBXBuildFile; fileRef = A0544982196D7E57006610B5 /* togglePressed.png */; };
 		A0840BC2195DBF1D00FC5FAC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A04EAAF818C7164C00D22715 /* AVFoundation.framework */; };
 		A0840BC3195DBF2100FC5FAC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A047569E18B633E9004E1160 /* CFNetwork.framework */; };
 		A0840BC4195DBF2300FC5FAC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A048BC1718A37DF500BF32C7 /* QuartzCore.framework */; };
@@ -165,12 +166,9 @@
 		A02ABF4C196AA1DC00FD11E0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A02ABF4D196AA1DC00FD11E0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/MainStoryboard_iPad.storyboard"; sourceTree = "<group>"; };
 		A02ABF4E196AA1DC00FD11E0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/MainStoryboard_iPhone.storyboard"; sourceTree = "<group>"; };
-		A03BA80C196199B00096E45E /* greenDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenDot.png; sourceTree = "<group>"; };
-		A03BA80D196199B00096E45E /* redDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redDot.png; sourceTree = "<group>"; };
 		A03E191319654EC3008416DB /* NotificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotificationCell.xib; path = Notifications/NotificationCell.xib; sourceTree = "<group>"; };
 		A03E191519655110008416DB /* Notifications.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Notifications.png; sourceTree = "<group>"; };
 		A03E191819655401008416DB /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		A03E191C1965632E008416DB /* toggleButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toggleButton.png; sourceTree = "<group>"; };
 		A03E191E19656384008416DB /* ZWDeviceItemScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWDeviceItemScene.h; path = "Device Items/ZWDeviceItemScene.h"; sourceTree = "<group>"; };
 		A03E191F19656384008416DB /* ZWDeviceItemScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWDeviceItemScene.m; path = "Device Items/ZWDeviceItemScene.m"; sourceTree = "<group>"; };
 		A03E1921196572D9008416DB /* scene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scene.png; sourceTree = "<group>"; };
@@ -335,6 +333,10 @@
 		A047569E18B633E9004E1160 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		A048BC1718A37DF500BF32C7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A04EAAF818C7164C00D22715 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A054497D196D7193006610B5 /* connection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connection.png; sourceTree = "<group>"; };
+		A054497E196D7193006610B5 /* noConnection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noConnection.png; sourceTree = "<group>"; };
+		A0544981196D7E57006610B5 /* toggleNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toggleNormal.png; sourceTree = "<group>"; };
+		A0544982196D7E57006610B5 /* togglePressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = togglePressed.png; sourceTree = "<group>"; };
 		A085F5161886C5F00061E721 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A085F5181886C5F00061E721 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A085F51A1886C5F00061E721 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -417,6 +419,7 @@
 				A0459A3E195DBA12005E6EB0 /* co-focus.png */,
 				A0459A3F195DBA12005E6EB0 /* co.png */,
 				A042F11B1962EF0700825387 /* connected-g.png */,
+				A054497D196D7193006610B5 /* connection.png */,
 				A0459A40195DBA12005E6EB0 /* cooling-focus.png */,
 				A0459A41195DBA12005E6EB0 /* cooling.png */,
 				A0466827196414B900323048 /* Dashboard.png */,
@@ -451,7 +454,6 @@
 				A0459A5E195DBA12005E6EB0 /* flood.png */,
 				A0459A5F195DBA12005E6EB0 /* gas-focus.png */,
 				A0459A60195DBA12005E6EB0 /* gas.png */,
-				A03BA80C196199B00096E45E /* greenDot.png */,
 				A0459A61195DBA12005E6EB0 /* heating-focus.png */,
 				A0459A62195DBA12005E6EB0 /* heating.png */,
 				A0459A63195DBA12005E6EB0 /* humidity-focus.png */,
@@ -466,12 +468,12 @@
 				A0459A6C195DBA12005E6EB0 /* meter.png */,
 				A0459A6D195DBA12005E6EB0 /* motion-focus.png */,
 				A0459A6E195DBA12005E6EB0 /* motion.png */,
+				A054497E196D7193006610B5 /* noConnection.png */,
 				A0459A6F195DBA12005E6EB0 /* notification-battery-critical@2x.png */,
 				A0459A70195DBA12005E6EB0 /* notification-battery-low@2x.png */,
 				A0459A71195DBA12005E6EB0 /* notification-connection@2x.png */,
 				A03E191519655110008416DB /* Notifications.png */,
 				A0466828196414B900323048 /* Options.png */,
-				A03BA80D196199B00096E45E /* redDot.png */,
 				A0459A72195DBA12005E6EB0 /* refreshing.png */,
 				A03E1921196572D9008416DB /* scene.png */,
 				A0459A73195DBA12005E6EB0 /* smoke-focus.png */,
@@ -482,7 +484,8 @@
 				A0459A78195DBA12005E6EB0 /* temperature.png */,
 				A0459A79195DBA12005E6EB0 /* thermostat-focus.png */,
 				A0459A7A195DBA12005E6EB0 /* thermostat.png */,
-				A03E191C1965632E008416DB /* toggleButton.png */,
+				A0544981196D7E57006610B5 /* toggleNormal.png */,
+				A0544982196D7E57006610B5 /* togglePressed.png */,
 				A0459A7B195DBA12005E6EB0 /* water-focus.png */,
 				A0459A7C195DBA12005E6EB0 /* water.png */,
 				A0466829196414B900323048 /* Widgets.png */,
@@ -753,6 +756,7 @@
 				A0C2DC1D19613EBE0031E4BA /* window.png in Resources */,
 				A0C2DBF319613EBE0031E4BA /* device-thermostat@2x.png in Resources */,
 				A042F0D51962EE0900825387 /* ZWPasswordCell.xib in Resources */,
+				A0544983196D7E57006610B5 /* toggleNormal.png in Resources */,
 				A0C2DBCB19613E9F0031E4BA /* MainStoryboard_iPad.storyboard in Resources */,
 				A0C2DBE019613EBE0031E4BA /* cooling.png in Resources */,
 				A0C2DBFD19613EBE0031E4BA /* flood.png in Resources */,
@@ -763,7 +767,6 @@
 				A0C2DBF619613EBE0031E4BA /* door-focus.png in Resources */,
 				A0C2DBFA19613EBE0031E4BA /* fan-focus.png in Resources */,
 				A0C2DBCC19613EB00031E4BA /* Localizable.strings in Resources */,
-				A03BA80E196199B00096E45E /* greenDot.png in Resources */,
 				A0C2DC1219613EBE0031E4BA /* smoke-focus.png in Resources */,
 				A042F1111962EE5D00825387 /* ZWDeviceItemSwitch.xib in Resources */,
 				A0C2DBD319613EBE0031E4BA /* arrow-down.png in Resources */,
@@ -785,7 +788,6 @@
 				A0C2DBDB19613EBE0031E4BA /* blinds-focus.png in Resources */,
 				A0C2DC1919613EBE0031E4BA /* thermostat.png in Resources */,
 				A0C2DC1C19613EBE0031E4BA /* window-focus.png in Resources */,
-				A03BA80F196199B00096E45E /* redDot.png in Resources */,
 				A042F1061962EE5D00825387 /* ZWDeviceItemBattery.xib in Resources */,
 				A0C2DC0919613EBE0031E4BA /* media.png in Resources */,
 				A0C2DBDC19613EBE0031E4BA /* blinds.png in Resources */,
@@ -793,7 +795,6 @@
 				A03E191419654EC3008416DB /* NotificationCell.xib in Resources */,
 				A0C2DBF419613EBE0031E4BA /* device-water@2x.png in Resources */,
 				A0C2DC0E19613EBE0031E4BA /* notification-battery-critical@2x.png in Resources */,
-				A03E191D1965632E008416DB /* toggleButton.png in Resources */,
 				A0C2DBD719613EBE0031E4BA /* battery-focus.png in Resources */,
 				A0C2DBD619613EBE0031E4BA /* battery-critical.png in Resources */,
 				A0C2DBFC19613EBE0031E4BA /* flood-focus.png in Resources */,
@@ -822,6 +823,7 @@
 				A0C2DBDA19613EBE0031E4BA /* battery.png in Resources */,
 				A0C2DBEF19613EBE0031E4BA /* device-motion@2x.png in Resources */,
 				A0C2DBE519613EBE0031E4BA /* device-energy@2x.png in Resources */,
+				A0544980196D7193006610B5 /* noConnection.png in Resources */,
 				A0C2DBF219613EBE0031E4BA /* device-temperature@2x.png in Resources */,
 				A042F1071962EE5D00825387 /* ZWDeviceItemBlinds.xib in Resources */,
 				A0C2DC1119613EBE0031E4BA /* refreshing.png in Resources */,
@@ -833,6 +835,7 @@
 				A0C2DBDE19613EBE0031E4BA /* co.png in Resources */,
 				A0C2DC0219613EBE0031E4BA /* humidity-focus.png in Resources */,
 				A046682B196414B900323048 /* BinaryOn.png in Resources */,
+				A0544984196D7E57006610B5 /* togglePressed.png in Resources */,
 				A042F1081962EE5D00825387 /* ZWDeviceItemDimmer.xib in Resources */,
 				A0C2DBEA19613EBE0031E4BA /* device-humidity@2x.png in Resources */,
 				A0C2DBD519613EBE0031E4BA /* battery-critical-focus.png in Resources */,
@@ -850,6 +853,7 @@
 				A0C2DC1419613EBE0031E4BA /* switch-focus.png in Resources */,
 				A0C2DBD819613EBE0031E4BA /* battery-low-focus.png in Resources */,
 				A0C2DC1819613EBE0031E4BA /* thermostat-focus.png in Resources */,
+				A054497F196D7193006610B5 /* connection.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

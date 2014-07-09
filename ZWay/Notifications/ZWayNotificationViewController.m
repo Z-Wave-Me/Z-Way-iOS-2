@@ -170,6 +170,8 @@
     else
         timestamp = 0;
     
+    NSLog(@"notifications: %@", notificationJSON);
+    
     //disable edit button if no notification is found
     if(notifications.count == 0)
         self.navigationItem.rightBarButtonItem.enabled = NO;

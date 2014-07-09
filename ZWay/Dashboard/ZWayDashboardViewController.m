@@ -44,7 +44,7 @@
     self.title = nil;
     
     ////set green dot to show connection
-    UIImage* image = [UIImage imageNamed:@"greenDot.png"];
+    UIImage* image = [UIImage imageNamed:@"connection.png"];
     CGRect frameimg = CGRectMake(0, 0, image.size.width, image.size.height);
     UIButton *someButton = [[UIButton alloc] initWithFrame:frameimg];
     [someButton setBackgroundImage:image forState:UIControlStateNormal];
@@ -211,7 +211,7 @@
     connection = nil;
     
     //set green dot to show connection
-    UIImage* image = [UIImage imageNamed:@"redDot.png"];
+    UIImage* image = [UIImage imageNamed:@"noConnection.png"];
     CGRect frameimg = CGRectMake(0, 0, image.size.width, image.size.height);
     UIButton *someButton = [[UIButton alloc] initWithFrame:frameimg];
     [someButton setBackgroundImage:image forState:UIControlStateNormal];
@@ -253,7 +253,7 @@
     }
     
     //set green dot to show connection
-    UIImage* image = [UIImage imageNamed:@"greenDot.png"];
+    UIImage* image = [UIImage imageNamed:@"connection.png"];
     CGRect frameimg = CGRectMake(0, 0, image.size.width, image.size.height);
     UIButton *someButton = [[UIButton alloc] initWithFrame:frameimg];
     [someButton setBackgroundImage:image forState:UIControlStateNormal];
