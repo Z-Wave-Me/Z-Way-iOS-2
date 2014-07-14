@@ -28,7 +28,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    textview.text = NSLocalizedString(@"AboutSection", @"");
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

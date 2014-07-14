@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Profile" representedClassName="CMProfile" syncable="YES">
         <attribute name="changedIP" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="indoorUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" minValueString="1" indexed="YES" syncable="YES"/>
         <attribute name="objects" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="showErrors" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="showNotifications" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="showWarnings" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="theme" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="useOutdoor" optional="YES" transient="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="userLogin" optional="YES" attributeType="String" syncable="YES"/>
@@ -17,6 +20,6 @@
         </compoundIndexes>
     </entity>
     <elements>
-        <element name="Profile" positionX="160" positionY="192" width="128" height="180"/>
+        <element name="Profile" positionX="160" positionY="192" width="128" height="225"/>
     </elements>
 </model>

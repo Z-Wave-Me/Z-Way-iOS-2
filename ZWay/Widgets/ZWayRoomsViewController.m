@@ -78,8 +78,6 @@
     //set localized label for empty section (empty locations)
     noItemsLabel.text = NSLocalizedString(@"NoDevices", @"");
     
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-    
     //load dash objects
     if(ZWayAppDelegate.sharedDelegate.profile.objects)
         objectsToDash = [NSMutableArray arrayWithArray:[NSKeyedUnarchiver unarchiveObjectWithData:ZWayAppDelegate.sharedDelegate.profile.objects]];

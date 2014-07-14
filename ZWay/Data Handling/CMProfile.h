@@ -34,5 +34,8 @@
 @property (nonatomic, retain) NSNumber * useOutdoor;
 @property (nonatomic, retain) NSString * language;
 @property (nonatomic, retain) NSNumber * changedIP;
+@property (nonatomic, retain) NSNumber * showErrors;
+@property (nonatomic, retain) NSNumber * showWarnings;
+@property (nonatomic, retain) NSNumber * showNotifications;
 
 @end

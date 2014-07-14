@@ -54,9 +54,6 @@
     UIBarButtonItem *connected =[[UIBarButtonItem alloc] initWithCustomView:someButton];
     self.navigationItem.leftBarButtonItem = connected;
     
-    //update all objects as soon as the view loads
-    [self updateObjects];
-    
     //set tab and navigation translucent so they don´t overlap the tableview
     [self.navigationController.navigationBar setTranslucent:NO];
     [self.navigationController.navigationBar setOpaque:YES];
@@ -67,7 +64,8 @@
 {
     [super viewWillAppear:animated];
     
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    //update all objects as soon as the view loads
+    [self updateObjects];
     
     //check if a profile is selected and hide tableview when not
     if (ZWayAppDelegate.sharedDelegate.profile != nil)
@@ -163,9 +161,6 @@
             receivedData = nil;
         }
     }
-    
-    //redo after 20 seconds
-    [self performSelector:@selector(updateObjects) withObject:nil afterDelay:20.0];
 }
 
 //Method to check the response

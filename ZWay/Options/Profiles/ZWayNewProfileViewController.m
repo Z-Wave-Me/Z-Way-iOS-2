@@ -47,6 +47,9 @@
         profile.name = @"Name";
         profile.language = nil;
         profile.theme = NSLocalizedString(@"Default", @"");
+        profile.showErrors = [NSNumber numberWithBool:YES];
+        profile.showWarnings = [NSNumber numberWithBool:NO];
+        profile.showNotifications = [NSNumber numberWithBool:YES];
         [store saveContext];
         self.navigationItem.title =  NSLocalizedString(@"NewProfile", @"New Profile title");
         _profile = profile;
@@ -64,8 +67,11 @@
     [_fields setObject:[[[NSBundle mainBundle] loadNibNamed:@"ZWPasswordCell" owner:self options:nil] objectAtIndex:0] forKey:@"userPassword"];
     [_fields setObject:[[[NSBundle mainBundle] loadNibNamed:@"ZWTextEditCell" owner:self options:nil] objectAtIndex:0] forKey:@"theme"];
     [_fields setObject:[[[NSBundle mainBundle] loadNibNamed:@"ZWTextEditCell" owner:self options:nil] objectAtIndex:0] forKey:@"language"];
+    [_fields setObject:[[[NSBundle mainBundle] loadNibNamed:@"ZWCheckBox" owner:self options:nil] objectAtIndex:0] forKey:@"warnings"];
+    [_fields setObject:[[[NSBundle mainBundle] loadNibNamed:@"ZWCheckBox" owner:self options:nil] objectAtIndex:0] forKey:@"errors"];
+    [_fields setObject:[[[NSBundle mainBundle] loadNibNamed:@"ZWCheckBox" owner:self options:nil] objectAtIndex:0] forKey:@"notifications"];
     
-    _fieldsOrder = [NSMutableArray arrayWithObjects:@"name", @"indoorUrl", @"userLogin", @"userPassword", @"theme", @"language", nil];
+    _fieldsOrder = [NSMutableArray arrayWithObjects:@"name", @"indoorUrl", @"userLogin", @"userPassword", @"theme", @"language", @"warnings", @"errors", @"notifications", nil];
     
     //set up color and language arrays
     colors = [NSArray arrayWithObjects:NSLocalizedString(@"Red", @"Red"), NSLocalizedString(@"Blue", @"Blue"), NSLocalizedString(@"Orange", @"Orange"), NSLocalizedString(@"Purple", @"Purple"), NSLocalizedString(@"Brown", @""), NSLocalizedString(@"Cyan", @""), NSLocalizedString(@"Green", @""), NSLocalizedString(@"Magenta", @""), NSLocalizedString(@"Yellow", @""), nil];
@@ -89,8 +95,6 @@
     [super viewWillAppear:animated];
     //set localized title
     [self setTitle:NSLocalizedString(@"Options", @"")];
-    
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
 }
 
 - (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar {
@@ -189,10 +193,48 @@
     }
 }
 
+- (void)checkedBox:(id)sender
+{
+    if([(UIButton *)sender isSelected] == NO)
+    {
+        switch ([(UIButton *)sender tag]) {
+            case 5:
+                _profile.showWarnings = [NSNumber numberWithBool:YES];
+                break;
+                
+            case 6:
+                _profile.showErrors = [NSNumber numberWithBool:YES];
+                break;
+                
+            case 7:
+                _profile.showNotifications = [NSNumber numberWithBool:YES];
+                break;
+        }
+    }
+    else
+    {
+        switch ([(UIButton *)sender tag]) {
+            case 5:
+                _profile.showWarnings = [NSNumber numberWithBool:NO];
+                break;
+                
+            case 6:
+                _profile.showErrors = [NSNumber numberWithBool:NO];
+                break;
+                
+            case 7:
+                _profile.showNotifications = [NSNumber numberWithBool:NO];
+                break;
+        }
+    }
+    
+    [(UIButton *)sender setSelected:![(UIButton *)sender isSelected]];
+}
+
 //3 sections in tableview
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 5;
+    return 6;
 }
 
 //title for sections
@@ -210,6 +252,8 @@
             return NSLocalizedString(@"Color", @"Color Theme");
         case 4:
             return NSLocalizedString(@"Language", @"");
+        case 5:
+            return NSLocalizedString(@"ToShow", @"Notifications to show");
         default:
             return nil;
     }
@@ -229,6 +273,8 @@
             return 1;
         case 4:
             return 1;
+        case 5:
+            return 3;
         default:
             return 0;
     }
@@ -323,6 +369,57 @@
             editor.userInteractionEnabled = NO;
             editor.text = [self languageTitle];
             break;
+            
+        case 5:
+        {
+            UIButton *checkBox = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+            checkBox.frame = CGRectMake(0, 0, 22, 22);
+            [checkBox setImage:nil forState:UIControlStateNormal];
+            [checkBox setBackgroundColor:[UIColor colorWithWhite:0.95 alpha:1.0]];
+            checkBox.tag = indexPath.section + indexPath.row;
+            [checkBox setImage:[UIImage imageNamed:@"connected-g.png"] forState:UIControlStateSelected];
+            [checkBox addTarget:self action:@selector(checkedBox:) forControlEvents:UIControlEventTouchUpInside];
+            
+            switch (indexPath.row)
+            {
+                case 0:
+                {
+                    name = @"warnings";
+                    displayName = NSLocalizedString(@"Warnings", @"");
+                    cell = [_fields objectForKey:name];
+                    cell.tag = 16;
+                    cell.textLabel.text = displayName;
+                    [checkBox setSelected:[_profile.showWarnings boolValue]];
+                    cell.accessoryView = checkBox;
+                    break;
+                }
+                    
+                case 1:
+                {
+                    name = @"errors";
+                    displayName = NSLocalizedString(@"Errors", @"");
+                    cell = [_fields objectForKey:name];
+                    cell.tag = 17;
+                    cell.textLabel.text = displayName;
+                    [checkBox setSelected:[_profile.showErrors boolValue]];
+                    cell.accessoryView = checkBox;
+                    break;
+                }
+                    
+                case 2:
+                {
+                    name = @"notifications";
+                    displayName = NSLocalizedString(@"Notifications", @"");
+                    cell = [_fields objectForKey:name];
+                    cell.tag = 18;
+                    cell.textLabel.text = displayName;
+                    [checkBox setSelected:[_profile.showNotifications boolValue]];
+                    cell.accessoryView = checkBox;
+                    break;
+                }
+            }
+        }
+        break;
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -433,97 +530,94 @@
     //check which color was selected and set all color elements to it
     if([color isEqualToString:NSLocalizedString(@"Red", @"")])
     {
-        [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
-        [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
+        [[UINavigationBar appearance] setTintColor:[UIColor redColor]];
+        [self.navigationController.navigationBar setTintColor:[UIColor redColor]];
         [self.tabBarController.tabBar setTintColor:[UIColor redColor]];
-        [[UIToolbar appearance] setBarTintColor:[UIColor redColor]];
+        [[UIToolbar appearance] setTintColor:[UIColor redColor]];
         [[UISlider appearance] setMinimumTrackTintColor:[UIColor redColor]];
         [[UISwitch appearance] setOnTintColor:[UIColor redColor]];
     }
     else if([color isEqualToString:NSLocalizedString(@"Blue", @"")])
     {
-        [[UINavigationBar appearance] setBarTintColor:[UIColor blueColor]];
-        [self.navigationController.navigationBar setBarTintColor:[UIColor blueColor]];
+        [[UINavigationBar appearance] setTintColor:[UIColor blueColor]];
+        [self.navigationController.navigationBar setTintColor:[UIColor blueColor]];
         [self.tabBarController.tabBar setTintColor:[UIColor blueColor]];
-        [[UIToolbar appearance] setBarTintColor:[UIColor blueColor]];
+        [[UIToolbar appearance] setTintColor:[UIColor blueColor]];
         [[UISlider appearance] setMinimumTrackTintColor:[UIColor blueColor]];
         [[UISwitch appearance] setOnTintColor:[UIColor blueColor]];
     }
     else if([color isEqualToString:NSLocalizedString(@"Orange", @"")])
     {
-        [[UINavigationBar appearance] setBarTintColor:[UIColor orangeColor]];
-        [self.navigationController.navigationBar setBarTintColor:[UIColor orangeColor]];
+        [[UINavigationBar appearance] setTintColor:[UIColor orangeColor]];
+        [self.navigationController.navigationBar setTintColor:[UIColor orangeColor]];
         [self.tabBarController.tabBar setTintColor:[UIColor orangeColor]];
-        [[UIToolbar appearance] setBarTintColor:[UIColor orangeColor]];
+        [[UIToolbar appearance] setTintColor:[UIColor orangeColor]];
         [[UISlider appearance] setMinimumTrackTintColor:[UIColor orangeColor]];
         [[UISwitch appearance] setOnTintColor:[UIColor orangeColor]];
     }
     else if([color isEqualToString:NSLocalizedString(@"Purple", @"")])
     {
-        [[UINavigationBar appearance] setBarTintColor:[UIColor purpleColor]];
-        [self.navigationController.navigationBar setBarTintColor:[UIColor purpleColor]];
+        [[UINavigationBar appearance] setTintColor:[UIColor purpleColor]];
+        [self.navigationController.navigationBar setTintColor:[UIColor purpleColor]];
         [self.tabBarController.tabBar setTintColor:[UIColor purpleColor]];
-        [[UIToolbar appearance] setBarTintColor:[UIColor purpleColor]];
+        [[UIToolbar appearance] setTintColor:[UIColor purpleColor]];
         [[UISlider appearance] setMinimumTrackTintColor:[UIColor purpleColor]];
         [[UISwitch appearance] setOnTintColor:[UIColor purpleColor]];
     }
     else if([color isEqualToString:NSLocalizedString(@"Brown", @"")])
     {
-        [[UINavigationBar appearance] setBarTintColor:[UIColor brownColor]];
-        [self.navigationController.navigationBar setBarTintColor:[UIColor brownColor]];
+        [[UINavigationBar appearance] setTintColor:[UIColor brownColor]];
+        [self.navigationController.navigationBar setTintColor:[UIColor brownColor]];
         [self.tabBarController.tabBar setTintColor:[UIColor brownColor]];
-        [[UIToolbar appearance] setBarTintColor:[UIColor brownColor]];
+        [[UIToolbar appearance] setTintColor:[UIColor brownColor]];
         [[UISlider appearance] setMinimumTrackTintColor:[UIColor brownColor]];
         [[UISwitch appearance] setOnTintColor:[UIColor brownColor]];
     }
     else if([color isEqualToString:NSLocalizedString(@"Cyan", @"")])
     {
-        [[UINavigationBar appearance] setBarTintColor:[UIColor cyanColor]];
-        [self.navigationController.navigationBar setBarTintColor:[UIColor cyanColor]];
+        [[UINavigationBar appearance] setTintColor:[UIColor cyanColor]];
+        [self.navigationController.navigationBar setTintColor:[UIColor cyanColor]];
         [self.tabBarController.tabBar setTintColor:[UIColor cyanColor]];
-        [[UIToolbar appearance] setBarTintColor:[UIColor cyanColor]];
+        [[UIToolbar appearance] setTintColor:[UIColor cyanColor]];
         [[UISlider appearance] setMinimumTrackTintColor:[UIColor cyanColor]];
         [[UISwitch appearance] setOnTintColor:[UIColor cyanColor]];
     }
     else if([color isEqualToString:NSLocalizedString(@"Green", @"")])
     {
-        [[UINavigationBar appearance] setBarTintColor:[UIColor greenColor]];
-        [self.navigationController.navigationBar setBarTintColor:[UIColor greenColor]];
+        [[UINavigationBar appearance] setTintColor:[UIColor greenColor]];
+        [self.navigationController.navigationBar setTintColor:[UIColor greenColor]];
         [self.tabBarController.tabBar setTintColor:[UIColor greenColor]];
-        [[UIToolbar appearance] setBarTintColor:[UIColor greenColor]];
+        [[UIToolbar appearance] setTintColor:[UIColor greenColor]];
         [[UISlider appearance] setMinimumTrackTintColor:[UIColor greenColor]];
         [[UISwitch appearance] setOnTintColor:[UIColor greenColor]];
     }
     else if([color isEqualToString:NSLocalizedString(@"Magenta", @"")])
     {
-        [[UINavigationBar appearance] setBarTintColor:[UIColor magentaColor]];
-        [self.navigationController.navigationBar setBarTintColor:[UIColor magentaColor]];
+        [[UINavigationBar appearance] setTintColor:[UIColor magentaColor]];
+        [self.navigationController.navigationBar setTintColor:[UIColor magentaColor]];
         [self.tabBarController.tabBar setTintColor:[UIColor magentaColor]];
-        [[UIToolbar appearance] setBarTintColor:[UIColor magentaColor]];
+        [[UIToolbar appearance] setTintColor:[UIColor magentaColor]];
         [[UISlider appearance] setMinimumTrackTintColor:[UIColor magentaColor]];
         [[UISwitch appearance] setOnTintColor:[UIColor magentaColor]];
     }
     else if([color isEqualToString:NSLocalizedString(@"Yellow", @"")])
     {
-        [[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];
-        [self.navigationController.navigationBar setBarTintColor:[UIColor yellowColor]];
+        [[UINavigationBar appearance] setTintColor:[UIColor yellowColor]];
+        [self.navigationController.navigationBar setTintColor:[UIColor yellowColor]];
         [self.tabBarController.tabBar setTintColor:[UIColor yellowColor]];
-        [[UIToolbar appearance] setBarTintColor:[UIColor yellowColor]];
+        [[UIToolbar appearance] setTintColor:[UIColor yellowColor]];
         [[UISlider appearance] setMinimumTrackTintColor:[UIColor yellowColor]];
         [[UISwitch appearance] setOnTintColor:[UIColor yellowColor]];
     }
     else
     {
-        [[UINavigationBar appearance] setBarTintColor:[UIColor blueColor]];
+        [[UINavigationBar appearance] setTintColor:[UIColor blueColor]];
         [self.tabBarController.tabBar setTintColor:[UIColor blueColor]];
-        [[UIToolbar appearance] setBarTintColor:[UIColor blueColor]];
+        [self.navigationController.navigationBar setTintColor:[UIColor blueColor]];
+        [[UIToolbar appearance] setTintColor:[UIColor blueColor]];
         [[UISlider appearance] setMinimumTrackTintColor:[UIColor blueColor]];
         [[UISwitch appearance] setOnTintColor:[UIColor blueColor]];
     }
-    
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UIToolbar appearance] setTintColor:[UIColor whiteColor]];
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
 }
 
 //method to change the language

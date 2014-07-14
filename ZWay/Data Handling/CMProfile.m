@@ -33,5 +33,6 @@
 @dynamic theme;
 @dynamic language;
 @dynamic changedIP;
+@dynamic showErrors, showNotifications, showWarnings;
 
 @end

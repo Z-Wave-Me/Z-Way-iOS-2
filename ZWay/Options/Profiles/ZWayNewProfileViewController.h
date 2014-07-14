@@ -27,6 +27,7 @@
 @property (strong, nonatomic) UIPickerView *picker;
 
 - (void)testConnection:(NSString*)field With:(NSString*)connection;
+- (void)checkedBox:(id)sender;
 - (void)store;
 - (void)deleteProfile;
 - (void)bringUpPickerViewWithRow:(NSIndexPath*)indexPath;

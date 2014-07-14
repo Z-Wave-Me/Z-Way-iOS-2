@@ -12,6 +12,11 @@
 "Options" = "Опции";
 "Widgets" = "Widgets";
 "About" = "О нас";
+"AboutSection" = "(c) 2014 Z-Wave.Me, All rights reserved.
+
+This software comes as it is without any implicit or explicit warranty. Use at your own risk.
+
+This software requires a server side equipped with Z-Way Smart Home Software in Version 1.7 or up. This server must be accessible either directly by its IP address or using the proxy service find.zwave.me";
 "NoDevices" = "Нет устройств";
 "OKMessage" = "Сообщение ОК";
 "UpdateError" = "Ошибка обновления";
@@ -67,11 +72,6 @@
 "Blue" = "Синий";
 "Orange" = "Оранжевый";
 "Purple" = "Фиолетовый";
-"Brown" = "";
-"Magenta" = "";
-"Yellow" = "";
-"Cyan" = "";
-"Green" = "";
 
 "Rooms" = "Комнаты";
 "Types" = "Типы";

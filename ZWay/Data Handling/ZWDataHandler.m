@@ -88,6 +88,9 @@
         [alert show];
         alertShown = true;
     }
+    
+    //reload the data after 10 seconds
+    [self performSelector:@selector(getLocations) withObject:nil afterDelay:10.0];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -118,9 +121,6 @@
     }
     self.locationTitles = locationTitles;
     self.locationIDs = locationIDs;
-    
-    //reload the data after 30 seconds
-    [self performSelector:@selector(getLocations) withObject:nil afterDelay:10.0];
 }
 
 //method to redirect in outdoor use

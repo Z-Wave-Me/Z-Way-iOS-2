@@ -48,9 +48,7 @@
     //set up toolbar
     toolbar.delegate = self;
     [self.navigationController setToolbarHidden:NO];
-    [self.toolbar setTranslucent:NO];
-    [self.toolbar setBarStyle:UIBarStyleBlackOpaque];
-    [self.toolbar setTintColor:[UIColor whiteColor]];
+    [self.toolbar setTranslucent:YES];
     [self.navigationController.navigationBar setTranslucent:NO];
     [self.navigationController.navigationBar setOpaque:YES];
     [self.tabBarController.tabBar setTranslucent:NO];
@@ -62,15 +60,8 @@
     //load notifications
     handler = [ZWDataHandler new];
     [handler setUpAuth];
-    [handler getLocations];
     
     currentButton = NSLocalizedString(@"All", @"");
-    
-    //update devices
-    if(handler.locationTitles)
-        [self updateDevices:[NSNumber numberWithLong:0]];
-    else
-        [self performSelector:@selector(updateDevices:) withObject:[NSNumber numberWithLong:0] afterDelay:1];
     
     alertShown = false;
     firstUpdate = YES;
@@ -80,8 +71,15 @@
 {
     [super viewWillAppear:animated];
     
+    [handler getLocations];
+    
+    //update devices
+    if(handler.locationTitles)
+        [self updateDevices:[NSNumber numberWithLong:0]];
+    else
+        [self performSelector:@selector(updateDevices:) withObject:[NSNumber numberWithLong:0] afterDelay:1];
+    
     [self.navigationController setToolbarHidden:NO animated:NO];
-    [self.toolbar setBarTintColor:self.navigationController.navigationBar.tintColor];
     
     //localize in case the language changed
     [self setTitle:NSLocalizedString(@"Widgets", @"")];
@@ -90,10 +88,11 @@
     tagsButton.title = NSLocalizedString(@"Tags", @"");
     noItemsLabel.text = NSLocalizedString(@"NoDevices", @"");
     
-    [roomsButton setTintColor:[UIColor whiteColor]];
-    [tagsButton setTintColor:[UIColor whiteColor]];
-    [typesButton setTintColor:[UIColor whiteColor]];
-    [allButton setTintColor:[UIColor whiteColor]];
+    UIColor *color = self.tabBarController.tabBar.tintColor;
+    [roomsButton setTintColor:color];
+    [tagsButton setTintColor:color];
+    [typesButton setTintColor:color];
+    [allButton setTintColor:color];
     
     if([currentButton isEqualToString:NSLocalizedString(@"Rooms", @"")])
         [self roomsSelected:self];
@@ -103,18 +102,6 @@
         [self typesSelected:self];
     else
         [self allSelected:self];
-    
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-    
-    if([ZWayAppDelegate.sharedDelegate.profile.changedIP boolValue] == YES)
-    {
-        [handler getLocations];
-        
-        if(handler.locationTitles)
-            [self updateDevices:[NSNumber numberWithLong:0]];
-        else
-            [self performSelector:@selector(updateDevices:) withObject:[NSNumber numberWithLong:0] afterDelay:1];
-    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -181,10 +168,7 @@
     receivedObjects = nil;
     
     //load device from scratch if connection failed
-    if(![ZWayAppDelegate.sharedDelegate.profile.changedIP boolValue] == YES)
-        [self performSelector:@selector(updateDevices:) withObject:[NSNumber numberWithInt:0] afterDelay:10.0];
-    
-    ZWayAppDelegate.sharedDelegate.profile.changedIP = [NSNumber numberWithBool:NO];
+    [self performSelector:@selector(updateDevices:) withObject:[NSNumber numberWithInt:0] afterDelay:10.0];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -198,7 +182,6 @@
     JSON = [NSJSONSerialization JSONObjectWithData:receivedObjects options:NSJSONReadingMutableContainers error:&error];
         
     updated = [[JSON objectForKey:@"data"] objectForKey:@"devices"];
-    NSInteger timestamp = [handler getTimestamp:JSON firstTime:firstUpdate];
     
     //load old objects in case the JSON is empty and alert the user
     if(updated.count == 0 && [[[JSON objectForKey:@"data"] objectForKey:@"structureChanged"] boolValue] == 1)
@@ -247,8 +230,6 @@
     NSData *encodedObjects = [NSKeyedArchiver archivedDataWithRootObject:objects];
     [defaults setObject:encodedObjects forKey:@"Devices"];
     
-    //NSLog(@"Objects: %@", JSON);
-    
     alertShown = false;
     
     //sort the devices into the categories
@@ -258,12 +239,6 @@
     
     if(firstUpdate == YES)
         firstUpdate = NO;
-    
-    //reload devices after 20 seconds
-    if(![ZWayAppDelegate.sharedDelegate.profile.changedIP boolValue] == YES)
-        [self performSelector:@selector(updateDevices:) withObject:[NSNumber numberWithLong:timestamp] afterDelay:20.0];
-    
-    ZWayAppDelegate.sharedDelegate.profile.changedIP = [NSNumber numberWithBool:NO];
 }
 
 //method for redirect if outdoor is used

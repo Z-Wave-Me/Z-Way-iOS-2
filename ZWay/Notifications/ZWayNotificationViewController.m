@@ -34,14 +34,12 @@
     
     //set up outdoor handler
     authent = [ZWayAuthentification new];
-
-    //load from scratch
-    [self getNotifications:[NSNumber numberWithLong:0]];
     
     //set editing button and the navigation bar translucent
     [self.navigationController.navigationBar setTranslucent:NO];
     [self.navigationController.navigationBar setOpaque:YES];
     [self.tabBarController.tabBar setTranslucent:NO];
+    
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.navigationItem.rightBarButtonItem.style = UIBarButtonItemStylePlain;
 }
@@ -49,10 +47,13 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    //load from scratch
+    [self getNotifications:[NSNumber numberWithLong:0]];
+    
     //set localized title and label
     [self setTitle:NSLocalizedString(@"Notifications", @"")];
     self.noItemsLabel.text = NSLocalizedString(@"OKMessage", @"");
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     
     if(notifications.count != 0)
     {
@@ -130,13 +131,13 @@
     connection = nil;
     notificationData = nil;
     //load data from scratch when an error occured
-    [self performSelector:@selector(getNotifications:) withObject:[NSNumber numberWithInt:0] afterDelay:20.0];
-    
+    [self performSelector:@selector(getNotifications:) withObject:[NSNumber numberWithInt:0] afterDelay:10.0];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSError *error;
+    
     //extract parsed notifications
     NSDictionary *notificationJSON = [NSJSONSerialization JSONObjectWithData:notificationData options:NSJSONReadingMutableContainers error:&error];
     NSDictionary *notificationDict = [notificationJSON objectForKey:@"data"];
@@ -147,18 +148,24 @@
         if(notificationDict != (id)[NSNull null])
         {
             NSMutableArray *sort = [notificationDict objectForKey:@"notifications"];
-            //timestamp = [[notificationDict valueForKey:@"updateTime"] integerValue];
             timestamp = 0;
         
             //filter all redeemed notifications
-            for(int i=0; i<sort.count; i++)
+            for(int i=sort.count-1; i>0; i--)
             {
                 BOOL redeemed = [[[sort objectAtIndex:i] objectForKey:@"redeemed"] boolValue];
+                NSString *level = [[sort objectAtIndex:i] objectForKey:@"level"];
+                BOOL show;
+                
+                if([level isEqualToString:@"warning"])
+                    show = [ZWayAppDelegate.sharedDelegate.profile.showWarnings boolValue];
+                else if([level isEqualToString:@"notification"])
+                    show = [ZWayAppDelegate.sharedDelegate.profile.showNotifications boolValue];
+                else
+                    show = [ZWayAppDelegate.sharedDelegate.profile.showErrors boolValue];
             
-                if(redeemed == YES)
-                {
+                if(redeemed == YES || show == NO)
                     [sort removeObjectAtIndex:i];
-                }
             }
         
             //set only notifications that should be shown
@@ -170,8 +177,6 @@
     else
         timestamp = 0;
     
-    NSLog(@"notifications: %@", notificationJSON);
-    
     //disable edit button if no notification is found
     if(notifications.count == 0)
         self.navigationItem.rightBarButtonItem.enabled = NO;
@@ -181,9 +186,6 @@
     alertShown = false;
     
     [tableview reloadData];
-    
-    //load notifications after 30 with last timestamp
-    [self performSelector:@selector(getNotifications:) withObject:[NSNumber numberWithLong:timestamp] afterDelay:30.0];
 }
 
 - (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace
@@ -220,6 +222,7 @@
         tableView.hidden = NO;
         noItemsLabel.hidden = YES;
     }
+    
     return notifications.count;
 }
 
@@ -234,7 +237,8 @@
     static NSString *identifier = @"notification";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    
+    NSDictionary *message = [notifications objectAtIndex:indexPath.row];
+
     if (cell == nil)
     {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"NotificationCell" owner:self options:nil];
@@ -242,8 +246,6 @@
     }
     
     //display message
-    NSDictionary *message = [notifications objectAtIndex:indexPath.row];
-    
     UILabel *timeStampLabel = (UILabel*)[cell viewWithTag:1];
     NSString *timestamp =[NSString stringWithFormat:@"%@", [message valueForKey:@"timestamp"]];
     timeStampLabel.text = [timestamp substringToIndex:MIN(10, [timestamp length])];

@@ -31,7 +31,6 @@
     
     self.title = NSLocalizedString(@"Options", @"");
     
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     [tableview reloadData];
 }
 

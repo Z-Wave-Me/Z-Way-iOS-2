@@ -12,6 +12,11 @@
 "Options" = "选项";
 "Widgets" = "控件";
 "About" = "关于";
+"AboutSection" = "(c) 2014 Z-Wave.Me, All rights reserved.
+
+This software comes as it is without any implicit or explicit warranty. Use at your own risk.
+
+This software requires a server side equipped with Z-Way Smart Home Software in Version 1.7 or up. This server must be accessible either directly by its IP address or using the proxy service find.zwave.me";
 "NoDevices" = "未发现设备";
 "OKMessage" = "一切正常";
 "UpdateError" = "更新出现问题";
@@ -63,15 +68,16 @@
 "Blue" = "蓝色";
 "Orange" = "橙色";
 "Purple" = "紫色";
-"Brown" = "";
-"Magenta" = "";
-"Yellow" = "";
-"Cyan" = "";
-"Green" = "";
+"Brown" = "Brown";
+"Magenta" = "Magenta";
+"Yellow" = "Yellow";
+"Cyan" = "Cyan";
+"Green" = "Green";
 
 "Error!" = "错误!";
 "AlreadyPart" = "部分";
 "MovedTo" = "可移动的";
+"Edit" = "";
 
 "Rooms" = "房间";
 "Types" = "类型";
