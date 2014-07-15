@@ -195,23 +195,7 @@
 
 - (void)checkedBox:(id)sender
 {
-    if([(UIButton *)sender isSelected] == NO)
-    {
-        switch ([(UIButton *)sender tag]) {
-            case 5:
-                _profile.showWarnings = [NSNumber numberWithBool:YES];
-                break;
-                
-            case 6:
-                _profile.showErrors = [NSNumber numberWithBool:YES];
-                break;
-                
-            case 7:
-                _profile.showNotifications = [NSNumber numberWithBool:YES];
-                break;
-        }
-    }
-    else
+    if([(UISwitch *)sender isOn] == NO)
     {
         switch ([(UIButton *)sender tag]) {
             case 5:
@@ -224,6 +208,22 @@
                 
             case 7:
                 _profile.showNotifications = [NSNumber numberWithBool:NO];
+                break;
+        }
+    }
+    else
+    {
+        switch ([(UISwitch *)sender tag]) {
+            case 5:
+                _profile.showWarnings = [NSNumber numberWithBool:YES];
+                break;
+                
+            case 6:
+                _profile.showErrors = [NSNumber numberWithBool:YES];
+                break;
+                
+            case 7:
+                _profile.showNotifications = [NSNumber numberWithBool:YES];
                 break;
         }
     }
@@ -372,13 +372,9 @@
             
         case 5:
         {
-            UIButton *checkBox = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-            checkBox.frame = CGRectMake(0, 0, 22, 22);
-            [checkBox setImage:nil forState:UIControlStateNormal];
-            [checkBox setBackgroundColor:[UIColor colorWithWhite:0.95 alpha:1.0]];
+            UISwitch *checkBox = [UISwitch new];
             checkBox.tag = indexPath.section + indexPath.row;
-            [checkBox setImage:[UIImage imageNamed:@"connected-g.png"] forState:UIControlStateSelected];
-            [checkBox addTarget:self action:@selector(checkedBox:) forControlEvents:UIControlEventTouchUpInside];
+            [checkBox addTarget:self action:@selector(checkedBox:) forControlEvents:UIControlEventValueChanged];
             
             switch (indexPath.row)
             {
@@ -389,7 +385,7 @@
                     cell = [_fields objectForKey:name];
                     cell.tag = 16;
                     cell.textLabel.text = displayName;
-                    [checkBox setSelected:[_profile.showWarnings boolValue]];
+                    [checkBox setOn:[_profile.showWarnings boolValue]];
                     cell.accessoryView = checkBox;
                     break;
                 }
@@ -401,7 +397,7 @@
                     cell = [_fields objectForKey:name];
                     cell.tag = 17;
                     cell.textLabel.text = displayName;
-                    [checkBox setSelected:[_profile.showErrors boolValue]];
+                    [checkBox setOn:[_profile.showErrors boolValue]];
                     cell.accessoryView = checkBox;
                     break;
                 }
@@ -413,7 +409,7 @@
                     cell = [_fields objectForKey:name];
                     cell.tag = 18;
                     cell.textLabel.text = displayName;
-                    [checkBox setSelected:[_profile.showNotifications boolValue]];
+                    [checkBox setOn:[_profile.showNotifications boolValue]];
                     cell.accessoryView = checkBox;
                     break;
                 }

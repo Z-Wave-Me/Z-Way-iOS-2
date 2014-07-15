@@ -63,6 +63,27 @@
 		A048471B1973B1690030ADFB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A04847181973B1690030ADFB /* Default-568h@2x.png */; };
 		A048471C1973B1690030ADFB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A04847191973B1690030ADFB /* Default.png */; };
 		A048471D1973B1690030ADFB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A048471A1973B1690030ADFB /* Default@2x.png */; };
+		A0484733197408E80030ADFB /* blinds@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A048471E197408E80030ADFB /* blinds@2x.png */; };
+		A0484734197408E80030ADFB /* co@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A048471F197408E80030ADFB /* co@2x.png */; };
+		A0484735197408E80030ADFB /* cooling@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0484720197408E80030ADFB /* cooling@2x.png */; };
+		A0484736197408E80030ADFB /* dmeter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0484721197408E80030ADFB /* dmeter@2x.png */; };
+		A0484737197408E80030ADFB /* door@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0484722197408E80030ADFB /* door@2x.png */; };
+		A0484738197408E80030ADFB /* energy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0484723197408E80030ADFB /* energy@2x.png */; };
+		A0484739197408E80030ADFB /* fan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0484724197408E80030ADFB /* fan@2x.png */; };
+		A048473A197408E80030ADFB /* gas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0484725197408E80030ADFB /* gas@2x.png */; };
+		A048473B197408E80030ADFB /* heating@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0484726197408E80030ADFB /* heating@2x.png */; };
+		A048473C197408E80030ADFB /* humidity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0484727197408E80030ADFB /* humidity@2x.png */; };
+		A048473D197408E80030ADFB /* light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0484728197408E80030ADFB /* light@2x.png */; };
+		A048473E197408E80030ADFB /* lood@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0484729197408E80030ADFB /* lood@2x.png */; };
+		A048473F197408E80030ADFB /* luminosity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A048472A197408E80030ADFB /* luminosity@2x.png */; };
+		A0484740197408E80030ADFB /* media@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A048472B197408E80030ADFB /* media@2x.png */; };
+		A0484741197408E80030ADFB /* motion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A048472C197408E80030ADFB /* motion@2x.png */; };
+		A0484742197408E80030ADFB /* smoke@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A048472D197408E80030ADFB /* smoke@2x.png */; };
+		A0484743197408E80030ADFB /* switch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A048472E197408E80030ADFB /* switch@2x.png */; };
+		A0484744197408E80030ADFB /* temperature@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A048472F197408E80030ADFB /* temperature@2x.png */; };
+		A0484745197408E80030ADFB /* thermostat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0484730197408E80030ADFB /* thermostat@2x.png */; };
+		A0484746197408E80030ADFB /* water@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0484731197408E80030ADFB /* water@2x.png */; };
+		A0484747197408E80030ADFB /* window@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0484732197408E80030ADFB /* window@2x.png */; };
 		A048EBBB197028FB00474521 /* BinaryOff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A048EBAE197028FB00474521 /* BinaryOff@2x.png */; };
 		A048EBBC197028FB00474521 /* BinaryOn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A048EBAF197028FB00474521 /* BinaryOn@2x.png */; };
 		A048EBBD197028FB00474521 /* connected-g@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A048EBB0197028FB00474521 /* connected-g@2x.png */; };
@@ -102,27 +123,6 @@
 		A0C2DBDE19613EBE0031E4BA /* co.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A3F195DBA12005E6EB0 /* co.png */; };
 		A0C2DBDF19613EBE0031E4BA /* cooling-focus.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A40195DBA12005E6EB0 /* cooling-focus.png */; };
 		A0C2DBE019613EBE0031E4BA /* cooling.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A41195DBA12005E6EB0 /* cooling.png */; };
-		A0C2DBE119613EBE0031E4BA /* device-blinds@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A42195DBA12005E6EB0 /* device-blinds@2x.png */; };
-		A0C2DBE219613EBE0031E4BA /* device-co@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A43195DBA12005E6EB0 /* device-co@2x.png */; };
-		A0C2DBE319613EBE0031E4BA /* device-cooling@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A44195DBA12005E6EB0 /* device-cooling@2x.png */; };
-		A0C2DBE419613EBE0031E4BA /* device-door@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A45195DBA12005E6EB0 /* device-door@2x.png */; };
-		A0C2DBE519613EBE0031E4BA /* device-energy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A46195DBA12005E6EB0 /* device-energy@2x.png */; };
-		A0C2DBE619613EBE0031E4BA /* device-fan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A47195DBA12005E6EB0 /* device-fan@2x.png */; };
-		A0C2DBE719613EBE0031E4BA /* device-flood@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A48195DBA12005E6EB0 /* device-flood@2x.png */; };
-		A0C2DBE819613EBE0031E4BA /* device-gas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A49195DBA12005E6EB0 /* device-gas@2x.png */; };
-		A0C2DBE919613EBE0031E4BA /* device-heating@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A4A195DBA12005E6EB0 /* device-heating@2x.png */; };
-		A0C2DBEA19613EBE0031E4BA /* device-humidity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A4B195DBA12005E6EB0 /* device-humidity@2x.png */; };
-		A0C2DBEB19613EBE0031E4BA /* device-light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A4C195DBA12005E6EB0 /* device-light@2x.png */; };
-		A0C2DBEC19613EBE0031E4BA /* device-luminosity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A4D195DBA12005E6EB0 /* device-luminosity@2x.png */; };
-		A0C2DBED19613EBE0031E4BA /* device-media@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A4E195DBA12005E6EB0 /* device-media@2x.png */; };
-		A0C2DBEE19613EBE0031E4BA /* device-meter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A4F195DBA12005E6EB0 /* device-meter@2x.png */; };
-		A0C2DBEF19613EBE0031E4BA /* device-motion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A50195DBA12005E6EB0 /* device-motion@2x.png */; };
-		A0C2DBF019613EBE0031E4BA /* device-smoke@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A51195DBA12005E6EB0 /* device-smoke@2x.png */; };
-		A0C2DBF119613EBE0031E4BA /* device-switch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A52195DBA12005E6EB0 /* device-switch@2x.png */; };
-		A0C2DBF219613EBE0031E4BA /* device-temperature@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A53195DBA12005E6EB0 /* device-temperature@2x.png */; };
-		A0C2DBF319613EBE0031E4BA /* device-thermostat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A54195DBA12005E6EB0 /* device-thermostat@2x.png */; };
-		A0C2DBF419613EBE0031E4BA /* device-water@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A55195DBA12005E6EB0 /* device-water@2x.png */; };
-		A0C2DBF519613EBE0031E4BA /* device-window@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A56195DBA12005E6EB0 /* device-window@2x.png */; };
 		A0C2DBF619613EBE0031E4BA /* door-focus.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A57195DBA12005E6EB0 /* door-focus.png */; };
 		A0C2DBF719613EBE0031E4BA /* door.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A58195DBA12005E6EB0 /* door.png */; };
 		A0C2DBF819613EBE0031E4BA /* energy-focus.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A59195DBA12005E6EB0 /* energy-focus.png */; };
@@ -268,27 +268,6 @@
 		A0459A3F195DBA12005E6EB0 /* co.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = co.png; sourceTree = "<group>"; };
 		A0459A40195DBA12005E6EB0 /* cooling-focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cooling-focus.png"; sourceTree = "<group>"; };
 		A0459A41195DBA12005E6EB0 /* cooling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cooling.png; sourceTree = "<group>"; };
-		A0459A42195DBA12005E6EB0 /* device-blinds@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device-blinds@2x.png"; sourceTree = "<group>"; };
-		A0459A43195DBA12005E6EB0 /* device-co@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device-co@2x.png"; sourceTree = "<group>"; };
-		A0459A44195DBA12005E6EB0 /* device-cooling@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device-cooling@2x.png"; sourceTree = "<group>"; };
-		A0459A45195DBA12005E6EB0 /* device-door@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device-door@2x.png"; sourceTree = "<group>"; };
-		A0459A46195DBA12005E6EB0 /* device-energy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device-energy@2x.png"; sourceTree = "<group>"; };
-		A0459A47195DBA12005E6EB0 /* device-fan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device-fan@2x.png"; sourceTree = "<group>"; };
-		A0459A48195DBA12005E6EB0 /* device-flood@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device-flood@2x.png"; sourceTree = "<group>"; };
-		A0459A49195DBA12005E6EB0 /* device-gas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device-gas@2x.png"; sourceTree = "<group>"; };
-		A0459A4A195DBA12005E6EB0 /* device-heating@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device-heating@2x.png"; sourceTree = "<group>"; };
-		A0459A4B195DBA12005E6EB0 /* device-humidity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device-humidity@2x.png"; sourceTree = "<group>"; };
-		A0459A4C195DBA12005E6EB0 /* device-light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device-light@2x.png"; sourceTree = "<group>"; };
-		A0459A4D195DBA12005E6EB0 /* device-luminosity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device-luminosity@2x.png"; sourceTree = "<group>"; };
-		A0459A4E195DBA12005E6EB0 /* device-media@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device-media@2x.png"; sourceTree = "<group>"; };
-		A0459A4F195DBA12005E6EB0 /* device-meter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device-meter@2x.png"; sourceTree = "<group>"; };
-		A0459A50195DBA12005E6EB0 /* device-motion@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device-motion@2x.png"; sourceTree = "<group>"; };
-		A0459A51195DBA12005E6EB0 /* device-smoke@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device-smoke@2x.png"; sourceTree = "<group>"; };
-		A0459A52195DBA12005E6EB0 /* device-switch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device-switch@2x.png"; sourceTree = "<group>"; };
-		A0459A53195DBA12005E6EB0 /* device-temperature@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device-temperature@2x.png"; sourceTree = "<group>"; };
-		A0459A54195DBA12005E6EB0 /* device-thermostat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device-thermostat@2x.png"; sourceTree = "<group>"; };
-		A0459A55195DBA12005E6EB0 /* device-water@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device-water@2x.png"; sourceTree = "<group>"; };
-		A0459A56195DBA12005E6EB0 /* device-window@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "device-window@2x.png"; sourceTree = "<group>"; };
 		A0459A57195DBA12005E6EB0 /* door-focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door-focus.png"; sourceTree = "<group>"; };
 		A0459A58195DBA12005E6EB0 /* door.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = door.png; sourceTree = "<group>"; };
 		A0459A59195DBA12005E6EB0 /* energy-focus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "energy-focus.png"; sourceTree = "<group>"; };
@@ -345,6 +324,27 @@
 		A04847181973B1690030ADFB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A04847191973B1690030ADFB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		A048471A1973B1690030ADFB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		A048471E197408E80030ADFB /* blinds@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blinds@2x.png"; sourceTree = "<group>"; };
+		A048471F197408E80030ADFB /* co@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "co@2x.png"; sourceTree = "<group>"; };
+		A0484720197408E80030ADFB /* cooling@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cooling@2x.png"; sourceTree = "<group>"; };
+		A0484721197408E80030ADFB /* dmeter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dmeter@2x.png"; sourceTree = "<group>"; };
+		A0484722197408E80030ADFB /* door@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "door@2x.png"; sourceTree = "<group>"; };
+		A0484723197408E80030ADFB /* energy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "energy@2x.png"; sourceTree = "<group>"; };
+		A0484724197408E80030ADFB /* fan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fan@2x.png"; sourceTree = "<group>"; };
+		A0484725197408E80030ADFB /* gas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gas@2x.png"; sourceTree = "<group>"; };
+		A0484726197408E80030ADFB /* heating@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heating@2x.png"; sourceTree = "<group>"; };
+		A0484727197408E80030ADFB /* humidity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "humidity@2x.png"; sourceTree = "<group>"; };
+		A0484728197408E80030ADFB /* light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light@2x.png"; sourceTree = "<group>"; };
+		A0484729197408E80030ADFB /* lood@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lood@2x.png"; sourceTree = "<group>"; };
+		A048472A197408E80030ADFB /* luminosity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "luminosity@2x.png"; sourceTree = "<group>"; };
+		A048472B197408E80030ADFB /* media@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "media@2x.png"; sourceTree = "<group>"; };
+		A048472C197408E80030ADFB /* motion@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "motion@2x.png"; sourceTree = "<group>"; };
+		A048472D197408E80030ADFB /* smoke@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "smoke@2x.png"; sourceTree = "<group>"; };
+		A048472E197408E80030ADFB /* switch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch@2x.png"; sourceTree = "<group>"; };
+		A048472F197408E80030ADFB /* temperature@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "temperature@2x.png"; sourceTree = "<group>"; };
+		A0484730197408E80030ADFB /* thermostat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thermostat@2x.png"; sourceTree = "<group>"; };
+		A0484731197408E80030ADFB /* water@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "water@2x.png"; sourceTree = "<group>"; };
+		A0484732197408E80030ADFB /* window@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "window@2x.png"; sourceTree = "<group>"; };
 		A048BC1718A37DF500BF32C7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A048EBAE197028FB00474521 /* BinaryOff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BinaryOff@2x.png"; sourceTree = "<group>"; };
 		A048EBAF197028FB00474521 /* BinaryOn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BinaryOn@2x.png"; sourceTree = "<group>"; };
@@ -445,64 +445,58 @@
 				A048EBAF197028FB00474521 /* BinaryOn@2x.png */,
 				A0459A3C195DBA12005E6EB0 /* blinds-focus.png */,
 				A0459A3D195DBA12005E6EB0 /* blinds.png */,
+				A048471E197408E80030ADFB /* blinds@2x.png */,
 				A0459A3E195DBA12005E6EB0 /* co-focus.png */,
 				A0459A3F195DBA12005E6EB0 /* co.png */,
+				A048471F197408E80030ADFB /* co@2x.png */,
 				A042F11B1962EF0700825387 /* connected-g.png */,
 				A048EBB0197028FB00474521 /* connected-g@2x.png */,
 				A054497D196D7193006610B5 /* connection.png */,
 				A048EBB1197028FB00474521 /* connection@2x.png */,
 				A0459A40195DBA12005E6EB0 /* cooling-focus.png */,
 				A0459A41195DBA12005E6EB0 /* cooling.png */,
+				A0484720197408E80030ADFB /* cooling@2x.png */,
 				A0466827196414B900323048 /* Dashboard.png */,
 				A048EBB2197028FB00474521 /* Dashboard@2x.png */,
 				A04847181973B1690030ADFB /* Default-568h@2x.png */,
 				A04847191973B1690030ADFB /* Default.png */,
 				A048471A1973B1690030ADFB /* Default@2x.png */,
-				A0459A42195DBA12005E6EB0 /* device-blinds@2x.png */,
-				A0459A43195DBA12005E6EB0 /* device-co@2x.png */,
-				A0459A44195DBA12005E6EB0 /* device-cooling@2x.png */,
-				A0459A45195DBA12005E6EB0 /* device-door@2x.png */,
-				A0459A46195DBA12005E6EB0 /* device-energy@2x.png */,
-				A0459A47195DBA12005E6EB0 /* device-fan@2x.png */,
-				A0459A48195DBA12005E6EB0 /* device-flood@2x.png */,
-				A0459A49195DBA12005E6EB0 /* device-gas@2x.png */,
-				A0459A4A195DBA12005E6EB0 /* device-heating@2x.png */,
-				A0459A4B195DBA12005E6EB0 /* device-humidity@2x.png */,
-				A0459A4C195DBA12005E6EB0 /* device-light@2x.png */,
-				A0459A4D195DBA12005E6EB0 /* device-luminosity@2x.png */,
-				A0459A4E195DBA12005E6EB0 /* device-media@2x.png */,
-				A0459A4F195DBA12005E6EB0 /* device-meter@2x.png */,
-				A0459A50195DBA12005E6EB0 /* device-motion@2x.png */,
-				A0459A51195DBA12005E6EB0 /* device-smoke@2x.png */,
-				A0459A52195DBA12005E6EB0 /* device-switch@2x.png */,
-				A0459A53195DBA12005E6EB0 /* device-temperature@2x.png */,
-				A0459A54195DBA12005E6EB0 /* device-thermostat@2x.png */,
-				A0459A55195DBA12005E6EB0 /* device-water@2x.png */,
-				A0459A56195DBA12005E6EB0 /* device-window@2x.png */,
+				A0484721197408E80030ADFB /* dmeter@2x.png */,
 				A0459A57195DBA12005E6EB0 /* door-focus.png */,
 				A0459A58195DBA12005E6EB0 /* door.png */,
+				A0484722197408E80030ADFB /* door@2x.png */,
 				A0459A59195DBA12005E6EB0 /* energy-focus.png */,
 				A0459A5A195DBA12005E6EB0 /* energy.png */,
+				A0484723197408E80030ADFB /* energy@2x.png */,
 				A0459A5B195DBA12005E6EB0 /* fan-focus.png */,
 				A0459A5C195DBA12005E6EB0 /* fan.png */,
+				A0484724197408E80030ADFB /* fan@2x.png */,
 				A0459A5D195DBA12005E6EB0 /* flood-focus.png */,
 				A0459A5E195DBA12005E6EB0 /* flood.png */,
 				A0459A5F195DBA12005E6EB0 /* gas-focus.png */,
 				A0459A60195DBA12005E6EB0 /* gas.png */,
+				A0484725197408E80030ADFB /* gas@2x.png */,
 				A0459A61195DBA12005E6EB0 /* heating-focus.png */,
 				A0459A62195DBA12005E6EB0 /* heating.png */,
+				A0484726197408E80030ADFB /* heating@2x.png */,
 				A0459A63195DBA12005E6EB0 /* humidity-focus.png */,
 				A0459A64195DBA12005E6EB0 /* humidity.png */,
+				A0484727197408E80030ADFB /* humidity@2x.png */,
 				A0459A65195DBA12005E6EB0 /* light-focus.png */,
 				A0459A66195DBA12005E6EB0 /* light.png */,
+				A0484728197408E80030ADFB /* light@2x.png */,
+				A0484729197408E80030ADFB /* lood@2x.png */,
 				A0459A67195DBA12005E6EB0 /* luminosity-focus.png */,
 				A0459A68195DBA12005E6EB0 /* luminosity.png */,
+				A048472A197408E80030ADFB /* luminosity@2x.png */,
 				A0459A69195DBA12005E6EB0 /* media-focus.png */,
 				A0459A6A195DBA12005E6EB0 /* media.png */,
+				A048472B197408E80030ADFB /* media@2x.png */,
 				A0459A6B195DBA12005E6EB0 /* meter-focus.png */,
 				A0459A6C195DBA12005E6EB0 /* meter.png */,
 				A0459A6D195DBA12005E6EB0 /* motion-focus.png */,
 				A0459A6E195DBA12005E6EB0 /* motion.png */,
+				A048472C197408E80030ADFB /* motion@2x.png */,
 				A054497E196D7193006610B5 /* noConnection.png */,
 				A048EBB3197028FB00474521 /* noConnection@2x.png */,
 				A0459A6F195DBA12005E6EB0 /* notification-battery-critical@2x.png */,
@@ -516,22 +510,28 @@
 				A048EBB6197028FB00474521 /* scene@2x.png */,
 				A0459A73195DBA12005E6EB0 /* smoke-focus.png */,
 				A0459A74195DBA12005E6EB0 /* smoke.png */,
+				A048472D197408E80030ADFB /* smoke@2x.png */,
 				A0459A75195DBA12005E6EB0 /* switch-focus.png */,
 				A0459A76195DBA12005E6EB0 /* switch.png */,
+				A048472E197408E80030ADFB /* switch@2x.png */,
 				A0459A77195DBA12005E6EB0 /* temperature-focus.png */,
 				A0459A78195DBA12005E6EB0 /* temperature.png */,
+				A048472F197408E80030ADFB /* temperature@2x.png */,
 				A0459A79195DBA12005E6EB0 /* thermostat-focus.png */,
 				A0459A7A195DBA12005E6EB0 /* thermostat.png */,
+				A0484730197408E80030ADFB /* thermostat@2x.png */,
 				A0544981196D7E57006610B5 /* toggleNormal.png */,
 				A048EBB7197028FB00474521 /* toggleNormal@2x.png */,
 				A0544982196D7E57006610B5 /* togglePressed.png */,
 				A048EBB8197028FB00474521 /* togglePressed@2x.png */,
 				A0459A7B195DBA12005E6EB0 /* water-focus.png */,
 				A0459A7C195DBA12005E6EB0 /* water.png */,
+				A0484731197408E80030ADFB /* water@2x.png */,
 				A0466829196414B900323048 /* Widgets.png */,
 				A048EBB9197028FB00474521 /* Widgets@2x.png */,
 				A0459A7D195DBA12005E6EB0 /* window-focus.png */,
 				A0459A7E195DBA12005E6EB0 /* window.png */,
+				A0484732197408E80030ADFB /* window@2x.png */,
 				A0459A7F195DBA12005E6EB0 /* wrong.png */,
 				A048EBBA197028FB00474521 /* wrong@2x.png */,
 			);
@@ -792,45 +792,45 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0484743197408E80030ADFB /* switch@2x.png in Resources */,
 				A048471D1973B1690030ADFB /* Default@2x.png in Resources */,
 				A0C2DBF919613EBE0031E4BA /* energy.png in Resources */,
 				A042F11C1962EF0700825387 /* connected-g.png in Resources */,
 				A0C2DC0019613EBE0031E4BA /* heating-focus.png in Resources */,
 				A0C2DC1D19613EBE0031E4BA /* window.png in Resources */,
-				A0C2DBF319613EBE0031E4BA /* device-thermostat@2x.png in Resources */,
 				A042F0D51962EE0900825387 /* ZWPasswordCell.xib in Resources */,
 				A0544983196D7E57006610B5 /* toggleNormal.png in Resources */,
+				A0484742197408E80030ADFB /* smoke@2x.png in Resources */,
 				A0C2DBCB19613E9F0031E4BA /* MainStoryboard_iPad.storyboard in Resources */,
 				A0C2DBE019613EBE0031E4BA /* cooling.png in Resources */,
 				A0C2DBFD19613EBE0031E4BA /* flood.png in Resources */,
 				A0507A5C196ED74A00143016 /* ZWCheckBox.xib in Resources */,
-				A0C2DBE919613EBE0031E4BA /* device-heating@2x.png in Resources */,
 				A0C2DC1B19613EBE0031E4BA /* water.png in Resources */,
-				A0C2DBE719613EBE0031E4BA /* device-flood@2x.png in Resources */,
 				A0C2DC1519613EBE0031E4BA /* switch.png in Resources */,
 				A0C2DBF619613EBE0031E4BA /* door-focus.png in Resources */,
 				A0C2DBFA19613EBE0031E4BA /* fan-focus.png in Resources */,
 				A0C2DBCC19613EB00031E4BA /* Localizable.strings in Resources */,
 				A0C2DC1219613EBE0031E4BA /* smoke-focus.png in Resources */,
 				A042F1111962EE5D00825387 /* ZWDeviceItemSwitch.xib in Resources */,
-				A0C2DBE819613EBE0031E4BA /* device-gas@2x.png in Resources */,
 				A048EBC0197028FB00474521 /* noConnection@2x.png in Resources */,
 				A03E1922196572D9008416DB /* scene.png in Resources */,
 				A042F0D71962EE0900825387 /* ZWUrlEditCell.xib in Resources */,
 				A0C2DBCA19613E9C0031E4BA /* MainStoryboard_iPhone.storyboard in Resources */,
 				A0C2DC0819613EBE0031E4BA /* media-focus.png in Resources */,
+				A048473B197408E80030ADFB /* heating@2x.png in Resources */,
 				A0C2DC0619613EBE0031E4BA /* luminosity-focus.png in Resources */,
 				A048EBBB197028FB00474521 /* BinaryOff@2x.png in Resources */,
 				A0C2DC1719613EBE0031E4BA /* temperature.png in Resources */,
 				A0C2DC1A19613EBE0031E4BA /* water-focus.png in Resources */,
 				A0C2DBFE19613EBE0031E4BA /* gas-focus.png in Resources */,
+				A048473D197408E80030ADFB /* light@2x.png in Resources */,
 				A0C2DC0F19613EBE0031E4BA /* notification-battery-low@2x.png in Resources */,
 				A0C2DC0B19613EBE0031E4BA /* meter.png in Resources */,
+				A0484741197408E80030ADFB /* motion@2x.png in Resources */,
+				A0484738197408E80030ADFB /* energy@2x.png in Resources */,
 				A048EBC2197028FB00474521 /* Options@2x.png in Resources */,
 				A042F1131962EE5D00825387 /* ZWDeviceItemThermostat.xib in Resources */,
 				A0C2DC0519613EBE0031E4BA /* light.png in Resources */,
-				A0C2DBEC19613EBE0031E4BA /* device-luminosity@2x.png in Resources */,
-				A0C2DBF519613EBE0031E4BA /* device-window@2x.png in Resources */,
 				A0C2DBDB19613EBE0031E4BA /* blinds-focus.png in Resources */,
 				A0C2DC1919613EBE0031E4BA /* thermostat.png in Resources */,
 				A048EBC5197028FB00474521 /* togglePressed@2x.png in Resources */,
@@ -839,76 +839,76 @@
 				A0C2DC0919613EBE0031E4BA /* media.png in Resources */,
 				A0C2DBDC19613EBE0031E4BA /* blinds.png in Resources */,
 				A0C2DC0319613EBE0031E4BA /* humidity.png in Resources */,
+				A048473A197408E80030ADFB /* gas@2x.png in Resources */,
 				A048471C1973B1690030ADFB /* Default.png in Resources */,
 				A03E191419654EC3008416DB /* NotificationCell.xib in Resources */,
-				A0C2DBF419613EBE0031E4BA /* device-water@2x.png in Resources */,
 				A0C2DC0E19613EBE0031E4BA /* notification-battery-critical@2x.png in Resources */,
 				A0C2DBD719613EBE0031E4BA /* battery-focus.png in Resources */,
 				A0C2DBD619613EBE0031E4BA /* battery-critical.png in Resources */,
+				A0484735197408E80030ADFB /* cooling@2x.png in Resources */,
+				A0484744197408E80030ADFB /* temperature@2x.png in Resources */,
 				A0C2DBFC19613EBE0031E4BA /* flood-focus.png in Resources */,
-				A0C2DBE319613EBE0031E4BA /* device-cooling@2x.png in Resources */,
 				A0C2DC1319613EBE0031E4BA /* smoke.png in Resources */,
 				A0C2DC0719613EBE0031E4BA /* luminosity.png in Resources */,
 				A048EBBE197028FB00474521 /* connection@2x.png in Resources */,
 				A048EBC3197028FB00474521 /* scene@2x.png in Resources */,
 				A0C2DBDF19613EBE0031E4BA /* cooling-focus.png in Resources */,
+				A0484746197408E80030ADFB /* water@2x.png in Resources */,
 				A0C2DC1619613EBE0031E4BA /* temperature-focus.png in Resources */,
 				A0C2DC1019613EBE0031E4BA /* notification-connection@2x.png in Resources */,
 				A048EBC4197028FB00474521 /* toggleNormal@2x.png in Resources */,
 				A03E191619655110008416DB /* Notifications.png in Resources */,
 				A0C2DBF819613EBE0031E4BA /* energy-focus.png in Resources */,
 				A0C2DC0119613EBE0031E4BA /* heating.png in Resources */,
+				A0484739197408E80030ADFB /* fan@2x.png in Resources */,
 				A048EBC6197028FB00474521 /* Widgets@2x.png in Resources */,
 				A046682C196414B900323048 /* Dashboard.png in Resources */,
 				A042F0D61962EE0900825387 /* ZWTextEditCell.xib in Resources */,
-				A0C2DBE119613EBE0031E4BA /* device-blinds@2x.png in Resources */,
-				A0C2DBF119613EBE0031E4BA /* device-switch@2x.png in Resources */,
 				A048EBBC197028FB00474521 /* BinaryOn@2x.png in Resources */,
+				A0484733197408E80030ADFB /* blinds@2x.png in Resources */,
 				A0C2DBDD19613EBE0031E4BA /* co-focus.png in Resources */,
 				A046682E196414B900323048 /* Widgets.png in Resources */,
 				A048EBC1197028FB00474521 /* Notifications@2x.png in Resources */,
 				A042F10F1962EE5D00825387 /* ZWDeviceItemSensorMulti.xib in Resources */,
+				A0484740197408E80030ADFB /* media@2x.png in Resources */,
+				A048473F197408E80030ADFB /* luminosity@2x.png in Resources */,
 				A0C2DC0D19613EBE0031E4BA /* motion.png in Resources */,
 				A048EBC7197028FB00474521 /* wrong@2x.png in Resources */,
 				A046682A196414B900323048 /* BinaryOff.png in Resources */,
 				A0C2DBF719613EBE0031E4BA /* door.png in Resources */,
 				A0C2DC1E19613EBE0031E4BA /* wrong.png in Resources */,
-				A0C2DBE419613EBE0031E4BA /* device-door@2x.png in Resources */,
+				A0484734197408E80030ADFB /* co@2x.png in Resources */,
 				A0C2DBDA19613EBE0031E4BA /* battery.png in Resources */,
-				A0C2DBEF19613EBE0031E4BA /* device-motion@2x.png in Resources */,
-				A0C2DBE519613EBE0031E4BA /* device-energy@2x.png in Resources */,
 				A0544980196D7193006610B5 /* noConnection.png in Resources */,
 				A048EBBD197028FB00474521 /* connected-g@2x.png in Resources */,
-				A0C2DBF219613EBE0031E4BA /* device-temperature@2x.png in Resources */,
+				A0484736197408E80030ADFB /* dmeter@2x.png in Resources */,
 				A042F1071962EE5D00825387 /* ZWDeviceItemBlinds.xib in Resources */,
 				A042F10A1962EE5D00825387 /* ZWDeviceItemFan.xib in Resources */,
+				A0484737197408E80030ADFB /* door@2x.png in Resources */,
 				A0C2DC0C19613EBE0031E4BA /* motion-focus.png in Resources */,
-				A0C2DBF019613EBE0031E4BA /* device-smoke@2x.png in Resources */,
+				A0484745197408E80030ADFB /* thermostat@2x.png in Resources */,
 				A0C2DBFB19613EBE0031E4BA /* fan.png in Resources */,
-				A0C2DBEB19613EBE0031E4BA /* device-light@2x.png in Resources */,
 				A0C2DBDE19613EBE0031E4BA /* co.png in Resources */,
 				A048471B1973B1690030ADFB /* Default-568h@2x.png in Resources */,
 				A0C2DC0219613EBE0031E4BA /* humidity-focus.png in Resources */,
 				A046682B196414B900323048 /* BinaryOn.png in Resources */,
 				A0544984196D7E57006610B5 /* togglePressed.png in Resources */,
+				A048473C197408E80030ADFB /* humidity@2x.png in Resources */,
 				A042F1081962EE5D00825387 /* ZWDeviceItemDimmer.xib in Resources */,
-				A0C2DBEA19613EBE0031E4BA /* device-humidity@2x.png in Resources */,
 				A0C2DBD519613EBE0031E4BA /* battery-critical-focus.png in Resources */,
 				A0C2DBC919613CF00031E4BA /* InfoPlist.strings in Resources */,
 				A0C2DBD919613EBE0031E4BA /* battery-low.png in Resources */,
-				A0C2DBED19613EBE0031E4BA /* device-media@2x.png in Resources */,
 				A0C2DBFF19613EBE0031E4BA /* gas.png in Resources */,
 				A03E19241965792B008416DB /* ZWDeviceItemScene.xib in Resources */,
 				A0C2DC0419613EBE0031E4BA /* light-focus.png in Resources */,
-				A0C2DBEE19613EBE0031E4BA /* device-meter@2x.png in Resources */,
 				A048EBBF197028FB00474521 /* Dashboard@2x.png in Resources */,
-				A0C2DBE219613EBE0031E4BA /* device-co@2x.png in Resources */,
-				A0C2DBE619613EBE0031E4BA /* device-fan@2x.png in Resources */,
+				A0484747197408E80030ADFB /* window@2x.png in Resources */,
 				A0C2DC0A19613EBE0031E4BA /* meter-focus.png in Resources */,
 				A046682D196414B900323048 /* Options.png in Resources */,
 				A0C2DC1419613EBE0031E4BA /* switch-focus.png in Resources */,
 				A0C2DBD819613EBE0031E4BA /* battery-low-focus.png in Resources */,
 				A0C2DC1819613EBE0031E4BA /* thermostat-focus.png in Resources */,
+				A048473E197408E80030ADFB /* lood@2x.png in Resources */,
 				A054497F196D7193006610B5 /* connection.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

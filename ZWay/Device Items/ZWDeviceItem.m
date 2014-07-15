@@ -48,7 +48,7 @@
     }
     else if([type isEqualToString:@"toggleButton"])
     {
-        self.imageView.image = [UIImage imageNamed:@"scene.png"];
+        self.imageView.image = [UIImage imageNamed:@"media.png"];
     }
     else if([type isEqualToString:@"probe"] || [self.device.deviceType isEqualToString:@"battery"])
     {

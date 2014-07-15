@@ -26,6 +26,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="khX-rs-IMQ">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="dataSource" destination="2" id="ove-Ws-ece"/>
                                     <outlet property="delegate" destination="2" id="h9e-I4-a0N"/>
@@ -46,6 +47,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Dashboard" id="NsS-Ip-axy"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="noItemsLabel" destination="zZh-bM-UNK" id="HRj-gR-WoW"/>
                         <outlet property="tableview" destination="khX-rs-IMQ" id="Zng-NA-rk6"/>
@@ -71,6 +73,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="dataSource" destination="xAq-N3-CHI" id="41P-64-DOv"/>
                                     <outlet property="delegate" destination="xAq-N3-CHI" id="4gu-E2-vwc"/>
@@ -87,6 +90,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="7Bd-5d-M7f"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="tableview" destination="pom-jM-hHY" id="p3r-pL-EQH"/>
                         <segue destination="lie-A2-KiG" kind="push" identifier="pushProfiles" id="RYS-W8-gvo"/>
@@ -133,6 +137,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="AI8-VT-q3W"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="textview" destination="qdD-0J-3Kn" id="irk-Cn-Kff"/>
                     </connections>
@@ -149,12 +154,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <connections>
                             <outlet property="dataSource" destination="lie-A2-KiG" id="YiW-U2-uyT"/>
                             <outlet property="delegate" destination="lie-A2-KiG" id="bky-FH-YLg"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Profiles" id="hbd-32-UuI"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="tableview" destination="xyl-ig-rHy" id="22T-8o-05S"/>
                         <segue destination="S0J-qv-wIn" kind="push" identifier="pushProfileNew" id="d4p-bg-uOm"/>
@@ -172,6 +179,7 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <connections>
                             <outlet property="dataSource" destination="S0J-qv-wIn" id="HBr-qJ-owJ"/>
                             <outlet property="delegate" destination="S0J-qv-wIn" id="h8F-AW-ahR"/>
@@ -179,6 +187,7 @@
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="4Zl-BF-tOO"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="tableview" destination="2Fv-nh-bqw" id="Snb-0c-zCU"/>
                     </connections>
@@ -208,6 +217,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Iav-uy-RMb">
                                 <rect key="frame" x="-1" y="0.0" width="768" height="911"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" id="0RN-RH-acb">
                                         <rect key="frame" x="0.0" y="22" width="768" height="44"/>
@@ -260,6 +270,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="v6f-iC-uDU"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="noItemsLabel" destination="hsO-Vo-pqX" id="H4f-5h-0bx"/>
                         <outlet property="tableview" destination="Iav-uy-RMb" id="xoK-9r-xVz"/>
@@ -287,7 +298,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="jN3-N9-upk">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="jN3-N9-upk">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
@@ -316,6 +327,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="YGW-rI-UzL">
                                 <rect key="frame" x="0.0" y="-69" width="768" height="980"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="gTd-4C-pww" style="IBUITableViewCellStyleDefault" id="Mqk-Py-i2a">
                                         <rect key="frame" x="0.0" y="22" width="768" height="44"/>
@@ -346,15 +358,16 @@
                             <constraint firstItem="jN3-N9-upk" firstAttribute="top" secondItem="17" secondAttribute="top" id="66O-OW-gE6"/>
                             <constraint firstItem="YGW-rI-UzL" firstAttribute="leading" secondItem="jN3-N9-upk" secondAttribute="leading" id="7dQ-Qk-9P3"/>
                             <constraint firstAttribute="bottom" secondItem="YGW-rI-UzL" secondAttribute="bottom" id="GOm-0a-4ab"/>
-                            <constraint firstItem="YGW-rI-UzL" firstAttribute="top" secondItem="17" secondAttribute="top" constant="-69" id="KNf-d2-bop"/>
                             <constraint firstAttribute="trailing" secondItem="YGW-rI-UzL" secondAttribute="trailing" id="QtX-vi-Qsr"/>
                             <constraint firstItem="YGW-rI-UzL" firstAttribute="leading" secondItem="17" secondAttribute="leading" id="RGO-uN-6d3"/>
                             <constraint firstItem="3kF-ms-MKJ" firstAttribute="top" secondItem="nFx-an-H7t" secondAttribute="bottom" constant="103" id="avy-wf-KvX"/>
+                            <constraint firstItem="YGW-rI-UzL" firstAttribute="top" secondItem="17" secondAttribute="top" constant="-69" id="r5c-5S-J86"/>
                             <constraint firstItem="YGW-rI-UzL" firstAttribute="centerX" secondItem="3kF-ms-MKJ" secondAttribute="centerX" id="tPX-tn-CZd"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Widgets" id="rS8-w0-7uq"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="allButton" destination="irV-AV-dbL" id="ycS-PY-qW4"/>
                         <outlet property="noItemsLabel" destination="3kF-ms-MKJ" id="87o-e7-MVU"/>
@@ -395,6 +408,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JFO-id-OFi">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="dataSource" destination="8Yj-FF-hgr" id="oOU-mC-y0N"/>
                                     <outlet property="delegate" destination="8Yj-FF-hgr" id="51L-Yu-zj9"/>
@@ -414,6 +428,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="V4c-TF-l3w"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="noItemsLabel" destination="mAO-Th-xTf" id="TKD-PB-KqW"/>
                         <outlet property="tableview" destination="JFO-id-OFi" id="jVT-xa-wCJ"/>
@@ -427,7 +442,8 @@
         <scene sceneID="15">
             <objects>
                 <tabBarController id="4" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="5">
                         <rect key="frame" x="0.0" y="431" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -450,6 +466,7 @@
                 <navigationController id="fYx-6O-i5n" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Widgets" image="Widgets.png" id="6"/>
                     <toolbarItems/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fVO-en-zNl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -469,6 +486,7 @@
                 <navigationController id="xZi-1A-p7I" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Dashboard" image="Dashboard.png" id="7"/>
                     <toolbarItems/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JNH-fp-FuL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -488,6 +506,7 @@
                 <navigationController id="Kyr-iH-6tr" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Notifications" image="Notifications.png" id="4cx-k1-jK4"/>
                     <toolbarItems/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GRo-Jc-LGh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -513,6 +532,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="shd-PZ-wSG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Options" image="Options.png" id="oj8-mp-kxR"/>
                     <toolbarItems/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VCA-WQ-Zlw">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

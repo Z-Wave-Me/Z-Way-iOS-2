@@ -151,7 +151,7 @@
             timestamp = 0;
         
             //filter all redeemed notifications
-            for(int i=sort.count-1; i>0; i--)
+            for(NSUInteger i=sort.count-1; i>0; i--)
             {
                 BOOL redeemed = [[[sort objectAtIndex:i] objectForKey:@"redeemed"] boolValue];
                 NSString *level = [[sort objectAtIndex:i] objectForKey:@"level"];
