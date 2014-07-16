@@ -289,11 +289,11 @@
                         <viewControllerLayoutGuide type="bottom" id="GYR-QC-Go7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="o2g-N7-tAU">
-                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="916"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="There is no device in this section" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxz-mb-5tV">
-                                <rect key="frame" x="20" y="103" width="728" height="216"/>
+                                <rect key="frame" x="20" y="108" width="728" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="216" id="Bgt-Qx-rxU"/>
                                 </constraints>
@@ -302,7 +302,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="S7x-dL-mDh">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                <rect key="frame" x="0.0" y="5" width="768" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <barButtonItem title="All" id="TSF-8a-Cyx">
@@ -326,9 +326,12 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="2SZ-Gu-6CS" id="l7U-W5-gEt"/>
+                                </connections>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LXm-7j-0sk">
-                                <rect key="frame" x="0.0" y="-69" width="768" height="980"/>
+                                <rect key="frame" x="0.0" y="-69" width="768" height="985"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -378,7 +381,7 @@
                         <outlet property="roomsButton" destination="8ro-57-fbl" id="DAI-9B-YVN"/>
                         <outlet property="tableview" destination="LXm-7j-0sk" id="Hdc-gg-bkf"/>
                         <outlet property="tagsButton" destination="xIZ-2j-FEx" id="dJE-8G-xq4"/>
-                        <outlet property="toolbar" destination="S7x-dL-mDh" id="lv9-fp-ERQ"/>
+                        <outlet property="toolbar" destination="S7x-dL-mDh" id="AAY-Yc-rgl"/>
                         <outlet property="typesButton" destination="Vc1-M8-89w" id="WRc-61-DlB"/>
                         <outlet property="view" destination="o2g-N7-tAU" id="fiH-fe-Dhj"/>
                         <segue destination="y7f-Fr-Pfn" kind="push" identifier="pushWidgetDevices" id="gjJ-db-ctu"/>
@@ -397,11 +400,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Foo-sE-C1R"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cYz-oL-hop">
-                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="916"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="There is no device in this section" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNo-a7-So5">
-                                <rect key="frame" x="251" y="149" width="266" height="116"/>
+                                <rect key="frame" x="251" y="149" width="266" height="121"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="266" id="bvl-Rl-UDz"/>
                                 </constraints>
@@ -410,7 +413,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GJJ-wI-Xxa">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="916"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
@@ -467,7 +470,7 @@
         <!--Navigation Controller - Widgets-->
         <scene sceneID="dQv-8p-OHW">
             <objects>
-                <navigationController id="xXN-ww-cTp" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="xXN-ww-cTp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Widgets" image="Widgets.png" id="l7i-EG-mkr"/>
                     <toolbarItems/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
@@ -476,6 +479,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="auM-TU-4xw">
+                        <rect key="frame" x="0.0" y="980" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="2SZ-Gu-6CS" kind="relationship" relationship="rootViewController" id="PFh-Th-8Tx"/>
                     </connections>

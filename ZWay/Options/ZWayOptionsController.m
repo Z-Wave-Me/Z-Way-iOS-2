@@ -23,6 +23,8 @@
     [self.navigationController.navigationBar setTranslucent:NO];
     [self.navigationController.navigationBar setOpaque:YES];
     [self.tabBarController.tabBar setTranslucent:NO];
+    
+    self.tableview.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (void)viewWillAppear:(BOOL)animated

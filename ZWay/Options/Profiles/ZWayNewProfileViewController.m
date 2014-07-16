@@ -78,6 +78,30 @@
     
     languages = [NSArray arrayWithObjects:NSLocalizedString(@"German", @"German"), NSLocalizedString(@"English", @"English"), NSLocalizedString(@"Russian", @"Russian"), NSLocalizedString(@"Chinese", @"Chinese"), nil];
     
+    //set up save and delete button
+    UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    saveButton.frame = CGRectMake(0, 0, 280, 40);
+    [saveButton setTitle:NSLocalizedString(@"Store", @"Store Data") forState:UIControlStateNormal];
+    saveButton.backgroundColor = [UIColor clearColor];
+    [saveButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [saveButton addTarget:self action:@selector(store) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    deleteButton.frame = CGRectMake(0, 50, 280, 40);
+    [deleteButton setTitle:NSLocalizedString(@"DeleteProfile", @"Delete Profile") forState:UIControlStateNormal];
+    deleteButton.backgroundColor = [UIColor clearColor];
+    [deleteButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [deleteButton addTarget:self action:@selector(deleteProfile) forControlEvents:UIControlEventTouchUpInside];
+    
+    //place buttons on bottom
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 280, 200)];
+    [footerView addSubview:saveButton];
+    [footerView addSubview:deleteButton];
+    CGPoint centerPoint = footerView.center;
+    centerPoint.x = self.view.center.x;
+    footerView.center = centerPoint;
+    tableview.tableFooterView = footerView;
+    
     //set up picker view for language and color
     picker = [[UIPickerView alloc] initWithFrame:(CGRect){{0, 0}, 320, 480}];
     picker.delegate = self;
@@ -420,27 +444,6 @@
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    //set up save and delete button
-    UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    saveButton.frame = CGRectMake(0, 0, 280, 40);
-    [saveButton setTitle:NSLocalizedString(@"Store", @"Store Data") forState:UIControlStateNormal];
-    saveButton.backgroundColor = [UIColor clearColor];
-    [saveButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [saveButton addTarget:self action:@selector(store) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    deleteButton.frame = CGRectMake(0, 50, 280, 40);
-    [deleteButton setTitle:NSLocalizedString(@"DeleteProfile", @"Delete Profile") forState:UIControlStateNormal];
-    deleteButton.backgroundColor = [UIColor clearColor];
-    [deleteButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [deleteButton addTarget:self action:@selector(deleteProfile) forControlEvents:UIControlEventTouchUpInside];
-    
-    //place buttons on bottom
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(20, 0, 280, 200)];
-    [footerView addSubview:saveButton];
-    [footerView addSubview:deleteButton];
-    tableView.tableFooterView = footerView;
-    
     return cell;
 }
 
@@ -657,6 +660,30 @@
     
     //set the title to the current language
     [self setTitle:NSLocalizedString(@"Options", @"")];
+    
+    //set up save and delete button
+    UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    saveButton.frame = CGRectMake(0, 0, 280, 40);
+    [saveButton setTitle:NSLocalizedString(@"Store", @"Store Data") forState:UIControlStateNormal];
+    saveButton.backgroundColor = [UIColor clearColor];
+    [saveButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [saveButton addTarget:self action:@selector(store) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    deleteButton.frame = CGRectMake(0, 50, 280, 40);
+    [deleteButton setTitle:NSLocalizedString(@"DeleteProfile", @"Delete Profile") forState:UIControlStateNormal];
+    deleteButton.backgroundColor = [UIColor clearColor];
+    [deleteButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [deleteButton addTarget:self action:@selector(deleteProfile) forControlEvents:UIControlEventTouchUpInside];
+    
+    //place buttons on bottom
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 280, 200)];
+    [footerView addSubview:saveButton];
+    [footerView addSubview:deleteButton];
+    CGPoint centerPoint = footerView.center;
+    centerPoint.x = self.view.center.x;
+    footerView.center = centerPoint;
+    tableview.tableFooterView = footerView;
 }
 
 - (NSString*)languageTitle

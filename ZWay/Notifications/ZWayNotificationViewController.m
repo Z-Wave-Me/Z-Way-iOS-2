@@ -32,6 +32,8 @@
         self.edgesForExtendedLayout = UIRectEdgeAll;
     }
     
+    self.tableview.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
     //set up outdoor handler
     authent = [ZWayAuthentification new];
     
@@ -39,9 +41,6 @@
     [self.navigationController.navigationBar setTranslucent:NO];
     [self.navigationController.navigationBar setOpaque:YES];
     [self.tabBarController.tabBar setTranslucent:NO];
-    
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.navigationItem.rightBarButtonItem.style = UIBarButtonItemStylePlain;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -54,6 +53,9 @@
     //set localized title and label
     [self setTitle:NSLocalizedString(@"Notifications", @"")];
     self.noItemsLabel.text = NSLocalizedString(@"OKMessage", @"");
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem.style = UIBarButtonItemStylePlain;
+    self.navigationItem.rightBarButtonItem.title = NSLocalizedString(@"Edit", @"");
     
     if(notifications.count != 0)
     {

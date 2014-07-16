@@ -289,7 +289,7 @@
                         <viewControllerLayoutGuide type="bottom" id="sem-Ne-3XK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="17">
-                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="916"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="There is no device in this section" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kF-ms-MKJ">
@@ -323,9 +323,12 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="3" id="TZj-G1-ZV9"/>
+                                </connections>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="YGW-rI-UzL">
-                                <rect key="frame" x="0.0" y="-69" width="768" height="980"/>
+                                <rect key="frame" x="0.0" y="-69" width="768" height="985"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -374,7 +377,7 @@
                         <outlet property="roomsButton" destination="CNd-Mg-6zA" id="2uG-u2-hBG"/>
                         <outlet property="tableview" destination="YGW-rI-UzL" id="bB6-io-qeG"/>
                         <outlet property="tagsButton" destination="1fk-zp-Jmt" id="1Rq-V2-f54"/>
-                        <outlet property="toolbar" destination="jN3-N9-upk" id="iOf-zx-Cll"/>
+                        <outlet property="toolbar" destination="jN3-N9-upk" id="8bF-zA-xbP"/>
                         <outlet property="typesButton" destination="aaA-CA-MGH" id="LPs-kb-JhF"/>
                         <outlet property="view" destination="17" id="pgU-nL-scw"/>
                         <segue destination="8Yj-FF-hgr" kind="push" identifier="pushWidgetDevices" id="m1D-fn-FFf"/>
@@ -393,11 +396,11 @@
                         <viewControllerLayoutGuide type="bottom" id="kqK-M7-vyx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NZc-2r-t1W">
-                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="916"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="There is no device in this section" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAO-Th-xTf">
-                                <rect key="frame" x="251" y="149" width="266" height="116"/>
+                                <rect key="frame" x="251" y="149" width="266" height="121"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="266" id="DFK-fh-z2r"/>
                                 </constraints>
@@ -406,7 +409,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JFO-id-OFi">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="916"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
@@ -442,6 +445,7 @@
         <scene sceneID="15">
             <objects>
                 <tabBarController id="4" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="5">
@@ -463,7 +467,7 @@
         <!--Navigation Controller - Widgets-->
         <scene sceneID="Xm0-zk-g2p">
             <objects>
-                <navigationController id="fYx-6O-i5n" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="fYx-6O-i5n" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Widgets" image="Widgets.png" id="6"/>
                     <toolbarItems/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
@@ -472,6 +476,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="8gq-rc-VEJ">
+                        <rect key="frame" x="0.0" y="980" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="3" kind="relationship" relationship="rootViewController" id="Q2L-ke-gpa"/>
                     </connections>

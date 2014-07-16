@@ -34,6 +34,8 @@
         self.edgesForExtendedLayout = UIRectEdgeAll;
     }
     
+    self.tableview.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
     //Tabbar items localization since it´s the first view controller
     [[self.tabBarController.tabBar.items objectAtIndex:0] setTitle:NSLocalizedString(@"Dashboard", @"")];
     [[self.tabBarController.tabBar.items objectAtIndex:1] setTitle:NSLocalizedString(@"Widgets", @"")];

@@ -41,18 +41,19 @@
     
     if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)])
     {
-        self.tableview.contentInset = UIEdgeInsetsMake(0.0f, 0.0f,  CGRectGetHeight(self.toolbar.frame), 0.0f);
+        self.tableview.contentInset = UIEdgeInsetsMake(0.0f, 0.0f,  CGRectGetHeight(self.navigationController.toolbar.frame), 0.0f);
         self.edgesForExtendedLayout = UIRectEdgeAll;
     }
+    
+    self.tableview.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     //set up toolbar
     toolbar.delegate = self;
     [self.navigationController setToolbarHidden:NO];
-    [self.toolbar setTranslucent:YES];
+    [self.navigationController.toolbar setTranslucent:YES];
     [self.navigationController.navigationBar setTranslucent:NO];
     [self.navigationController.navigationBar setOpaque:YES];
     [self.tabBarController.tabBar setTranslucent:NO];
-    [self setToolbarItems:[NSArray arrayWithObjects:self.allButton, self.typesButton, self.roomsButton, self.tagsButton, nil] animated:NO];
     
     //set up auth handler
     authent = [ZWayAuthentification new];
@@ -80,6 +81,13 @@
         [self performSelector:@selector(updateDevices:) withObject:[NSNumber numberWithLong:0] afterDelay:1];
     
     [self.navigationController setToolbarHidden:NO animated:NO];
+    
+    UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        [self setToolbarItems:[NSArray arrayWithObjects:space, self.allButton, space, self.typesButton, space, self.roomsButton, space, self.tagsButton, space, nil]];
+    else
+        [self setToolbarItems:[NSArray arrayWithObjects:self.allButton, self.typesButton, self.roomsButton, self.tagsButton, nil]];
     
     //localize in case the language changed
     [self setTitle:NSLocalizedString(@"Widgets", @"")];
@@ -520,7 +528,7 @@
         if([currentButton isEqualToString:NSLocalizedString(@"Rooms", @"")])
             name = [rooms objectAtIndex:indexPath.row];
         else if([currentButton isEqualToString:NSLocalizedString(@"Types", @"")])
-        name = [self smoothTitles:[types objectAtIndex:indexPath.row]];
+            name = [self smoothTitles:[types objectAtIndex:indexPath.row]];
         else
             name = [tags objectAtIndex:indexPath.row];
 

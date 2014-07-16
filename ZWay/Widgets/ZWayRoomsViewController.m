@@ -40,6 +40,8 @@
     //set up outdoor handler
     authent = [ZWayAuthentification new];
     
+    self.tableview.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
     //set up 2 second touch to add a device to the dashboard
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]
                                                initWithTarget:self

@@ -294,11 +294,11 @@
                         <viewControllerLayoutGuide type="bottom" id="MAu-d4-ehr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="17">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="There is no device in this section" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kF-ms-MKJ">
-                                <rect key="frame" x="20" y="75" width="280" height="217"/>
+                                <rect key="frame" x="20" y="77" width="280" height="217"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="217" id="hW4-ur-AIj"/>
                                 </constraints>
@@ -307,7 +307,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <toolbar clearsContextBeforeDrawing="NO" contentMode="center" horizontalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="jN3-N9-upk">
-                                <rect key="frame" x="0.0" y="367" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
                                 <items>
                                     <barButtonItem title="All" id="4m5-nI-gRq">
                                         <connections>
@@ -336,7 +336,7 @@
                                 </connections>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="T3f-ru-fsL">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="368"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="373"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -407,11 +407,11 @@
                         <viewControllerLayoutGuide type="bottom" id="gyR-w1-f0C"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NZc-2r-t1W">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JFO-id-OFi">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
@@ -477,7 +477,7 @@
         <!--Navigation Controller - Widgets-->
         <scene sceneID="Xm0-zk-g2p">
             <objects>
-                <navigationController id="fYx-6O-i5n" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="fYx-6O-i5n" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Widgets" image="Widgets.png" id="6"/>
                     <toolbarItems/>

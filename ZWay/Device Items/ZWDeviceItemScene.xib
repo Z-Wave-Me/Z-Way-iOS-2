@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
@@ -24,14 +25,14 @@
                         <rect key="frame" x="20" y="13" width="29" height="29"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SmT-22-28v">
-                        <rect key="frame" x="243" y="12" width="63" height="34"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFW-ho-hvc">
+                        <rect key="frame" x="268" y="13" width="32" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" image="toggleButton.png">
+                        <state key="normal" image="toggleNormal.png">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <connections>
-                            <action selector="triggerToggle:" destination="uDg-Kp-Wef" eventType="touchUpInside" id="8zy-So-Mzt"/>
+                            <action selector="triggerToggle:" destination="uDg-Kp-Wef" eventType="touchUpInside" id="8Vz-8N-UMb"/>
                         </connections>
                     </button>
                 </subviews>
@@ -40,11 +41,11 @@
             <connections>
                 <outlet property="imageView" destination="ZBv-O6-JgR" id="3Cs-FC-ayf"/>
                 <outlet property="nameView" destination="lcc-XP-lzF" id="w2I-Wg-V74"/>
-                <outlet property="toggleButton" destination="SmT-22-28v" id="bDj-Gy-yH3"/>
+                <outlet property="toggleButton" destination="WFW-ho-hvc" id="96o-CA-dPR"/>
             </connections>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="toggleButton.png" width="45" height="35"/>
+        <image name="toggleNormal.png" width="32" height="32"/>
     </resources>
 </document>

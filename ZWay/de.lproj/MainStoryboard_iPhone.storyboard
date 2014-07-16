@@ -459,16 +459,20 @@
         <!--Navigation Controller - Widgets-->
         <scene sceneID="Xm0-zk-g2p">
             <objects>
-                <navigationController id="fYx-6O-i5n" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="fYx-6O-i5n" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Widgets" image="Widgets.png" id="6"/>
                     <toolbarItems/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fVO-en-zNl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="DFK-CP-MHw">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="3" kind="relationship" relationship="rootViewController" id="Q2L-ke-gpa"/>
                     </connections>

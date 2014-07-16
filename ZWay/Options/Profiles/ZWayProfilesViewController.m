@@ -33,6 +33,8 @@
     [self.navigationController.navigationBar setOpaque:YES];
     [self.tabBarController.tabBar setTranslucent:NO];
     
+    self.tableview.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
     //get the profiles
     ZWDataStore *store = [ZWayAppDelegate sharedDelegate].dataStore;
     

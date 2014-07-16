@@ -68,6 +68,10 @@ This software requires a server side equipped with Z-Way Smart Home Software in 
 "AlreadyPart" = "Is part";
 "MovedTo" = "Moved";
 
+"ToShow" = "Notifications to show";
+"Warnings" = "Warnings";
+"Errors" = "Errors";
+
 "Red" = "Red";
 "Blue" = "Blue";
 "Orange" = "Orange";

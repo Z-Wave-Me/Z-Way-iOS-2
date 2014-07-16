@@ -79,6 +79,10 @@ This software requires a server side equipped with Z-Way Smart Home Software in 
 "MovedTo" = "可移动的";
 "Edit" = "";
 
+"ToShow" = "Notifications to show";
+"Warnings" = "Warnings";
+"Errors" = "Errors";
+
 "Rooms" = "房间";
 "Types" = "类型";
 "Tags" = "标签";
