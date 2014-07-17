@@ -45,9 +45,10 @@
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                          forBarMetrics:UIBarMetricsDefault];
     //start the app
-    [self.window makeKeyAndVisible];
+    [self useLanguage];
     [self useColorTheme:self.profile.theme];
     [self testOutdoor];
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
@@ -67,6 +68,16 @@
     
     //check again after 20 seconds
     [self performSelector:@selector(testOutdoor) withObject:nil afterDelay:20.0];
+}
+
+- (void)useLanguage
+{
+    NSLog(@"%@", self.profile.language);
+    //check if language is selected and set it to it
+    if(self.profile.language)
+    {
+        [NSBundle setLanguage:self.profile.language];
+    }
 }
 
 - (void)useColorTheme:(NSString*)theme

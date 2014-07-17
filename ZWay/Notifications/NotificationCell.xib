@@ -31,7 +31,7 @@
                     <constraint firstAttribute="centerY" secondItem="5el-o4-NW0" secondAttribute="centerY" id="5hw-DJ-V88"/>
                     <constraint firstItem="5el-o4-NW0" firstAttribute="leading" secondItem="lCg-pO-e9P" secondAttribute="trailing" constant="10" id="WHM-D9-a4R"/>
                     <constraint firstAttribute="centerY" secondItem="lCg-pO-e9P" secondAttribute="centerY" id="a52-cY-UYc"/>
-                    <constraint firstItem="lCg-pO-e9P" firstAttribute="leading" secondItem="tv0-b1-Y4K" secondAttribute="leading" constant="7" id="cPo-5R-MzZ"/>
+                    <constraint firstItem="lCg-pO-e9P" firstAttribute="leading" secondItem="tv0-b1-Y4K" secondAttribute="leading" constant="10" id="cPo-5R-MzZ"/>
                     <constraint firstAttribute="trailing" secondItem="5el-o4-NW0" secondAttribute="trailing" constant="10" id="uge-dM-DhB"/>
                 </constraints>
             </tableViewCellContentView>

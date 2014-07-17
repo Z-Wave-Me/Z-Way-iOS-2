@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CMProfile.h"
 #import "ZWDataStore.h"
+#import "ZWayLanguage.h"
 
 @interface ZWayAppDelegate : UIResponder <UIApplicationDelegate>
 {
@@ -22,6 +23,7 @@
 
 + (ZWayAppDelegate*)sharedDelegate;
 - (void)useColorTheme:(NSString*)theme;
+- (void)useLanguage;
 - (void)testOutdoor;
 
 @end

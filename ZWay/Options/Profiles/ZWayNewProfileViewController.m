@@ -85,6 +85,7 @@
     saveButton.backgroundColor = [UIColor clearColor];
     [saveButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [saveButton addTarget:self action:@selector(store) forControlEvents:UIControlEventTouchUpInside];
+    [saveButton.titleLabel setFont:[UIFont systemFontOfSize:18.0]];
     
     UIButton *deleteButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     deleteButton.frame = CGRectMake(0, 50, 280, 40);
@@ -92,6 +93,7 @@
     deleteButton.backgroundColor = [UIColor clearColor];
     [deleteButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [deleteButton addTarget:self action:@selector(deleteProfile) forControlEvents:UIControlEventTouchUpInside];
+    [deleteButton.titleLabel setFont:[UIFont systemFontOfSize:18.0]];
     
     //place buttons on bottom
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 280, 200)];
