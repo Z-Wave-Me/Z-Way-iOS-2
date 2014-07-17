@@ -376,15 +376,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JFO-id-OFi">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="8Yj-FF-hgr" id="oOU-mC-y0N"/>
-                                    <outlet property="delegate" destination="8Yj-FF-hgr" id="51L-Yu-zj9"/>
-                                </connections>
-                            </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="There is no device in this section" textAlignment="center" lineBreakMode="clip" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAO-Th-xTf">
                                 <rect key="frame" x="10" y="170" width="300" height="110"/>
                                 <constraints>
@@ -395,23 +386,27 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="nMQ-Ai-upc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8Yj-FF-hgr" id="og2-rh-rAM"/>
+                                    <outlet property="delegate" destination="8Yj-FF-hgr" id="uhj-Nb-Jq0"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mAO-Th-xTf" firstAttribute="centerX" secondItem="JFO-id-OFi" secondAttribute="centerX" id="Cpg-on-e1f"/>
-                            <constraint firstAttribute="bottom" secondItem="JFO-id-OFi" secondAttribute="bottom" id="ICc-53-UeN"/>
                             <constraint firstItem="mAO-Th-xTf" firstAttribute="top" secondItem="NZc-2r-t1W" secondAttribute="top" constant="170" id="LNO-bj-JJk"/>
-                            <constraint firstItem="JFO-id-OFi" firstAttribute="centerY" secondItem="NZc-2r-t1W" secondAttribute="centerY" id="NXf-VF-MPk"/>
-                            <constraint firstItem="JFO-id-OFi" firstAttribute="leading" secondItem="NZc-2r-t1W" secondAttribute="leading" id="S6S-90-thA"/>
-                            <constraint firstAttribute="trailing" secondItem="JFO-id-OFi" secondAttribute="trailing" id="Tiu-uX-0ot"/>
-                            <constraint firstAttribute="bottom" secondItem="JFO-id-OFi" secondAttribute="bottom" id="xTW-Sx-cqL"/>
+                            <constraint firstItem="mAO-Th-xTf" firstAttribute="centerX" secondItem="NZc-2r-t1W" secondAttribute="centerX" id="o3z-D9-kiv"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="V4c-TF-l3w"/>
                     <connections>
                         <outlet property="noItemsLabel" destination="mAO-Th-xTf" id="TKD-PB-KqW"/>
-                        <outlet property="tableview" destination="JFO-id-OFi" id="jVT-xa-wCJ"/>
+                        <outlet property="tableview" destination="nMQ-Ai-upc" id="8hs-SH-Spz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3T4-W0-lUO" userLabel="First Responder" sceneMemberID="firstResponder"/>

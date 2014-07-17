@@ -437,6 +437,7 @@
         <scene sceneID="dQv-8p-OHW">
             <objects>
                 <navigationController toolbarHidden="NO" id="xXN-ww-cTp" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Widgets" image="Widgets.png" id="l7i-EG-mkr"/>
                     <toolbarItems/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>

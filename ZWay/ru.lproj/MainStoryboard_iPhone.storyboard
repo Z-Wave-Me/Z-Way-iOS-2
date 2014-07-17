@@ -362,30 +362,25 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="There is no device in this section" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAO-Th-xTf">
-                                <rect key="frame" x="27" y="128" width="266" height="121"/>
+                                <rect key="frame" x="27" y="128" width="251" height="121"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JFO-id-OFi">
-                                <rect key="frame" x="0.0" y="-57" width="320" height="573"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fA5-hQ-H9M">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="8Yj-FF-hgr" id="oOU-mC-y0N"/>
-                                    <outlet property="delegate" destination="8Yj-FF-hgr" id="51L-Yu-zj9"/>
+                                    <outlet property="dataSource" destination="8Yj-FF-hgr" id="oUn-5H-Nms"/>
+                                    <outlet property="delegate" destination="8Yj-FF-hgr" id="qdA-zi-evt"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JFO-id-OFi" firstAttribute="top" secondItem="NZc-2r-t1W" secondAttribute="top" constant="-57" id="0wI-z8-7wP"/>
-                            <constraint firstItem="JFO-id-OFi" firstAttribute="centerY" secondItem="NZc-2r-t1W" secondAttribute="centerY" id="81o-dj-2g9"/>
-                            <constraint firstItem="JFO-id-OFi" firstAttribute="leading" secondItem="NZc-2r-t1W" secondAttribute="leading" id="Awf-yv-caF"/>
                             <constraint firstItem="mAO-Th-xTf" firstAttribute="top" secondItem="GYL-Gn-yC3" secondAttribute="bottom" constant="128" id="WeL-JM-b3Z"/>
-                            <constraint firstItem="JFO-id-OFi" firstAttribute="centerX" secondItem="mAO-Th-xTf" secondAttribute="centerX" id="bRh-qg-Hug"/>
                             <constraint firstItem="YFK-Ua-suZ" firstAttribute="top" secondItem="mAO-Th-xTf" secondAttribute="bottom" constant="211" id="o5b-Hd-MaR"/>
-                            <constraint firstAttribute="trailing" secondItem="JFO-id-OFi" secondAttribute="trailing" id="pig-WZ-Hg8"/>
                             <constraint firstItem="mAO-Th-xTf" firstAttribute="leading" secondItem="NZc-2r-t1W" secondAttribute="leading" constant="27" id="y53-K1-IeN"/>
                         </constraints>
                     </view>
@@ -393,7 +388,7 @@
                     <navigationItem key="navigationItem" id="V4c-TF-l3w"/>
                     <connections>
                         <outlet property="noItemsLabel" destination="mAO-Th-xTf" id="TKD-PB-KqW"/>
-                        <outlet property="tableview" destination="JFO-id-OFi" id="jVT-xa-wCJ"/>
+                        <outlet property="tableview" destination="fA5-hQ-H9M" id="2ws-Dh-hcv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3T4-W0-lUO" userLabel="First Responder" sceneMemberID="firstResponder"/>

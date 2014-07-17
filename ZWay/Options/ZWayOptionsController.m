@@ -98,6 +98,7 @@
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     [cell.textLabel setFont:[UIFont systemFontOfSize:20.0]];
+    cell.textLabel.frame = CGRectMake(15, 0, cell.frame.size.width, cell.frame.size.height);
     
     return cell;
 }

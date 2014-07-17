@@ -344,7 +344,7 @@
             {
                 case 0:
                     name = @"userLogin";
-                    displayName = NSLocalizedString(@"Login", @"");
+                    displayName = @"ID";
                     cell = [_fields objectForKey:name];
                     cell.tag = 12;
                     label = (UILabel*)[cell viewWithTag:1];
