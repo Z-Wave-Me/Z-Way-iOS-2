@@ -29,10 +29,14 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="centerY" secondItem="5el-o4-NW0" secondAttribute="centerY" id="5hw-DJ-V88"/>
-                    <constraint firstItem="5el-o4-NW0" firstAttribute="leading" secondItem="lCg-pO-e9P" secondAttribute="trailing" constant="10" id="WHM-D9-a4R"/>
+                    <constraint firstAttribute="bottom" secondItem="lCg-pO-e9P" secondAttribute="bottom" id="ALv-4X-5y8"/>
+                    <constraint firstItem="5el-o4-NW0" firstAttribute="top" secondItem="tv0-b1-Y4K" secondAttribute="top" id="CRH-MK-HGf"/>
+                    <constraint firstItem="5el-o4-NW0" firstAttribute="leading" secondItem="lCg-pO-e9P" secondAttribute="trailing" constant="15" id="WHM-D9-a4R"/>
                     <constraint firstAttribute="centerY" secondItem="lCg-pO-e9P" secondAttribute="centerY" id="a52-cY-UYc"/>
-                    <constraint firstItem="lCg-pO-e9P" firstAttribute="leading" secondItem="tv0-b1-Y4K" secondAttribute="leading" constant="10" id="cPo-5R-MzZ"/>
+                    <constraint firstItem="lCg-pO-e9P" firstAttribute="leading" secondItem="tv0-b1-Y4K" secondAttribute="leading" constant="7" id="aog-8z-lQs"/>
                     <constraint firstAttribute="trailing" secondItem="5el-o4-NW0" secondAttribute="trailing" constant="10" id="uge-dM-DhB"/>
+                    <constraint firstItem="lCg-pO-e9P" firstAttribute="top" secondItem="tv0-b1-Y4K" secondAttribute="top" id="xvH-qn-DMf"/>
+                    <constraint firstAttribute="bottom" secondItem="5el-o4-NW0" secondAttribute="bottom" id="zh6-gn-VYr"/>
                 </constraints>
             </tableViewCellContentView>
         </tableViewCell>

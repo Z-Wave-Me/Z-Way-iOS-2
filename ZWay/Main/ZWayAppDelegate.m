@@ -72,7 +72,6 @@
 
 - (void)useLanguage
 {
-    NSLog(@"%@", self.profile.language);
     //check if language is selected and set it to it
     if(self.profile.language)
     {
