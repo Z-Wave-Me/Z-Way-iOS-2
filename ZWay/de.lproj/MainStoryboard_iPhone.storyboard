@@ -110,14 +110,14 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="About Section" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXV-m6-Wqd">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="About Section" translatesAutoresizingMaskIntoConstraints="NO" id="ZXV-m6-Wqd">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" staticText="YES"/>
                                 </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
                                     <outlet property="delegate" destination="Air-bM-tvu" id="Zq8-M6-lEh"/>
@@ -215,38 +215,6 @@
                                 <rect key="frame" x="-4" y="0.0" width="326" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" id="0RN-RH-acb">
-                                        <rect key="frame" x="0.0" y="22" width="326" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0RN-RH-acb" id="upo-uS-ILn">
-                                            <rect key="frame" x="0.0" y="0.0" width="326" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="239" translatesAutoresizingMaskIntoConstraints="NO" id="eGb-NK-GRc">
-                                                    <rect key="frame" x="67" y="11" width="239" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YRc-8N-GKG">
-                                                    <rect key="frame" x="7" y="5" width="52" height="33"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="52" id="2Ms-BG-1iW"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="eGb-NK-GRc" secondAttribute="trailing" constant="20" symbolic="YES" id="CIz-47-epK"/>
-                                                <constraint firstItem="YRc-8N-GKG" firstAttribute="centerY" secondItem="eGb-NK-GRc" secondAttribute="centerY" id="YJ7-vI-Bhk"/>
-                                                <constraint firstItem="eGb-NK-GRc" firstAttribute="leading" secondItem="YRc-8N-GKG" secondAttribute="trailing" constant="8" symbolic="YES" id="cXs-PZ-neq"/>
-                                                <constraint firstItem="YRc-8N-GKG" firstAttribute="top" secondItem="upo-uS-ILn" secondAttribute="top" constant="5" id="dga-ro-81S"/>
-                                                <constraint firstItem="YRc-8N-GKG" firstAttribute="leading" secondItem="upo-uS-ILn" secondAttribute="leading" constant="7" id="h7p-BV-xRw"/>
-                                                <constraint firstItem="YRc-8N-GKG" firstAttribute="centerY" secondItem="upo-uS-ILn" secondAttribute="centerY" id="pRN-Ym-qD3"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="mFp-XH-TKO" id="UlW-L8-u9O"/>
                                     <outlet property="delegate" destination="mFp-XH-TKO" id="OqV-B9-BuX"/>
@@ -380,7 +348,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="782" y="678"/>
+            <point key="canvasLocation" x="782" y="686"/>
         </scene>
         <!--Way Rooms View Controller-->
         <scene sceneID="gch-dx-Evj">

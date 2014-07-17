@@ -53,9 +53,15 @@
 - (void)hideControls:(BOOL)editing
 {
     if (editing == YES)
+    {
         self.slider.hidden = YES;
+        self.switchButton.hidden = YES;
+    }
     else
+    {
+        self.switchButton.hidden = NO;
         self.slider.hidden = NO;
+    }
 }
 
 //send a command when the slider was moved

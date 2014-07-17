@@ -97,6 +97,7 @@
     //no selection and indicator
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    [cell.textLabel setFont:[UIFont systemFontOfSize:20.0]];
     
     return cell;
 }

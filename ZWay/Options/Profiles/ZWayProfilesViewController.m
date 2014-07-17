@@ -180,6 +180,7 @@
             break;
     }
     
+    [cell.textLabel setFont:[UIFont systemFontOfSize:20.0]];
     return cell;
 }
 

@@ -37,7 +37,7 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="WFW-ho-hvc" secondAttribute="trailing" constant="20" id="oKk-Gz-2xN"/>
+                    <constraint firstAttribute="trailing" secondItem="WFW-ho-hvc" secondAttribute="trailing" constant="20" id="qKr-bR-Ozb"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

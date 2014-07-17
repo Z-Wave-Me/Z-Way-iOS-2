@@ -254,6 +254,13 @@
     
     UILabel *messageLabel = (UILabel*)[cell viewWithTag:2];
     messageLabel.text = [NSString stringWithFormat:@"%@", [message valueForKey:@"message"]];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        [messageLabel setFont:[UIFont systemFontOfSize:18.0]];
+        [timeStampLabel setFont:[UIFont systemFontOfSize:18.0]];
+    }
+    
 
     return cell;
 }

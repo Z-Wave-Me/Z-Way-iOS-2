@@ -69,10 +69,10 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pom-jM-hHY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="pom-jM-hHY">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="dataSource" destination="xAq-N3-CHI" id="41P-64-DOv"/>
@@ -113,14 +113,14 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="911"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="About Section" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdD-0J-3Kn">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="About Section" translatesAutoresizingMaskIntoConstraints="NO" id="qdD-0J-3Kn">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="911"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" staticText="YES"/>
                                 </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
                                     <outlet property="delegate" destination="VPC-9Z-ChA" id="NXL-qo-7V8"/>
@@ -218,40 +218,6 @@
                                 <rect key="frame" x="-1" y="0.0" width="768" height="911"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" id="0RN-RH-acb">
-                                        <rect key="frame" x="0.0" y="22" width="768" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0RN-RH-acb" id="9Yc-N8-NbW">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGb-NK-GRc">
-                                                    <rect key="frame" x="67" y="11" width="239" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="239" id="I7w-WY-W4L"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YRc-8N-GKG">
-                                                    <rect key="frame" x="7" y="5" width="52" height="33"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="52" id="dOC-j4-Q1f"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="YRc-8N-GKG" firstAttribute="top" secondItem="9Yc-N8-NbW" secondAttribute="top" constant="5" id="XVs-hZ-e1W"/>
-                                                <constraint firstItem="YRc-8N-GKG" firstAttribute="leading" secondItem="9Yc-N8-NbW" secondAttribute="leading" constant="7" id="Zmw-Do-DLB"/>
-                                                <constraint firstItem="YRc-8N-GKG" firstAttribute="centerY" secondItem="eGb-NK-GRc" secondAttribute="centerY" id="kmh-hP-Alu"/>
-                                                <constraint firstItem="eGb-NK-GRc" firstAttribute="centerY" secondItem="9Yc-N8-NbW" secondAttribute="centerY" id="mrG-vV-0ZW"/>
-                                                <constraint firstItem="eGb-NK-GRc" firstAttribute="leading" secondItem="YRc-8N-GKG" secondAttribute="trailing" constant="8" symbolic="YES" id="pib-RN-sFz"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="mFp-XH-TKO" id="UlW-L8-u9O"/>
                                     <outlet property="delegate" destination="mFp-XH-TKO" id="OqV-B9-BuX"/>

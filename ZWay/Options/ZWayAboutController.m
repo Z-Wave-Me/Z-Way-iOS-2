@@ -23,6 +23,7 @@
     [self.navigationController.navigationBar setTranslucent:NO];
     [self.navigationController.navigationBar setOpaque:YES];
     [self.tabBarController.tabBar setTranslucent:NO];
+    [self.textview setFont:[UIFont systemFontOfSize:18]];
 }
 
 - (void)viewWillAppear:(BOOL)animated

@@ -110,14 +110,14 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="About Section" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRG-Hp-pk1">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="About Section" translatesAutoresizingMaskIntoConstraints="NO" id="QRG-Hp-pk1">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" staticText="YES"/>
                                 </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
                                     <outlet property="delegate" destination="5Hu-ky-NTs" id="ngu-i6-TV1"/>
@@ -213,38 +213,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="326" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" id="0RN-RH-acb">
-                                        <rect key="frame" x="0.0" y="22" width="326" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0RN-RH-acb" id="nFl-q6-exC">
-                                            <rect key="frame" x="0.0" y="0.0" width="326" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="239" translatesAutoresizingMaskIntoConstraints="NO" id="eGb-NK-GRc">
-                                                    <rect key="frame" x="67" y="11" width="239" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YRc-8N-GKG">
-                                                    <rect key="frame" x="7" y="5" width="52" height="33"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="52" id="Z0k-c3-ZUS"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="YRc-8N-GKG" firstAttribute="leading" secondItem="nFl-q6-exC" secondAttribute="leading" constant="7" id="1bS-jM-xSB"/>
-                                                <constraint firstItem="eGb-NK-GRc" firstAttribute="leading" secondItem="YRc-8N-GKG" secondAttribute="trailing" constant="8" symbolic="YES" id="2lQ-zq-cRT"/>
-                                                <constraint firstItem="eGb-NK-GRc" firstAttribute="centerY" secondItem="YRc-8N-GKG" secondAttribute="centerY" id="5BU-P6-Q57"/>
-                                                <constraint firstAttribute="trailing" secondItem="eGb-NK-GRc" secondAttribute="trailing" constant="20" symbolic="YES" id="PIb-yf-TFy"/>
-                                                <constraint firstItem="YRc-8N-GKG" firstAttribute="top" secondItem="nFl-q6-exC" secondAttribute="top" constant="5" id="bvI-Fh-hr4"/>
-                                                <constraint firstItem="eGb-NK-GRc" firstAttribute="centerY" secondItem="nFl-q6-exC" secondAttribute="centerY" id="yLD-si-e3e"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="mFp-XH-TKO" id="UlW-L8-u9O"/>
                                     <outlet property="delegate" destination="mFp-XH-TKO" id="OqV-B9-BuX"/>
