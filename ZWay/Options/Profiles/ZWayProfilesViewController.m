@@ -104,25 +104,38 @@
     return _fetchController.sections.count;
 }
 
-//set section titles
-- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    // create the parent view that will hold header Label
+    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.frame.size.width, 22.0)];
+    
+    // create the label
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    
+    headerLabel.frame = CGRectMake(15, customView.center.y, tableView.frame.size.width, 22.0);
+    
     switch (section) {
         case 0:
         {
             id<NSFetchedResultsSectionInfo> sectInfo = [_fetchController.sections objectAtIndex:section];
             if(sectInfo.numberOfObjects == 0)
             {
-                return NSLocalizedString(@"NoProfile", @"");
+                headerLabel.text = NSLocalizedString(@"NoProfile", @"");
             }
-            return NSLocalizedString(@"Profiles", @"");
+            else
+                headerLabel.text = NSLocalizedString(@"Profiles", @"");
         }
             break;
-            
-        default:
-            return @"";
-            break;
     }
+    
+    [customView addSubview:headerLabel];
+    
+    return customView;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 35;
 }
 
 //only the profile count can vary all other have 1 row per section
@@ -181,6 +194,7 @@
     }
     
     [cell.textLabel setFont:[UIFont systemFontOfSize:20.0]];
+    cell.textLabel.frame = CGRectMake(15, 0, cell.frame.size.width, cell.frame.size.height);
     return cell;
 }
 

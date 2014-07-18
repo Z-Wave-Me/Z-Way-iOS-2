@@ -58,6 +58,7 @@
     //set tab and navigation translucent
     [self.navigationController.navigationBar setTranslucent:NO];
     [self.navigationController.navigationBar setOpaque:YES];
+    [self.tabBarController.tabBar setOpaque:YES];
     [self.tabBarController.tabBar setTranslucent:NO];
     
     //set title for subview

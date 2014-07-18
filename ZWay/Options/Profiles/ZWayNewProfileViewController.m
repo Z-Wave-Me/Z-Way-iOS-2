@@ -263,26 +263,51 @@
     return 6;
 }
 
-//title for sections
-- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    // create the parent view that will hold header Label
+    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.frame.size.width, 22.0)];
+    
+    // create the label
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    
+    headerLabel.frame = CGRectMake(15, customView.center.y, tableView.frame.size.width, 22.0);
+    
     switch (section)
     {
         case 0:
-            return NSLocalizedString(@"Name", @"");
+            headerLabel.text = NSLocalizedString(@"Name", @"");
+            break;
+            
         case 1:
-            return NSLocalizedString(@"IndoorServer", @"");
+            headerLabel.text = NSLocalizedString(@"IndoorServer", @"");
+            break;
+            
         case 2:
-            return NSLocalizedString(@"RemoteAccess", @"");
+            headerLabel.text = NSLocalizedString(@"RemoteAccess", @"");
+            break;
+            
         case 3:
-            return NSLocalizedString(@"Color", @"Color Theme");
+            headerLabel.text = NSLocalizedString(@"Color", @"Color Theme");
+            break;
+            
         case 4:
-            return NSLocalizedString(@"Language", @"");
+            headerLabel.text = NSLocalizedString(@"Language", @"");
+            break;
+            
         case 5:
-            return NSLocalizedString(@"ToShow", @"Notifications to show");
-        default:
-            return nil;
+            headerLabel.text = NSLocalizedString(@"ToShow", @"Notifications to show");
+            break;
     }
+    
+    [customView addSubview:headerLabel];
+    
+    return customView;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 35;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

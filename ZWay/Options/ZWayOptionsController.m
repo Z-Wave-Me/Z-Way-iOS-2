@@ -47,22 +47,34 @@
     return 2;
 }
 
-//set section titles
-- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    // create the parent view that will hold header Label
+    UIView *customView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, tableView.frame.size.width, 22.0)];
+    
+    // create the label
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    
+    headerLabel.frame = CGRectMake(15, customView.center.y, tableView.frame.size.width, 22.0);
+    
     switch (section) {
         case 0:
-            return NSLocalizedString(@"Profiles", @"");
+            headerLabel.text = NSLocalizedString(@"Profiles", @"");
             break;
             
         case 1:
-            return NSLocalizedString(@"About", @"About");
-            break;
-            
-        default:
-            return @"";
+            headerLabel.text = NSLocalizedString(@"About", @"About");
             break;
     }
+
+    [customView addSubview:headerLabel];
+    
+    return customView;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 35;
 }
 
 //always one row
