@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A035696E1979257100436A69 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A035696D1979257100436A69 /* Images.xcassets */; };
 		A03E191419654EC3008416DB /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A03E191319654EC3008416DB /* NotificationCell.xib */; };
 		A03E191619655110008416DB /* Notifications.png in Resources */ = {isa = PBXBuildFile; fileRef = A03E191519655110008416DB /* Notifications.png */; };
 		A03E191919655401008416DB /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A03E191719655401008416DB /* Model.xcdatamodeld */; };
@@ -52,9 +53,6 @@
 		A0459B0B195DBD76005E6EB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085F5181886C5F00061E721 /* Foundation.framework */; };
 		A0459B0C195DBD76005E6EB0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085F51A1886C5F00061E721 /* CoreGraphics.framework */; };
 		A0459B0D195DBD76005E6EB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085F5161886C5F00061E721 /* UIKit.framework */; };
-		A0459B2B195DBD76005E6EB0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0459AF1195DBC7E005E6EB0 /* XCTest.framework */; };
-		A0459B2C195DBD77005E6EB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085F5181886C5F00061E721 /* Foundation.framework */; };
-		A0459B2D195DBD77005E6EB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A085F5161886C5F00061E721 /* UIKit.framework */; };
 		A046682A196414B900323048 /* BinaryOff.png in Resources */ = {isa = PBXBuildFile; fileRef = A0466825196414B900323048 /* BinaryOff.png */; };
 		A046682B196414B900323048 /* BinaryOn.png in Resources */ = {isa = PBXBuildFile; fileRef = A0466826196414B900323048 /* BinaryOn.png */; };
 		A046682C196414B900323048 /* Dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = A0466827196414B900323048 /* Dashboard.png */; };
@@ -165,21 +163,12 @@
 		A0C2DC1E19613EBE0031E4BA /* wrong.png in Resources */ = {isa = PBXBuildFile; fileRef = A0459A7F195DBA12005E6EB0 /* wrong.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		A0459B2E195DBD77005E6EB0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A085F50B1886C5F00061E721 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A0459B09195DBD76005E6EB0;
-			remoteInfo = ZWay;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		A02ABF4B196AA1DC00FD11E0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		A02ABF4C196AA1DC00FD11E0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A02ABF4D196AA1DC00FD11E0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/MainStoryboard_iPad.storyboard"; sourceTree = "<group>"; };
 		A02ABF4E196AA1DC00FD11E0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "zh-Hans"; path = "zh-Hans.lproj/MainStoryboard_iPhone.storyboard"; sourceTree = "<group>"; };
+		A035696D1979257100436A69 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A03E191319654EC3008416DB /* NotificationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotificationCell.xib; path = Notifications/NotificationCell.xib; sourceTree = "<group>"; };
 		A03E191519655110008416DB /* Notifications.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Notifications.png; sourceTree = "<group>"; };
 		A03E191819655401008416DB /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -314,7 +303,6 @@
 		A0459A8A195DBA12005E6EB0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ru; path = ru.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		A0459AF1195DBC7E005E6EB0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A0459B0A195DBD76005E6EB0 /* ZWay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZWay.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0459B2A195DBD76005E6EB0 /* ZWayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZWayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0466825196414B900323048 /* BinaryOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BinaryOff.png; sourceTree = "<group>"; };
 		A0466826196414B900323048 /* BinaryOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BinaryOn.png; sourceTree = "<group>"; };
 		A0466827196414B900323048 /* Dashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dashboard.png; sourceTree = "<group>"; };
@@ -389,16 +377,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A0459B27195DBD76005E6EB0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0459B2B195DBD76005E6EB0 /* XCTest.framework in Frameworks */,
-				A0459B2D195DBD77005E6EB0 /* UIKit.framework in Frameworks */,
-				A0459B2C195DBD77005E6EB0 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -426,6 +404,7 @@
 				A0459AC4195DBB16005E6EB0 /* Localization */,
 				A0459A33195DBA12005E6EB0 /* Images */,
 				A0459AC9195DBBED005E6EB0 /* Main */,
+				A035696D1979257100436A69 /* Images.xcassets */,
 			);
 			path = ZWay;
 			sourceTree = "<group>";
@@ -678,7 +657,6 @@
 			isa = PBXGroup;
 			children = (
 				A0459B0A195DBD76005E6EB0 /* ZWay.app */,
-				A0459B2A195DBD76005E6EB0 /* ZWayTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -731,24 +709,6 @@
 			productReference = A0459B0A195DBD76005E6EB0 /* ZWay.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A0459B29195DBD76005E6EB0 /* ZWayTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A0459B3B195DBD77005E6EB0 /* Build configuration list for PBXNativeTarget "ZWayTests" */;
-			buildPhases = (
-				A0459B26195DBD76005E6EB0 /* Sources */,
-				A0459B27195DBD76005E6EB0 /* Frameworks */,
-				A0459B28195DBD76005E6EB0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A0459B2F195DBD77005E6EB0 /* PBXTargetDependency */,
-			);
-			name = ZWayTests;
-			productName = ZWayTests;
-			productReference = A0459B2A195DBD76005E6EB0 /* ZWayTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -760,8 +720,8 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Lucas von Hacht";
 				TargetAttributes = {
-					A0459B29195DBD76005E6EB0 = {
-						TestTargetID = A0459B09195DBD76005E6EB0;
+					A0459B09195DBD76005E6EB0 = {
+						DevelopmentTeam = GBYV49BJ53;
 					};
 				};
 			};
@@ -782,7 +742,6 @@
 			projectRoot = "";
 			targets = (
 				A0459B09195DBD76005E6EB0 /* ZWay */,
-				A0459B29195DBD76005E6EB0 /* ZWayTests */,
 			);
 		};
 /* End PBXProject section */
@@ -871,6 +830,7 @@
 				A048EBC1197028FB00474521 /* Notifications@2x.png in Resources */,
 				A042F10F1962EE5D00825387 /* ZWDeviceItemSensorMulti.xib in Resources */,
 				A0484740197408E80030ADFB /* media@2x.png in Resources */,
+				A035696E1979257100436A69 /* Images.xcassets in Resources */,
 				A048473F197408E80030ADFB /* luminosity@2x.png in Resources */,
 				A0C2DC0D19613EBE0031E4BA /* motion.png in Resources */,
 				A048EBC7197028FB00474521 /* wrong@2x.png in Resources */,
@@ -913,13 +873,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A0459B28195DBD76005E6EB0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -957,22 +910,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A0459B26195DBD76005E6EB0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A0459B2F195DBD77005E6EB0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A0459B09195DBD76005E6EB0 /* ZWay */;
-			targetProxy = A0459B2E195DBD77005E6EB0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A0459A23195DBA12005E6EB0 /* InfoPlist.strings */ = {
@@ -1031,6 +969,8 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Christian Paetz (6GBYXGX8UL)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Christian Paetz (6GBYXGX8UL)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -1048,6 +988,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "ZWay/Localization/ZWay-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7E6FE896-ADAB-4145-A59E-31DF3BECC834";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1061,6 +1002,8 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Christian Paetz (6GBYXGX8UL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christian Paetz (6GBYXGX8UL)";
 				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1075,68 +1018,67 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "ZWay/Localization/ZWay-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7E6FE896-ADAB-4145-A59E-31DF3BECC834";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
-		A0459B3C195DBD77005E6EB0 /* Debug */ = {
+		A04CCBB0197D398200B8DBA8 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ZWay.app/ZWay";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ZWay/ZWay-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "ZWayTests/ZWayTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Christian Paetz (GBYV49BJ53)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Christian Paetz (GBYV49BJ53)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
-			name = Debug;
+			name = Distribution;
 		};
-		A0459B3D195DBD77005E6EB0 /* Release */ = {
+		A04CCBB1197D398200B8DBA8 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ZWay.app/ZWay";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Christian Paetz (6GBYXGX8UL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Christian Paetz (6GBYXGX8UL)";
 				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ZWay/ZWay-Prefix.pch";
+				GCC_PREFIX_HEADER = "ZWay/Localization/ZWay-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "ZWayTests/ZWayTests-Info.plist";
+				INFOPLIST_FILE = "ZWay/Localization/ZWay-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
+				PROVISIONING_PROFILE = "7E6FE896-ADAB-4145-A59E-31DF3BECC834";
+				WRAPPER_EXTENSION = app;
 			};
-			name = Release;
+			name = Distribution;
 		};
 		A085F5571886C5F00061E721 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1150,7 +1092,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Christian Paetz (GBYV49BJ53)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Christian Paetz (GBYV49BJ53)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1182,7 +1125,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Christian Paetz (GBYV49BJ53)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Christian Paetz (GBYV49BJ53)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1204,15 +1148,7 @@
 			buildConfigurations = (
 				A0459B39195DBD77005E6EB0 /* Debug */,
 				A0459B3A195DBD77005E6EB0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A0459B3B195DBD77005E6EB0 /* Build configuration list for PBXNativeTarget "ZWayTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A0459B3C195DBD77005E6EB0 /* Debug */,
-				A0459B3D195DBD77005E6EB0 /* Release */,
+				A04CCBB1197D398200B8DBA8 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1222,6 +1158,7 @@
 			buildConfigurations = (
 				A085F5571886C5F00061E721 /* Debug */,
 				A085F5581886C5F00061E721 /* Release */,
+				A04CCBB0197D398200B8DBA8 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

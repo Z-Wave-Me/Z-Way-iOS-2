@@ -68,25 +68,25 @@ This software requires a server side equipped with Z-Way Smart Home Software in 
 "Blue" = "蓝色";
 "Orange" = "橙色";
 "Purple" = "紫色";
-"Brown" = "Brown";
-"Magenta" = "Magenta";
-"Yellow" = "Yellow";
-"Cyan" = "Cyan";
-"Green" = "Green";
+"Brown" = "棕色";
+"Magenta" = "品红";
+"Yellow" = "黄色";
+"Cyan" = "青色";
+"Green" = "绿色";
 
 "Error!" = "错误!";
 "AlreadyPart" = "部分";
 "MovedTo" = "可移动的";
-"Edit" = "";
+"Edit" = "编辑";
 
-"ToShow" = "Notifications to show";
-"Warnings" = "Warnings";
-"Errors" = "Errors";
+"ToShow" = "通知显示";
+"Warnings" = "警告";
+"Errors" = "错误";
 
 "Rooms" = "房间";
 "Types" = "类型";
 "Tags" = "标签";
-"All" = "";
+"All" = "所有";
 
 "Battery" = "电池";
 "MultiSensor" = "多传感器";

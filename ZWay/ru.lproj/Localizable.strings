@@ -58,19 +58,19 @@ This software requires a server side equipped with Z-Way Smart Home Software in 
 "CredentialsError" = "Ошибка учетной записи";
 "WrongCred" = "Неверная учетная запись";
 "Language" = "Язык";
-"English" = "English";
-"German" = "Deutsch";
+"English" = "английский";
+"German" = "немецкий";
 "Russian" = "Русский";
 "Chinese" = "中国的";
 
-"Error!" = "";
-"AlreadyPart" = "";
-"MovedTo" = "";
-"Edit" = "";
+"Error!" = "ошибка";
+"AlreadyPart" = "Является составной частью";
+"MovedTo" = "Перемещенные";
+"Edit" = "редактировать";
 
-"ToShow" = "Notifications to show";
-"Warnings" = "Warnings";
-"Errors" = "Errors";
+"ToShow" = "Уведомления для отображения";
+"Warnings" = "Предупреждения";
+"Errors" = "Ошибки";
 
 "Red" = "Красный";
 "Blue" = "Синий";
